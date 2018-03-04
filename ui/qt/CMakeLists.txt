@@ -137,6 +137,9 @@ set(WIRESHARK_QT_HEADERS
 	enabled_protocols_dialog.h
 	endpoint_dialog.h
 	expert_info_dialog.h
+	expert_info_model.h
+	expert_info_proxy_model.h
+	expert_info_view.h
 	export_dissection_dialog.h
 	export_object_action.h
 	export_object_dialog.h
@@ -216,6 +219,10 @@ set(WIRESHARK_QT_HEADERS
 	service_response_time_dialog.h
 	simple_statistics_dialog.h
 	supported_protocols_dialog.h
+<<<<<<< HEAD
+=======
+	syntax_line_edit.h
+>>>>>>> upstream/master-2.4
 	tabnav_tree_widget.h
 	tap_parameter_dialog.h
 	tcp_stream_dialog.h
@@ -355,6 +362,9 @@ set(WIRESHARK_QT_SRC
 	dissector_tables_dialog.cpp
 	enabled_protocols_dialog.cpp
 	endpoint_dialog.cpp
+	expert_info_model.cpp
+	expert_info_proxy_model.cpp
+	expert_info_view.cpp
 	export_dissection_dialog.cpp
 	export_object_action.cpp
 	export_object_dialog.cpp
@@ -429,6 +439,10 @@ set(WIRESHARK_QT_SRC
 	simple_statistics_dialog.cpp
 	splash_overlay.cpp
 	supported_protocols_dialog.cpp
+<<<<<<< HEAD
+=======
+	syntax_line_edit.cpp
+>>>>>>> upstream/master-2.4
 	tabnav_tree_widget.cpp
 	tap_parameter_dialog.cpp
 	tcp_stream_dialog.cpp

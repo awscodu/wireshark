@@ -274,6 +274,9 @@ MOC_HDRS = \
 	enabled_protocols_dialog.h			\
 	endpoint_dialog.h				\
 	expert_info_dialog.h				\
+	expert_info_model.h				\
+	expert_info_proxy_model.h				\
+	expert_info_view.h				\
 	export_dissection_dialog.h			\
 	export_object_action.h				\
 	export_object_dialog.h				\
@@ -355,6 +358,10 @@ MOC_HDRS = \
 	splash_overlay.h				\
 	stats_tree_dialog.h				\
 	supported_protocols_dialog.h			\
+<<<<<<< HEAD
+=======
+	syntax_line_edit.h				\
+>>>>>>> upstream/master-2.4
 	tabnav_tree_widget.h				\
 	tap_parameter_dialog.h				\
 	tcp_stream_dialog.h				\
@@ -616,6 +623,9 @@ WIRESHARK_QT_SRC = \
 	dissector_tables_dialog.cpp			\
 	enabled_protocols_dialog.cpp			\
 	endpoint_dialog.cpp				\
+	expert_info_model.cpp			\
+	expert_info_proxy_model.cpp			\
+	expert_info_view.cpp			\
 	export_dissection_dialog.cpp			\
 	export_object_action.cpp			\
 	export_object_dialog.cpp			\
@@ -692,6 +702,10 @@ WIRESHARK_QT_SRC = \
 	simple_statistics_dialog.cpp			\
 	splash_overlay.cpp				\
 	supported_protocols_dialog.cpp			\
+<<<<<<< HEAD
+=======
+	syntax_line_edit.cpp				\
+>>>>>>> upstream/master-2.4
 	tabnav_tree_widget.cpp				\
 	tap_parameter_dialog.cpp			\
 	tcp_stream_dialog.cpp				\
@@ -725,6 +739,7 @@ WIRESHARK_QT_TAP_SRC = \
 	wlan_statistics_dialog.cpp
 
 noinst_HEADERS = \
+<<<<<<< HEAD
 	$(MOC_HDRS)			\
 	simple_dialog.h			\
 	models/packet_list_record.h	\
@@ -733,6 +748,26 @@ noinst_HEADERS = \
 	utils/stock_icon.h		\
 	utils/tango_colors.h		\
 	utils/variant_pointer.h
+=======
+	$(MOC_HDRS)		\
+	packet_list_record.h	\
+	qcustomplot.h		\
+	qt_ui_utils.h		\
+	simple_dialog.h		\
+	stock_icon.h		\
+	tango_colors.h		\
+	variant_pointer.h
+
+if HAVE_EXTCAP
+NODIST_GENERATED_HEADER_FILES += \
+	ui_extcap_options_dialog.h
+
+MOC_HDRS += \
+	extcap_argument.h		\
+	extcap_argument_file.h		\
+	extcap_argument_multiselect.h	\
+	extcap_options_dialog.h
+>>>>>>> upstream/master-2.4
 
 
 wireshark-tap-register.c: $(WIRESHARK_QT_TAP_SRC) ../make-taps

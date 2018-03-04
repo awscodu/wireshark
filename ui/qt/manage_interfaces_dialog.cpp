@@ -277,16 +277,24 @@ void ManageInterfacesDialog::on_addPipe_clicked()
     device.has_snaplen  = global_capture_opts.default_options.has_snaplen;
     device.snaplen      = global_capture_opts.default_options.snaplen;
     device.cfilter      = g_strdup(global_capture_opts.default_options.cfilter);
+<<<<<<< HEAD
     device.timestamp_type = g_strdup(global_capture_opts.default_options.timestamp_type);
+=======
+>>>>>>> upstream/master-2.4
 #ifdef CAN_SET_CAPTURE_BUFFER_SIZE
     device.buffer       = DEFAULT_CAPTURE_BUFFER_SIZE;
 #endif
     device.active_dlt = -1;
     device.if_info.name = g_strdup(device.name);
     device.if_info.type = IF_PIPE;
+<<<<<<< HEAD
 
     sourceModel->addDevice(&device);
 
+=======
+
+    sourceModel->addDevice(&device);
+>>>>>>> upstream/master-2.4
     updateWidgets();
 }
 

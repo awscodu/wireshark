@@ -160,8 +160,52 @@ PluginListModel::PluginListModel(QObject * parent) : AStringListListModel(parent
 
 QStringList PluginListModel::typeNames() const
 {
+<<<<<<< HEAD
     return typeNames_;
 }
+=======
+    ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose, true);
+    QFile f_license;
+    const char *constpath;
+    QString message;
+#if defined(HAVE_LIBSMI) || defined(HAVE_GEOIP) || defined(HAVE_EXTCAP)
+#if defined(HAVE_LIBSMI) || defined(HAVE_GEOIP)
+    char *path = NULL;
+#endif
+    gint i;
+    gchar **resultArray;
+#endif
+  GString *comp_info_str = get_compiled_version_info(get_wireshark_qt_compiled_info,
+                                              get_gui_compiled_info);
+  GString *runtime_info_str = get_runtime_version_info(get_wireshark_runtime_info);
+
+    /* Wireshark tab */
+
+    /* Construct the message string */
+    message = QString(
+        "Version %1\n"
+        "\n"
+        "%2"
+        "\n"
+        "%3"
+        "\n"
+        "%4"
+        "\n"
+        "Wireshark is Open Source Software released under the GNU General Public License.\n"
+        "\n"
+        "Check the man page and http://www.wireshark.org for more information.")
+        .arg(get_ws_vcs_version_info()).arg(get_copyright_info()).arg(comp_info_str->str)
+        .arg(runtime_info_str->str);
+
+    ui->label_wireshark->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    ui->label_wireshark->setText(message);
+
+/* Check if it is a dev release... (VERSION_MINOR is odd in dev release) */
+#if VERSION_MINOR & 1
+        ui->label_logo->setPixmap(QPixmap(":/about/wssplash.png"));
+#endif
+>>>>>>> upstream/master-2.4
 
 QStringList PluginListModel::headerColumns() const
 {

@@ -502,13 +502,18 @@ void IOGraphDialog::addDefaultGraph(bool enabled, int idx)
 // TODO: The issues in the above note should be fixed and setFilter() should not be
 //       called so frequently.
 
+<<<<<<< HEAD
 void IOGraphDialog::syncGraphSettings(int row)
+=======
+void IOGraphDialog::syncGraphSettings(QTreeWidgetItem *item)
+>>>>>>> upstream/master-2.4
 {
     IOGraph *iog = ioGraphs_.value(row, Q_NULLPTR);
 
     if (!uat_model_->index(row, colEnabled).isValid() || !iog)
         return;
 
+<<<<<<< HEAD
     bool visible = graphIsEnabled(row);
     bool retap = !iog->visible() && visible;
     QString data_str;
@@ -527,6 +532,19 @@ void IOGraphDialog::syncGraphSettings(int row)
 
     data_str = uat_model_->data(uat_model_->index(row, colSMAPeriod)).toString();
     iog->moving_avg_period_ = str_to_val(qUtf8Printable(data_str), moving_avg_vs, 0);
+=======
+    iog->setName(item->text(name_col_));
+    iog->setFilter(item->text(dfilter_col_));
+
+    /* plot style depend on the value unit, so set it first. */
+    iog->setValueUnits(item->data(yaxis_col_, Qt::UserRole).toInt());
+    iog->setValueUnitField(item->text(yfield_col_));
+
+    iog->setColor(colors_[item->data(color_col_, Qt::UserRole).toInt() % colors_.size()]);
+    iog->setPlotStyle(item->data(style_col_, Qt::UserRole).toInt());
+
+    iog->moving_avg_period_ = item->data(sma_period_col_, Qt::UserRole).toUInt();
+>>>>>>> upstream/master-2.4
 
     iog->setInterval(ui->intervalComboBox->itemData(ui->intervalComboBox->currentIndex()).toInt());
 
@@ -1191,7 +1209,153 @@ void IOGraphDialog::on_todCheckBox_toggled(bool checked)
 
 void IOGraphDialog::on_graphUat_currentItemChanged(const QModelIndex &current, const QModelIndex&)
 {
+<<<<<<< HEAD
     if (current.isValid()) {
+=======
+    if (!item || name_line_edit_) return;
+
+    QTreeWidget *gtw = ui->graphTreeWidget;
+    QWidget *editor = NULL;
+    int cur_idx;
+
+    name_line_edit_ = new QLineEdit();
+    name_line_edit_->setFixedWidth(gtw->columnWidth(name_col_));
+    name_line_edit_->setText(item->text(name_col_));
+
+    dfilter_line_edit_ = new DisplayFilterEdit();
+    connect(dfilter_line_edit_, SIGNAL(textChanged(QString)),
+            dfilter_line_edit_, SLOT(checkDisplayFilter(QString)));
+    dfilter_line_edit_->setFixedWidth(gtw->columnWidth(dfilter_col_));
+    dfilter_line_edit_->setText(item->text(dfilter_col_));
+
+    color_combo_box_ = new QComboBox();
+    cur_idx = item->data(color_col_, Qt::UserRole).toInt();
+    for (int i = 0; i < colors_.size(); i++) {
+        color_combo_box_->addItem(QString());
+        color_combo_box_->setItemIcon(i, graphColorIcon(i));
+        if (i == cur_idx) {
+            color_combo_box_->setCurrentIndex(i);
+        }
+    }
+    item->setIcon(color_col_, QIcon());
+    color_combo_box_->setFocusPolicy(Qt::StrongFocus);
+
+#ifdef Q_OS_WIN
+    // QTBUG-3097
+    color_combo_box_->view()->setMinimumWidth(
+        style()->pixelMetric(QStyle::PM_ListViewIconSize) + // Not entirely correct but close enough.
+        style()->pixelMetric(QStyle::PM_ScrollBarExtent));
+#endif
+
+    style_combo_box_ = new QComboBox();
+    cur_idx = item->data(style_col_, Qt::UserRole).toInt();
+    for (int i = 0; i < plot_style_to_name_.size(); i++) {
+        IOGraph::PlotStyles ps = plot_style_to_name_.keys()[i];
+        style_combo_box_->addItem(plot_style_to_name_[ps], ps);
+        if (ps == cur_idx) {
+            style_combo_box_->setCurrentIndex(i);
+        }
+    }
+    style_combo_box_->setFocusPolicy(Qt::StrongFocus);
+
+    yaxis_combo_box_ = new QComboBox();
+    cur_idx = item->data(yaxis_col_, Qt::UserRole).toInt();
+    for (int i = 0; i < value_unit_to_name_.size(); i++) {
+        io_graph_item_unit_t vu = value_unit_to_name_.keys()[i];
+        yaxis_combo_box_->addItem(value_unit_to_name_[vu], vu);
+        if (vu == cur_idx) {
+            yaxis_combo_box_->setCurrentIndex(i);
+        }
+    }
+    yaxis_combo_box_->setFocusPolicy(Qt::StrongFocus);
+
+    yfield_line_edit_ = new FieldFilterEdit();
+    connect(yfield_line_edit_, SIGNAL(textChanged(QString)),
+            yfield_line_edit_, SLOT(checkFieldName(QString)));
+    yfield_line_edit_->setFixedWidth(gtw->columnWidth(yfield_col_));
+    yfield_line_edit_->setText(item->text(yfield_col_));
+
+    sma_combo_box_ = new QComboBox();
+    cur_idx = item->data(sma_period_col_, Qt::UserRole).toInt();
+    for (int i = 0; i < moving_average_to_name_.size(); i++) {
+        int sma = moving_average_to_name_.keys()[i];
+        sma_combo_box_->addItem(moving_average_to_name_[sma], sma);
+        if (sma == cur_idx) {
+            sma_combo_box_->setCurrentIndex(i);
+        }
+    }
+    sma_combo_box_->setFocusPolicy(Qt::StrongFocus);
+
+    switch (column) {
+    case name_col_:
+        editor = name_line_edit_;
+        name_line_edit_->selectAll();
+        break;
+    case dfilter_col_:
+        editor = dfilter_line_edit_;
+        dfilter_line_edit_->selectAll();
+        break;
+    case color_col_:
+    {
+        editor = color_combo_box_;
+        break;
+    }
+    case style_col_:
+    {
+        editor = style_combo_box_;
+        break;
+    }
+    case yaxis_col_:
+    {
+        editor = yaxis_combo_box_;
+        break;
+    }
+    case yfield_col_:
+        editor = yfield_line_edit_;
+        yfield_line_edit_->selectAll();
+        break;
+    case sma_period_col_:
+    {
+        editor = sma_combo_box_;
+        break;
+    }
+    default:
+        return;
+    }
+
+    QList<QWidget *>editors = QList<QWidget *>() << name_line_edit_ << dfilter_line_edit_ <<
+                                                  color_combo_box_ << style_combo_box_ <<
+                                                  yaxis_combo_box_ << yfield_line_edit_ <<
+                                                  sma_combo_box_;
+    int cur_col = name_col_;
+    QWidget *prev_widget = ui->graphTreeWidget;
+    foreach (QWidget *editorItem, editors) {
+        QFrame *edit_frame = new QFrame();
+        QHBoxLayout *hb = new QHBoxLayout();
+        QSpacerItem *spacer = new QSpacerItem(5, 10);
+
+        hb->addWidget(editorItem, 0);
+        hb->addSpacerItem(spacer);
+        hb->setStretch(1, 1);
+        hb->setContentsMargins(0, 0, 0, 0);
+
+        edit_frame->setLineWidth(0);
+        edit_frame->setFrameStyle(QFrame::NoFrame);
+        edit_frame->setLayout(hb);
+        ui->graphTreeWidget->setItemWidget(item, cur_col, edit_frame);
+        setTabOrder(prev_widget, editorItem);
+        prev_widget = editorItem;
+        cur_col++;
+    }
+
+//    setTabOrder(prev_widget, ui->graphTreeWidget);
+    editor->setFocus();
+}
+
+void IOGraphDialog::on_graphTreeWidget_itemSelectionChanged()
+{
+    if (ui->graphTreeWidget->selectedItems().length() > 0) {
+>>>>>>> upstream/master-2.4
         ui->deleteToolButton->setEnabled(true);
         ui->copyToolButton->setEnabled(true);
     } else {

@@ -752,11 +752,19 @@ void InterfaceToolbar::startCapture(GArray *ifaces)
 
         // Open control out channel
 #ifdef _WIN32
+<<<<<<< HEAD
         startReaderThread(ifname, interface_opts->extcap_control_in_h);
         interface_[ifname].out_fd = _open_osfhandle((intptr_t)interface_opts->extcap_control_out_h, O_APPEND | O_BINARY);
 #else
         startReaderThread(ifname, interface_opts->extcap_control_in);
         interface_[ifname].out_fd = ws_open(interface_opts->extcap_control_out, O_WRONLY | O_BINARY, 0);
+=======
+        startReaderThread(ifname, interface_opts.extcap_control_in_h);
+        interface_[ifname].out_fd = _open_osfhandle((intptr_t)interface_opts.extcap_control_out_h, O_APPEND | O_BINARY);
+#else
+        startReaderThread(ifname, interface_opts.extcap_control_in);
+        interface_[ifname].out_fd = ws_open(interface_opts.extcap_control_out, O_WRONLY | O_BINARY, 0);
+>>>>>>> upstream/master-2.4
 #endif
         sendChangedValues(ifname);
         controlSend(ifname, 0, commandControlInitialized);
@@ -778,6 +786,10 @@ void InterfaceToolbar::startCapture(GArray *ifaces)
     {
         updateWidgets();
     }
+<<<<<<< HEAD
+=======
+#endif // HAVE_EXTCAP
+>>>>>>> upstream/master-2.4
 }
 
 void InterfaceToolbar::stopCapture()
@@ -953,9 +965,15 @@ void InterfaceToolbar::interfaceListChanged()
             {
                 // Keep selected interface
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+<<<<<<< HEAD
                 ui->interfacesComboBox->setCurrentText(device->name);
 #else
                 int new_index = ui->interfacesComboBox->findText(device->name);
+=======
+                ui->interfacesComboBox->setCurrentText(device.name);
+#else
+                int new_index = ui->interfacesComboBox->findText(device.name);
+>>>>>>> upstream/master-2.4
                 if (new_index >= 0)
                 {
                     ui->interfacesComboBox->setCurrentIndex(new_index);

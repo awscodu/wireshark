@@ -123,13 +123,13 @@ add_library(wiretap
 
 add_dependencies(wiretap version)
 
-set(FULL_SO_VERSION "0.0.0")
+set(FULL_SO_VERSION "7.0.6")
 
 set_target_properties(wiretap PROPERTIES
 	PREFIX "lib"
 	COMPILE_DEFINITIONS "WS_BUILD_DLL"
 	LINK_FLAGS "${WS_LINK_FLAGS}"
-	VERSION ${FULL_SO_VERSION} SOVERSION 0
+	VERSION ${FULL_SO_VERSION} SOVERSION 7
 	FOLDER "DLLs"
 )
 

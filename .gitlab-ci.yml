@@ -94,3 +94,24 @@ clang-6.0-nopcap:
     - apt install clang-6.0 -y
     - cmake -GNinja -DENABLE_PCAP=OFF -DCMAKE_C_COMPILER=clang-6.0 -DCMAKE_CXX_COMPILER=clang++-6.0 -DCMAKE_C_FLAGS=-Wframe-larger-than=20000 ..
     - ninja
+gcc-7:
+  image: gcc:7
+  script:
+    - mkdir build
+    - cd build
+    - cmake -GNinja ..
+    - ninja
+gcc-7-noextcap:
+  image: gcc:7
+  script:
+    - mkdir build
+    - cd build
+    - cmake -GNinja -DENABLE_EXTCAP=OFF ..
+    - ninja
+gcc-7-nopcap:
+  image: gcc:7
+  script:
+    - mkdir build
+    - cd build
+    - cmake -GNinja -DENABLE_PCAP=OFF ..
+    - ninja

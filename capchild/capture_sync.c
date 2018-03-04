@@ -329,7 +329,11 @@ sync_pipe_start(capture_options *capture_opts, capture_session *cap_session, inf
             argv = sync_pipe_add_arg(argv, &argc, "-f");
             argv = sync_pipe_add_arg(argv, &argc, interface_opts->cfilter);
         }
+<<<<<<< HEAD
         if (interface_opts->has_snaplen) {
+=======
+        if (interface_opts.has_snaplen) {
+>>>>>>> upstream/master-2.4
             argv = sync_pipe_add_arg(argv, &argc, "-s");
             g_snprintf(ssnap, ARGV_NUMBER_LEN, "%d", interface_opts->snaplen);
             argv = sync_pipe_add_arg(argv, &argc, ssnap);
@@ -505,9 +509,17 @@ sync_pipe_start(capture_options *capture_opts, capture_session *cap_session, inf
 #else
     si.dwFlags = STARTF_USESTDHANDLES|STARTF_USESHOWWINDOW;
     si.wShowWindow  = SW_HIDE;  /* this hides the console window */
+<<<<<<< HEAD
     if(interface_opts->extcap_pipe_h != INVALID_HANDLE_VALUE)
         si.hStdInput = interface_opts->extcap_pipe_h;
     else
+=======
+#ifdef HAVE_EXTCAP
+    if(interface_opts.extcap_pipe_h != INVALID_HANDLE_VALUE)
+        si.hStdInput = interface_opts.extcap_pipe_h;
+    else
+#endif
+>>>>>>> upstream/master-2.4
         si.hStdInput = GetStdHandle(STD_INPUT_HANDLE);
 
     si.hStdOutput = GetStdHandle(STD_OUTPUT_HANDLE);

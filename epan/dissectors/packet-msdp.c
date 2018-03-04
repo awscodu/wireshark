@@ -210,19 +210,27 @@ dissect_msdp(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void* data _U_
                          * This type is mentioned in the RFC but the format
                          * isn't described.
                          */
+<<<<<<< HEAD
                         if (length < 1) {
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_short,
                                     "TLV length for IPv4 Source-Active Request < 8");
                                 break;
                         }
+=======
+                        if (length < 1)
+                                break;
+>>>>>>> upstream/master-2.4
                         proto_tree_add_item(msdp_tree, hf_msdp_sa_req_res, tvb, offset, 1, ENC_BIG_ENDIAN);
                         offset += 1;
                         length -= 1;
                         if (length < 4) {
+<<<<<<< HEAD
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_short,
                                     "TLV length for IPv4 Source-Active Request < 8");
+=======
+>>>>>>> upstream/master-2.4
                                 offset += length;
                                 break;
                         }
@@ -230,9 +238,12 @@ dissect_msdp(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void* data _U_
                         offset += 4;
                         length -= 4;
                         if (length > 0) {
+<<<<<<< HEAD
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_long,
                                     "TLV length for KeepAlive > 8");
+=======
+>>>>>>> upstream/master-2.4
                                 proto_tree_add_item(tree, hf_msdp_trailing_junk, tvb, offset, length, ENC_NA);
                                 offset += length;
                         }
@@ -243,6 +254,7 @@ dissect_msdp(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void* data _U_
                          * isn't described.
                          */
                         dissect_msdp_sa(tvb, pinfo, msdp_tree, &offset,
+<<<<<<< HEAD
                                         length, length_item);
                         break;
                 case MSDP_KEEP_ALIVE:
@@ -250,6 +262,12 @@ dissect_msdp(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void* data _U_
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_long,
                                     "TLV length for KeepAlive > 3");
+=======
+                                        length);
+                        break;
+                case MSDP_KEEP_ALIVE:
+                        if (length > 0) {
+>>>>>>> upstream/master-2.4
                                 proto_tree_add_item(tree, hf_msdp_trailing_junk, tvb, offset, length, ENC_NA);
                                 offset += length;
                         }
@@ -259,7 +277,11 @@ dissect_msdp(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void* data _U_
                          * This was in draft 10, but is reserved in the
                          * RFC.
                          */
+<<<<<<< HEAD
                         dissect_msdp_notification(tvb, pinfo, msdp_tree, &offset, length, length_item);
+=======
+                        dissect_msdp_notification(tvb, pinfo, msdp_tree, &offset, length);
+>>>>>>> upstream/master-2.4
                         break;
                 default:
                         if (length > 0)
@@ -384,12 +406,17 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
         gint reported_length;
         tvbuff_t *next_tvb;
 
+<<<<<<< HEAD
         if (tlv_len < 1) {
                 expert_add_info_format(pinfo, length_item,
                     &ei_msdp_tlv_len_too_short,
                     "TLV length for Notification < 4");
                 return;
         }
+=======
+        if (tlv_len < 1)
+                return;
+>>>>>>> upstream/master-2.4
         proto_tree_add_item(tree, hf_msdp_not_o, tvb, *offset, 1, ENC_BIG_ENDIAN);
         proto_tree_add_item(tree, hf_msdp_not_error, tvb, *offset, 1, ENC_BIG_ENDIAN);
         error = tvb_get_guint8(tvb, *offset);
@@ -423,12 +450,17 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                 break;
         }
 
+<<<<<<< HEAD
         if (tlv_len < 1) {
                 expert_add_info_format(pinfo, length_item,
                     &ei_msdp_tlv_len_too_short,
                     "TLV length for Notification < 5");
                 return;
         }
+=======
+        if (tlv_len < 1)
+                return;
+>>>>>>> upstream/master-2.4
         error_sub = tvb_get_guint8(tvb, *offset);
         proto_tree_add_uint_format_value(tree, hf_msdp_not_error_sub, tvb, *offset, 1,
                                    error_sub, "%s (%u)",
@@ -443,9 +475,12 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
         switch (error) {
         case SA_REQUEST_ERROR:
                 if (tlv_len < 7) {
+<<<<<<< HEAD
                         expert_add_info_format(pinfo, length_item,
                             &ei_msdp_tlv_len_too_short,
                             "TLV length for Notification SA-Request Error < 12");
+=======
+>>>>>>> upstream/master-2.4
                         *offset += tlv_len;
                         return;
                 }
@@ -456,21 +491,29 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                 if (error_sub == 0) {
                         break;
                 } else if (error_sub == 1) {
+<<<<<<< HEAD
                         if (tlv_len < 1) {
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_short,
                                     "TLV length for Notification SA-Response Invalid Entry Count Error < 6");
                                 return;
                         }
+=======
+                        if (tlv_len < 1)
+                                return;
+>>>>>>> upstream/master-2.4
                         proto_tree_add_item(tree, hf_msdp_not_entry_count, tvb, *offset, 1, ENC_BIG_ENDIAN);
                         *offset += 1;
                         tlv_len -= 1;
                         break;
                 } else if (error_sub == 2) {
                         if (tlv_len < 7) {
+<<<<<<< HEAD
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_short,
                                     "TLV length for Notification SA-Response Invalid RP Address Error < 12");
+=======
+>>>>>>> upstream/master-2.4
                                 *offset += tlv_len;
                                 return;
                         }
@@ -479,11 +522,14 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                         break;
                 } else if (error_sub == 3 || error_sub == 8) {
                         if (tlv_len < 7) {
+<<<<<<< HEAD
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_short,
                                     "TLV length for Notification SA-Response %s Error < 12",
                                     (error_sub == 3) ? "Invalid Group Address"
                                                      : "Administrative Scope Boundary Violated");
+=======
+>>>>>>> upstream/master-2.4
                                 *offset += tlv_len;
                                 return;
                         }
@@ -492,9 +538,12 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                         break;
                 } else if (error_sub == 4) {
                         if (tlv_len < 7) {
+<<<<<<< HEAD
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_short,
                                     "TLV length for Notification SA-Response Invalid Source Address Error < 12");
+=======
+>>>>>>> upstream/master-2.4
                                 *offset += tlv_len;
                                 return;
                         }
@@ -502,12 +551,17 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                         tlv_len -= 7;
                         break;
                 } else if (error_sub == 5) {
+<<<<<<< HEAD
                         if (tlv_len < 1) {
                                 expert_add_info_format(pinfo, length_item,
                                     &ei_msdp_tlv_len_too_short,
                                     "TLV length for Notification SA-Response Invalid Invalid Sprefix Length Error < 6");
                                 return;
                         }
+=======
+                        if (tlv_len < 1)
+                                return;
+>>>>>>> upstream/master-2.4
                         proto_tree_add_item(tree, hf_msdp_not_sprefix_len, tvb, *offset, 1, ENC_BIG_ENDIAN);
                         *offset += 1;
                         tlv_len -= 1;
@@ -518,7 +572,11 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                                 DISSECTOR_ASSERT(reported_length >= 0);
                                 if (reported_length > tlv_len)
                                         reported_length = tlv_len;
+<<<<<<< HEAD
                                 next_tvb = tvb_new_subset_length(tvb, *offset, reported_length);
+=======
+                                next_tvb = tvb_new_subset_length(tvb, *offset, tlv_len);
+>>>>>>> upstream/master-2.4
                                 dissect_msdp(next_tvb, pinfo, tree, NULL);
                         }
                         *offset += tlv_len;
@@ -529,7 +587,11 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                                 DISSECTOR_ASSERT(reported_length >= 0);
                                 if (reported_length > tlv_len)
                                         reported_length = tlv_len;
+<<<<<<< HEAD
                                 next_tvb = tvb_new_subset_length(tvb, *offset, reported_length);
+=======
+                                next_tvb = tvb_new_subset_length(tvb, *offset, tlv_len);
+>>>>>>> upstream/master-2.4
                                 dissect_msdp(next_tvb, pinfo, tree, NULL);
                         }
                         *offset += tlv_len;
@@ -555,7 +617,11 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                         DISSECTOR_ASSERT(reported_length >= 0);
                         if (reported_length > tlv_len)
                                 reported_length = tlv_len;
+<<<<<<< HEAD
                         next_tvb = tvb_new_subset_length(tvb, *offset, reported_length);
+=======
+                        next_tvb = tvb_new_subset_length(tvb, *offset, tlv_len);
+>>>>>>> upstream/master-2.4
                         dissect_msdp(next_tvb, pinfo, tree, NULL);
                 }
                 *offset += tlv_len;
@@ -574,9 +640,12 @@ static void dissect_msdp_notification(tvbuff_t *tvb, packet_info *pinfo, proto_t
                 break;
         }
         if (tlv_len != 0) {
+<<<<<<< HEAD
                 expert_add_info_format(pinfo, length_item,
                     &ei_msdp_tlv_len_too_long,
                     "TLV length too long");
+=======
+>>>>>>> upstream/master-2.4
                 proto_tree_add_item(tree, hf_msdp_trailing_junk, tvb, *offset, tlv_len, ENC_NA);
                 *offset += tlv_len;
         }

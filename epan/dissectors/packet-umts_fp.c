@@ -860,7 +860,11 @@ dissect_macd_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
 
         pinfo->fd->subnum = pdu; /* set subframe number to current TB */
         p_fp_info->cur_tb = pdu;    /*Set TB (PDU) index correctly*/
+<<<<<<< HEAD
         if (preferences_call_mac_dissectors) {
+=======
+        if (preferences_call_mac_dissectors /*&& !rlc_is_ciphered(pinfo)*/) {
+>>>>>>> upstream/master-2.4
             tvbuff_t *next_tvb;
             next_tvb = tvb_new_subset_length_caplen(tvb, offset + bit_offset/8,
                                       ((bit_offset % 8) + length + 7)/8, -1);
@@ -5399,7 +5403,13 @@ fp_set_per_packet_inf_from_conv(conversation_t *p_conv,
                 /* control frame, we're done */
                 return fpi;
             }
+<<<<<<< HEAD
             /* Set offset to TFI */
+=======
+            /* Set offset to point to first TFI
+             * the Number of TFI's = number of DCH's in the flow
+             */
+>>>>>>> upstream/master-2.4
             offset = 2;
             /* Set MAC data */
             macinf = wmem_new0(wmem_file_scope(), umts_mac_info);
@@ -5431,7 +5441,13 @@ fp_set_per_packet_inf_from_conv(conversation_t *p_conv,
                 /* control frame, we're done */
                 return fpi;
             }
+<<<<<<< HEAD
             /* Set offset to TFI */
+=======
+            /* Set offset to point to first TFI
+             * the Number of TFI's = number of DCH's in the flow
+             */
+>>>>>>> upstream/master-2.4
             offset = 2;
             /* set MAC & RLC data */
             macinf = wmem_new0(wmem_file_scope(), umts_mac_info);

@@ -1,4 +1,4 @@
-libwireshark.so.0 libwireshark0 #MINVER#
+libwireshark.so.10 libwireshark10 #MINVER#
  AdmissionRejectReason_vals@Base 1.9.1
  AirPDcapDestroyContext@Base 1.9.1
  AirPDcapInitContext@Base 1.9.1
@@ -388,6 +388,7 @@ libwireshark.so.0 libwireshark0 #MINVER#
  dissect_per_set_of@Base 1.9.1
  dissect_q931_bearer_capability_ie@Base 1.9.1
  dissect_q931_high_layer_compat_ie@Base 1.9.1
+<<<<<<< HEAD:debian/libwireshark0.symbols
  dissect_q932_Address@Base 2.5.0
  dissect_q932_PartyNumber@Base 1.9.1
  dissect_q932_PartySubaddress@Base 1.9.1
@@ -399,6 +400,19 @@ libwireshark.so.0 libwireshark0 #MINVER#
  dissect_q932_ScreeningIndicator@Base 2.5.0
  dissect_qsig_Extension@Base 2.5.0
  dissect_qsig_PSS1InformationElement@Base 2.5.0
+=======
+ dissect_q932_Address@Base 2.4.0
+ dissect_q932_PartyNumber@Base 1.9.1
+ dissect_q932_PartySubaddress@Base 1.9.1
+ dissect_q932_PresentationAllowedIndicator@Base 2.4.0
+ dissect_q932_PresentedAddressScreened@Base 2.4.0
+ dissect_q932_PresentedAddressUnscreened@Base 2.4.0
+ dissect_q932_PresentedNumberScreened@Base 1.9.1
+ dissect_q932_PresentedNumberUnscreened@Base 1.9.1
+ dissect_q932_ScreeningIndicator@Base 2.4.0
+ dissect_qsig_Extension@Base 2.4.0
+ dissect_qsig_PSS1InformationElement@Base 2.4.0
+>>>>>>> upstream/master-2.4:debian/libwireshark10.symbols
  dissect_qsig_na_Name@Base 1.9.1
  dissect_rpc_array@Base 1.9.1
  dissect_rpc_bool@Base 1.9.1
@@ -1049,8 +1063,12 @@ libwireshark.so.0 libwireshark0 #MINVER#
  prefs_set_effect_flags@Base 2.5.0
  prefs_set_effect_flags_by_name@Base 2.5.0
  prefs_set_enum_value@Base 2.3.0
+<<<<<<< HEAD:debian/libwireshark0.symbols
  prefs_set_gui_theme_is_dark@Base 2.5.0
  prefs_set_module_effect_flags@Base 2.5.0
+=======
+ prefs_set_gui_theme_is_dark@Base 2.4.0
+>>>>>>> upstream/master-2.4:debian/libwireshark10.symbols
  prefs_set_pref@Base 1.9.1
  prefs_set_range_value@Base 2.1.0
  prefs_set_range_value_work@Base 2.3.0
@@ -1272,11 +1290,19 @@ libwireshark.so.0 libwireshark0 #MINVER#
  q931_message_type_vals@Base 1.9.1
  q932_PartyNumber_vals@Base 2.1.0
  q932_PartySubaddress_vals@Base 2.1.0
+<<<<<<< HEAD:debian/libwireshark0.symbols
  q932_PresentedAddressScreened_vals@Base 2.5.0
  q932_PresentedAddressUnscreened_vals@Base 2.5.0
  q932_PresentedNumberScreened_vals@Base 2.1.0
  q932_PresentedNumberUnscreened_vals@Base 2.1.0
  q932_ScreeningIndicator_vals@Base 2.5.0
+=======
+ q932_PresentedAddressScreened_vals@Base 2.4.0
+ q932_PresentedAddressUnscreened_vals@Base 2.4.0
+ q932_PresentedNumberScreened_vals@Base 2.1.0
+ q932_PresentedNumberUnscreened_vals@Base 2.1.0
+ q932_ScreeningIndicator_vals@Base 2.4.0
+>>>>>>> upstream/master-2.4:debian/libwireshark10.symbols
  qs_func_vals@Base 1.9.1
  qs_rate_vals_ext@Base 1.9.1
  raknet_add_udp_dissector@Base 2.3.0

@@ -5294,16 +5294,28 @@ dissect_netlib_buffer(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
     tds_tree = proto_item_add_subtree(tds_item, ett_tds);
 
     type = tvb_get_guint8(tvb, offset);
+<<<<<<< HEAD
     proto_tree_add_item(tds_tree, hf_tds_type, tvb, offset, 1, ENC_NA);
 
     status = tvb_get_guint8(tvb, offset + 1);
     proto_tree_add_bitmask(tds_tree, tvb, offset+1, hf_tds_status, ett_tds_status, status_flags, ENC_NA);
+=======
+    proto_tree_add_item(tds_tree, hf_tds_type, tvb, offset, 1, ENC_LITTLE_ENDIAN);
+
+    status = tvb_get_guint8(tvb, offset + 1);
+    proto_tree_add_bitmask(tds_tree, tvb, offset+1, hf_tds_status, ett_tds_status, status_flags, ENC_LITTLE_ENDIAN);
+>>>>>>> upstream/master-2.4
     proto_tree_add_item(tds_tree, hf_tds_length, tvb, offset + 2, 2, ENC_BIG_ENDIAN);
     channel = tvb_get_ntohs(tvb, offset + 4);
     proto_tree_add_item(tds_tree, hf_tds_channel, tvb, offset + 4, 2, ENC_BIG_ENDIAN);
     packet_number = tvb_get_guint8(tvb, offset + 6);
+<<<<<<< HEAD
     proto_tree_add_item(tds_tree, hf_tds_packet_number, tvb, offset + 6, 1, ENC_NA);
     proto_tree_add_item(tds_tree, hf_tds_window, tvb, offset + 7, 1, ENC_NA);
+=======
+    proto_tree_add_item(tds_tree, hf_tds_packet_number, tvb, offset + 6, 1, ENC_LITTLE_ENDIAN);
+    proto_tree_add_item(tds_tree, hf_tds_window, tvb, offset + 7, 1, ENC_LITTLE_ENDIAN);
+>>>>>>> upstream/master-2.4
 
     offset += 8;        /* skip Netlib header */
 
@@ -5467,6 +5479,7 @@ dissect_tds_pdu(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void* data 
     col_clear(pinfo->cinfo, COL_INFO);
 
     type = tvb_get_guint8(tvb, 0);
+<<<<<<< HEAD
     if (type == TDS_SMP_PKT)
     {
         /* if the type is SMP, it's shimmed in between TDS and lower layer */
@@ -5515,6 +5528,41 @@ dissect_tds(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void * data _U_
    return tvb_captured_length(tvb);
 }
 
+=======
+    col_append_sep_fstr(pinfo->cinfo, COL_INFO, ",", "%s", val_to_str(type, packet_type_names, "Unknown Packet Type: %u"));
+
+    dissect_netlib_buffer(tvb, pinfo, tree);
+
+    col_set_fence(pinfo->cinfo, COL_INFO);
+
+    return tvb_captured_length(tvb);
+}
+
+static guint
+get_tds_pdu_len(packet_info *pinfo _U_, tvbuff_t *tvb, int offset, void *data _U_)
+{
+    guint16 plen;
+    guint8 type;
+
+    type = tvb_get_guint8(tvb, offset);
+
+    /* Special test for TLS to that we don't have lots of incorrect reports of malformed packets */
+    if(type == TDS_TLS_PKT)
+        plen = tvb_get_ntohs(tvb, offset + 3) + 5;
+    else
+        plen = tvb_get_ntohs(tvb, offset + 2);
+
+   return plen;
+}
+
+static int
+dissect_tds(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void * data _U_)
+{
+   tcp_dissect_pdus(tvb, pinfo, tree, tds_desegment, 8, get_tds_pdu_len, dissect_tds_pdu, data);
+   return tvb_captured_length(tvb);
+}
+
+>>>>>>> upstream/master-2.4
 static gboolean
 dissect_tds_tcp_heur(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void *data)
 {

@@ -31,7 +31,20 @@ AM_CPPFLAGS = $(INCLUDEDIRS) $(WS_CPPFLAGS) -DWS_BUILD_DLL \
 	$(LIBGCRYPT_CFLAGS)			\
 	$(LIBGNUTLS_CFLAGS)
 
+<<<<<<< HEAD
 WSUTIL_PUBLIC_INCLUDES = \
+=======
+# Optional headers for ABI checking
+wsutil_optional_abi_includes =
+
+if HAVE_MACOS_FRAMEWORKS
+wsutil_optional_abi_includes += cfutils.h
+endif
+
+# Header files that don't declare replacement functions for functions
+# present in the APIs/ABIs of some, but not all, targets.
+libwsutil_nonrepl_INCLUDES = \
+>>>>>>> upstream/master-2.4
 	adler32.h		\
 	base32.h		\
 	base64.h		\
@@ -169,12 +182,17 @@ libwsutil_la_SOURCES = \
 	wsjsmn.c		\
 	xtea.c
 
+<<<<<<< HEAD
 if HAVE_PLUGINS
 libwsutil_la_SOURCES += plugins.c
+=======
+if HAVE_MACOS_FRAMEWORKS
+libwsutil_la_SOURCES += cfutils.c cfutils.h
+>>>>>>> upstream/master-2.4
 endif
 
 # http://www.gnu.org/software/libtool/manual/html_node/Updating-version-info.html
-libwsutil_la_LDFLAGS = -version-info 0:0:0 @LDFLAGS_SHAREDLIB@
+libwsutil_la_LDFLAGS = -version-info 8:0:0 @LDFLAGS_SHAREDLIB@
 
 libwsutil_la_LIBADD = \
 	$(LTLIBOBJS)			\

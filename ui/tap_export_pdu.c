@@ -45,6 +45,7 @@ export_pdu_packet(void *tapdata, packet_info *pinfo, epan_dissect_t *edt, const 
     if(exp_pdu_data->tvb_captured_length > 0){
         tvb_memcpy(exp_pdu_data->pdu_tvb, packet_buf+exp_pdu_data->tlv_buffer_len, 0, exp_pdu_data->tvb_captured_length);
     }
+<<<<<<< HEAD
     rec.rec_type                           = REC_TYPE_PACKET;
     rec.presence_flags                     = WTAP_HAS_CAP_LEN|WTAP_HAS_INTERFACE_ID|WTAP_HAS_TS|WTAP_HAS_PACK_FLAGS;
     rec.ts.secs                            = pinfo->abs_ts.secs;
@@ -60,6 +61,24 @@ export_pdu_packet(void *tapdata, packet_info *pinfo, epan_dissect_t *edt, const 
     } else if (pinfo->fd->flags.has_phdr_comment) {
         rec.opt_comment = g_strdup(pinfo->rec->opt_comment);
     }
+=======
+    pkthdr.rec_type  = REC_TYPE_PACKET;
+    pkthdr.ts.secs   = pinfo->abs_ts.secs;
+    pkthdr.ts.nsecs  = pinfo->abs_ts.nsecs;
+    pkthdr.caplen    = buffer_len;
+    pkthdr.len       = exp_pdu_data->tvb_reported_length + exp_pdu_data->tlv_buffer_len;
+
+    pkthdr.pkt_encap = exp_pdu_tap_data->pkt_encap;
+
+    if (pinfo->fd->flags.has_user_comment) {
+        pkthdr.opt_comment = g_strdup(epan_get_user_comment(edt->session, pinfo->fd));
+        pkthdr.has_comment_changed = TRUE;
+    } else if (pinfo->fd->flags.has_phdr_comment) {
+        pkthdr.opt_comment = g_strdup(pinfo->phdr->opt_comment);
+    }
+
+    pkthdr.presence_flags = WTAP_HAS_CAP_LEN|WTAP_HAS_INTERFACE_ID|WTAP_HAS_TS|WTAP_HAS_PACK_FLAGS;
+>>>>>>> upstream/master-2.4
 
     /* XXX: should the rec.rec_header.packet_header.pseudo_header be set to the pinfo's pseudo-header? */
     /* XXX: report errors! */

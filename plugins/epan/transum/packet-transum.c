@@ -239,6 +239,10 @@ static RRPD *find_latest_rrpd_dcerpc(RRPD *in_rrpd)
     RRPD *rrpd;
     wmem_list_frame_t* i;
 
+    /* If this is a SYN from C2S there is no point searching the list */
+    if (in_rrpd->c2s && in_rrpd->calculation == RTE_CALC_SYN)
+        return NULL;
+
     for (i = wmem_list_tail(rrpd_list); i != NULL; i = wmem_list_frame_prev(i))
     {
         rrpd = (RRPD*)wmem_list_frame_data(i);
@@ -592,10 +596,41 @@ static void update_rrpd_list_entry_req(RRPD *in_rrpd)
 {
     RRPD *match;
 
+<<<<<<< HEAD:plugins/epan/transum/packet-transum.c
     match = find_latest_rrpd(in_rrpd);
 
     if (match != NULL)
         update_rrpd_list_entry(match, in_rrpd);
+=======
+    if (in_rrpd->decode_based)
+    {
+        while (TRUE)
+        {
+            if (preferences.reassembly)
+            {
+                match = find_latest_rrpd(in_rrpd, RRPD_STATE_1);
+                if (match != NULL)  /* Check to cover TCP Reassembly enabled */
+                {
+                    update_rrpd_list_entry(match, in_rrpd);
+                    break;
+                }
+            }
+            else
+            {
+                match = find_latest_rrpd(in_rrpd, RRPD_STATE_4);
+                if (match != NULL)
+                {
+                    update_rrpd_list_entry(match, in_rrpd);
+                    break;
+                }
+            }
+
+            /* No entries and so add one */
+            append_to_rrpd_list(in_rrpd);
+            break;
+        }
+    }
+>>>>>>> upstream/master-2.4:plugins/transum/packet-transum.c
     else
         append_to_rrpd_list(in_rrpd);
 }

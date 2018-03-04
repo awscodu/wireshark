@@ -100,6 +100,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="address_editor_frame.cpp" line="166"/>
+>>>>>>> upstream/master-2.4
         <source>Can&apos;t assign %1 to %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -745,6 +749,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="791"/>
+>>>>>>> upstream/master-2.4
         <source>%1, error after %Ln packet(s)</source>
         <oldsource>%1, error after %2 packets</oldsource>
         <translation type="vanished">
@@ -753,6 +761,10 @@
         </translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="798"/>
+>>>>>>> upstream/master-2.4
         <source>%1, timed out at %Ln packet(s)</source>
         <oldsource>%1, timed out at %2 packets</oldsource>
         <translation type="vanished">
@@ -761,6 +773,10 @@
         </translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="801"/>
+>>>>>>> upstream/master-2.4
         <source>%1, %Ln packet(s)</source>
         <translation type="vanished">
             <numerusform>%1, %Ln packet</numerusform>
@@ -828,14 +844,26 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="734"/>
+>>>>>>> upstream/master-2.4
         <source>directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="741"/>
+>>>>>>> upstream/master-2.4
         <source>unknown file format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="743"/>
+>>>>>>> upstream/master-2.4
         <source>error opening file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -861,6 +889,12 @@
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="808"/>
+        <location filename="capture_file_dialog.cpp" line="829"/>
+        <location filename="capture_file_dialog.cpp" line="833"/>
+>>>>>>> upstream/master-2.4
         <source>unknown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1064,39 +1098,76 @@
 <context>
     <name>CaptureFilterEdit</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="174"/>
+>>>>>>> upstream/master-2.4
         <source>Capture filter entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="331"/>
+        <source>Enter a capture filter %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="capture_filter_edit.cpp" line="187"/>
+>>>>>>> upstream/master-2.4
         <source>Manage saved bookmarks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="224"/>
+>>>>>>> upstream/master-2.4
         <source>Apply this filter string to the display.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="326"/>
+>>>>>>> upstream/master-2.4
         <source>Multiple filters selected. Override them here or leave this blank to preserve them.</source>
         <extracomment>This is a very long concept that needs to fit into a short space.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="327"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;p&gt;The interfaces you have selected have different capture filters. Typing a filter here will override them. Doing nothing will preserve them.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Enter a capture filter %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="capture_filter_edit.cpp" line="429"/>
+>>>>>>> upstream/master-2.4
         <source>Save this filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="431"/>
+>>>>>>> upstream/master-2.4
         <source>Remove this filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="433"/>
+>>>>>>> upstream/master-2.4
         <source>Manage Capture Filters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1580,14 +1651,26 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="column_editor_frame.cpp" line="176"/>
+>>>>>>> upstream/master-2.4
         <source>Missing fields.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="column_editor_frame.cpp" line="178"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid fields.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="column_editor_frame.cpp" line="180"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid occurrence value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2005,6 +2088,7 @@ PLEASE NOTE: One option MUST be selected.</source>
     </message>
 </context>
 <context>
+<<<<<<< HEAD
     <name>EndpointDialog</name>
     <message>
         <source>Map</source>
@@ -2022,79 +2106,154 @@ PLEASE NOTE: One option MUST be selected.</source>
 <context>
     <name>ExpertInfoDialog</name>
     <message>
+=======
+    <name>ExpertInfoDialog</name>
+    <message>
+        <location filename="expert_info_dialog.ui" line="14"/>
+>>>>>>> upstream/master-2.4
         <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="30"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;small&gt;&lt;i&gt;A hint.&lt;/i&gt;&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="39"/>
+>>>>>>> upstream/master-2.4
         <source>Limit to Display Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="59"/>
+>>>>>>> upstream/master-2.4
         <source>Group by summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="82"/>
+        <location filename="expert_info_dialog.ui" line="92"/>
+>>>>>>> upstream/master-2.4
         <source>Search expert summaries.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="85"/>
+>>>>>>> upstream/master-2.4
         <source>Search:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="112"/>
+>>>>>>> upstream/master-2.4
         <source>Show…</source>
         <oldsource>Show...</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="144"/>
+>>>>>>> upstream/master-2.4
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="147"/>
+>>>>>>> upstream/master-2.4
         <source>Show error packets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="158"/>
+>>>>>>> upstream/master-2.4
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="161"/>
+>>>>>>> upstream/master-2.4
         <source>Show warning packets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="172"/>
+>>>>>>> upstream/master-2.4
         <source>Note</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="175"/>
+>>>>>>> upstream/master-2.4
         <source>Show note packets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="186"/>
+>>>>>>> upstream/master-2.4
         <source>Chat</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="189"/>
+>>>>>>> upstream/master-2.4
         <source>Show chat packets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="200"/>
+>>>>>>> upstream/master-2.4
         <source>Comment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="203"/>
+>>>>>>> upstream/master-2.4
         <source>Show comment packets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="61"/>
+>>>>>>> upstream/master-2.4
         <source>Expert Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Collapse All</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2103,22 +2262,52 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="expert_info_dialog.cpp" line="111"/>
+        <source>Collapse All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="expert_info_dialog.cpp" line="115"/>
+        <source>Expand All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="expert_info_dialog.cpp" line="194"/>
+        <location filename="expert_info_dialog.cpp" line="195"/>
+>>>>>>> upstream/master-2.4
         <source>Capture file closed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="197"/>
+>>>>>>> upstream/master-2.4
         <source>No display filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="198"/>
+>>>>>>> upstream/master-2.4
         <source>No display filter set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="200"/>
+>>>>>>> upstream/master-2.4
         <source>Limit information to &quot;%1&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="201"/>
+>>>>>>> upstream/master-2.4
         <source>Display filter: &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2126,26 +2315,50 @@ PLEASE NOTE: One option MUST be selected.</source>
 <context>
     <name>ExpertInfoProxyModel</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_proxy_model.cpp" line="196"/>
+>>>>>>> upstream/master-2.4
         <source>Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_proxy_model.cpp" line="198"/>
+>>>>>>> upstream/master-2.4
         <source>Severity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_proxy_model.cpp" line="200"/>
+>>>>>>> upstream/master-2.4
         <source>Summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_proxy_model.cpp" line="202"/>
+>>>>>>> upstream/master-2.4
         <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_proxy_model.cpp" line="204"/>
+>>>>>>> upstream/master-2.4
         <source>Protocol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_proxy_model.cpp" line="206"/>
+>>>>>>> upstream/master-2.4
         <source>Count</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2229,6 +2442,7 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Hostname</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2242,6 +2456,25 @@ PLEASE NOTE: One option MUST be selected.</source>
     </message>
     <message>
         <source>Filename</source>
+=======
+        <location filename="export_object_dialog.cpp" line="316"/>
+        <source>Save Object As</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="export_object_dialog.cpp" line="343"/>
+        <source>Save All Objects In</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="export_object_dialog.cpp" line="389"/>
+        <source>Object Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="export_object_dialog.cpp" line="390"/>
+        <source>Some files could not be saved.</source>
+>>>>>>> upstream/master-2.4
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2430,6 +2663,7 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Enter a filter expression to be applied</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2450,6 +2684,25 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Invalid filter expression.</source>
+=======
+        <location filename="filter_expression_frame.cpp" line="61"/>
+        <source>Apply this filter</source>
+>>>>>>> upstream/master-2.4
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="filter_expression_frame.cpp" line="129"/>
+        <source>Missing label.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="filter_expression_frame.cpp" line="131"/>
+        <source>Missing filter expression.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="filter_expression_frame.cpp" line="133"/>
         <source>Invalid filter expression.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2646,15 +2899,27 @@ PLEASE NOTE: One option MUST be selected.</source>
 <context>
     <name>FollowStreamDialog</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="129"/>
+>>>>>>> upstream/master-2.4
         <source>Filter Out This Stream</source>
         <oldsource>Hide this stream</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="132"/>
+>>>>>>> upstream/master-2.4
         <source>Print</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="135"/>
+>>>>>>> upstream/master-2.4
         <source>Save as</source>
         <oldsource>Save as...</oldsource>
         <translation type="unfinished"></translation>
@@ -2674,46 +2939,90 @@ PLEASE NOTE: One option MUST be selected.</source>
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="119"/>
+>>>>>>> upstream/master-2.4
         <source>ASCII</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="120"/>
+>>>>>>> upstream/master-2.4
         <source>C Arrays</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="121"/>
+>>>>>>> upstream/master-2.4
         <source>EBCDIC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="122"/>
+>>>>>>> upstream/master-2.4
         <source>Hex Dump</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="123"/>
+>>>>>>> upstream/master-2.4
         <source>UTF-8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="124"/>
+>>>>>>> upstream/master-2.4
         <source>UTF-16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="125"/>
+>>>>>>> upstream/master-2.4
         <source>YAML</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="126"/>
+>>>>>>> upstream/master-2.4
         <source>Raw</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="138"/>
+>>>>>>> upstream/master-2.4
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="182"/>
+>>>>>>> upstream/master-2.4
         <source>Packet %1. </source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="185"/>
+>>>>>>> upstream/master-2.4
         <source>%Ln &lt;span style=&quot;color: %1; background-color:%2&quot;&gt;client&lt;/span&gt; pkt(s), </source>
         <translation>
             <numerusform>%Ln &lt;span style=&quot;color: %1; background-color:%2&quot;&gt;client&lt;/span&gt; pkt, </numerusform>
@@ -2721,6 +3030,10 @@ PLEASE NOTE: One option MUST be selected.</source>
         </translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="188"/>
+>>>>>>> upstream/master-2.4
         <source>%Ln &lt;span style=&quot;color: %1; background-color:%2&quot;&gt;server&lt;/span&gt; pkt(s), </source>
         <translation>
             <numerusform>%Ln &lt;span style=&quot;color: %1; background-color:%2&quot;&gt;server&lt;/span&gt; pkt, </numerusform>
@@ -2728,6 +3041,10 @@ PLEASE NOTE: One option MUST be selected.</source>
         </translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="191"/>
+>>>>>>> upstream/master-2.4
         <source>%Ln turn(s).</source>
         <translation>
             <numerusform>%Ln turn.</numerusform>
@@ -2735,58 +3052,116 @@ PLEASE NOTE: One option MUST be selected.</source>
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="194"/>
+>>>>>>> upstream/master-2.4
         <source> Click to select.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="245"/>
+>>>>>>> upstream/master-2.4
         <source>Regex Find:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="276"/>
+>>>>>>> upstream/master-2.4
         <source>Save Stream Content As</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="815"/>
+>>>>>>> upstream/master-2.4
         <source>No capture file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="815"/>
+>>>>>>> upstream/master-2.4
         <source>Please make sure you have a capture file opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="821"/>
+        <location filename="follow_stream_dialog.cpp" line="827"/>
+>>>>>>> upstream/master-2.4
         <source>Error following stream.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="821"/>
+>>>>>>> upstream/master-2.4
         <source>Capture file invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="827"/>
+>>>>>>> upstream/master-2.4
         <source>Please make sure you have a %1 packet selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="940"/>
+>>>>>>> upstream/master-2.4
         <source>Entire conversation (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="944"/>
+>>>>>>> upstream/master-2.4
         <source>Follow %1 Stream (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="849"/>
+>>>>>>> upstream/master-2.4
         <source>Error creating filter for this stream.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="539"/>
+>>>>>>> upstream/master-2.4
         <source>[Stream output truncated]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="850"/>
+>>>>>>> upstream/master-2.4
         <source>A transport or network layer header is needed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="881"/>
+        <location filename="follow_stream_dialog.cpp" line="893"/>
+>>>>>>> upstream/master-2.4
         <source>%Ln total stream(s).</source>
         <translation type="unfinished">
             <numerusform>%Ln stream.</numerusform>
@@ -2794,6 +3169,10 @@ PLEASE NOTE: One option MUST be selected.</source>
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="964"/>
+>>>>>>> upstream/master-2.4
         <source>File closed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2815,6 +3194,11 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.ui" line="109"/>
+        <location filename="follow_stream_dialog.cpp" line="247"/>
+>>>>>>> upstream/master-2.4
         <source>Find:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2866,6 +3250,10 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="font_color_preferences_frame.ui" line="219"/>
+>>>>>>> upstream/master-2.4
         <source>Sample warning filter</source>
         <oldsource>Sample deprecated filter</oldsource>
         <translation type="unfinished"></translation>
@@ -3013,6 +3401,17 @@ PLEASE NOTE: One option MUST be selected.</source>
     </message>
 </context>
 <context>
+<<<<<<< HEAD
+=======
+    <name>IOGraph</name>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="1910"/>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+>>>>>>> upstream/master-2.4
     <name>IOGraphDialog</name>
     <message>
         <source>Dialog</source>
@@ -3361,58 +3760,114 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="935"/>
+>>>>>>> upstream/master-2.4
         <source>Hover over the graph for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="937"/>
+>>>>>>> upstream/master-2.4
         <source>No packets in interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="942"/>
+>>>>>>> upstream/master-2.4
         <source>Click to select packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="942"/>
+>>>>>>> upstream/master-2.4
         <source>Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="946"/>
+>>>>>>> upstream/master-2.4
         <source>%1 (%2s%3).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="957"/>
+>>>>>>> upstream/master-2.4
         <source>Release to zoom, x = %1 to %2, y = %3 to %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="963"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to select range.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="966"/>
+>>>>>>> upstream/master-2.4
         <source>Click to select a portion of the graph.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1602"/>
+>>>>>>> upstream/master-2.4
         <source>Portable Document Format (*.pdf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1603"/>
+>>>>>>> upstream/master-2.4
         <source>Portable Network Graphics (*.png)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1604"/>
+>>>>>>> upstream/master-2.4
         <source>Windows Bitmap (*.bmp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1606"/>
+>>>>>>> upstream/master-2.4
         <source>JPEG File Interchange Format (*.jpeg *.jpg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1607"/>
+>>>>>>> upstream/master-2.4
         <source>Comma Separated Values (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1619"/>
+>>>>>>> upstream/master-2.4
         <source>Save Graph As</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5574,18 +6029,34 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="68"/>
+>>>>>>> upstream/master-2.4
         <source>Show in Finder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="70"/>
+>>>>>>> upstream/master-2.4
         <source>Show in Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="238"/>
+>>>>>>> upstream/master-2.4
         <source>All interfaces shown</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="240"/>
+>>>>>>> upstream/master-2.4
         <source>%n interface(s) shown, %1 hidden</source>
         <oldsource>%Ln interface(s) shown</oldsource>
         <translation type="unfinished">
@@ -5594,34 +6065,62 @@ a:hover {
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>You are sniffing the glue that holds the Internet together using Wireshark </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_welcome.cpp" line="251"/>
+>>>>>>> upstream/master-2.4
         <source>You are running Wireshark </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="253"/>
+>>>>>>> upstream/master-2.4
         <source>.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="256"/>
+>>>>>>> upstream/master-2.4
         <source> You receive automatic updates.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="258"/>
+>>>>>>> upstream/master-2.4
         <source> You have disabled automatic updates.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="395"/>
+>>>>>>> upstream/master-2.4
         <source>not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="474"/>
+>>>>>>> upstream/master-2.4
         <source>Copy file path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="480"/>
+>>>>>>> upstream/master-2.4
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5629,6 +6128,11 @@ a:hover {
 <context>
     <name>MainWindow</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="17"/>
+        <location filename="main_window.ui" line="874"/>
+>>>>>>> upstream/master-2.4
         <source>Wireshark</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5641,62 +6145,123 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="156"/>
+>>>>>>> upstream/master-2.4
         <source>Open Recent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="162"/>
+>>>>>>> upstream/master-2.4
         <source>File Set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="170"/>
+>>>>>>> upstream/master-2.4
         <source>Export Packet Dissections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="182"/>
+>>>>>>> upstream/master-2.4
         <source>Export Objects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="281"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Zoom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="289"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Time Display Format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="314"/>
+>>>>>>> upstream/master-2.4
         <source>Name Resolution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="627"/>
+>>>>>>> upstream/master-2.4
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="225"/>
+>>>>>>> upstream/master-2.4
         <source>Manual pages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="394"/>
+>>>>>>> upstream/master-2.4
         <source>Apply as Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="405"/>
+>>>>>>> upstream/master-2.4
         <source>Prepare a Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="416"/>
+        <location filename="main_window.ui" line="572"/>
+>>>>>>> upstream/master-2.4
         <source>SCTP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="461"/>
+>>>>>>> upstream/master-2.4
         <source>TCP Stream Graphs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="471"/>
+>>>>>>> upstream/master-2.4
         <source>BACnet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="480"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5705,330 +6270,662 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="152"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="209"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="221"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="254"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Go</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="272"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="390"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Analyze</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="423"/>
+>>>>>>> upstream/master-2.4
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="457"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="488"/>
+        <location filename="main_window.ui" line="1982"/>
+>>>>>>> upstream/master-2.4
         <source>29West</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="492"/>
+>>>>>>> upstream/master-2.4
         <source>Topics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="504"/>
+>>>>>>> upstream/master-2.4
         <source>Queues</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="513"/>
+>>>>>>> upstream/master-2.4
         <source>UIM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="555"/>
+>>>>>>> upstream/master-2.4
         <source>Telephon&amp;y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="559"/>
+>>>>>>> upstream/master-2.4
         <source>RTSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="565"/>
+>>>>>>> upstream/master-2.4
         <source>RTP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="623"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="700"/>
+>>>>>>> upstream/master-2.4
         <source>Main Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="748"/>
+>>>>>>> upstream/master-2.4
         <source>Display Filter Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="785"/>
+>>>>>>> upstream/master-2.4
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="788"/>
+>>>>>>> upstream/master-2.4
         <source>Open a capture file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="799"/>
+>>>>>>> upstream/master-2.4
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="802"/>
+>>>>>>> upstream/master-2.4
         <source>Quit Wireshark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="816"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="819"/>
+>>>>>>> upstream/master-2.4
         <source>Start capturing packets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="827"/>
+>>>>>>> upstream/master-2.4
         <source>S&amp;top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="830"/>
+>>>>>>> upstream/master-2.4
         <source>Stop capturing packets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="838"/>
+>>>>>>> upstream/master-2.4
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="855"/>
+>>>>>>> upstream/master-2.4
         <source>No files found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="860"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="879"/>
+>>>>>>> upstream/master-2.4
         <source>Wireshark Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="884"/>
+>>>>>>> upstream/master-2.4
         <source>TShark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="889"/>
+>>>>>>> upstream/master-2.4
         <source>RawShark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="894"/>
+>>>>>>> upstream/master-2.4
         <source>Dumpcap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="899"/>
+>>>>>>> upstream/master-2.4
         <source>Mergecap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="904"/>
+>>>>>>> upstream/master-2.4
         <source>Editcap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="909"/>
+>>>>>>> upstream/master-2.4
         <source>Text2cap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="918"/>
+>>>>>>> upstream/master-2.4
         <source>Website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="923"/>
+>>>>>>> upstream/master-2.4
         <source>FAQ&apos;s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="928"/>
+>>>>>>> upstream/master-2.4
         <source>Downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="937"/>
+>>>>>>> upstream/master-2.4
         <source>Wiki</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="945"/>
+>>>>>>> upstream/master-2.4
         <source>Sample Captures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="950"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;About Wireshark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="962"/>
+>>>>>>> upstream/master-2.4
         <source>Ask (Q&amp;&amp;A)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="970"/>
+>>>>>>> upstream/master-2.4
         <source>Next Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="973"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="981"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="984"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1036"/>
+>>>>>>> upstream/master-2.4
         <source>First Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1039"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the first packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1047"/>
+>>>>>>> upstream/master-2.4
         <source>Last Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1050"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the last packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1061"/>
+>>>>>>> upstream/master-2.4
         <source>E&amp;xpand Subtrees</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1064"/>
+>>>>>>> upstream/master-2.4
         <source>Expand the current packet detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1072"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Expand All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1075"/>
+>>>>>>> upstream/master-2.4
         <source>Expand packet details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1083"/>
+>>>>>>> upstream/master-2.4
         <source>Collapse &amp;All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1086"/>
+>>>>>>> upstream/master-2.4
         <source>Collapse all packet details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1100"/>
+>>>>>>> upstream/master-2.4
         <source>Go to specified packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1111"/>
+>>>>>>> upstream/master-2.4
         <source>Merge one or more files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1119"/>
+>>>>>>> upstream/master-2.4
         <source>Import a file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1124"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1141"/>
+>>>>>>> upstream/master-2.4
         <source>Save as a different file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1152"/>
+>>>>>>> upstream/master-2.4
         <source>Export specified packets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1178"/>
+>>>>>>> upstream/master-2.4
         <source>List Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1183"/>
+>>>>>>> upstream/master-2.4
         <source>Next File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1188"/>
+>>>>>>> upstream/master-2.4
         <source>Previous File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1193"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1218"/>
+>>>>>>> upstream/master-2.4
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1221"/>
+>>>>>>> upstream/master-2.4
         <source>Capture options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1235"/>
+>>>>>>> upstream/master-2.4
         <source>Capture filters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1240"/>
+>>>>>>> upstream/master-2.4
         <source>Refresh Interfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1243"/>
+>>>>>>> upstream/master-2.4
         <source>Refresh interfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1251"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Restart</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1254"/>
+>>>>>>> upstream/master-2.4
         <source>Restart current capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1292"/>
+>>>>>>> upstream/master-2.4
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1316"/>
+>>>>>>> upstream/master-2.4
         <source>Field Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1327"/>
+>>>>>>> upstream/master-2.4
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1338"/>
+>>>>>>> upstream/master-2.4
         <source>As Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1349"/>
+        <location filename="main_window.ui" line="1394"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1354"/>
+        <location filename="main_window.ui" line="1399"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Not Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1357"/>
+        <location filename="main_window.ui" line="1402"/>
+>>>>>>> upstream/master-2.4
         <source>Not Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="841"/>
+>>>>>>> upstream/master-2.4
         <source>Close this capture file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6037,95 +6934,184 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="276"/>
+>>>>>>> upstream/master-2.4
         <source>Interface Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="324"/>
+>>>>>>> upstream/master-2.4
         <source>Colorize Conversation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="342"/>
+>>>>>>> upstream/master-2.4
         <source>Internals</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="350"/>
+>>>>>>> upstream/master-2.4
         <source>Additional Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="432"/>
+>>>>>>> upstream/master-2.4
         <source>Conversation Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="526"/>
+>>>>>>> upstream/master-2.4
         <source>Service Response Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="579"/>
+>>>>>>> upstream/master-2.4
         <source>ANSI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="585"/>
+>>>>>>> upstream/master-2.4
         <source>GSM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="591"/>
+>>>>>>> upstream/master-2.4
         <source>LTE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="597"/>
+>>>>>>> upstream/master-2.4
         <source>MTP3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="603"/>
+>>>>>>> upstream/master-2.4
         <source>Osmux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="676"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Tools</source>
         <oldsource>Tools</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="771"/>
+>>>>>>> upstream/master-2.4
         <source>Wireless Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="863"/>
+>>>>>>> upstream/master-2.4
         <source>Help contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="992"/>
+>>>>>>> upstream/master-2.4
         <source>Next Packet in Conversation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="995"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next packet in this conversation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1003"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Packet in Conversation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1006"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous packet in this conversation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1014"/>
+>>>>>>> upstream/master-2.4
         <source>Next Packet In History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1017"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next packet in your selection history</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1025"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Packet In History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1028"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous packet in your selection history</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Collapse Subtrees</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6134,194 +7120,382 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window.ui" line="1097"/>
+>>>>>>> upstream/master-2.4
         <source>Go to Packet…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1108"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Merge…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1116"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Import from Hex Dump…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1127"/>
+>>>>>>> upstream/master-2.4
         <source>Save this capture file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1138"/>
+>>>>>>> upstream/master-2.4
         <source>Save &amp;As…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1149"/>
+>>>>>>> upstream/master-2.4
         <source>Export Specified Packets…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1157"/>
+>>>>>>> upstream/master-2.4
         <source>Export Packet &amp;Bytes…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1165"/>
+>>>>>>> upstream/master-2.4
         <source>Export SSL Session Keys…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1170"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Print…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1196"/>
+>>>>>>> upstream/master-2.4
         <source>Reload this file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1207"/>
+>>>>>>> upstream/master-2.4
         <source>Reload as File Format/Capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1287"/>
+>>>>>>> upstream/master-2.4
         <source>As JSON…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1295"/>
+>>>>>>> upstream/master-2.4
         <source>Copy this item&apos;s description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1319"/>
+>>>>>>> upstream/master-2.4
         <source>Copy this item&apos;s field name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1330"/>
+>>>>>>> upstream/master-2.4
         <source>Copy this item&apos;s value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1341"/>
+>>>>>>> upstream/master-2.4
         <source>Copy this item as a display filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1449"/>
+>>>>>>> upstream/master-2.4
         <source>Apply as Column</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1452"/>
+>>>>>>> upstream/master-2.4
         <source>Create a packet list column from the selected field.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1460"/>
+>>>>>>> upstream/master-2.4
         <source>Find a packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1471"/>
+>>>>>>> upstream/master-2.4
         <source>Find the next packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1482"/>
+>>>>>>> upstream/master-2.4
         <source>Find the previous packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1490"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Mark/Unmark Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1493"/>
+>>>>>>> upstream/master-2.4
         <source>Mark or unmark this packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1501"/>
+>>>>>>> upstream/master-2.4
         <source>Mark All Displayed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1504"/>
+>>>>>>> upstream/master-2.4
         <source>Mark all displayed packets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1512"/>
+>>>>>>> upstream/master-2.4
         <source>Unmark All Displayed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1515"/>
+>>>>>>> upstream/master-2.4
         <source>Unmark all displayed packets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1523"/>
+>>>>>>> upstream/master-2.4
         <source>Next Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1526"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next marked packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1534"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1537"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous marked packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1545"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Ignore/Unignore Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1548"/>
+>>>>>>> upstream/master-2.4
         <source>Ignore or unignore this packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1556"/>
+>>>>>>> upstream/master-2.4
         <source>Ignore All Displayed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1559"/>
+>>>>>>> upstream/master-2.4
         <source>Ignore all displayed packets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1567"/>
+>>>>>>> upstream/master-2.4
         <source>Unignore All Displayed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1570"/>
+>>>>>>> upstream/master-2.4
         <source>Unignore all displayed packets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1578"/>
+>>>>>>> upstream/master-2.4
         <source>Set/Unset Time Reference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1581"/>
+>>>>>>> upstream/master-2.4
         <source>Set or unset a time reference for this packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1589"/>
+>>>>>>> upstream/master-2.4
         <source>Unset All Time References</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1592"/>
+>>>>>>> upstream/master-2.4
         <source>Remove all time references</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1600"/>
+>>>>>>> upstream/master-2.4
         <source>Next Time Reference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1603"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next time reference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1611"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Time Reference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1614"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous time reference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1625"/>
+>>>>>>> upstream/master-2.4
         <source>Shift or change packet timestamps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1636"/>
+>>>>>>> upstream/master-2.4
         <source>Add or change a packet comment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Delete All Packet Comments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6330,206 +7504,408 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window.ui" line="1650"/>
+>>>>>>> upstream/master-2.4
         <source>Configuration profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1653"/>
+>>>>>>> upstream/master-2.4
         <source>Manage your configuration profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1667"/>
+>>>>>>> upstream/master-2.4
         <source>Manage Wireshark&apos;s preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1681"/>
+>>>>>>> upstream/master-2.4
         <source>Capture File Properties</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1684"/>
+>>>>>>> upstream/master-2.4
         <source>Capture file properties</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1695"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Protocol Hierarchy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1698"/>
+>>>>>>> upstream/master-2.4
         <source>Show a summary of protocols present in the capture file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1703"/>
+>>>>>>> upstream/master-2.4
         <source>Capinfos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1708"/>
+>>>>>>> upstream/master-2.4
         <source>Reordercap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1713"/>
+>>>>>>> upstream/master-2.4
         <source>Time Sequence (Stevens)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1716"/>
+>>>>>>> upstream/master-2.4
         <source>TCP time sequence graph (Stevens)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1721"/>
+>>>>>>> upstream/master-2.4
         <source>Throughput</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1724"/>
+>>>>>>> upstream/master-2.4
         <source>TCP througput</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1729"/>
+>>>>>>> upstream/master-2.4
         <source>Round Trip Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1732"/>
+>>>>>>> upstream/master-2.4
         <source>TCP round trip time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1737"/>
+>>>>>>> upstream/master-2.4
         <source>Window Scaling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1740"/>
+>>>>>>> upstream/master-2.4
         <source>TCP window scaling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1772"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1777"/>
+>>>>>>> upstream/master-2.4
         <source>Time Sequence (tcptrace)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1780"/>
+>>>>>>> upstream/master-2.4
         <source>TCP time sequence graph (tcptrace)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1785"/>
+>>>>>>> upstream/master-2.4
         <source>Analyse this Association</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1790"/>
+>>>>>>> upstream/master-2.4
         <source>Show All Associations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1795"/>
+>>>>>>> upstream/master-2.4
         <source>Flow Graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1798"/>
+>>>>>>> upstream/master-2.4
         <source>Flow sequence diagram</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1803"/>
+>>>>>>> upstream/master-2.4
         <source>ANCP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1806"/>
+>>>>>>> upstream/master-2.4
         <source>ANCP statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1811"/>
+>>>>>>> upstream/master-2.4
         <source>Packets sorted by Instance ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1814"/>
+>>>>>>> upstream/master-2.4
         <source>BACapp statistics sorted by instance ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1819"/>
+>>>>>>> upstream/master-2.4
         <source>Packets sorted by IP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1822"/>
+>>>>>>> upstream/master-2.4
         <source>BACapp statistics sorted by IP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1827"/>
+>>>>>>> upstream/master-2.4
         <source>Packets sorted by object type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1830"/>
+>>>>>>> upstream/master-2.4
         <source>BACapp statistics sorted by object type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1835"/>
+>>>>>>> upstream/master-2.4
         <source>Packets sorted by service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1838"/>
+>>>>>>> upstream/master-2.4
         <source>BACapp statistics sorted by service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1843"/>
+>>>>>>> upstream/master-2.4
         <source>Collectd</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1846"/>
+>>>>>>> upstream/master-2.4
         <source>Collectd statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1851"/>
+>>>>>>> upstream/master-2.4
         <source>DNS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1854"/>
+>>>>>>> upstream/master-2.4
         <source>DNS statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1859"/>
+>>>>>>> upstream/master-2.4
         <source>HART-IP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1862"/>
+>>>>>>> upstream/master-2.4
         <source>HART-IP statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1867"/>
+>>>>>>> upstream/master-2.4
         <source>HPFEEDS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1870"/>
+>>>>>>> upstream/master-2.4
         <source>hpfeeds statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1875"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1878"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP2 statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1883"/>
+        <location filename="main_window.ui" line="1931"/>
+        <location filename="main_window.ui" line="1939"/>
+>>>>>>> upstream/master-2.4
         <source>Packet Counter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1886"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP packet counter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1891"/>
+>>>>>>> upstream/master-2.4
         <source>Requests</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1894"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP requests</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1899"/>
+>>>>>>> upstream/master-2.4
         <source>Load Distribution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1902"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP load distribution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Referers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6538,1019 +7914,2116 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window.ui" line="1907"/>
+>>>>>>> upstream/master-2.4
         <source>Packet Lengths</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1910"/>
+>>>>>>> upstream/master-2.4
         <source>Packet length statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1915"/>
+>>>>>>> upstream/master-2.4
         <source>Sametime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1918"/>
+>>>>>>> upstream/master-2.4
         <source>Sametime statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1923"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;ISUP Messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1926"/>
+>>>>>>> upstream/master-2.4
         <source>ISUP message statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1934"/>
+>>>>>>> upstream/master-2.4
         <source>Osmux packet counts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1942"/>
+>>>>>>> upstream/master-2.4
         <source>RTSP packet counts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1947"/>
+>>>>>>> upstream/master-2.4
         <source>SM&amp;PP Operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1950"/>
+>>>>>>> upstream/master-2.4
         <source>SMPP operation statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1955"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;UCP Messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1958"/>
+>>>>>>> upstream/master-2.4
         <source>UCP message statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1966"/>
+>>>>>>> upstream/master-2.4
         <source>Change the way packets are dissected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1971"/>
+>>>>>>> upstream/master-2.4
         <source>Reload Lua Plugins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1974"/>
+>>>>>>> upstream/master-2.4
         <source>Reload Lua plugins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1987"/>
+>>>>>>> upstream/master-2.4
         <source>Advertisements by Topic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1992"/>
+        <location filename="main_window.ui" line="2027"/>
+>>>>>>> upstream/master-2.4
         <source>Advertisements by Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1997"/>
+>>>>>>> upstream/master-2.4
         <source>Advertisements by Transport</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2002"/>
+>>>>>>> upstream/master-2.4
         <source>Queries by Topic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2007"/>
+        <location filename="main_window.ui" line="2037"/>
+>>>>>>> upstream/master-2.4
         <source>Queries by Receiver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2012"/>
+>>>>>>> upstream/master-2.4
         <source>Wildcard Queries by Pattern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2017"/>
+>>>>>>> upstream/master-2.4
         <source>Wildcard Queries by Receiver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2022"/>
+>>>>>>> upstream/master-2.4
         <source>Advertisements by Queue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2032"/>
+>>>>>>> upstream/master-2.4
         <source>Queries by Queue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2042"/>
+>>>>>>> upstream/master-2.4
         <source>Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2047"/>
+        <source>Stream Flow Graph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2052"/>
+>>>>>>> upstream/master-2.4
         <source>LBT-RM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2057"/>
+>>>>>>> upstream/master-2.4
         <source>LBT-RU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2062"/>
+        <location filename="main_window.ui" line="2065"/>
+>>>>>>> upstream/master-2.4
         <source>Filter this Association</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2152"/>
+>>>>>>> upstream/master-2.4
         <source>Shrink the main window text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2163"/>
+>>>>>>> upstream/master-2.4
         <source>Return the main window text to its normal size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2171"/>
+>>>>>>> upstream/master-2.4
         <source>Reset Layout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2174"/>
+>>>>>>> upstream/master-2.4
         <source>Reset appearance layout to default size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2497"/>
+>>>>>>> upstream/master-2.4
         <source>Conversation Hash Tables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2500"/>
+>>>>>>> upstream/master-2.4
         <source>Show each conversation hash table</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2505"/>
+>>>>>>> upstream/master-2.4
         <source>Dissector Tables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2508"/>
+>>>>>>> upstream/master-2.4
         <source>Show each dissector table and its entries</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2513"/>
+>>>>>>> upstream/master-2.4
         <source>Supported Protocols</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2516"/>
+>>>>>>> upstream/master-2.4
         <source>Show the currently supported protocols and display filter fields</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2569"/>
+>>>>>>> upstream/master-2.4
         <source>MAC Statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2572"/>
+>>>>>>> upstream/master-2.4
         <source>LTE MAC statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2577"/>
+>>>>>>> upstream/master-2.4
         <source>RLC Statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2580"/>
+>>>>>>> upstream/master-2.4
         <source>LTE RLC statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2585"/>
+>>>>>>> upstream/master-2.4
         <source>RLC Graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2588"/>
+>>>>>>> upstream/master-2.4
         <source>LTE RLC graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2593"/>
+>>>>>>> upstream/master-2.4
         <source>MTP3 Summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2596"/>
+>>>>>>> upstream/master-2.4
         <source>MTP3 summary statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2635"/>
+>>>>>>> upstream/master-2.4
         <source>Bluetooth Devices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2640"/>
+>>>>>>> upstream/master-2.4
         <source>Bluetooth HCI Summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2716"/>
+>>>>>>> upstream/master-2.4
         <source>No GSM statistics registered</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2724"/>
+>>>>>>> upstream/master-2.4
         <source>No LTE statistics registered</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2732"/>
+>>>>>>> upstream/master-2.4
         <source>No MTP3 statistics registered</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2871"/>
+>>>>>>> upstream/master-2.4
         <source>Stream Analysis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2879"/>
+        <location filename="main_window.ui" line="2882"/>
+>>>>>>> upstream/master-2.4
         <source>IAX2 Stream Analysis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2906"/>
+>>>>>>> upstream/master-2.4
         <source>Show Packet Bytes…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2935"/>
+>>>>>>> upstream/master-2.4
         <source>UDP Multicast Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2938"/>
+>>>>>>> upstream/master-2.4
         <source>Show UTP multicast stream statistics.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2943"/>
+>>>>>>> upstream/master-2.4
         <source>WLAN Traffic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2946"/>
+>>>>>>> upstream/master-2.4
         <source>Show IEEE 802.11 wireless LAN statistics.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2955"/>
+>>>>>>> upstream/master-2.4
         <source>Add a filter button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2961"/>
+>>>>>>> upstream/master-2.4
         <source>Add a display filter button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2966"/>
+>>>>>>> upstream/master-2.4
         <source>Firewall ACL Rules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2969"/>
+>>>>>>> upstream/master-2.4
         <source>Create firewall ACL rules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2974"/>
+        <source>…as Escaped String</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2977"/>
+        <source>Copy packet bytes as a Escaped string</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2985"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Full Screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1215"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Options…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="666"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Wireless</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1232"/>
+>>>>>>> upstream/master-2.4
         <source>Capture &amp;Filters…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1262"/>
+>>>>>>> upstream/master-2.4
         <source>As Plain &amp;Text…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1267"/>
+>>>>>>> upstream/master-2.4
         <source>As CSV…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1272"/>
+>>>>>>> upstream/master-2.4
         <source>As &quot;C&quot; Arrays…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1277"/>
+>>>>>>> upstream/master-2.4
         <source>As PSML XML…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1282"/>
+>>>>>>> upstream/master-2.4
         <source>As PDML XML…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1303"/>
+>>>>>>> upstream/master-2.4
         <source>All Visible Items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1311"/>
+>>>>>>> upstream/master-2.4
         <source>All Visible Selected Tree Items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1362"/>
+        <location filename="main_window.ui" line="1407"/>
+>>>>>>> upstream/master-2.4
         <source>…&amp;and Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1365"/>
+        <location filename="main_window.ui" line="1410"/>
+>>>>>>> upstream/master-2.4
         <source>…and Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1370"/>
+        <location filename="main_window.ui" line="1415"/>
+>>>>>>> upstream/master-2.4
         <source>…&amp;or Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1373"/>
+        <location filename="main_window.ui" line="1418"/>
+>>>>>>> upstream/master-2.4
         <source>…or Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1378"/>
+        <location filename="main_window.ui" line="1423"/>
+>>>>>>> upstream/master-2.4
         <source>…a&amp;nd not Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1381"/>
+        <location filename="main_window.ui" line="1426"/>
+>>>>>>> upstream/master-2.4
         <source>…and not Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1386"/>
+        <location filename="main_window.ui" line="1431"/>
+>>>>>>> upstream/master-2.4
         <source>…o&amp;r not Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1389"/>
+        <location filename="main_window.ui" line="1434"/>
+>>>>>>> upstream/master-2.4
         <source>…or not Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1439"/>
+>>>>>>> upstream/master-2.4
         <source>Display Filters…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1444"/>
+>>>>>>> upstream/master-2.4
         <source>Display Filter &amp;Macros…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1457"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Find Packet…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1468"/>
+>>>>>>> upstream/master-2.4
         <source>Find Ne&amp;xt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1479"/>
+>>>>>>> upstream/master-2.4
         <source>Find Pre&amp;vious</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1622"/>
+>>>>>>> upstream/master-2.4
         <source>Time Shift…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1633"/>
+>>>>>>> upstream/master-2.4
         <source>Packet Comment…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1647"/>
+>>>>>>> upstream/master-2.4
         <source>Configuration Profiles…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1664"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Preferences…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1748"/>
+>>>>>>> upstream/master-2.4
         <source>TCP Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1756"/>
+>>>>>>> upstream/master-2.4
         <source>UDP Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1764"/>
+>>>>>>> upstream/master-2.4
         <source>SSL Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1963"/>
+>>>>>>> upstream/master-2.4
         <source>Decode &amp;As…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2070"/>
+>>>>>>> upstream/master-2.4
         <source>Export PDUs to File…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2075"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;I/O Graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2078"/>
+>>>>>>> upstream/master-2.4
         <source>Create graphs based on display filter fields</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2089"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Main Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2092"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the main toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2103"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Filter Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2106"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the display filter toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2111"/>
+>>>>>>> upstream/master-2.4
         <source>Conversations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2114"/>
+>>>>>>> upstream/master-2.4
         <source>Conversations at different protocol levels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2119"/>
+>>>>>>> upstream/master-2.4
         <source>Endpoints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2122"/>
+>>>>>>> upstream/master-2.4
         <source>Endpoints at different protocol levels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2130"/>
+>>>>>>> upstream/master-2.4
         <source>Colorize Packet List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2133"/>
+>>>>>>> upstream/master-2.4
         <source>Draw packets using your coloring rules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2138"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Zoom In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2141"/>
+>>>>>>> upstream/master-2.4
         <source>Enlarge the main window text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2149"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2160"/>
+>>>>>>> upstream/master-2.4
         <source>Normal Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2182"/>
+>>>>>>> upstream/master-2.4
         <source>Resize Columns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2185"/>
+>>>>>>> upstream/master-2.4
         <source>Resize packet list columns to fit contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2196"/>
+>>>>>>> upstream/master-2.4
         <source>Date and Time of Day (1970-01-01 01:02:03.123456)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2199"/>
+        <location filename="main_window.ui" line="2224"/>
+        <location filename="main_window.ui" line="2252"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the date and time of day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2210"/>
+>>>>>>> upstream/master-2.4
         <source>Year, Day of Year, and Time of Day (1970/001 01:02:03.123456)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2213"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the year, day of the year and time of day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2221"/>
+>>>>>>> upstream/master-2.4
         <source>Time of Day (01:02:03.123456)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2235"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds Since 1970-01-01</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2238"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the seconds since the UNIX / POSIX epoch (1970-01-01).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2249"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds Since Beginning of Capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2263"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds Since Previous Captured Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2266"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the seconds since the previous captured packet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2277"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds Since Previous Displayed Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2280"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the seconds since the previous displayed packet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2291"/>
+>>>>>>> upstream/master-2.4
         <source>UTC Date and Time of Day (1970-01-01 01:02:03.123456)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2294"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the UTC date and time of day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2305"/>
+>>>>>>> upstream/master-2.4
         <source>UTC Year, Day of Year, and Time of Day (1970/001 01:02:03.123456)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2308"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the UTC year, day of the year and time of day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2316"/>
+>>>>>>> upstream/master-2.4
         <source>UTC Time of Day (01:02:03.123456)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2319"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the UTC time of day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2330"/>
+>>>>>>> upstream/master-2.4
         <source>Automatic (from capture file)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2333"/>
+>>>>>>> upstream/master-2.4
         <source>Use the time precision indicated in the capture file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2341"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2349"/>
+>>>>>>> upstream/master-2.4
         <source>Tenths of a second</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2357"/>
+>>>>>>> upstream/master-2.4
         <source>Hundredths of a second</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2365"/>
+>>>>>>> upstream/master-2.4
         <source>Milliseconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2373"/>
+>>>>>>> upstream/master-2.4
         <source>Microseconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2381"/>
+>>>>>>> upstream/master-2.4
         <source>Nanoseconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2389"/>
+>>>>>>> upstream/master-2.4
         <source>Display Seconds With Hours and Minutes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2392"/>
+>>>>>>> upstream/master-2.4
         <source>Display seconds with hours and minutes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2400"/>
+>>>>>>> upstream/master-2.4
         <source>Resolve &amp;Physical Addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2403"/>
+>>>>>>> upstream/master-2.4
         <source>Show names for known MAC addresses. Lookups use a local database.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2411"/>
+>>>>>>> upstream/master-2.4
         <source>Resolve &amp;Network Addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2414"/>
+>>>>>>> upstream/master-2.4
         <source>Show names for known IPv4, IPv6, and IPX addresses. Lookups can generate network traffic.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2422"/>
+>>>>>>> upstream/master-2.4
         <source>Resolve &amp;Transport Addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2425"/>
+>>>>>>> upstream/master-2.4
         <source>Show names for known TCP, UDP, and SCTP services. Lookups can generate traffic on some systems.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2433"/>
+>>>>>>> upstream/master-2.4
         <source>Wire&amp;less Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2436"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the wireless toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2447"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Status Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2450"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the status bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2461"/>
+>>>>>>> upstream/master-2.4
         <source>Packet &amp;List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2464"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the packet list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2475"/>
+>>>>>>> upstream/master-2.4
         <source>Packet &amp;Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2478"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the packet details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2489"/>
+>>>>>>> upstream/master-2.4
         <source>Packet &amp;Bytes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2492"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the packet bytes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2521"/>
+        <source>Bytes as Hex + ASCII Dump</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2524"/>
+        <source>Copy packet bytes as a hex and ASCII dump.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2529"/>
+        <source>…as Hex Dump</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2532"/>
+        <source>Copy packet bytes as a hex dump.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2537"/>
+        <source>…as Printable Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2540"/>
+        <source>Copy only the printable text in the packet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2545"/>
+        <source>…as a Hex Stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2548"/>
+        <source>Copy packet bytes as a stream of hex.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2553"/>
+        <source>…as Raw Binary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2556"/>
+        <source>Copy packet bytes as application/octet-stream MIME data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2561"/>
+>>>>>>> upstream/master-2.4
         <source>MAP Summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2564"/>
+>>>>>>> upstream/master-2.4
         <source>GSM MAP summary statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2622"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Coloring Rules…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2653"/>
+>>>>>>> upstream/master-2.4
         <source>Show Linked Packet in New Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2680"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Expression…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2683"/>
+        <location filename="main_window.ui" line="2958"/>
+>>>>>>> upstream/master-2.4
         <source>Expression…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2852"/>
+>>>>>>> upstream/master-2.4
         <source>New Coloring Rule…</source>
         <oldsource>New Conversation Rule…</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2895"/>
+>>>>>>> upstream/master-2.4
         <source>Enabled Protocols…</source>
         <oldsource>Enable Protocols…</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2911"/>
+>>>>>>> upstream/master-2.4
         <source>Wiki Protocol Page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2914"/>
+>>>>>>> upstream/master-2.4
         <source>Open the Wireshark wiki page for this protocol.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2919"/>
+>>>>>>> upstream/master-2.4
         <source>Filter Field Reference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2922"/>
+>>>>>>> upstream/master-2.4
         <source>Open the display filter reference page for this filter field.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2927"/>
+>>>>>>> upstream/master-2.4
         <source>Go to Linked Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2930"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the packet referenced by the selected field.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2601"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;VoIP Calls</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2604"/>
+>>>>>>> upstream/master-2.4
         <source>All VoIP Calls</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2609"/>
+>>>>>>> upstream/master-2.4
         <source>SIP &amp;Flows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2612"/>
+>>>>>>> upstream/master-2.4
         <source>SIP Flows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2617"/>
+>>>>>>> upstream/master-2.4
         <source>RTP Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2625"/>
+>>>>>>> upstream/master-2.4
         <source>Edit the packet list coloring rules.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2630"/>
+>>>>>>> upstream/master-2.4
         <source>Bluetooth ATT Server Attributes</source>
         <oldsource>ATT Server Attributes</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2645"/>
+>>>>>>> upstream/master-2.4
         <source>Show Packet in New &amp;Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2648"/>
+>>>>>>> upstream/master-2.4
         <source>Show this packet in a separate window.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2656"/>
+>>>>>>> upstream/master-2.4
         <source>Show the linked packet in a separate window.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2664"/>
+>>>>>>> upstream/master-2.4
         <source>Auto Scroll in Li&amp;ve Capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2667"/>
+>>>>>>> upstream/master-2.4
         <source>Automatically scroll to the last packet during a live capture.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2672"/>
+>>>>>>> upstream/master-2.4
         <source>Expert Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2675"/>
+>>>>>>> upstream/master-2.4
         <source>Show expert notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2686"/>
+>>>>>>> upstream/master-2.4
         <source>Add an expression to the display filter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2691"/>
+>>>>>>> upstream/master-2.4
         <source>REGISTER_STAT_GROUP_UNSORTED</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2694"/>
+>>>>>>> upstream/master-2.4
         <source>Start of &quot;REGISTER_STAT_GROUP_UNSORTED&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2708"/>
+>>>>>>> upstream/master-2.4
         <source>No ANSI statistics registered</source>
         <oldsource>No tools registered</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2737"/>
+>>>>>>> upstream/master-2.4
         <source>Resolved Addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2740"/>
+>>>>>>> upstream/master-2.4
         <source>Show each table of resolved addresses as copyable text.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2745"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2748"/>
+        <location filename="main_window.ui" line="2759"/>
+        <location filename="main_window.ui" line="2770"/>
+        <location filename="main_window.ui" line="2781"/>
+        <location filename="main_window.ui" line="2792"/>
+        <location filename="main_window.ui" line="2803"/>
+        <location filename="main_window.ui" line="2814"/>
+        <location filename="main_window.ui" line="2825"/>
+        <location filename="main_window.ui" line="2836"/>
+        <location filename="main_window.ui" line="2847"/>
+>>>>>>> upstream/master-2.4
         <source>Mark the current conversation with its own color.</source>
         <oldsource>Mark the current coversation with its own color.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2756"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2767"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2778"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2789"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2800"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2811"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2822"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2833"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2844"/>
+>>>>>>> upstream/master-2.4
         <source>Color 1&amp;0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2855"/>
+>>>>>>> upstream/master-2.4
         <source>Create a new coloring rule based on this field.</source>
         <oldsource>Create a new coloring rule based on this conversation.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2860"/>
+>>>>>>> upstream/master-2.4
         <source>Reset Colorization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2863"/>
+>>>>>>> upstream/master-2.4
         <source>Reset colorized conversations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2874"/>
+>>>>>>> upstream/master-2.4
         <source>RTP Stream Analysis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2887"/>
+>>>>>>> upstream/master-2.4
         <source>Edit Resolved Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2890"/>
+>>>>>>> upstream/master-2.4
         <source>Manually edit a name resolution entry.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2898"/>
+>>>>>>> upstream/master-2.4
         <source>Enable and disable specific protocols</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="297"/>
+>>>>>>> upstream/master-2.4
         <source>Check for Updates</source>
         <oldsource>Check for Updates...</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="930"/>
+>>>>>>> upstream/master-2.4
         <source> before quitting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1166"/>
+>>>>>>> upstream/master-2.4
         <source>Save packets before merging?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1167"/>
+>>>>>>> upstream/master-2.4
         <source>A temporary capture file can&apos;t be merged.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1173"/>
+>>>>>>> upstream/master-2.4
         <source>Save changes in &quot;%1&quot; before merging?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1175"/>
+>>>>>>> upstream/master-2.4
         <source>Changes must be saved before the files can be merged.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="229"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid Display Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1212"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid Read Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1213"/>
+>>>>>>> upstream/master-2.4
         <source>The filter expression %1 isn&apos;t a valid read filter. (%2).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1302"/>
+>>>>>>> upstream/master-2.4
         <source> before importing a capture</source>
         <oldsource> before importing a new capture</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1578"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to export to &quot;%1&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1579"/>
+>>>>>>> upstream/master-2.4
         <source>You cannot export packets to the current capture file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1667"/>
+        <location filename="main_window.cpp" line="1692"/>
+>>>>>>> upstream/master-2.4
         <source>.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1737"/>
+>>>>>>> upstream/master-2.4
         <source>Do you want to save the changes you&apos;ve made%1?</source>
         <oldsource>Do you want to save the captured packets</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1733"/>
+        <location filename="main_window.cpp" line="1741"/>
+>>>>>>> upstream/master-2.4
         <source>Your captured packets will be lost if you don&apos;t save them.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1746"/>
+>>>>>>> upstream/master-2.4
         <source>Do you want to save the changes you&apos;ve made to the capture file &quot;%1&quot;%2?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1738"/>
+        <location filename="main_window.cpp" line="1747"/>
+>>>>>>> upstream/master-2.4
         <source>Your changes will be lost if you don&apos;t save them.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="967"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to drop files during capture.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1732"/>
+>>>>>>> upstream/master-2.4
         <source>Do you want to stop the capture and save the captured packets%1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1740"/>
+>>>>>>> upstream/master-2.4
         <source>Do you want to save the captured packets%1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1764"/>
+>>>>>>> upstream/master-2.4
         <source>Save before Continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1766"/>
+>>>>>>> upstream/master-2.4
         <source>Stop and Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1778"/>
+>>>>>>> upstream/master-2.4
         <source>Stop and Quit &amp;without Saving</source>
         <oldsource>Stop and Quit without Saving</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1790"/>
+>>>>>>> upstream/master-2.4
         <source>Quit &amp;without Saving</source>
         <oldsource>Quit without Saving</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="773"/>
+        <location filename="main_window.cpp" line="2740"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1781"/>
+        <location filename="main_window.cpp" line="1794"/>
+>>>>>>> upstream/master-2.4
         <source>Continue &amp;without Saving</source>
         <oldsource>Continue without Saving</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1784"/>
+>>>>>>> upstream/master-2.4
         <source>Stop and Continue &amp;without Saving</source>
         <oldsource>Stop and Continue without Saving</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="2162"/>
+>>>>>>> upstream/master-2.4
         <source>(File name can&apos;t be mapped to UTF-8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="2183"/>
+>>>>>>> upstream/master-2.4
         <source>The Wireshark Network Analyzer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="2208"/>
+>>>>>>> upstream/master-2.4
         <source>Capturing from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="217"/>
+>>>>>>> upstream/master-2.4
         <source> before opening another file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="786"/>
+>>>>>>> upstream/master-2.4
         <source>%1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="895"/>
+>>>>>>> upstream/master-2.4
         <source>Saving %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="940"/>
+>>>>>>> upstream/master-2.4
         <source>No interface selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="950"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid capture filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1198"/>
+>>>>>>> upstream/master-2.4
         <source>Clear Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1696"/>
+>>>>>>> upstream/master-2.4
         <source>Please wait while Wireshark is initializing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1800"/>
+>>>>>>> upstream/master-2.4
         <source> before closing the file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1882"/>
+>>>>>>> upstream/master-2.4
         <source>Export Selected Packet Bytes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1948"/>
+>>>>>>> upstream/master-2.4
         <source>No Keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1949"/>
+>>>>>>> upstream/master-2.4
         <source>There are no SSL Session Keys to save.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1955"/>
+>>>>>>> upstream/master-2.4
         <source>Export SSL Session Keys (%Ln key(s))</source>
         <oldsource>Export SSL Session Keys (%1 key%2</oldsource>
         <translation>
@@ -7559,66 +10032,125 @@ a:hover {
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1884"/>
+>>>>>>> upstream/master-2.4
         <source>Raw data (*.bin *.dat *.raw);;All Files (</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="840"/>
+>>>>>>> upstream/master-2.4
         <source>Merging files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1959"/>
+>>>>>>> upstream/master-2.4
         <source>SSL Session Keys (*.keys *.txt);;All Files (</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="2077"/>
+>>>>>>> upstream/master-2.4
         <source>Couldn&apos;t copy text. Try another item.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Are you sure you want to remove all packet comments?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window_slots.cpp" line="2495"/>
+        <location filename="main_window_slots.cpp" line="3604"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to build conversation filter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="2653"/>
+        <location filename="main_window_slots.cpp" line="2666"/>
+>>>>>>> upstream/master-2.4
         <source> before reloading the file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="2700"/>
+>>>>>>> upstream/master-2.4
         <source>No filter available. Try another </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3611"/>
+>>>>>>> upstream/master-2.4
         <source>Error compiling filter for this conversation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3620"/>
+>>>>>>> upstream/master-2.4
         <source>No previous/next packet in conversation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3697"/>
+>>>>>>> upstream/master-2.4
         <source>No Interface Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3704"/>
+>>>>>>> upstream/master-2.4
         <source> before starting a new capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3722"/>
+>>>>>>> upstream/master-2.4
         <source> before restarting the capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3933"/>
+>>>>>>> upstream/master-2.4
         <source>Wiki Page for %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3934"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;p&gt;The Wireshark Wiki is maintained by the community.&lt;/p&gt;&lt;p&gt;The page you are about to load might be wonderful, incomplete, wrong, or nonexistent.&lt;/p&gt;&lt;p&gt;Proceed to the wiki?&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Filter Button Preferences...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7635,14 +10167,25 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window.h" line="288"/>
+>>>>>>> upstream/master-2.4
         <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.h" line="290"/>
+>>>>>>> upstream/master-2.4
         <source>Reloading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.h" line="291"/>
+>>>>>>> upstream/master-2.4
         <source>Rescanning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7798,18 +10341,34 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="249"/>
+>>>>>>> upstream/master-2.4
         <source>This version of Wireshark does not save pipe settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="253"/>
+>>>>>>> upstream/master-2.4
         <source>This version of Wireshark does not save remote settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="255"/>
+>>>>>>> upstream/master-2.4
         <source>This version of Wireshark does not support remote interfaces.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="283"/>
+>>>>>>> upstream/master-2.4
         <source>New Pipe</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8125,44 +10684,84 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="718"/>
+>>>>>>> upstream/master-2.4
         <source>Align Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="719"/>
+>>>>>>> upstream/master-2.4
         <source>Align Center</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="720"/>
+>>>>>>> upstream/master-2.4
         <source>Align Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="722"/>
+>>>>>>> upstream/master-2.4
         <source>Column Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="723"/>
+>>>>>>> upstream/master-2.4
         <source>Edit Column</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="724"/>
+>>>>>>> upstream/master-2.4
         <source>Resize To Contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="725"/>
+>>>>>>> upstream/master-2.4
         <source>Resolve Names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="730"/>
+>>>>>>> upstream/master-2.4
         <source>Remove This Column</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="1140"/>
+>>>>>>> upstream/master-2.4
         <source>Frame %1: %2
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="1144"/>
+>>>>>>> upstream/master-2.4
         <source>[ Comment text exceeds %1. Stopping. ]</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8170,10 +10769,18 @@ a:hover {
 <context>
     <name>PacketListModel</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list_model.cpp" line="320"/>
+>>>>>>> upstream/master-2.4
         <source>Dissecting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list_model.cpp" line="342"/>
+>>>>>>> upstream/master-2.4
         <source>Sorting &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8251,11 +10858,21 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Path</source>
+=======
+        <location filename="preference_editor_frame.cpp" line="80"/>
+        <source>Open %1 preferences</source>
+>>>>>>> upstream/master-2.4
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preference_editor_frame.cpp" line="260"/>
+        <source>Invalid value.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8296,8 +10913,14 @@ a:hover {
 <context>
     <name>PrefsModel</name>
     <message>
+<<<<<<< HEAD
         <source>Advanced</source>
         <extracomment>Names of special preferences handled by the GUI</extracomment>
+=======
+        <location filename="preferences_dialog.ui" line="64"/>
+        <source>Filter Buttons</source>
+        <oldsource>Filter Expressions</oldsource>
+>>>>>>> upstream/master-2.4
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8396,50 +11019,98 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="59"/>
+>>>>>>> upstream/master-2.4
         <source>Configuration Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="164"/>
+>>>>>>> upstream/master-2.4
         <source>Will be reset to default values</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="180"/>
+>>>>>>> upstream/master-2.4
         <source>Created from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="182"/>
+>>>>>>> upstream/master-2.4
         <source>(system provided)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="188"/>
+>>>>>>> upstream/master-2.4
         <source>Created from default settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="191"/>
+>>>>>>> upstream/master-2.4
         <source>Renamed from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="197"/>
+>>>>>>> upstream/master-2.4
         <source>Go to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="222"/>
+>>>>>>> upstream/master-2.4
         <source>This is a system provided profile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="226"/>
+>>>>>>> upstream/master-2.4
         <source>A profile already exists with this name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="231"/>
+>>>>>>> upstream/master-2.4
         <source>A profile already exists with this name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="235"/>
+>>>>>>> upstream/master-2.4
         <source>The profile will be reset to default values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="365"/>
+>>>>>>> upstream/master-2.4
         <source>Profile Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8599,6 +11270,105 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="2010"/>
+        <source>Packets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2011"/>
+        <source>Bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2012"/>
+        <source>Bits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2013"/>
+        <source>SUM(Y Field)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2014"/>
+        <source>COUNT FRAMES(Y Field)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2015"/>
+        <source>COUNT FIELDS(Y Field)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2016"/>
+        <source>MAX(Y Field)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2017"/>
+        <source>MIN(Y Field)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2018"/>
+        <source>AVG(Y Field)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2019"/>
+        <source>LOAD(Y Field)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2028"/>
+        <source>Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2029"/>
+        <source>Impulse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2030"/>
+        <source>Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2031"/>
+        <source>Stacked Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2032"/>
+        <source>Dot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2033"/>
+        <source>Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2034"/>
+        <source>Diamond</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2045"/>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2047"/>
+        <source>%1 interval SMA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="capture_file.cpp" line="50"/>
+>>>>>>> upstream/master-2.4
         <source>[no capture file]</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8667,14 +11437,26 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="simple_dialog.cpp" line="115"/>
+>>>>>>> upstream/master-2.4
         <source>Don&apos;t show this message again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="simple_dialog.cpp" line="295"/>
+>>>>>>> upstream/master-2.4
         <source>Multiple problems found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_stream_dialog.cpp" line="128"/>
+>>>>>>> upstream/master-2.4
         <source>%1 (%L2%)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8919,26 +11701,50 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="../../wireshark-qt.cpp" line="876"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid Display Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="../../wireshark-qt.cpp" line="877"/>
+>>>>>>> upstream/master-2.4
         <source>The filter expression %1 isn&apos;t a valid display filter. (%2).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="121"/>
+        <location filename="manage_interfaces_dialog.cpp" line="124"/>
+        <location filename="manage_interfaces_dialog.cpp" line="127"/>
+        <location filename="manage_interfaces_dialog.cpp" line="130"/>
+>>>>>>> upstream/master-2.4
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="121"/>
+>>>>>>> upstream/master-2.4
         <source>No remote interfaces found.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="127"/>
+>>>>>>> upstream/master-2.4
         <source>PCAP not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Unknown error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8958,6 +11764,12 @@ a:hover {
         <source>Default value is empty</source>
         <translation type="unfinished"></translation>
     </message>
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="130"/>
+        <source>Unknown error</source>
+        <translation type="unfinished"></translation>
+    </message>
+>>>>>>> upstream/master-2.4
 </context>
 <context>
     <name>QObject::QObject</name>
@@ -9001,18 +11813,39 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="remote_capture_dialog.cpp" line="60"/>
+        <location filename="remote_capture_dialog.cpp" line="92"/>
+        <location filename="remote_capture_dialog.cpp" line="145"/>
+>>>>>>> upstream/master-2.4
         <source>Clear list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="remote_capture_dialog.cpp" line="132"/>
+        <location filename="remote_capture_dialog.cpp" line="134"/>
+        <location filename="remote_capture_dialog.cpp" line="136"/>
+        <location filename="remote_capture_dialog.cpp" line="138"/>
+>>>>>>> upstream/master-2.4
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="remote_capture_dialog.cpp" line="132"/>
+>>>>>>> upstream/master-2.4
         <source>No remote interfaces found.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="remote_capture_dialog.cpp" line="136"/>
+>>>>>>> upstream/master-2.4
         <source>PCAP not found</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9668,10 +12501,18 @@ a:hover {
 <context>
     <name>RtpAudioStream</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_audio_stream.cpp" line="573"/>
+>>>>>>> upstream/master-2.4
         <source>RTP stream is empty or codec is unsupported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_audio_stream.cpp" line="597"/>
+>>>>>>> upstream/master-2.4
         <source>%1 does not support PCM at %2. Preferred format is %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9679,6 +12520,11 @@ a:hover {
 <context>
     <name>RtpPlayerDialog</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.ui" line="14"/>
+        <location filename="rtp_player_dialog.cpp" line="115"/>
+>>>>>>> upstream/master-2.4
         <source>RTP Player</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9913,34 +12759,66 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="175"/>
+>>>>>>> upstream/master-2.4
         <source>No devices available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="195"/>
+>>>>>>> upstream/master-2.4
         <source>Play Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="301"/>
+>>>>>>> upstream/master-2.4
         <source>Out of Sequence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="316"/>
+>>>>>>> upstream/master-2.4
         <source>Jitter Drops</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="331"/>
+>>>>>>> upstream/master-2.4
         <source>Wrong Timestamps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="346"/>
+>>>>>>> upstream/master-2.4
         <source>Inserted Silence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="529"/>
+>>>>>>> upstream/master-2.4
         <source>%1. Press &quot;G&quot; to go to packet %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="716"/>
+>>>>>>> upstream/master-2.4
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10806,14 +13684,26 @@ a:hover {
 <context>
     <name>ScsiServiceResponseTimeDialog</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="scsi_service_response_time_dialog.cpp" line="41"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;small&gt;&lt;i&gt;Select a command and enter a filter if desired, then press Apply.&lt;/i&gt;&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="scsi_service_response_time_dialog.cpp" line="48"/>
+>>>>>>> upstream/master-2.4
         <source>Command:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="scsi_service_response_time_dialog.cpp" line="50"/>
+>>>>>>> upstream/master-2.4
         <source>SCSI Service Response Times</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11276,6 +14166,11 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="show_packet_bytes_dialog.ui" line="109"/>
+        <location filename="show_packet_bytes_dialog.cpp" line="230"/>
+>>>>>>> upstream/master-2.4
         <source>Find:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11374,10 +14269,18 @@ a:hover {
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="show_packet_bytes_dialog.cpp" line="228"/>
+>>>>>>> upstream/master-2.4
         <source>Regex Find:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="show_packet_bytes_dialog.cpp" line="305"/>
+>>>>>>> upstream/master-2.4
         <source>Save Selected Packet Bytes As</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11611,6 +14514,10 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="130"/>
+>>>>>>> upstream/master-2.4
         <source>Select SACKs</source>
         <oldsource>select SACKs</oldsource>
         <translation type="unfinished"></translation>
@@ -11624,6 +14531,11 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="166"/>
+        <location filename="tcp_stream_dialog.ui" line="491"/>
+>>>>>>> upstream/master-2.4
         <source>Switch Direction</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11648,6 +14560,7 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Display Round Trip Time vs Sequence Number</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11668,310 +14581,660 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="tcp_stream_dialog.ui" line="235"/>
+        <source>Display Round Trip Time vs Sequence Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="tcp_stream_dialog.ui" line="238"/>
+        <source>RTT By Sequence Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="tcp_stream_dialog.ui" line="248"/>
+        <source>Display graph of Segment Length vs Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="tcp_stream_dialog.ui" line="251"/>
+        <source>Segment Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="tcp_stream_dialog.ui" line="261"/>
+        <source>Display graph of Mean Transmitted Bytes vs Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="tcp_stream_dialog.ui" line="274"/>
+>>>>>>> upstream/master-2.4
         <source>Display graph of Mean ACKed Bytes vs Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="277"/>
+>>>>>>> upstream/master-2.4
         <source>Goodput</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="287"/>
+>>>>>>> upstream/master-2.4
         <source>Display graph of Receive Window Size vs Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="290"/>
+>>>>>>> upstream/master-2.4
         <source>Rcv Win</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="300"/>
+>>>>>>> upstream/master-2.4
         <source>Display graph of Outstanding Bytes vs Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="303"/>
+>>>>>>> upstream/master-2.4
         <source>Bytes Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="326"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reset the graph to its initial state.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="329"/>
+>>>>>>> upstream/master-2.4
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="348"/>
+>>>>>>> upstream/master-2.4
         <source>Reset Graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="351"/>
+>>>>>>> upstream/master-2.4
         <source>Reset the graph to its initial state.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="354"/>
+>>>>>>> upstream/master-2.4
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="359"/>
+        <location filename="tcp_stream_dialog.ui" line="362"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="365"/>
+>>>>>>> upstream/master-2.4
         <source>+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="370"/>
+        <location filename="tcp_stream_dialog.ui" line="373"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="376"/>
+>>>>>>> upstream/master-2.4
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="381"/>
+        <location filename="tcp_stream_dialog.ui" line="384"/>
+>>>>>>> upstream/master-2.4
         <source>Move Up 10 Pixels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="387"/>
+>>>>>>> upstream/master-2.4
         <source>Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="392"/>
+        <location filename="tcp_stream_dialog.ui" line="395"/>
+>>>>>>> upstream/master-2.4
         <source>Move Left 10 Pixels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="398"/>
+>>>>>>> upstream/master-2.4
         <source>Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="403"/>
+        <location filename="tcp_stream_dialog.ui" line="406"/>
+>>>>>>> upstream/master-2.4
         <source>Move Right 10 Pixels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="409"/>
+>>>>>>> upstream/master-2.4
         <source>Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="414"/>
+        <location filename="tcp_stream_dialog.ui" line="417"/>
+>>>>>>> upstream/master-2.4
         <source>Move Down 10 Pixels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="420"/>
+>>>>>>> upstream/master-2.4
         <source>Down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="425"/>
+        <location filename="tcp_stream_dialog.ui" line="428"/>
+>>>>>>> upstream/master-2.4
         <source>Move Up 1 Pixel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="431"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="436"/>
+        <location filename="tcp_stream_dialog.ui" line="439"/>
+>>>>>>> upstream/master-2.4
         <source>Move Left 1 Pixel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="442"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="447"/>
+        <location filename="tcp_stream_dialog.ui" line="450"/>
+>>>>>>> upstream/master-2.4
         <source>Move Right 1 Pixel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="453"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="458"/>
+        <location filename="tcp_stream_dialog.ui" line="461"/>
+>>>>>>> upstream/master-2.4
         <source>Move Down 1 Pixel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="464"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="469"/>
+>>>>>>> upstream/master-2.4
         <source>Next Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="472"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next stream in the capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="475"/>
+>>>>>>> upstream/master-2.4
         <source>PgUp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="480"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="483"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous stream in the capture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="486"/>
+>>>>>>> upstream/master-2.4
         <source>PgDown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="494"/>
+>>>>>>> upstream/master-2.4
         <source>Switch direction (swap TCP endpoints)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="497"/>
+>>>>>>> upstream/master-2.4
         <source>D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="502"/>
+>>>>>>> upstream/master-2.4
         <source>Go To Packet Under Cursor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="505"/>
+>>>>>>> upstream/master-2.4
         <source>Go to packet currently under the cursor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="508"/>
+>>>>>>> upstream/master-2.4
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="513"/>
+>>>>>>> upstream/master-2.4
         <source>Drag / Zoom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="516"/>
+>>>>>>> upstream/master-2.4
         <source>Toggle mouse drag / zoom behavior</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="519"/>
+>>>>>>> upstream/master-2.4
         <source>Z</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="524"/>
+>>>>>>> upstream/master-2.4
         <source>Relative / Absolute Sequence Numbers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="527"/>
+>>>>>>> upstream/master-2.4
         <source>Toggle relative / absolute sequence numbers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="530"/>
+>>>>>>> upstream/master-2.4
         <source>S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="535"/>
+>>>>>>> upstream/master-2.4
         <source>Capture / Session Time Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="538"/>
+>>>>>>> upstream/master-2.4
         <source>Toggle capture / session time origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="541"/>
+>>>>>>> upstream/master-2.4
         <source>T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="546"/>
+>>>>>>> upstream/master-2.4
         <source>Crosshairs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="549"/>
+>>>>>>> upstream/master-2.4
         <source>Toggle crosshairs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="552"/>
+>>>>>>> upstream/master-2.4
         <source>Space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="557"/>
+        <location filename="tcp_stream_dialog.cpp" line="1365"/>
+>>>>>>> upstream/master-2.4
         <source>Round Trip Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="560"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the Round Trip Time graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="563"/>
+>>>>>>> upstream/master-2.4
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="264"/>
+        <location filename="tcp_stream_dialog.ui" line="568"/>
+        <location filename="tcp_stream_dialog.cpp" line="1093"/>
+>>>>>>> upstream/master-2.4
         <source>Throughput</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="571"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the Throughput graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="574"/>
+>>>>>>> upstream/master-2.4
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="579"/>
+>>>>>>> upstream/master-2.4
         <source>Time / Sequence (Stevens)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="582"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the Stevens-style Time / Sequence graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="585"/>
+>>>>>>> upstream/master-2.4
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="590"/>
+        <location filename="tcp_stream_dialog.cpp" line="1460"/>
+>>>>>>> upstream/master-2.4
         <source>Window Scaling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="593"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the Window Scaling graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="596"/>
+>>>>>>> upstream/master-2.4
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="601"/>
+>>>>>>> upstream/master-2.4
         <source>Time / Sequence (tcptrace)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="604"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the tcptrace-style Time / Sequence graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="607"/>
+>>>>>>> upstream/master-2.4
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="612"/>
+        <location filename="tcp_stream_dialog.ui" line="615"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom In X Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="618"/>
+>>>>>>> upstream/master-2.4
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="623"/>
+        <location filename="tcp_stream_dialog.ui" line="626"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom Out X Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="629"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="634"/>
+        <location filename="tcp_stream_dialog.ui" line="637"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom In Y Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="640"/>
+>>>>>>> upstream/master-2.4
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="645"/>
+        <location filename="tcp_stream_dialog.ui" line="648"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom Out Y Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="651"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Y</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11989,70 +15252,138 @@ a:hover {
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="730"/>
+>>>>>>> upstream/master-2.4
         <source>Sequence Numbers (Stevens)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="755"/>
+>>>>>>> upstream/master-2.4
         <source>Sequence Numbers (tcptrace)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1095"/>
+>>>>>>> upstream/master-2.4
         <source> (MA)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1097"/>
+>>>>>>> upstream/master-2.4
         <source> (%1 Segment MA)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1118"/>
+>>>>>>> upstream/master-2.4
         <source> [not enough data]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1515"/>
+>>>>>>> upstream/master-2.4
         <source> for %1:%2 %3 %4:%5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1702"/>
+>>>>>>> upstream/master-2.4
         <source>%1 %2 (%3s len %4 seq %5 ack %6 win %7)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1703"/>
+>>>>>>> upstream/master-2.4
         <source>Click to select packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1703"/>
+>>>>>>> upstream/master-2.4
         <source>Packet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1717"/>
+>>>>>>> upstream/master-2.4
         <source>Release to zoom, x = %1 to %2, y = %3 to %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1723"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to select range.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1726"/>
+>>>>>>> upstream/master-2.4
         <source>Click to select a portion of the graph.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1769"/>
+>>>>>>> upstream/master-2.4
         <source>Portable Document Format (*.pdf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1770"/>
+>>>>>>> upstream/master-2.4
         <source>Portable Network Graphics (*.png)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1771"/>
+>>>>>>> upstream/master-2.4
         <source>Windows Bitmap (*.bmp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1773"/>
+>>>>>>> upstream/master-2.4
         <source>JPEG File Interchange Format (*.jpeg *.jpg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1780"/>
+>>>>>>> upstream/master-2.4
         <source>Save Graph As</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12504,18 +15835,34 @@ a:hover {
 <context>
     <name>WiresharkApplication</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="wireshark_application.cpp" line="599"/>
+>>>>>>> upstream/master-2.4
         <source>Dell Backup and Recovery Found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="wireshark_application.cpp" line="600"/>
+>>>>>>> upstream/master-2.4
         <source>You appear to be running Dell Backup and Recovery 1.8.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="wireshark_application.cpp" line="601"/>
+>>>>>>> upstream/master-2.4
         <source>DBAR can make many applications crash &lt;a href=&quot;https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=12036&quot;&gt;including Wireshark&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="wireshark_application.cpp" line="605"/>
+>>>>>>> upstream/master-2.4
         <source>Offending DLL: %1</source>
         <translation type="unfinished"></translation>
     </message>

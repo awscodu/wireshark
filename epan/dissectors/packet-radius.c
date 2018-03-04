@@ -1604,12 +1604,21 @@ dissect_attribute_value_pairs(proto_tree *tree, packet_info *pinfo, tvbuff_t *tv
 
 				if (vendor->has_flags) {
 					avp_tree = proto_tree_add_subtree_format(vendor_tree, tvb, offset-avp_vsa_header_len, avp_vsa_len+avp_vsa_header_len,
+<<<<<<< HEAD
 								       dictionary_entry->ett, &avp_item, "VSA: t=%s(%u) l=%u C=0x%02x",
 								       dictionary_entry->name, avp_vsa_type, avp_vsa_len+avp_vsa_header_len, avp_vsa_flags);
 				} else if (avp_is_extended) {
 					avp_tree = proto_tree_add_subtree_format(vendor_tree, tvb, offset-avp_vsa_header_len, avp_vsa_len+avp_vsa_header_len,
 								       dictionary_entry->ett, &avp_item, "EVS: t=%s(%u) l=%u",
 								        dictionary_entry->name, avp_vsa_type, avp_vsa_len+avp_vsa_header_len);
+=======
+								       dictionary_entry->ett, &avp_item, "VSA: l=%u t=%s(%u) C=0x%02x",
+								       avp_vsa_len+avp_vsa_header_len, dictionary_entry->name, avp_vsa_type, avp_vsa_flags);
+				} else if (avp_is_extended) {
+					avp_tree = proto_tree_add_subtree_format(vendor_tree, tvb, offset-avp_vsa_header_len, avp_vsa_len+avp_vsa_header_len,
+								       dictionary_entry->ett, &avp_item, "EVS: l=%u t=%s(%u)",
+								       avp_vsa_len+avp_vsa_header_len, dictionary_entry->name, avp_vsa_type);
+>>>>>>> upstream/master-2.4
 				} else {
 					avp_tree = proto_tree_add_subtree_format(vendor_tree, tvb, offset-avp_vsa_header_len, avp_vsa_len+avp_vsa_header_len,
 								       dictionary_entry->ett, &avp_item, "VSA: t=%s(%u) l=%u",
@@ -2709,7 +2718,11 @@ register_radius_fields(const char *unused _U_)
 		{ "Type", "radius.avp.type", FT_UINT8, BASE_DEC, NULL, 0x0,
 			NULL, HFILL }},
 		{ &hf_radius_avp_vendor_id,
+<<<<<<< HEAD
 		{ "Vendor ID", "radius.avp.vendor_id", FT_UINT32, BASE_ENTERPRISES, STRINGS_ENTERPRISES, 0x0,
+=======
+		{ "Vendor ID", "radius.avp.vendor_id", FT_UINT32, BASE_DEC, NULL, 0x0,
+>>>>>>> upstream/master-2.4
 			NULL, HFILL }},
 		{ &hf_radius_avp_vendor_type,
 		{ "Type", "radius.avp.vendor_type", FT_UINT8, BASE_DEC, NULL, 0x0,

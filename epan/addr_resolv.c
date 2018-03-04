@@ -2646,6 +2646,8 @@ add_ipv4_name(const guint addr, const gchar *name)
         new_resolved_objects = TRUE;
     }
     tp->flags |= TRIED_RESOLVE_ADDRESS|NAME_RESOLVED;
+    /* Clear DUMMY_ADDRESS_ENTRY */
+    tp->flags &= ~DUMMY_ADDRESS_ENTRY;
 } /* add_ipv4_name */
 
 /* -------------------------- */
@@ -2676,6 +2678,8 @@ add_ipv6_name(const ws_in6_addr *addrp, const gchar *name)
         new_resolved_objects = TRUE;
     }
     tp->flags |= TRIED_RESOLVE_ADDRESS|NAME_RESOLVED;
+    /* Clear DUMMY_ADDRESS_ENTRY */
+    tp->flags &= ~DUMMY_ADDRESS_ENTRY;
 } /* add_ipv6_name */
 
 static void
@@ -2810,10 +2814,14 @@ host_name_lookup_cleanup(void)
 void
 manually_resolve_cleanup(void)
 {
-    wmem_destroy_list(manually_resolved_ipv4_list);
-    manually_resolved_ipv4_list = NULL;
-    wmem_destroy_list(manually_resolved_ipv6_list);
-    manually_resolved_ipv6_list = NULL;
+    if (manually_resolved_ipv4_list) {
+        wmem_destroy_list(manually_resolved_ipv4_list);
+        manually_resolved_ipv4_list = NULL;
+    }
+    if (manually_resolved_ipv6_list) {
+        wmem_destroy_list(manually_resolved_ipv6_list);
+        manually_resolved_ipv6_list = NULL;
+    }
 }
 
 gchar *

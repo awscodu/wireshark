@@ -1,19 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+<<<<<<< HEAD
 # This file is distributed under the same license as the wireshark package.
+=======
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+>>>>>>> upstream/master-2.4
 # 
-# Translators:
-# Simon Paillard <spaillard@debian.org>, 2009
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Wireshark\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: wireshark@packages.debian.org\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2017-08-06 18:31-0400\n"
 "PO-Revision-Date: 2017-09-22 06:50+0000\n"
 "Last-Translator: Gerald Combs <gerald@wireshark.org>\n"
 "Language-Team: French (http://www.transifex.com/wireshark/wireshark/language/fr/)\n"
+=======
+"POT-Creation-Date: 2010-06-20 16:35+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Gerald Combs <gerald@wireshark.org>, 2017\n"
+"Language-Team: French (https://www.transifex.com/wireshark/teams/36457/fr/)\n"
+>>>>>>> upstream/master-2.4
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -32,7 +43,11 @@ msgid ""
 "system group to capture packets. This is recommended over the alternative of"
 " running Wireshark/Tshark directly as root, because less of the code will "
 "run with elevated privileges."
-msgstr "Dumpcap peut être installé afin d'autoriser les membres du groupe « wireshark » à capturer des paquets. Cette méthode de capture est préférable à l'exécution de Wireshark ou Tshark avec les droits du superutilisateur, car elle permet d'exécuter moins de code avec des droits importants."
+msgstr ""
+"Dumpcap peut être installé afin d'autoriser les membres du groupe « "
+"wireshark » à capturer des paquets. Cette méthode de capture est préférable "
+"à l'exécution de Wireshark ou Tshark avec les droits du superutilisateur, "
+"car elle permet d'exécuter moins de code avec des droits importants."
 
 #. Type: boolean
 #. Description
@@ -40,7 +55,9 @@ msgstr "Dumpcap peut être installé afin d'autoriser les membres du groupe « 
 msgid ""
 "For more detailed information please see /usr/share/doc/wireshark-"
 "common/README.Debian."
-msgstr "Pour plus d'informations, veuillez consulter /usr/share/doc/wireshark-common/README.Debian."
+msgstr ""
+"Pour plus d'informations, veuillez consulter /usr/share/doc/wireshark-"
+"common/README.Debian."
 
 #. Type: boolean
 #. Description
@@ -48,6 +65,7 @@ msgstr "Pour plus d'informations, veuillez consulter /usr/share/doc/wireshark-co
 msgid ""
 "Enabling this feature may be a security risk, so it is disabled by default. "
 "If in doubt, it is suggested to leave it disabled."
+<<<<<<< HEAD
 msgstr "Cette fonctionnalité constitue un risque pour la sécurité, c'est pourquoi elle est désactivée par défaut. En cas de doute, il est suggéré de la laisser désactivée."
 
 #. Type: error
@@ -136,3 +154,9 @@ msgstr ""
 #: ../templates:6001
 msgid "If the group is no longer needed, please remove it manually."
 msgstr ""
+=======
+msgstr ""
+"Cette fonctionnalité constitue un risque pour la sécurité, c'est pourquoi "
+"elle est désactivée par défaut. En cas de doute, il est suggéré de la "
+"laisser désactivée."
+>>>>>>> upstream/master-2.4

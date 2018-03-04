@@ -84,8 +84,13 @@ my $set_version = 0;
 my $set_release = 0;
 my %version_pref = (
 	"version_major" => 2,
+<<<<<<< HEAD
 	"version_minor" => 5,
 	"version_micro" => 1,
+=======
+	"version_minor" => 4,
+	"version_micro" => 6,
+>>>>>>> upstream/master-2.4
 	"version_build" => 0,
 
 	"enable"        => 1,

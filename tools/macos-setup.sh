@@ -62,6 +62,11 @@ XZ_VERSION=5.2.3
 LZIP_VERSION=1.19
 
 #
+# Some packages need lzip to unpack their current source.
+#
+LZIP_VERSION=1.19
+
+#
 # In case we want to build with cmake.
 #
 CMAKE_VERSION=${CMAKE_VERSION-2.8.12.2}
@@ -71,7 +76,11 @@ CMAKE_VERSION=${CMAKE_VERSION-2.8.12.2}
 #
 GETTEXT_VERSION=0.19.8.1
 GLIB_VERSION=2.36.0
+<<<<<<< HEAD:tools/macos-setup.sh
 PKG_CONFIG_VERSION=0.29.2
+=======
+PKG_CONFIG_VERSION=0.28
+>>>>>>> upstream/master-2.4:macosx-setup.sh
 #
 # libgpg-error is required for libgcrypt.
 #
@@ -157,12 +166,17 @@ LZ4_VERSION=1.7.5
 SBC_VERSION=1.3
 GEOIP_VERSION=1.6.10
 CARES_VERSION=1.12.0
+<<<<<<< HEAD:tools/macos-setup.sh
 # Redmine used by libssh.org numbers the files available for download,
 # so using version only isn't enough
 LIBSSH_VERSION=0.7.4
 LIBSSH_FILENUM=210
 
 NGHTTP2_VERSION=1.21.0
+=======
+LIBSSH_VERSION=0.7.3
+NGHTTP2_VERSION=1.14.0
+>>>>>>> upstream/master-2.4:macosx-setup.sh
 SPANDSP_VERSION=0.0.6
 if [ "$SPANDSP_VERSION" ]; then
     #
@@ -170,7 +184,10 @@ if [ "$SPANDSP_VERSION" ]; then
     #
     LIBTIFF_VERSION=3.8.1
 fi
+<<<<<<< HEAD:tools/macos-setup.sh
 BCG729_VERSION=1.0.2
+=======
+>>>>>>> upstream/master-2.4:macosx-setup.sh
 
 DARWIN_MAJOR_VERSION=`uname -r | sed 's/\([0-9]*\).*/\1/'`
 
@@ -1512,6 +1529,175 @@ install_snappy() {
     if [ "$SNAPPY_VERSION" -a ! -f snappy-$SNAPPY_VERSION-done ] ; then
         echo "Downloading, building, and installing snappy:"
         [ -f snappy-$SNAPPY_VERSION.tar.gz ] || curl -L -O https://github.com/google/snappy/releases/download/$SNAPPY_VERSION/snappy-$SNAPPY_VERSION.tar.gz || exit 1
+<<<<<<< HEAD:tools/macos-setup.sh
+=======
+        $no_build && echo "Skipping installation" && return
+        gzcat snappy-$SNAPPY_VERSION.tar.gz | tar xf - || exit 1
+        cd snappy-$SNAPPY_VERSION
+        CFLAGS="$CFLAGS -D_FORTIFY_SOURCE=0" ./configure || exit 1
+        make $MAKE_BUILD_OPTS || exit 1
+        $DO_MAKE_INSTALL || exit 1
+        cd ..
+        touch snappy-$SNAPPY_VERSION-done
+    fi
+}
+
+uninstall_snappy() {
+    if [ ! -z "$installed_snappy_version" ] ; then
+        echo "Uninstalling snappy:"
+        cd snappy-$installed_snappy_version
+        $DO_MAKE_UNINSTALL || exit 1
+        make distclean || exit 1
+        cd ..
+        rm snappy-$installed_snappy_version-done
+
+        if [ "$#" -eq 1 -a "$1" = "-r" ] ; then
+            #
+            # Get rid of the previously downloaded and unpacked version.
+            #
+            rm -rf snappy-$installed_snappy_version
+            rm -rf snappy-$installed_snappy_version.tar.gz
+        fi
+
+        installed_snappy_version=""
+    fi
+}
+
+install_libxml2() {
+    if [ "$LIBXML2_VERSION" -a ! -f libxml2-$LIBXML2_VERSION-done ] ; then
+        echo "Downloading, building, and installing libxml2:"
+        [ -f libxml2-$LIBXML2_VERSION.tar.gz ] || curl -L -O ftp://xmlsoft.org/libxml2/libxml2-$LIBXML2_VERSION.tar.gz || exit 1
+        $no_build && echo "Skipping installation" && return
+        gzcat libxml2-$LIBXML2_VERSION.tar.gz | tar xf - || exit 1
+        cd libxml2-$LIBXML2_VERSION
+        CFLAGS="$CFLAGS -D_FORTIFY_SOURCE=0" ./configure || exit 1
+        make $MAKE_BUILD_OPTS || exit 1
+        $DO_MAKE_INSTALL || exit 1
+        cd ..
+        touch libxml2-$LIBXML2_VERSION-done
+    fi
+}
+
+uninstall_libxml2() {
+    if [ ! -z "$installed_libxml2_version" ] ; then
+        echo "Uninstalling libxml2:"
+        cd libxml2-$installed_libxml2_version
+        $DO_MAKE_UNINSTALL || exit 1
+        make distclean || exit 1
+        cd ..
+        rm libxml2-$installed_libxml2_version-done
+
+        if [ "$#" -eq 1 -a "$1" = "-r" ] ; then
+            #
+            # Get rid of the previously downloaded and unpacked version.
+            #
+            rm -rf libxml2-$installed_libxml2_version
+            rm -rf libxml2-$installed_libxml2_version.tar.gz
+        fi
+
+        installed_libxml2_version=""
+    fi
+}
+
+install_lz4() {
+    if [ "$LZ4_VERSION" -a ! -f lz4-$LZ4_VERSION-done ] ; then
+        echo "Downloading, building, and installing lz4:"
+        [ -f lz4-$LZ4_VERSION.tar.gz ] || curl -L -o lz4-$LZ4_VERSION.tar.gz https://github.com/lz4/lz4/archive/$LZ4_VERSION.tar.gz  || exit 1
+        $no_build && echo "Skipping installation" && return
+        gzcat lz4-$LZ4_VERSION.tar.gz | tar xf - || exit 1
+        cd lz4-$LZ4_VERSION
+        # CFLAGS="$CFLAGS -D_FORTIFY_SOURCE=0" ./configure || exit 1
+        make $MAKE_BUILD_OPTS || exit 1
+        $DO_MAKE_INSTALL || exit 1
+        cd ..
+        touch lz4-$LZ4_VERSION-done
+    fi
+}
+
+uninstall_lz4() {
+    if [ ! -z "$installed_lz4_version" ] ; then
+        echo "Uninstalling lz4:"
+        cd lz4-$installed_lz4_version
+        $DO_MAKE_UNINSTALL || exit 1
+        #
+        # lz4 uses cmake and doesn't support "make distclean"
+        #
+        # make distclean || exit 1
+        cd ..
+        rm lz4-$installed_lz4_version-done
+
+        if [ "$#" -eq 1 -a "$1" = "-r" ] ; then
+            #
+            # Get rid of the previously downloaded and unpacked version.
+            #
+            # "make install" apparently causes some stuff to be
+            # modified in the build tree, so, as it's done as
+            # root, that leaves stuff owned by root in the build
+            # tree.  Therefore, we have to remove the build tree
+            # as root.
+            #
+            sudo rm -rf lz4-$installed_lz4_version
+            rm -rf lz4-$installed_lz4_version.tar.gz
+        fi
+
+        installed_lz4_version=""
+    fi
+}
+
+install_sbc() {
+    if [ "$SBC_VERSION" -a ! -f sbc-$SBC_VERSION-done ] ; then
+        echo "Downloading, building, and installing sbc:"
+        [ -f sbc-$SBC_VERSION.tar.gz ] || curl -L -O https://www.kernel.org/pub/linux/bluetooth/sbc-$SBC_VERSION.tar.gz || exit 1
+        $no_build && echo "Skipping installation" && return
+        gzcat sbc-$SBC_VERSION.tar.gz | tar xf - || exit 1
+        cd sbc-$SBC_VERSION
+        CFLAGS="$CFLAGS -D_FORTIFY_SOURCE=0" ./configure --disable-tools --disable-tester --disable-shared || exit 1
+        make $MAKE_BUILD_OPTS || exit 1
+        $DO_MAKE_INSTALL || exit 1
+        cd ..
+        touch sbc-$SBC_VERSION-done
+    fi
+}
+
+uninstall_sbc() {
+    if [ ! -z "$installed_sbc_version" ] ; then
+        echo "Uninstalling sbc:"
+        cd sbc-$installed_sbc_version
+        $DO_MAKE_UNINSTALL || exit 1
+        make distclean || exit 1
+        cd ..
+        rm sbc-$installed_sbc_version-done
+
+        if [ "$#" -eq 1 -a "$1" = "-r" ] ; then
+            #
+            # Get rid of the previously downloaded and unpacked version.
+            #
+            rm -rf sbc-$installed_sbc_version
+            rm -rf sbc-$installed_sbc_version.tar.gz
+        fi
+
+        installed_sbc_version=""
+    fi
+}
+
+install_geoip() {
+    if [ "$GEOIP_VERSION" -a ! -f geoip-$GEOIP_VERSION-done ] ; then
+        echo "Downloading, building, and installing GeoIP API:"
+        GEOIP_MAJOR_VERSION="`expr $GEOIP_VERSION : '\([0-9][0-9]*\).*'`"
+        GEOIP_MINOR_VERSION="`expr $GEOIP_VERSION : '[0-9][0-9]*\.\([0-9][0-9]*\).*'`"
+        GEOIP_DOTDOT_VERSION="`expr $GEOIP_VERSION : '[0-9][0-9]*\.[0-9][0-9]*\.\([0-9][0-9]*\).*'`"
+        if [[ $GEOIP_MAJOR_VERSION -gt 1 ||
+             ($GEOIP_MAJOR_VERSION -eq 1 && $GEOIP_MINOR_VERSION -gt 6) ||
+             ($GEOIP_MAJOR_VERSION -eq 1 && $GEOIP_MINOR_VERSION -eq 6 && $GEOIP_DOTDOT_VERSION -ge 1) ]]
+        then
+            #
+            # Starting with GeoIP 1.6.1, the tarballs are on GitHub.
+            #
+            [ -f GeoIP-$GEOIP_VERSION.tar.gz ] || curl -L -O https://github.com/maxmind/geoip-api-c/releases/download/v$GEOIP_VERSION/GeoIP-$GEOIP_VERSION.tar.gz || exit 1
+        else
+            [ -f GeoIP-$GEOIP_VERSION.tar.gz ] || curl -L -O http://geolite.maxmind.com/download/geoip/api/c/GeoIP-$GEOIP_VERSION.tar.gz || exit 1
+        fi
+>>>>>>> upstream/master-2.4:macosx-setup.sh
         $no_build && echo "Skipping installation" && return
         gzcat snappy-$SNAPPY_VERSION.tar.gz | tar xf - || exit 1
         cd snappy-$SNAPPY_VERSION
@@ -1949,6 +2135,7 @@ uninstall_spandsp() {
     fi
 }
 
+<<<<<<< HEAD:tools/macos-setup.sh
 install_bcg729() {
     if [ "$BCG729_VERSION" -a ! -f bcg729-$BCG729_VERSION-done ] ; then
         echo "Downloading, building, and installing bcg729:"
@@ -1985,11 +2172,14 @@ uninstall_bcg729() {
     fi
 }
 
+=======
+>>>>>>> upstream/master-2.4:macosx-setup.sh
 install_all() {
     #
     # Check whether the versions we have installed are the versions
     # requested; if not, uninstall the installed versions.
     #
+<<<<<<< HEAD:tools/macos-setup.sh
     if [ ! -z "$installed_bcg729_version" -a \
               "$installed_bcg729_version" != "$BCG729_VERSION" ] ; then
         echo "Installed SpanDSP version is $installed_bcg729_version"
@@ -2001,6 +2191,8 @@ install_all() {
         uninstall_bcg729 -r
     fi
 
+=======
+>>>>>>> upstream/master-2.4:macosx-setup.sh
     if [ ! -z "$installed_spandsp_version" -a \
               "$installed_spandsp_version" != "$SPANDSP_VERSION" ] ; then
         echo "Installed SpanDSP version is $installed_spandsp_version"
@@ -2531,8 +2723,11 @@ install_all() {
     install_libtiff
 
     install_spandsp
+<<<<<<< HEAD:tools/macos-setup.sh
 
     install_bcg729
+=======
+>>>>>>> upstream/master-2.4:macosx-setup.sh
 }
 
 uninstall_all() {
@@ -2549,8 +2744,11 @@ uninstall_all() {
         # We also do a "make distclean", so that we don't have leftovers from
         # old configurations.
         #
+<<<<<<< HEAD:tools/macos-setup.sh
 	uninstall_bcg729
 
+=======
+>>>>>>> upstream/master-2.4:macosx-setup.sh
 	uninstall_spandsp
 
 	uninstall_libtiff

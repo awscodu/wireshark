@@ -1109,7 +1109,11 @@ void dissector_add_uint_range_with_preference(const char *name, const char* rang
 	range_t** range;
 	module_t *module;
 	gchar *description, *title;
+<<<<<<< HEAD
 	dissector_table_t  pref_dissector_table = find_dissector_table(name);
+=======
+	dissector_table_t  pref_dissector_table = find_dissector_table( name);
+>>>>>>> upstream/master-2.4
 	int proto_id = proto_get_id(handle->protocol);
 	guint32 max_value = 0;
 
@@ -3177,7 +3181,11 @@ void call_heur_dissector_direct(heur_dtbl_entry_t *heur_dtbl_entry, tvbuff_t *tv
 	pinfo->heur_list_name = heur_dtbl_entry->list_name;
 
 	/* call the dissector, in case of failure call data handle (might happen with exported PDUs) */
+<<<<<<< HEAD
 	if (!(*heur_dtbl_entry->dissector)(tvb, pinfo, tree, data)) {
+=======
+	if(!(*heur_dtbl_entry->dissector)(tvb, pinfo, tree, data)) {
+>>>>>>> upstream/master-2.4
 		call_dissector_work(data_handle, tvb, pinfo, tree, TRUE, NULL);
 
 		/*

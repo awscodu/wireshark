@@ -1924,6 +1924,7 @@ wlantap_dissect(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
 
     //Command type Rx = 0, Tx = 1, RF = 3, RF_RX = 4
     //log mode = 0 is normal capture and 1 is reduced capture
+<<<<<<< HEAD
 
     /* Pre-OCTO. */
     /* First add the IFG information, need to grab the info bit field here */
@@ -1982,6 +1983,66 @@ wlantap_dissect(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
     nss = tvb_get_guint8(tvb, offset);
     offset++;
 
+=======
+
+    /* Pre-OCTO. */
+    /* First add the IFG information, need to grab the info bit field here */
+    vw_info = tvb_get_letohs(tvb, 20);
+    p_ifg_info = (struct ifg_info *) p_get_proto_data(wmem_file_scope(), pinfo, proto_ixveriwave, 0);
+    if ((vw_info & INFO_MPDU_OF_A_MPDU) && !(vw_info & INFO_FIRST_MPDU_OF_A_MPDU))  /* If the packet is part of an A-MPDU but not the first MPDU */
+        ti = proto_tree_add_uint(tap_tree, hf_ixveriwave_vw_ifg, tvb, 18, 0, 0);
+    else
+        ti = proto_tree_add_uint(tap_tree, hf_ixveriwave_vw_ifg, tvb, 18, 0, p_ifg_info->ifg);
+    PROTO_ITEM_SET_GENERATED(ti);
+
+    offset      = 0;
+    /* header length */
+    length = tvb_get_letohs(tvb, offset);
+    offset      += 2;
+
+    /* rflags */
+    vw_rflags = tvb_get_letohs(tvb, offset);
+    phdr.fcs_len = 0;
+
+    ft = proto_tree_add_item(tap_tree, hf_radiotap_flags, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+    flags_tree = proto_item_add_subtree(ft, ett_radiotap_flags);
+    proto_tree_add_item_ret_boolean(flags_tree, hf_radiotap_flags_preamble, tvb, offset, 2, ENC_LITTLE_ENDIAN, &short_preamble);
+    proto_tree_add_item(flags_tree, hf_radiotap_flags_wep, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+    if ( vw_rflags & FLAGS_CHAN_HT ) {
+        proto_tree_add_item(flags_tree, hf_radiotap_flags_ht, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+        proto_tree_add_item(flags_tree, hf_radiotap_flags_40mhz, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+        proto_tree_add_item(flags_tree, hf_radiotap_flags_short_gi, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+    }
+    if ( vw_rflags & FLAGS_CHAN_VHT ) {
+        proto_tree_add_item(flags_tree, hf_radiotap_flags_vht, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+        proto_tree_add_item(flags_tree, hf_radiotap_flags_short_gi, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+        proto_tree_add_item(flags_tree, hf_radiotap_flags_40mhz, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+        proto_tree_add_item(flags_tree, hf_radiotap_flags_80mhz, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+    }
+    offset      += 2;
+
+    /* channel flags */
+    vw_chanflags = tvb_get_letohs(tvb, offset);
+    offset      += 2;
+
+    /* PHY rate */
+    phyRate = (float)tvb_get_letohs(tvb, offset) / 10;
+    offset      += 2;
+
+    /* PLCP type */
+    plcp_type = tvb_get_guint8(tvb,offset) & 0x03;
+    vht_ndp_flag = tvb_get_guint8(tvb,offset) & 0x80;
+    offset++;
+
+    /* Rate/MCS index */
+    rate_mcs_index = tvb_get_guint8(tvb, offset);
+    offset++;
+
+    /* number of spatial streams */
+    nss = tvb_get_guint8(tvb, offset);
+    offset++;
+
+>>>>>>> upstream/master-2.4
     if ((vw_rflags & FLAGS_CHAN_HT) || (vw_rflags & FLAGS_CHAN_VHT)) {
         if (vw_rflags & FLAGS_CHAN_VHT) {
             phdr.phy = PHDR_802_11_PHY_11AC;
@@ -2012,10 +2073,17 @@ wlantap_dissect(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
 
         proto_tree_add_item(tap_tree, hf_radiotap_mcsindex,
                             tvb, offset - 2, 1, ENC_BIG_ENDIAN);
+<<<<<<< HEAD
 
         proto_tree_add_item(tap_tree, hf_radiotap_nss,
                             tvb, offset - 1, 1, ENC_BIG_ENDIAN);
 
+=======
+
+        proto_tree_add_item(tap_tree, hf_radiotap_nss,
+                            tvb, offset - 1, 1, ENC_BIG_ENDIAN);
+
+>>>>>>> upstream/master-2.4
         proto_tree_add_uint_format_value(tap_tree, hf_radiotap_datarate,
                                     tvb, offset - 5, 2, tvb_get_letohs(tvb, offset-5),
                                     "%.1f (MCS %d)", phyRate, rate_mcs_index);
@@ -2053,6 +2121,7 @@ wlantap_dissect(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
         proto_tree_add_item(tap_tree, hf_radiotap_dbm_antb, tvb, offset, 1, ENC_NA);
     }
     offset++;
+<<<<<<< HEAD
 
     /* Antenna C RSSI, or 100 if absent */
     dbm = (gint8) tvb_get_guint8(tvb, offset);
@@ -2061,6 +2130,16 @@ wlantap_dissect(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
     }
     offset++;
 
+=======
+
+    /* Antenna C RSSI, or 100 if absent */
+    dbm = (gint8) tvb_get_guint8(tvb, offset);
+    if (dbm != 100) {
+        proto_tree_add_item(tap_tree, hf_radiotap_dbm_antc, tvb, offset, 1, ENC_NA);
+    }
+    offset++;
+
+>>>>>>> upstream/master-2.4
     /* Antenna D RSSI, or 100 if absent */
     dbm = (gint8) tvb_get_guint8(tvb, offset);
     if (dbm != 100) {
@@ -2231,10 +2310,17 @@ wlantap_dissect(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
                 proto_tree_add_item(tap_tree, hf_radiotap_vht_su_mimo_flg, tvb, offset, 1, ENC_NA);
             }
             offset += 1; /*** skip the RX L1 Info byte ****/
+<<<<<<< HEAD
 
             /* L-SIG */
             offset = decode_ofdm_signal(tap_tree, tvb, offset);
 
+=======
+
+            /* L-SIG */
+            offset = decode_ofdm_signal(tap_tree, tvb, offset);
+
+>>>>>>> upstream/master-2.4
             /* VHT-SIG */
             /* XXX - does this include VHT-SIG-B? */
             decode_vht_sig(tap_tree, tvb, offset, &phdr);
@@ -2300,9 +2386,15 @@ wlantap_dissect_octo(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
 
     vwl1i = proto_tree_add_item(tap_tree, hf_radiotap_l1info, tvb, offset, 12, ENC_NA);
     vw_l1info_tree = proto_item_add_subtree(vwl1i, ett_radiotap_layer1);
+<<<<<<< HEAD
 
     plcp_type = tvb_get_guint8(tvb, offset+4) & 0x0f;
 
+=======
+
+    plcp_type = tvb_get_guint8(tvb, offset+4) & 0x0f;
+
+>>>>>>> upstream/master-2.4
     /* l1p_1 byte */
     switch (plcp_type)
     {
@@ -2431,6 +2523,7 @@ wlantap_dissect_octo(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
     offset++;
 
     dbm = (gint8) tvb_get_guint8(tvb, offset);
+<<<<<<< HEAD
 
     phdr.has_signal_dbm = TRUE;
     phdr.signal_dbm = dbm;
@@ -2445,6 +2538,22 @@ wlantap_dissect_octo(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
                                 tvb, offset, 1, ENC_NA);
     offset++;
 
+=======
+
+    phdr.has_signal_dbm = TRUE;
+    phdr.signal_dbm = dbm;
+
+    col_add_fstr(pinfo->cinfo, COL_RSSI, "%d dBm", dbm);
+
+    if (cmd_type != 1)
+        proto_tree_add_item(vw_l1info_tree, hf_radiotap_dbm_anta,
+                                tvb, offset, 1, ENC_NA);
+    else
+        proto_tree_add_item(vw_l1info_tree, hf_radiotap_dbm_tx_anta,
+                                tvb, offset, 1, ENC_NA);
+    offset++;
+
+>>>>>>> upstream/master-2.4
     dbm = (gint8) tvb_get_guint8(tvb, offset);
     if (dbm != 100) {
         if (cmd_type != 1)
@@ -2515,10 +2624,17 @@ wlantap_dissect_octo(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree,
             if (vht_mu_mimo_flg == 1) {
                 proto_tree_add_uint(vw_infoC_tree, hf_radiotap_vht_mu_mimo_flg,
                     tvb, offset, 1, vht_mu_mimo_flg);
+<<<<<<< HEAD
 
                 // extract user Postiion in case of mu-mimo
                 proto_tree_add_item(vw_infoC_tree, hf_radiotap_vht_user_pos, tvb, offset, 1, ENC_NA);
 
+=======
+
+                // extract user Postiion in case of mu-mimo
+                proto_tree_add_item(vw_infoC_tree, hf_radiotap_vht_user_pos, tvb, offset, 1, ENC_NA);
+
+>>>>>>> upstream/master-2.4
             } else {
                 proto_tree_add_item(vw_infoC_tree, hf_radiotap_vht_su_mimo_flg, tvb, offset, 1, ENC_NA);
             }

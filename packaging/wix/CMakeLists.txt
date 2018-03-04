@@ -108,6 +108,27 @@ elseif(MSVC_VERSION GREATER_EQUAL 1900)
 	set (MSVC_CRT_VERSION "VC140")
 elseif(MSVC_VERSION GREATER_EQUAL 1800)
 	set (MSVC_CRT_VERSION "VC120")
+<<<<<<< HEAD
+=======
+endif()
+
+set(MERGE_MODULE "Microsoft_${MSVC_CRT_VERSION}_CRT_${TARGET_MACHINE}.msm")
+set (PF86_ENV "ProgramFiles(x86)")
+
+find_path(MERGE_MODULE_DIR ${MERGE_MODULE}
+	PATHS
+		#"$ENV{VCINSTALLDIR}/VC/Redist/MSVC/how-do-we-get-this-version/Merge Modules"
+		"$ENV{${PF86_ENV}}/Common Files/Merge Modules"
+		"$ENV{PROGRAMFILES}/Common Files/Merge Modules"
+	NO_DEFAULT_PATH
+)
+
+message(STATUS "Using ${MERGE_MODULE_DIR}/Microsoft_${MSVC_CRT_VERSION}_CRT_${TARGET_MACHINE}.msm for the installer")
+
+if(NOT ENABLE_STATIC)
+	# XXX Replace ENABLE_LIBWIRESHARK with !ENABLE_STATIC everywhere.
+	set(ENABLE_LIBWIRESHARK "-dENABLE_LIBWIRESHARK")
+>>>>>>> upstream/master-2.4
 endif()
 
 set(MERGE_MODULE "Microsoft_${MSVC_CRT_VERSION}_CRT_${TARGET_MACHINE}.msm")

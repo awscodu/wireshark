@@ -1165,7 +1165,11 @@ snort_dissector(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void *data 
                  */
                 current_session.pdh = wtap_dump_fdopen(current_session.in,
                                                        WTAP_FILE_TYPE_SUBTYPE_PCAP,
+<<<<<<< HEAD
                                                        pinfo->rec->rec_header.packet_header.pkt_encap,
+=======
+                                                       pinfo->pkt_encap,
+>>>>>>> upstream/master-2.4
                                                        WTAP_MAX_PACKET_SIZE_STANDARD,
                                                        FALSE,                 /* compressed */
                                                        &open_err);

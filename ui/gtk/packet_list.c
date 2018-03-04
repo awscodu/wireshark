@@ -1572,7 +1572,11 @@ packet_list_return_all_comments(GtkTextBuffer *buffer)
 	for (framenum = 1; framenum <= cfile.count ; framenum++) {
 		char *pkt_comment;
 
+<<<<<<< HEAD
 		fdata = frame_data_sequence_find(cfile.provider.frames, framenum);
+=======
+		fdata = frame_data_sequence_find(cfile.frames, framenum);
+>>>>>>> upstream/master-2.4
 		pkt_comment = cf_get_packet_comment(&cfile, fdata);
 		if (pkt_comment) {
 			buf_str = g_strdup_printf("Frame %u: %s \n\n",framenum, pkt_comment);

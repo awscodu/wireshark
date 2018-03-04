@@ -29,9 +29,52 @@
       <property name="headerHidden">
        <bool>true</bool>
       </property>
+<<<<<<< HEAD
       <property name="sortingEnabled">
         <bool>true</bool>
       </property>
+=======
+      <column>
+       <property name="text">
+        <string notr="true">1</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>Appearance</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Layout</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Columns</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Font and Colors</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>Capture</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Filter Buttons</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Advanced</string>
+       </property>
+      </item>
+>>>>>>> upstream/master-2.4
      </widget>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="sizePolicy">

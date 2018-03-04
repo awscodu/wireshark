@@ -262,6 +262,7 @@ extern "C" {
 #define WTAP_ENCAP_IP_OVER_IB_PCAP              180
 #define WTAP_ENCAP_JUNIPER_VN                   181
 #define WTAP_ENCAP_USB_DARWIN                   182
+<<<<<<< HEAD
 #define WTAP_ENCAP_LORATAP                      183
 #define WTAP_ENCAP_3MB_ETHERNET                 184
 #define WTAP_ENCAP_VSOCK                        185
@@ -279,6 +280,9 @@ extern "C" {
 #define WTAP_ENCAP_JUNIPER_ST                   197
 #define WTAP_ENCAP_ETHERNET_MPACKET             198
 
+=======
+#define WTAP_ENCAP_NORDIC_BLE                   183
+>>>>>>> upstream/master-2.4
 /* After adding new item here, please also add new item to encap_table_base array */
 
 #define WTAP_NUM_ENCAP_TYPES                    wtap_get_num_encap_types()
@@ -1245,6 +1249,12 @@ typedef struct {
                                 /* pcapng variables */
     guint32   interface_id;     /* identifier of the interface. */
                                 /* options */
+<<<<<<< HEAD
+=======
+    gchar     *opt_comment;     /* NULL if not available */
+    gboolean  has_comment_changed; /* TRUE if the comment has been changed. Currently only valid while dumping. */
+
+>>>>>>> upstream/master-2.4
     guint64   drop_count;       /* number of packets lost (by the interface and the
                                    operating system) between this packet and the preceding one. */
     guint32   pack_flags;       /* XXX - 0 for now (any value for "we don't have it"?) */

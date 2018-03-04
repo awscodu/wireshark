@@ -902,12 +902,26 @@ libtool: $(LIBTOOL_DEPS)
 #
 install-data-local:
 if BUILDING_WIRESHARK
+<<<<<<< HEAD
 	$(MKDIR_P) $(DESTDIR)$(datadir)/mime/packages
 	$(INSTALL) -m 644 $(srcdir)/wireshark-mime-package.xml $(DESTDIR)$(datadir)/mime/packages/wireshark.xml
 	$(MKDIR_P) $(DESTDIR)$(datadir)/appdata
 	$(INSTALL) -m 644 $(srcdir)/wireshark.appdata.xml $(DESTDIR)$(datadir)/appdata/wireshark.appdata.xml
 	$(MKDIR_P) $(DESTDIR)$(datadir)/applications
 	$(INSTALL) -m 644 $(srcdir)/wireshark.desktop $(srcdir)/wireshark-gtk.desktop $(DESTDIR)$(datadir)/applications
+=======
+if NOT_MACOS
+	mkdir -p $(DESTDIR)$(datadir)/mime/packages
+	install -m 644 $(srcdir)/wireshark-mime-package.xml $(DESTDIR)$(datadir)/mime/packages/wireshark.xml
+	mkdir -p $(DESTDIR)$(datadir)/appdata
+	install -m 644 $(srcdir)/wireshark.appdata.xml $(DESTDIR)$(datadir)/appdata/wireshark.appdata.xml
+	mkdir -p $(DESTDIR)$(datadir)/applications
+	if test x$(DESKTOP_FILE_INSTALL) != x ; then \
+		$(DESKTOP_FILE_INSTALL) --dir $(DESTDIR)$(datadir)/applications $(srcdir)/wireshark.desktop  $(srcdir)/wireshark-gtk.desktop ; \
+	else \
+		install -m 644 $(srcdir)/wireshark.desktop $(srcdir)/wireshark-gtk.desktop $(DESTDIR)$(datadir)/applications; \
+	fi
+>>>>>>> upstream/master-2.4
 	for size in 16 24 32 48 64 128 256; \
 	do \
 		$(MKDIR_P) $(DESTDIR)$(datadir)/icons/hicolor/$${size}x$${size}/apps ; \
@@ -921,6 +935,10 @@ endif
 
 uninstall-local:
 if BUILDING_WIRESHARK
+<<<<<<< HEAD
+=======
+if NOT_MACOS
+>>>>>>> upstream/master-2.4
 	rm -f $(DESTDIR)$(datadir)/appdata/wireshark.appdata.xml
 	rm -f $(DESTDIR)$(datadir)/applications/wireshark.desktop
 	rm -f $(DESTDIR)$(datadir)/applications/wireshark-gtk.desktop
@@ -949,7 +967,12 @@ uninstall-hook: update-databases-and-caches-uninstall
 # (that being the only desktop app).
 #
 update-databases-and-caches-common:
+<<<<<<< HEAD
 	@echo "-------------------------------------------------------------------------------"
+=======
+if BUILDING_WIRESHARK
+if NOT_MACOS
+>>>>>>> upstream/master-2.4
 	@echo "You may need to run \"ldconfig\" as root"
 if BUILDING_WIRESHARK
 	@echo "You may need to run \"update-desktop-database $(datadir)/applications\""

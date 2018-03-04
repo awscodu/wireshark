@@ -1602,7 +1602,12 @@ dissect_radiotap(tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree, void* u
 	guint8      version;
 	guint       length;
 	proto_item *rate_ti;
+<<<<<<< HEAD
 	gint8       db;
+=======
+	gint8       dbm;
+	guint8      db;
+>>>>>>> upstream/master-2.4
 	gboolean    have_rflags       = FALSE;
 	guint8      rflags            = 0;
 	/* backward compat with bit 14 == fcs in header */
@@ -1659,7 +1664,7 @@ dissect_radiotap(tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree, void* u
 		proto_tree_add_uint(radiotap_tree, hf_radiotap_version,
 				    tvb, 0, 1, version);
 		proto_tree_add_item(radiotap_tree, hf_radiotap_pad,
-				    tvb, 1, 1, ENC_BIG_ENDIAN);
+				    tvb, 1, 1, ENC_LITTLE_ENDIAN);
 		proto_tree_add_uint(radiotap_tree, hf_radiotap_length,
 				    tvb, 2, 2, length);
 	}
@@ -1852,7 +1857,7 @@ dissect_radiotap(tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree, void* u
 			proto_tree_add_item(ven_tree, hf_radiotap_ven_oui,
 					    tvb, offset, 3, ENC_BIG_ENDIAN);
 			proto_tree_add_item(ven_tree, hf_radiotap_ven_subns,
-					    tvb, offset + 3, 1, ENC_BIG_ENDIAN);
+					    tvb, offset + 3, 1, ENC_LITTLE_ENDIAN);
 			proto_tree_add_item(ven_tree, hf_radiotap_ven_skip, tvb,
 					    offset + 4, 2, ENC_LITTLE_ENDIAN);
 			proto_tree_add_item(ven_tree, hf_radiotap_ven_data, tvb,
@@ -1911,13 +1916,13 @@ dissect_radiotap(tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree, void* u
 		case IEEE80211_RADIOTAP_TX_ATTENUATION:
 			proto_tree_add_item(radiotap_tree,
 					    hf_radiotap_tx_attenuation, tvb,
-					    offset, 2, ENC_BIG_ENDIAN);
+					    offset, 2, ENC_LITTLE_ENDIAN);
 			break;
 
 		case IEEE80211_RADIOTAP_DB_TX_ATTENUATION:
 			proto_tree_add_item(radiotap_tree,
 					    hf_radiotap_db_tx_attenuation, tvb,
-					    offset, 2, ENC_BIG_ENDIAN);
+					    offset, 2, ENC_LITTLE_ENDIAN);
 			break;
 
 		case IEEE80211_RADIOTAP_DBM_TX_POWER:
@@ -2880,44 +2885,46 @@ void proto_register_radiotap(void)
 		  "Antenna number this frame was sent/received over (starting at 0)", HFILL}},
 
 		{&hf_radiotap_dbm_antsignal,
-		 {"SSI Signal", "radiotap.dbm_antsignal",
-		  FT_INT32, BASE_DEC|BASE_UNIT_STRING, &units_dbm, 0x0,
-		  "RF signal power at the antenna from a fixed,"
-		  " arbitrary value in decibels from one milliwatt", HFILL}},
+		 {"Antenna signal", "radiotap.dbm_antsignal",
+		  FT_INT8, BASE_DEC|BASE_UNIT_STRING, &units_dbm, 0x0,
+		  "RF signal power at the antenna expressed as decibels"
+		  " from one milliwatt", HFILL}},
 
 		{&hf_radiotap_db_antsignal,
-		 {"SSI Signal", "radiotap.db_antsignal",
-		  FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_decibels, 0x0,
-		  "RF signal power at the antenna from a fixed, arbitrary value in decibels", HFILL}},
+		 {"dB antenna signal", "radiotap.db_antsignal",
+		  FT_UINT8, BASE_DEC|BASE_UNIT_STRING, &units_decibels, 0x0,
+		  "RF signal power at the antenna expressed as decibels"
+		  " from a fixed, arbitrary value", HFILL}},
 
 		{&hf_radiotap_dbm_antnoise,
-		 {"SSI Noise", "radiotap.dbm_antnoise",
-		  FT_INT32, BASE_DEC|BASE_UNIT_STRING, &units_dbm, 0x0,
-		  "RF noise power at the antenna from a fixed, arbitrary value"
-		  " in decibels per one milliwatt", HFILL}},
+		 {"Antenna noise", "radiotap.dbm_antnoise",
+		  FT_INT8, BASE_DEC|BASE_UNIT_STRING, &units_dbm, 0x0,
+		  "RF noise power at the antenna expressed as decibels"
+		  " from one milliwatt", HFILL}},
 
 		{&hf_radiotap_db_antnoise,
-		 {"SSI Noise", "radiotap.db_antnoise",
-		  FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_decibels, 0x0,
-		  "RF noise power at the antenna from a fixed, arbitrary value"
-		  " in decibels", HFILL}},
+		 {"dB antenna noise", "radiotap.db_antnoise",
+		  FT_UINT8, BASE_DEC|BASE_UNIT_STRING, &units_decibels, 0x0,
+		  "RF noise power at the antenna expressed as decibels"
+		  " from a fixed, arbitrary value", HFILL}},
 
 		{&hf_radiotap_tx_attenuation,
-		 {"Transmit attenuation", "radiotap.txattenuation",
+		 {"TX attenuation", "radiotap.txattenuation",
 		  FT_UINT16, BASE_DEC, NULL, 0x0,
 		  "Transmit power expressed as unitless distance from max power"
-		  " set at factory (0 is max power)", HFILL}},
+		  " set at factory calibration (0 is max power)", HFILL}},
 
 		{&hf_radiotap_db_tx_attenuation,
-		 {"Transmit attenuation (dB)", "radiotap.db_txattenuation",
-		  FT_UINT16, BASE_DEC, NULL, 0x0,
+		 {"dB TX attenuation", "radiotap.db_txattenuation",
+		  FT_UINT16, BASE_DEC|BASE_UNIT_STRING, &units_decibels, 0x0,
 		  "Transmit power expressed as decibels from max power"
-		  " set at factory (0 is max power)", HFILL}},
+		  " set at factory calibration (0 is max power)", HFILL}},
 
 		{&hf_radiotap_txpower,
 		 {"Transmit power", "radiotap.txpower",
-		  FT_INT32, BASE_DEC, NULL, 0x0,
-		  "Transmit power in decibels per one milliwatt (dBm)", HFILL}},
+		  FT_INT8, BASE_DEC|BASE_UNIT_STRING, &units_dbm, 0x0,
+		  "Transmit power at the antenna port expressed as decibels"
+		  " from one milliwatt", HFILL}},
 
 		{&hf_radiotap_mcs,
 		 {"MCS information", "radiotap.mcs",

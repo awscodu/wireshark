@@ -461,7 +461,11 @@ Set when the current sequence number is greater than the next expected sequence 
 Checks for a retransmission based on analysis data in the reverse
 direction. Set when all of the following are true:
 
+<<<<<<< HEAD
 - The SYN or FIN flag is set.
+=======
+- In the forward direction, the segment length is greater than zero or the SYN or FIN is set.
+>>>>>>> upstream/master-2.4
 - This is not a keepalive packet.
 - The segment length is greater than zero.
 - Data for this flow has been acknowledged. That is, the last-seen acknowledgement number has been set.
@@ -476,7 +480,11 @@ Supersedes “Retransmission”.
 Set when all of the following are true:
 
 - This is not a keepalive packet.
+<<<<<<< HEAD
 - In the forward direction, the segment length is greater than zero or the SYN or FIN flag is set.
+=======
+- In the forward direction, the segment length is greater than zero or the SYN or FIN is set.
+>>>>>>> upstream/master-2.4
 - The next expected sequence number is greater than the current sequence number.
 
 // TCP_A_WINDOW_FULL

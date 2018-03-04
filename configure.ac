@@ -6,8 +6,13 @@
 # Define variables for the components of the Wireshark version number.
 #
 m4_define([version_major], [2])
+<<<<<<< HEAD
 m4_define([version_minor], [5])
 m4_define([version_micro], [1])
+=======
+m4_define([version_minor], [4])
+m4_define([version_micro], [6])
+>>>>>>> upstream/master-2.4
 dnl Updated by make-version.pl
 m4_define([version_extra], [])
 m4_define([version_micro_extra], m4_join([], version_micro, version_extra))
@@ -61,8 +66,8 @@ AC_DEFINE(VERSION_MAJOR, version_major, [Wireshark's major version])
 AC_DEFINE(VERSION_MINOR, version_minor, [Wireshark's minor version])
 AC_DEFINE(VERSION_MICRO, version_micro, [Wireshark's micro version])
 
-AC_DEFINE_UNQUOTED(VERSION_FLAVOR,
-	["${WIRESHARK_VERSION_FLAVOR:-"Development Build"}"], [Wireshark's package flavor])
+dnl AC_DEFINE_UNQUOTED(VERSION_FLAVOR,
+dnl 	["${WIRESHARK_VERSION_FLAVOR:-"Development Build"}"], [Wireshark's package flavor])
 
 LT_PREREQ([2.2.2])
 LT_INIT([disable-static])
@@ -464,7 +469,50 @@ AS_IF([test ! -x "$XSLTPROC"],
 AM_CONDITIONAL(BUILD_USER_GUIDE, [test "x$have_wsug" = xyes -a "x$want_wsug" != xno])
 
 # RPM
+<<<<<<< HEAD
 AC_CHECK_PROGS(RPMBUILD, [rpmbuild], [rpmbuild])
+=======
+#
+# Looks for the rpmbuild program, and checks to see if we can redefine "_topdir".
+#
+AC_CHECK_PROGS(RPMBUILD, [rpmbuild], [false])
+if test "x$RPMBUILD" != "xfalse" ; then
+	AC_MSG_CHECKING([to see if we can redefine _topdir])
+	rpm --define '_topdir /tmp' > /dev/null 2>&1
+	if test $? -eq 0 ; then
+		AC_MSG_RESULT(yes)
+		have_rpm=yes
+	else
+		AC_MSG_RESULT([no, you'll have to build packages manually])
+		have_rpm=no
+	fi
+fi
+AM_CONDITIONAL(HAVE_RPM, [test "x$have_rpm" = xyes])
+
+# Debian
+AC_CHECK_PROG(HAVE_DPKG_BUILDPACKAGE, dpkg-buildpackage, "yes", "no")
+
+# macOS
+AC_CHECK_PROG(HAVE_XCODEBUILD, xcodebuild, "yes", "no")
+AC_CHECK_PROG(HAVE_HDIUTIL, hdiutil, "yes", "no")
+AC_CHECK_PROG(HAVE_BLESS, bless, "yes", "no")
+
+if test x$HAVE_XCODEBUILD = xyes -a x$HAVE_HDIUTIL = xyes \
+     -a x$HAVE_BLESS = xyes ; then
+  HAVE_OSX_PACKAGING=yes
+else
+  HAVE_OSX_PACKAGING=no
+fi
+AC_SUBST(HAVE_OSX_PACKAGING)
+
+#
+# Use this as a proxy for "is this macOS" (just in case somebody actually
+# built and installed Darwin as an OS, perhaps with some X11-based GUI,
+# don't look for Darwin).
+#
+AC_CHECK_PROG(have_sw_vers, sw_vers, "yes", "no")
+AM_CONDITIONAL(NOT_MACOS, test "x$have_sw_vers" = "xno")
+>>>>>>> upstream/master-2.4
 
 # Shellcheck
 AC_CHECK_PROG(SHELLCHECK, shellcheck)
@@ -915,11 +963,11 @@ AC_WIRESHARK_GCC_FORTIFY_SOURCE_CHECK
 # This barrier is set for a very large part of the code. However, it is
 # typically not set for "generated" code  (flex, ans2wrs, idl2wrs, ...)
 #
-warnings_as_errors_default="yes"
+warnings_as_errors_default="no"
 AC_MSG_CHECKING(whether we should treat compiler warnings as errors)
 AC_ARG_ENABLE(warnings-as-errors,
   AC_HELP_STRING( [--enable-warnings-as-errors],
-		  [treat warnings as errors (only for GCC or clang) @<:@default=yes, unless extra compiler warnings are enabled@:>@]),
+		  [treat warnings as errors (only for GCC or clang) @<:@default=no@:>@]),
 [
   if test "x$ac_supports_gcc_flags" = "xyes" -a "x$enableval" = "xyes"; then
     with_warnings_as_errors="yes"
@@ -1066,6 +1114,51 @@ AC_SUBST(LDFLAGS_BIGSHAREDLIB)
 AC_SUBST(LDFLAGS_SHAREDLIB)
 
 #
+<<<<<<< HEAD
+=======
+# On "Darwin", which we assume to mean "macOS" rather than "iOS" or
+# "just Darwin" (as we don't currently support iOS, and as I don't
+# think you can build and run "just Darwin" as an OS for PCs), we
+# arrange to build some programs with Application Services so they
+# can launch Web browsers and Finder windows, arrange to build some
+# programs with System Configuration so they can get "friendly names"
+# and other information about interfaces, and build any programs that
+# use either of those frameworks or that report version information
+# with Core Foundation as the frameworks in question use it and as we
+# get version information from plists and thus need Core Foundation
+# to process those plists.
+#
+have_macos_frameworks=no
+case "$host_os" in
+darwin*)
+	have_macos_frameworks=yes
+	AC_DEFINE(HAVE_MACOS_FRAMEWORKS, 1, [Define to 1 if you have macOS frameworks])
+	APPLICATIONSERVICES_FRAMEWORKS="-framework ApplicationServices"
+	SYSTEMCONFIGURATION_FRAMEWORKS="-framework SystemConfiguration"
+	COREFOUNDATION_FRAMEWORKS="-framework CoreFoundation"
+
+	#
+	# OK, so we have the macOS frameworks; do they include
+	# CFPropertyListCreateWithStream, or do we have
+	# to fall back on CFPropertyListCreateFromStream?
+	# (They only differ in the error return, which we
+	# don't care about.  And, no, we shouldn't just
+	# use CFPropertyListCreateFromStream, because it's
+	# deprecated in newer releases.)
+	#
+	ac_save_LIBS="$LIBS"
+	LIBS="$LIBS $COREFOUNDATION_FRAMEWORKS"
+	AC_CHECK_FUNCS(CFPropertyListCreateWithStream)
+	LIBS="$ac_save_LIBS"
+	;;
+esac
+AC_SUBST(APPLICATIONSERVICES_FRAMEWORKS)
+AC_SUBST(SYSTEMCONFIGURATION_FRAMEWORKS)
+AC_SUBST(COREFOUNDATION_FRAMEWORKS)
+AM_CONDITIONAL(HAVE_MACOS_FRAMEWORKS, [test "x$have_macos_frameworks" = "xyes"])
+
+#
+>>>>>>> upstream/master-2.4
 # If we're running Solaris, and LD_LIBRARY_PATH is defined, add it as a
 # link directory.
 #

@@ -78,10 +78,17 @@ man_MANS =
 noinst_DATA = asn2deb.1 asn2deb.html idl2deb.1 idl2deb.html idl2wrs.1 idl2wrs.html
 
 pkgdata_DATA = AUTHORS-SHORT $(top_srcdir)/docbook/ws.css wireshark.html \
+<<<<<<< HEAD
 	tshark.html wireshark-filter.html capinfos.html captype.html ciscodump.html \
 	editcap.html mergecap.html reordercap.html text2pcap.html dumpcap.html \
 	androiddump.html sshdump.html randpktdump.html rawshark.html dftest.html \
 	randpkt.html extcap.html udpdump.html
+=======
+	tshark.html wireshark-filter.html capinfos.html ciscodump.html editcap.html \
+	mergecap.html reordercap.html text2pcap.html dumpcap.html androiddump.html \
+	sshdump.html randpktdump.html rawshark.html dftest.html randpkt.html \
+	extcap.html udpdump.html
+>>>>>>> upstream/master-2.4
 
 #
 # Build the short version of the authors file for the about dialog

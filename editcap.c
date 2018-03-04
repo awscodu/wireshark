@@ -1792,6 +1792,7 @@ main(int argc, char *argv[])
                         (const char*)g_tree_lookup(frames_user_comments, GUINT_TO_POINTER(read_count));
                     /* XXX: What about comment changed to no comment? */
                     if (comment != NULL) {
+<<<<<<< HEAD
                         /* Copy and change rather than modify returned rec */
                         temp_rec = *rec;
                         temp_rec.opt_comment = g_strdup(comment);
@@ -1802,6 +1803,17 @@ main(int argc, char *argv[])
                         temp_rec = *rec;
                         temp_rec.has_comment_changed = FALSE;
                         rec = &temp_rec;
+=======
+                        /* Copy and change rather than modify returned phdr */
+                        temp_phdr = *phdr;
+                        temp_phdr.opt_comment = g_strdup(comment);
+                        temp_phdr.has_comment_changed = TRUE;
+                        phdr = &temp_phdr;
+                    } else {
+                        temp_phdr = *phdr;
+                        temp_phdr.has_comment_changed = FALSE;
+                        phdr = &temp_phdr;
+>>>>>>> upstream/master-2.4
                     }
                 }
 

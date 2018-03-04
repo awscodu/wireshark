@@ -88,12 +88,21 @@ prefs_store_ext_helper(const char * module_name, const char *pref_name, const ch
     if (!pref)
         return 0;
 
+<<<<<<< HEAD
     if (prefs_get_type(pref) == PREF_STRING )
     {
         pref_changed |= prefs_set_string_value(pref, pref_value, pref_stashed);
         if ( ! pref_changed || prefs_get_string_value(pref, pref_stashed) != 0 )
             pref_changed |= prefs_set_string_value(pref, pref_value, pref_current);
     }
+=======
+  if (prefs_get_type(pref) == PREF_STRING )
+  {
+    pref_changed = prefs_set_string_value(pref, pref_value, pref_stashed);
+    if ( ! pref_changed || prefs_get_string_value(pref, pref_stashed) != 0 )
+        pref_changed = prefs_set_string_value(pref, pref_value, pref_current);
+  }
+>>>>>>> upstream/master-2.4
 
     return pref_changed;
 }

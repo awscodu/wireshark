@@ -493,6 +493,7 @@ capture_input_new_packets(capture_session *cap_session, int to_read)
 
     g_assert(capture_opts->save_file);
 
+<<<<<<< HEAD
     if(capture_opts->real_time_mode) {
         /* Read from the capture file the number of records the child told us it added. */
         switch (cf_continue_tail((capture_file *)cap_session->cf, to_read, &err)) {
@@ -521,6 +522,10 @@ capture_input_new_packets(capture_session *cap_session, int to_read)
 
     if(capture_opts->show_info)
         capture_info_new_packets(to_read, cap_session->cap_data_info);
+=======
+  if(capture_opts->show_info)
+    capture_info_new_packets(to_read, cap_session->cap_data_info);
+>>>>>>> upstream/master-2.4
 }
 
 

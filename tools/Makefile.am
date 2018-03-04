@@ -60,8 +60,13 @@ EXTRA_DIST = \
 	lex.py						\
 	licensecheck.pl					\
 	list_protos_in_cap.sh				\
+<<<<<<< HEAD
 	macos-setup.sh					\
 	macos-setup-brew.sh				\
+=======
+	macos-setup-brew.sh				\
+	make-dissector-reg.py				\
+>>>>>>> upstream/master-2.4
 	make-manuf					\
 	make-plugin-reg.py				\
 	make-sminmpec.pl				\

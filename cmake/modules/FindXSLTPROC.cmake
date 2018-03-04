@@ -5,13 +5,26 @@
 
 include(FindCygwin)
 
+<<<<<<< HEAD
+=======
+if(ENABLE_PDF_GUIDES)
+    find_package(FOP)
+    if(${FOP_EXECUTABLE} STREQUAL "FOP_EXECUTABLE-NOTFOUND")
+        message(FATAL_ERROR "fop wasn't found, but is necessary for building PDFs." )
+    endif()
+endif()
+
+# Strawberry Perl ships with xsltproc but no DocBook XML files, which
+# is detrimental to our interests. Search for the Chocolatey and Cygwin
+# versions first.
+>>>>>>> upstream/master-2.4
 find_program(XSLTPROC_EXECUTABLE
   NAMES
     xsltproc
-  PATHS
+  HINTS
+    ${ChocolateyInstall}/bin
     ${CYGWIN_INSTALL_PATH}/bin
-    /bin
-    /usr/bin
+  PATHS
     /usr/local/bin
     /sbin
 )

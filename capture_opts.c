@@ -989,11 +989,21 @@ capture_opts_trim_snaplen(capture_options *capture_opts, int snaplen_min)
 
     if (capture_opts->ifaces->len > 0) {
         for (i = 0; i < capture_opts->ifaces->len; i++) {
+<<<<<<< HEAD
             interface_opts = &g_array_index(capture_opts->ifaces, interface_options, 0);
             if (interface_opts->snaplen < 1)
                 interface_opts->snaplen = WTAP_MAX_PACKET_SIZE_STANDARD;
             else if (interface_opts->snaplen < snaplen_min)
                 interface_opts->snaplen = snaplen_min;
+=======
+            interface_opts = g_array_index(capture_opts->ifaces, interface_options, 0);
+            capture_opts->ifaces = g_array_remove_index(capture_opts->ifaces, 0);
+            if (interface_opts.snaplen < 1)
+                interface_opts.snaplen = WTAP_MAX_PACKET_SIZE_STANDARD;
+            else if (interface_opts.snaplen < snaplen_min)
+                interface_opts.snaplen = snaplen_min;
+            g_array_append_val(capture_opts->ifaces, interface_opts);
+>>>>>>> upstream/master-2.4
         }
     } else {
         if (capture_opts->default_options.snaplen < 1)

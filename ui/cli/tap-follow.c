@@ -40,7 +40,11 @@ typedef struct _cli_follow_info {
   address       addr[2];
   union {
     guint32           addrBuf_v4;
+<<<<<<< HEAD
     ws_in6_addr addrBuf_v6;
+=======
+    struct e_in6_addr addrBuf_v6;
+>>>>>>> upstream/master-2.4
   }             addrBuf[2];
 } cli_follow_info_t;
 

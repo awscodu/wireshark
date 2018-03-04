@@ -337,12 +337,21 @@ def extcap_capture(interface, fifo, control_in, control_out, in_delay, in_verify
 		if control_out != None:
 			fn_out = open(control_out, 'wb', 0)
 			control_write(fn_out, CTRL_ARG_LOGGER, CTRL_CMD_SET, "Log started at " + time.strftime("%c") + "\n")
+<<<<<<< HEAD
 
 		if control_in != None:
 			# Start reading thread
 			thread = Thread(target = control_read_thread, args = (control_in, fn_out))
 			thread.start()
 
+=======
+
+		if control_in != None:
+			# Start reading thread
+			thread = Thread(target = control_read_thread, args = (control_in, fn_out))
+			thread.start()
+
+>>>>>>> upstream/master-2.4
 		if fn_out != None:
 			control_write_defaults(fn_out)
 

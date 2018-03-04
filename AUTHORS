@@ -4006,8 +4006,11 @@ Anil Kumar		<anilkumar911[AT]gmail.com>
 Anndy Ke		<anndymaktub[AT]yahoo.com.tw>
 Anthony Coddington	<anthony.coddington[AT]endace.com>
 Anton Butenko		<ant.butenko[AT]gmail.com>
+<<<<<<< HEAD
 Anton Glukhov		<anton.a.glukhov[AT]gmail.com>
 Anton Kharchenko	<astotal[AT]gmail.com>
+=======
+>>>>>>> upstream/master-2.4
 Anton Thomasson		<anton.thomasson[AT]ericsson.com>
 Apeksha Singhal		<apeksha.singhal[AT]gmail.com>
 Arjen Zonneveld		<arjen[AT]bz2.nl>
@@ -4016,6 +4019,7 @@ Artur Nowosielski	<artnowo[AT]gmail.com>
 Ashish Shukla		<shukla.a[AT]gmail.com>
 Aurelien Aptel		<aaptel[AT]suse.com>
 Babak Farrokhi		<babak[AT]farrokhi.net>
+Balint Reczey		<balint.reczey[AT]canonical.com>
 Bartolo Otrit		<bartolootrit[AT]gmail.com>
 Baruch Siach		<baruch[AT]tkos.co.il>
 Basil			<addremover[AT]gmail.com>
@@ -4105,9 +4109,13 @@ Dhiru Kholia		<kholia[AT]kth.se>
 DiablosOffens		<DiablosOffens[AT]gmx.de>
 Didier Arenzana		<darenzana[AT]yahoo.fr>
 Diederik de Groot	<ddegroot[AT]talon.nl>
+<<<<<<< HEAD
 Dirk Römmen		<dirk.roemmen[AT]cslab.de>
 Dirk Weise		<code[AT]dirk-weise.de>
 Dmitry Bravikov		<dmitry[AT]bravikov.pro>
+=======
+Dirk Weise		<code[AT]dirk-weise.de>
+>>>>>>> upstream/master-2.4
 Dmitry Lazurkin		<dilaz03[AT]gmail.com>
 Dom Gifford		<Dominic.Gifford[AT]atmel.com>
 Dominic Chen		<d.c.ddcc[AT]gmail.com>
@@ -4127,12 +4135,16 @@ Ethan Young		<imfargo[AT]gmail.com>
 Etienne Dechamps	<etienne[AT]edechamps.fr>
 Etienne Millon		<etienne[AT]cryptosense.com>
 Eugene Adell		<eugene.adell[AT]d2-si.eu>
+Eugene Adell		<eugene.adell[AT]gmail.com>
 Eugene Exarevsky	<eugene.exarevsky[AT]dsr-company.com>
 Eugene Sukhodolin	<eugene[AT]sukhodolin.com>
 Evelio Vila		<eveliovila[AT]gmail.com>
 Fabian Raetz		<fabian.raetz[AT]gmail.com>
 Fabrizio Demaria	<fabrizio.demaria[AT]intel.com>
+<<<<<<< HEAD
 Felix Ruess		<felix.ruess[AT]roboception.de>
+=======
+>>>>>>> upstream/master-2.4
 Flavio Santes		<flavio.santes[AT]1byt3.com>
 Florian Adamsky		<fa-git[AT]haktar.org>
 Florian Bezold		<florian.bezold[AT]esrlabs.com>
@@ -4177,7 +4189,10 @@ Ignacio Martínez	<ignacio.martinez.rivera[AT]gmail.com>
 Ike Gilbert		<ike[AT]imgilbert.com>
 Ilya Gavrilov		<ilya.dev[AT]gmail.com>
 Ionut Ceausu		<ionut.ceausu[AT]gmail.com>
+<<<<<<< HEAD
 Ivan Ermakov		<iermakov[AT]yahoo.com>
+=======
+>>>>>>> upstream/master-2.4
 Ivan Nardi		<nardi.ivan[AT]gmail.com>
 J. Bruce Fields		<bfields[AT]redhat.com>
 JC Wren			<jcwren[AT]jcwren.com>
@@ -4272,7 +4287,11 @@ Marcel Essig		<marcel.essig[AT]gmx.de>
 Marcelo Ricardo Leitner	<marcelo.leitner[AT]gmail.com>
 Marcin Rokicki		<marcin.rokicki[AT]gmail.com>
 Marian Ďurkovič		<md[AT]bts.sk>
+<<<<<<< HEAD
 Marie Janssen		<jamuraa[AT]google.com>
+=======
+Marius			<mareko.paliga[AT]gmail.com>
+>>>>>>> upstream/master-2.4
 Marius Paliga		<marius.paliga[AT]gmail.com>
 Mark Cunningham		<launchpad[AT]markcunningham.ie>
 Mark Phillips		<mark.s.phillips[AT]outlook.com>
@@ -4319,6 +4338,10 @@ Moraney Jalil		<moraney.jalil[AT]outlook.com>
 Moshe Kaplan		<me[AT]moshekaplan.com>
 Nathan Cole		<nath[AT]thecoleresidence.co.uk>
 Nathaniel Clark		<nathaniel.l.clark[AT]intel.com>
+<<<<<<< HEAD
+=======
+Neil Ostroff		<neil[AT]mangosoup.com>
+>>>>>>> upstream/master-2.4
 Nick Bedbury		<npbedbur[AT]syr.edu>
 Nick Carter		<ncarter100[AT]gmail.com>
 Nick James		<mookito[AT]tuta.io>
@@ -4375,7 +4398,10 @@ Philipp Hancke		<fippo[AT]andyet.net>
 Pino Toscano		<pino[AT]debian.org>
 Piotr Pawłowski		<ppiotru[AT]gmail.com>
 Piotr Tulpan		<piotr.tulpan[AT]netscan.pl>
+<<<<<<< HEAD
 Prashanth Pai		<ppai[AT]redhat.com>
+=======
+>>>>>>> upstream/master-2.4
 Priyanka Mondal		<priyanka02010[AT]gmail.com>
 Radhashyam Behera	<radhashyambehera[AT]gmail.com>
 Rado Radoulov		<rad0x6f[AT]gmail.com>
@@ -4419,6 +4445,10 @@ Shoichi Sakane		<wireshark-shoichi[AT]tanu.org>
 Shu Shen		<shu.shen[AT]gmail.com>
 Shuai Xiao		<iamhihi[AT]gmail.com>
 Silvio Gissi		<silvio.gissi[AT]gmail.com>
+<<<<<<< HEAD
+=======
+Simon Barber		<sbarber[AT]parc.com>
+>>>>>>> upstream/master-2.4
 Simon Barber		<simon.barber[AT]meraki.net>
 Simon Graham		<simgrxp[AT]gmail.com>
 Simon Long		<hobei[AT]whitedoor.plus.com>
@@ -4461,7 +4491,10 @@ Tom Haynes		<loghyr[AT]primarydata.com>
 Tomas Kukosa		<tomas.kukosa[AT]ixperta.com>
 Trond Myklebust		<trond.myklebust[AT]primarydata.com>
 Ulf			<ulf33286[AT]gmail.com>
+<<<<<<< HEAD
 Uli Schlachter		<psychon[AT]znc.in>
+=======
+>>>>>>> upstream/master-2.4
 Umberto Corponi		<umberto.corponi[AT]athonet.com>
 Uri Simchoni		<urisimchoni[AT]gmail.com>
 Vasil Velichckov	<vvvelichkov[AT]gmail.com>
@@ -4494,6 +4527,10 @@ Yang Luo		<hsluoyz[AT]qq.com>
 Yann Diorcet		<yann[AT]diorcet.fr>
 Yann Lejeune		<ylejeune[AT]netyl.org>
 Yasuyuki Tanaka		<yatch1.tanaka[AT]toshiba.co.jp>
+<<<<<<< HEAD
+=======
+Yasuyuki Tanaka		<yatch[AT]isl.rdc.toshiba.co.jp>
+>>>>>>> upstream/master-2.4
 Yurii Lysyi		<yurii.lysyi[AT]ericsson.com>
 Yury Gargay		<yury.gargay[AT]gmail.com>
 ZHANG Rui		<rzhang[AT]grandstream.cn>
@@ -4504,7 +4541,11 @@ cff339			<cff339[AT]gmail.com>
 cheloftus		<cheloftus[AT]gmail.com>
 kardam			<netkardam[AT]gmail.com>
 kkoizumi		<kkoizumi46[AT]gmail.com>
+<<<<<<< HEAD
 shqking			<shqking[AT]gmail.com>
+=======
+linzhao115		<zlbinghamton[AT]gmail.com>
+>>>>>>> upstream/master-2.4
 Éric Piel		<piel[AT]delmic.com>
 Øyvind Rønningstad	<ronningstad[AT]gmail.com>
 Дмитрий Цветцих		<dmitrycvet[AT]gmail.com>

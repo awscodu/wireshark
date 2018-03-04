@@ -2736,7 +2736,11 @@ static int      hf_pie_ntop_radius_acct_session_id      = -1;
 static int      hf_pie_ntop_radius_acct_status_type     = -1;
 static int      hf_pie_ntop_radius_acct_in_octects      = -1;
 static int      hf_pie_ntop_radius_acct_out_octects     = -1;
+<<<<<<< HEAD
 static int      hf_pie_ntop_radius_acct_in_pkts         = -1;
+=======
+static int      hf_pie_ntop_radus_acct_in_pkts          = -1;
+>>>>>>> upstream/master-2.4
 static int      hf_pie_ntop_radius_acct_out_pkts        = -1;
 static int      hf_pie_ntop_imap_login                  = -1;
 
@@ -7312,6 +7316,7 @@ dissect_v9_v10_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, 
         case (NTOP_BASE + 85):           /* SRC_TO_SRC_MAX_THROUGHPUT */
         case ((VENDOR_NTOP << 16) | 85): /* SRC_TO_SRC_MAX_THROUGHPUT */
             ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_to_src_max_throughput,
+<<<<<<< HEAD
                                      tvb, offset, length, ENC_BIG_ENDIAN);
             break;
 
@@ -7321,6 +7326,17 @@ dissect_v9_v10_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, 
                                      tvb, offset, length, ENC_BIG_ENDIAN);
             break;
 
+=======
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 86):           /* SRC_TO_SRC_MIN_THROUGHPUT */
+        case ((VENDOR_NTOP << 16) | 86): /* SRC_TO_SRC_MIN_THROUGHPUT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_to_src_min_throughput,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+>>>>>>> upstream/master-2.4
         case (NTOP_BASE + 87):           /* SRC_TO_SRC_AVG_THROUGHPUT */
         case ((VENDOR_NTOP << 16) | 87): /* SRC_TO_SRC_AVG_THROUGHPUT */
             ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_to_src_avg_throughput,
@@ -7481,6 +7497,7 @@ dissect_v9_v10_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, 
         case (NTOP_BASE + 119):           /* L7_PROTO_NAME */
         case ((VENDOR_NTOP << 16) | 119): /* L7_PROTO_NAME */
             ti = proto_tree_add_item(pdutree, hf_pie_ntop_l7_proto_name,
+<<<<<<< HEAD
                                      tvb, offset, length, ENC_ASCII|ENC_NA);
             break;
 
@@ -7574,6 +7591,101 @@ dissect_v9_v10_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, 
                                      tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
             break;
 
+=======
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 120):           /* DOWNSTREAM_TUNNEL_ID */
+        case ((VENDOR_NTOP << 16) | 120): /* DOWNSTREAM_TUNNEL_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_downstram_tunnel_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 121):           /* FLOW_USER_NAME */
+        case ((VENDOR_NTOP << 16) | 121): /* FLOW_USER_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_flow_user_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 122):           /* FLOW_SERVER_NAME */
+        case ((VENDOR_NTOP << 16) | 122): /* FLOW_SERVER_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_flow_server_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 123):           /* CLIENT_NW_LATENCY_MS */
+        case ((VENDOR_NTOP << 16) | 123): /* CLIENT_NW_LATENCY_MS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_client_nw_latency_ms,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 124):           /* SERVER_NW_LATENCY_MS */
+        case ((VENDOR_NTOP << 16) | 124): /* SERVER_NW_LATENCY_MS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_server_nw_latency_ms,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 125):           /* APPL_LATENCY_MS */
+        case ((VENDOR_NTOP << 16) | 125): /* APPL_LATENCY_MS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_appl_latency_ms,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 126):           /* PLUGIN_NAME */
+        case ((VENDOR_NTOP << 16) | 126): /* PLUGIN_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_plugin_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 127):           /* RETRANSMITTED_IN_BYTES */
+        case ((VENDOR_NTOP << 16) | 127): /* RETRANSMITTED_IN_BYTES */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_retransmitted_in_bytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 128):           /* RETRANSMITTED_OUT_BYTES */
+        case ((VENDOR_NTOP << 16) | 128): /* RETRANSMITTED_OUT_BYTES */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_retransmitted_out_bytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 130):           /* SIP_CALL_ID */
+        case ((VENDOR_NTOP << 16) | 130): /* SIP_CALL_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_call_id,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 131):           /* SIP_CALLING_PARTY */
+        case ((VENDOR_NTOP << 16) | 131): /* SIP_CALLING_PARTY */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_calling_party,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 132):           /* SIP_CALLED_PARTY */
+        case ((VENDOR_NTOP << 16) | 132): /* SIP_CALLED_PARTY */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_called_party,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 133):           /* SIP_RTP_CODECS */
+        case ((VENDOR_NTOP << 16) | 133): /* SIP_RTP_CODECS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_rtp_codecs,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 134):           /* SIP_INVITE_TIME */
+        case ((VENDOR_NTOP << 16) | 134): /* SIP_INVITE_TIME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_invite_time,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 135):           /* SIP_TRYING_TIME */
+        case ((VENDOR_NTOP << 16) | 135): /* SIP_TRYING_TIME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_trying_time,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+
+>>>>>>> upstream/master-2.4
         case (NTOP_BASE + 136):           /* SIP_RINGING_TIME */
         case ((VENDOR_NTOP << 16) | 136): /* SIP_RINGING_TIME */
             ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_ringing_time,
@@ -7851,6 +7963,7 @@ dissect_v9_v10_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, 
         case ((VENDOR_NTOP << 16) | 203): /* ORACLE_RSP_STRING */
             ti = proto_tree_add_item(pdutree, hf_pie_ntop_oracle_resp_string,
                                      tvb, offset, length, ENC_ASCII|ENC_NA);
+<<<<<<< HEAD
             break;
 
         case (NTOP_BASE + 204):           /* ORACLE_QUERY_DURATION */
@@ -9188,10 +9301,1158 @@ dissect_v9_v10_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, 
         case (NTOP_BASE + 471):           /* NPROBE_IPV4_ADDRESS */
         case ((VENDOR_NTOP << 16) | 471): /* NPROBE_IPV4_ADDRESS */
             ti = proto_tree_add_item(pdutree, hf_pie_ntop_nprobe_ipv4_address,
+=======
+            break;
+
+        case (NTOP_BASE + 204):           /* ORACLE_QUERY_DURATION */
+        case ((VENDOR_NTOP << 16) | 204): /* ORACLE_QUERY_DURATION */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_oracle_query_duration,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 205):           /* DNS_QUERY */
+        case ((VENDOR_NTOP << 16) | 205): /* DNS_QUERY */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dns_query,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 206):           /* DNS_QUERY_ID */
+        case ((VENDOR_NTOP << 16) | 206): /* DNS_QUERY_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dns_query_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 207):           /* DNS_QUERY_TYPE */
+        case ((VENDOR_NTOP << 16) | 207): /* DNS_QUERY_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dns_query_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 208):           /* DNS_RET_CODE */
+        case ((VENDOR_NTOP << 16) | 208): /* DNS_RET_CODE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dns_ret_code,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 209):           /* DNS_NUM_ANSWERS */
+        case ((VENDOR_NTOP << 16) | 209): /* DNS_NUM_ANSWERS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dns_num_answers,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 210):           /* POP_USER */
+        case ((VENDOR_NTOP << 16) | 210): /* POP_USER */
+            ti = proto_tree_add_item(pdutree, df_pie_ntop_pop_user,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 220):           /* GTPV1_REQ_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 220): /* GTPV1_REQ_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_req_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 221):           /* GTPV1_RSP_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 221): /* GTPV1_RSP_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_rsp_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 222):           /* GTPV1_C2S_TEID_DATA */
+        case ((VENDOR_NTOP << 16) | 222): /* GTPV1_C2S_TEID_DATA */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_c2s_teid_data,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 223):           /* GTPV1_C2S_TEID_CTRL */
+        case ((VENDOR_NTOP << 16) | 223): /* GTPV1_C2S_TEID_CTRL */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_c2s_teid_ctrl,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 224):           /* GTPV1_S2C_TEID_DATA */
+        case ((VENDOR_NTOP << 16) | 224): /* GTPV1_S2C_TEID_DATA */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_s2c_teid_data,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 225):           /* GTPV1_S2C_TEID_CTRL */
+        case ((VENDOR_NTOP << 16) | 225): /* GTPV1_S2C_TEID_CTRL */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_s2c_teid_ctrl,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 226):           /* GTPV1_END_USER_IP */
+        case ((VENDOR_NTOP << 16) | 226): /* GTPV1_END_USER_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_end_user_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 227):           /* GTPV1_END_USER_IMSI */
+        case ((VENDOR_NTOP << 16) | 227): /* GTPV1_END_USER_IMSI */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_end_user_imsi,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 228):           /* GTPV1_END_USER_MSISDN */
+        case ((VENDOR_NTOP << 16) | 228): /* GTPV1_END_USER_MSISDN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_end_user_msisdn,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 229):           /* GTPV1_END_USER_IMEI */
+        case ((VENDOR_NTOP << 16) | 229): /* GTPV1_END_USER_IMEI */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_end_user_imei,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 230):           /* GTPV1_APN_NAME */
+        case ((VENDOR_NTOP << 16) | 230): /* GTPV1_APN_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_apn_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 231):           /* GTPV1_RAI_MCC */
+        case ((VENDOR_NTOP << 16) | 231): /* GTPV1_RAI_MCC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_rai_mcc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 232):           /* GTPV1_RAI_MNC */
+        case ((VENDOR_NTOP << 16) | 232): /* GTPV1_RAI_MNC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_rai_mnc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 233):           /* GTPV1_ULI_CELL_LAC */
+        case ((VENDOR_NTOP << 16) | 233): /* GTPV1_ULI_CELL_LAC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_uli_cell_lac,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 234):           /* GTPV1_ULI_CELL_CI */
+        case ((VENDOR_NTOP << 16) | 234): /* GTPV1_ULI_CELL_CI */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_uli_cell_ci,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 235):           /* GTPV1_ULI_SAC */
+        case ((VENDOR_NTOP << 16) | 235): /* GTPV1_ULI_SAC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_uli_sac,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 236):           /* GTPV1_RAT_TYPE */
+        case ((VENDOR_NTOP << 16) | 236): /* GTPV1_RAT_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_rai_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 240):           /* RADIUS_REQ_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 240): /* RADIUS_REQ_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_req_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 241):           /* RADIUS_RSP_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 241): /* RADIUS_RSP_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_rsp_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 242):           /* RADIUS_USER_NAME */
+        case ((VENDOR_NTOP << 16) | 242): /* RADIUS_USER_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_user_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 243):           /* RADIUS_CALLING_STATION_ID */
+        case ((VENDOR_NTOP << 16) | 243): /* RADIUS_CALLING_STATION_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_calling_station_id,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 244):           /* RADIUS_CALLED_STATION_ID */
+        case ((VENDOR_NTOP << 16) | 244): /* RADIUS_CALLED_STATION_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_called_station_id,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 245):           /* RADIUS_NAS_IP_ADDR */
+        case ((VENDOR_NTOP << 16) | 245): /* RADIUS_NAS_IP_ADDR */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_nas_ip_addr,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 246):           /* RADIUS_NAS_IDENTIFIER */
+        case ((VENDOR_NTOP << 16) | 246): /* RADIUS_NAS_IDENTIFIER */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_nas_identifier,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 247):           /* RADIUS_USER_IMSI */
+        case ((VENDOR_NTOP << 16) | 247): /* RADIUS_USER_IMSI */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_user_imsi,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 248):           /* RADIUS_USER_IMEI */
+        case ((VENDOR_NTOP << 16) | 248): /* RADIUS_USER_IMEI */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_user_imei,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 249):           /* RADIUS_FRAMED_IP_ADDR */
+        case ((VENDOR_NTOP << 16) | 249): /* RADIUS_FRAMED_IP_ADDR */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_framed_ip_addr,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 250):           /* RADIUS_ACCT_SESSION_ID */
+        case ((VENDOR_NTOP << 16) | 250): /* RADIUS_ACCT_SESSION_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_acct_session_id,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 251):           /* RADIUS_ACCT_STATUS_TYPE */
+        case ((VENDOR_NTOP << 16) | 251): /* RADIUS_ACCT_STATUS_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_acct_status_type,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 252):           /* RADIUS_ACCT_IN_OCTETS */
+        case ((VENDOR_NTOP << 16) | 252): /* RADIUS_ACCT_IN_OCTETS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_acct_in_octects,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 253):           /* RADIUS_ACCT_OUT_OCTETS */
+        case ((VENDOR_NTOP << 16) | 253): /* RADIUS_ACCT_OUT_OCTETS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_acct_out_octects,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 254):           /* RADIUS_ACCT_IN_PKTS */
+        case ((VENDOR_NTOP << 16) | 254): /* RADIUS_ACCT_IN_PKTS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_acct_out_pkts,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 255):           /* RADIUS_ACCT_OUT_PKTS */
+        case ((VENDOR_NTOP << 16) | 255): /* RADIUS_ACCT_OUT_PKTS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_radius_acct_out_pkts,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 260):           /* IMAP_LOGIN */
+        case ((VENDOR_NTOP << 16) | 260): /* IMAP_LOGIN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_imap_login,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 270):           /* GTPV2_REQ_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 270): /* GTPV2_REQ_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_req_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 271):           /* GTPV2_RSP_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 271): /* GTPV2_RSP_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_rsp_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 272):           /* GTPV2_C2S_S1U_GTPU_TEID */
+        case ((VENDOR_NTOP << 16) | 272): /* GTPV2_C2S_S1U_GTPU_TEID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_c2s_s1u_gtpu_teid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 273):           /* GTPV2_C2S_S1U_GTPU_IP */
+        case ((VENDOR_NTOP << 16) | 273): /* GTPV2_C2S_S1U_GTPU_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_c2s_s1u_gtpu_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 274):           /* GTPV2_S2C_S1U_GTPU_TEID */
+        case ((VENDOR_NTOP << 16) | 274): /* GTPV2_S2C_S1U_GTPU_TEID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_s2c_s1u_gtpu_teid,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 275):           /* GTPV2_S2C_S1U_GTPU_IP */
+        case ((VENDOR_NTOP << 16) | 275): /* GTPV2_S2C_S1U_GTPU_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_s2c_s1u_gtpu_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 276):           /* GTPV2_END_USER_IMSI */
+        case ((VENDOR_NTOP << 16) | 276): /* GTPV2_END_USER_IMSI */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_end_user_imsi,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 277):           /* GTPV2_END_USER_MSISDN */
+        case ((VENDOR_NTOP << 16) | 277): /* GTPV2_END_USER_MSISDN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_and_user_msisdn,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 278):           /* GTPV2_APN_NAME */
+        case ((VENDOR_NTOP << 16) | 278): /* GTPV2_APN_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_apn_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 279):           /* GTPV2_ULI_MCC */
+        case ((VENDOR_NTOP << 16) | 279): /* GTPV2_ULI_MCC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_uli_mcc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 280):           /* GTPV2_ULI_MNC */
+        case ((VENDOR_NTOP << 16) | 280): /* GTPV2_ULI_MNC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_uli_mnc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 281):           /* GTPV2_ULI_CELL_TAC */
+        case ((VENDOR_NTOP << 16) | 281): /* GTPV2_ULI_CELL_TAC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_uli_cell_tac,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 282):           /* GTPV2_ULI_CELL_ID */
+        case ((VENDOR_NTOP << 16) | 282): /* GTPV2_ULI_CELL_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_uli_cell_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 283):           /* GTPV2_RAT_TYPE */
+        case ((VENDOR_NTOP << 16) | 283): /* GTPV2_RAT_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_rat_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 284):           /* GTPV2_PDN_IP */
+        case ((VENDOR_NTOP << 16) | 284): /* GTPV2_PDN_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_pdn_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 285):           /* GTPV2_END_USER_IMEI */
+        case ((VENDOR_NTOP << 16) | 285): /* GTPV2_END_USER_IMEI */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_end_user_imei,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 290):           /* SRC_AS_PATH_1 */
+        case ((VENDOR_NTOP << 16) | 290): /* SRC_AS_PATH_1 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_1,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 291):           /* SRC_AS_PATH_2 */
+        case ((VENDOR_NTOP << 16) | 291): /* SRC_AS_PATH_2 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_2,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 292):           /* SRC_AS_PATH_3 */
+        case ((VENDOR_NTOP << 16) | 292): /* SRC_AS_PATH_3 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_3,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 293):           /* SRC_AS_PATH_4 */
+        case ((VENDOR_NTOP << 16) | 293): /* SRC_AS_PATH_4 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_4,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 294):           /* SRC_AS_PATH_5 */
+        case ((VENDOR_NTOP << 16) | 294): /* SRC_AS_PATH_5 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_5,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 295):           /* SRC_AS_PATH_6 */
+        case ((VENDOR_NTOP << 16) | 295): /* SRC_AS_PATH_6 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_6,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 296):           /* SRC_AS_PATH_7 */
+        case ((VENDOR_NTOP << 16) | 296): /* SRC_AS_PATH_7 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_7,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 297):           /* SRC_AS_PATH_8 */
+        case ((VENDOR_NTOP << 16) | 297): /* SRC_AS_PATH_8 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_8,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 298):           /* SRC_AS_PATH_9 */
+        case ((VENDOR_NTOP << 16) | 298): /* SRC_AS_PATH_9 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_9,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 299):           /* SRC_AS_PATH_10 */
+        case ((VENDOR_NTOP << 16) | 299): /* SRC_AS_PATH_10 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_path_10,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 300):           /* DST_AS_PATH_1 */
+        case ((VENDOR_NTOP << 16) | 300): /* DST_AS_PATH_1 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_1,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 301):           /* DST_AS_PATH_2 */
+        case ((VENDOR_NTOP << 16) | 301): /* DST_AS_PATH_2 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_2,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 302):           /* DST_AS_PATH_3 */
+        case ((VENDOR_NTOP << 16) | 302): /* DST_AS_PATH_3 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_3,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 303):           /* DST_AS_PATH_4 */
+        case ((VENDOR_NTOP << 16) | 303): /* DST_AS_PATH_4 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_4,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 304):           /* DST_AS_PATH_5 */
+        case ((VENDOR_NTOP << 16) | 304): /* DST_AS_PATH_5 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_5,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 305):           /* DST_AS_PATH_6 */
+        case ((VENDOR_NTOP << 16) | 305): /* DST_AS_PATH_6 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_6,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 306):           /* DST_AS_PATH_7 */
+        case ((VENDOR_NTOP << 16) | 306): /* DST_AS_PATH_7 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_7,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 307):           /* DST_AS_PATH_8 */
+        case ((VENDOR_NTOP << 16) | 307): /* DST_AS_PATH_8 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_8,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 308):           /* DST_AS_PATH_9 */
+        case ((VENDOR_NTOP << 16) | 308): /* DST_AS_PATH_9 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_9,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 309):           /* DST_AS_PATH_10 */
+        case ((VENDOR_NTOP << 16) | 309): /* DST_AS_PATH_10 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_path_10,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 320):           /* MYSQL_APPL_LATENCY_USEC */
+        case ((VENDOR_NTOP << 16) | 320): /* MYSQL_APPL_LATENCY_USEC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_mysql_appl_latency_usec,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 321):           /* GTPV0_REQ_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 321): /* GTPV0_REQ_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_req_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 322):           /* GTPV0_RSP_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 322): /* GTPV0_RSP_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_rsp_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 323):           /* GTPV0_TID */
+        case ((VENDOR_NTOP << 16) | 323): /* GTPV0_TID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_tid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 324):           /* GTPV0_END_USER_IP */
+        case ((VENDOR_NTOP << 16) | 324): /* GTPV0_END_USER_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_end_user_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 325):           /* GTPV0_END_USER_MSISDN */
+        case ((VENDOR_NTOP << 16) | 325): /* GTPV0_END_USER_MSISDN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_end_user_msisdn,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 326):           /* GTPV0_APN_NAME */
+        case ((VENDOR_NTOP << 16) | 326): /* GTPV0_APN_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_apn_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 327):           /* GTPV0_RAI_MCC */
+        case ((VENDOR_NTOP << 16) | 327): /* GTPV0_RAI_MCC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_rai_mcc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 328):           /* GTPV0_RAI_MNC */
+        case ((VENDOR_NTOP << 16) | 328): /* GTPV0_RAI_MNC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_rai_mnc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 329):           /* GTPV0_RAI_CELL_LAC */
+        case ((VENDOR_NTOP << 16) | 329): /* GTPV0_RAI_CELL_LAC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_rai_cell_lac,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 330):           /* GTPV0_RAI_CELL_RAC */
+        case ((VENDOR_NTOP << 16) | 330): /* GTPV0_RAI_CELL_RAC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_rai_cell_rac,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 331):           /* GTPV0_RESPONSE_CAUSE */
+        case ((VENDOR_NTOP << 16) | 331): /* GTPV0_RESPONSE_CAUSE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv0_response_cause,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 332):           /* GTPV1_RESPONSE_CAUSE */
+        case ((VENDOR_NTOP << 16) | 332): /* GTPV1_RESPONSE_CAUSE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_response_cause,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 333):           /* GTPV2_RESPONSE_CAUSE */
+        case ((VENDOR_NTOP << 16) | 333): /* GTPV2_RESPONSE_CAUSE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_response_cause,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 334):           /* NUM_PKTS_TTL_5_32 */
+        case ((VENDOR_NTOP << 16) | 334): /* NUM_PKTS_TTL_5_32 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_5_32,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 335):           /* NUM_PKTS_TTL_32_64 */
+        case ((VENDOR_NTOP << 16) | 335): /* NUM_PKTS_TTL_32_64 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_32_64,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 336):           /* NUM_PKTS_TTL_64_96 */
+        case ((VENDOR_NTOP << 16) | 336): /* NUM_PKTS_TTL_64_96 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_64_96,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 337):           /* NUM_PKTS_TTL_96_128 */
+        case ((VENDOR_NTOP << 16) | 337): /* NUM_PKTS_TTL_96_128 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_96_128,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 338):           /* NUM_PKTS_TTL_128_160 */
+        case ((VENDOR_NTOP << 16) | 338): /* NUM_PKTS_TTL_128_160 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_128_160,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 339):           /* NUM_PKTS_TTL_160_192 */
+        case ((VENDOR_NTOP << 16) | 339): /* NUM_PKTS_TTL_160_192 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_160_192,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 340):           /* NUM_PKTS_TTL_192_224 */
+        case ((VENDOR_NTOP << 16) | 340): /* NUM_PKTS_TTL_192_224 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_192_224,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 341):           /* NUM_PKTS_TTL_224_255 */
+        case ((VENDOR_NTOP << 16) | 341): /* NUM_PKTS_TTL_224_255 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_224_225,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 342):           /* GTPV1_RAI_LAC */
+        case ((VENDOR_NTOP << 16) | 342): /* GTPV1_RAI_LAC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_rai_lac,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 343):           /* GTPV1_RAI_RAC */
+        case ((VENDOR_NTOP << 16) | 343): /* GTPV1_RAI_RAC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_rai_rac,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 344):           /* GTPV1_ULI_MCC */
+        case ((VENDOR_NTOP << 16) | 344): /* GTPV1_ULI_MCC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_uli_mcc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 345):           /* GTPV1_ULI_MNC */
+        case ((VENDOR_NTOP << 16) | 345): /* GTPV1_ULI_MNC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv1_uli_mnc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 346):           /* NUM_PKTS_TTL_2_5 */
+        case ((VENDOR_NTOP << 16) | 346): /* NUM_PKTS_TTL_2_5 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_2_5,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 347):           /* NUM_PKTS_TTL_EQ_1 */
+        case ((VENDOR_NTOP << 16) | 347): /* NUM_PKTS_TTL_EQ_1 */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_num_pkts_ttl_eq_1,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 348):           /* RTP_SIP_CALL_ID */
+        case ((VENDOR_NTOP << 16) | 348): /* RTP_SIP_CALL_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_sip_call_id,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 349):           /* IN_SRC_OSI_SAP */
+        case ((VENDOR_NTOP << 16) | 349): /* IN_SRC_OSI_SAP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_in_src_osi_sap,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 350):           /* OUT_DST_OSI_SAP */
+        case ((VENDOR_NTOP << 16) | 350): /* OUT_DST_OSI_SAP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_out_dst_osi_sap,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 351):           /* WHOIS_DAS_DOMAIN */
+        case ((VENDOR_NTOP << 16) | 351): /* WHOIS_DAS_DOMAIN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_whois_das_domain,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 352):           /* DNS_TTL_ANSWER */
+        case ((VENDOR_NTOP << 16) | 352): /* DNS_TTL_ANSWER */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dns_ttl_answer,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 353):           /* DHCP_CLIENT_MAC */
+        case ((VENDOR_NTOP << 16) | 353): /* DHCP_CLIENT_MAC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dhcp_client_mac,
+                                     tvb, offset, length, ENC_NA);
+            break;
+
+        case (NTOP_BASE + 354):           /* DHCP_CLIENT_IP */
+        case ((VENDOR_NTOP << 16) | 354): /* DHCP_CLIENT_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dhcp_client_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 355):           /* DHCP_CLIENT_NAME */
+        case ((VENDOR_NTOP << 16) | 355): /* DHCP_CLIENT_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dhcp_client_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 356):           /* FTP_LOGIN */
+        case ((VENDOR_NTOP << 16) | 356): /* FTP_LOGIN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ftp_login,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 357):           /* FTP_PASSWORD */
+        case ((VENDOR_NTOP << 16) | 357): /* FTP_PASSWORD */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ftp_password,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 358):           /* FTP_COMMAND */
+        case ((VENDOR_NTOP << 16) | 358): /* FTP_COMMAND */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ftp_command,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 359):           /* FTP_COMMAND_RET_CODE */
+        case ((VENDOR_NTOP << 16) | 359): /* FTP_COMMAND_RET_CODE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ftp_command_ret_code,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 360):           /* HTTP_METHOD */
+        case ((VENDOR_NTOP << 16) | 360): /* HTTP_METHOD */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_http_method,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 361):           /* HTTP_SITE */
+        case ((VENDOR_NTOP << 16) | 361): /* HTTP_SITE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_http_site,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 362):           /* SIP_C_IP */
+        case ((VENDOR_NTOP << 16) | 362): /* SIP_C_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_c_ip,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 363):           /* SIP_CALL_STATE */
+        case ((VENDOR_NTOP << 16) | 363): /* SIP_CALL_STATE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_sip_call_state,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 370):           /* RTP_IN_MOS */
+        case ((VENDOR_NTOP << 16) | 370): /* RTP_IN_MOS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_in_mos,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 371):           /* RTP_IN_R_FACTOR */
+        case ((VENDOR_NTOP << 16) | 371): /* RTP_IN_R_FACTOR */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_in_r_factor,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 372):           /* SRC_PROC_USER_NAME */
+        case ((VENDOR_NTOP << 16) | 372): /* SRC_PROC_USER_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_proc_user_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 373):           /* SRC_FATHER_PROC_PID */
+        case ((VENDOR_NTOP << 16) | 373): /* SRC_FATHER_PROC_PID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_father_proc_pid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 374):           /* SRC_FATHER_PROC_NAME */
+        case ((VENDOR_NTOP << 16) | 374): /* SRC_FATHER_PROC_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_father_proc_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 375):           /* DST_PROC_PID */
+        case ((VENDOR_NTOP << 16) | 375): /* DST_PROC_PID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_pid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 376):           /* DST_PROC_NAME */
+        case ((VENDOR_NTOP << 16) | 376): /* DST_PROC_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 377):           /* DST_PROC_USER_NAME */
+        case ((VENDOR_NTOP << 16) | 377): /* DST_PROC_USER_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_user_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 378):           /* DST_FATHER_PROC_PID */
+        case ((VENDOR_NTOP << 16) | 378): /* DST_FATHER_PROC_PID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_father_proc_pid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 379):           /* DST_FATHER_PROC_NAME */
+        case ((VENDOR_NTOP << 16) | 379): /* DST_FATHER_PROC_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_father_proc_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 380):           /* RTP_RTT */
+        case ((VENDOR_NTOP << 16) | 380): /* RTP_RTT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_rtt,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 381):           /* RTP_IN_TRANSIT */
+        case ((VENDOR_NTOP << 16) | 381): /* RTP_IN_TRANSIT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_in_transit,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 382):           /* RTP_OUT_TRANSIT */
+        case ((VENDOR_NTOP << 16) | 382): /* RTP_OUT_TRANSIT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_out_transit,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 383):           /* SRC_PROC_ACTUAL_MEMORY */
+        case ((VENDOR_NTOP << 16) | 383): /* SRC_PROC_ACTUAL_MEMORY */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_proc_actual_memory,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 384):           /* SRC_PROC_PEAK_MEMORY */
+        case ((VENDOR_NTOP << 16) | 384): /* SRC_PROC_PEAK_MEMORY */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_proc_peak_memory,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 385):           /* SRC_PROC_AVERAGE_CPU_LOAD */
+        case ((VENDOR_NTOP << 16) | 385): /* SRC_PROC_AVERAGE_CPU_LOAD */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_proc_average_cpu_load,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 386):           /* SRC_PROC_NUM_PAGE_FAULTS */
+        case ((VENDOR_NTOP << 16) | 386): /* SRC_PROC_NUM_PAGE_FAULTS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_proc_num_page_faults,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 387):           /* DST_PROC_ACTUAL_MEMORY */
+        case ((VENDOR_NTOP << 16) | 387): /* DST_PROC_ACTUAL_MEMORY */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_actual_memory,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 388):           /* DST_PROC_PEAK_MEMORY */
+        case ((VENDOR_NTOP << 16) | 388): /* DST_PROC_PEAK_MEMORY */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_peak_memory,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 389):           /* DST_PROC_AVERAGE_CPU_LOAD */
+        case ((VENDOR_NTOP << 16) | 389): /* DST_PROC_AVERAGE_CPU_LOAD */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_average_cpu_load,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 390):           /* DST_PROC_NUM_PAGE_FAULTS */
+        case ((VENDOR_NTOP << 16) | 390): /* DST_PROC_NUM_PAGE_FAULTS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_num_page_faults,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 391):           /* DURATION_IN */
+        case ((VENDOR_NTOP << 16) | 391): /* DURATION_IN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_duration_in,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 392):           /* DURATION_OUT */
+        case ((VENDOR_NTOP << 16) | 392): /* DURATION_OUT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_duration_out,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 393):           /* SRC_PROC_PCTG_IOWAIT */
+        case ((VENDOR_NTOP << 16) | 393): /* SRC_PROC_PCTG_IOWAIT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_proc_pctg_iowait,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 394):           /* DST_PROC_PCTG_IOWAIT */
+        case ((VENDOR_NTOP << 16) | 394): /* DST_PROC_PCTG_IOWAIT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_pctg_iowait,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 395):           /* RTP_DTMF_TONES */
+        case ((VENDOR_NTOP << 16) | 395): /* RTP_DTMF_TONES */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_dtmf_tones,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 396):           /* UNTUNNELED_IPV6_SRC_ADDR */
+        case ((VENDOR_NTOP << 16) | 396): /* UNTUNNELED_IPV6_SRC_ADDR */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_untunneled_ipv6_src_addr,
+                                     tvb, offset, length, ENC_NA);
+            break;
+
+        case (NTOP_BASE + 397):           /* UNTUNNELED_IPV6_DST_ADDR */
+        case ((VENDOR_NTOP << 16) | 397): /* UNTUNNELED_IPV6_DST_ADDR */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_untunneled_ipv6_dst_addr,
+                                     tvb, offset, length, ENC_NA);
+            break;
+
+        case (NTOP_BASE + 398):           /* DNS_RESPONSE */
+        case ((VENDOR_NTOP << 16) | 398): /* DNS_RESPONSE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dns_response,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 399):           /* DIAMETER_REQ_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 399): /* DIAMETER_REQ_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_req_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 400):           /* DIAMETER_RSP_MSG_TYPE */
+        case ((VENDOR_NTOP << 16) | 400): /* DIAMETER_RSP_MSG_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_rsp_msg_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 401):           /* DIAMETER_REQ_ORIGIN_HOST */
+        case ((VENDOR_NTOP << 16) | 401): /* DIAMETER_REQ_ORIGIN_HOST */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_req_origin_host,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 402):           /* DIAMETER_RSP_ORIGIN_HOST */
+        case ((VENDOR_NTOP << 16) | 402): /* DIAMETER_RSP_ORIGIN_HOST */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_rsp_origin_host,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 403):           /* DIAMETER_REQ_USER_NAME */
+        case ((VENDOR_NTOP << 16) | 403): /* DIAMETER_REQ_USER_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_req_user_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 404):           /* DIAMETER_RSP_RESULT_CODE */
+        case ((VENDOR_NTOP << 16) | 404): /* DIAMETER_RSP_RESULT_CODE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_rsp_result_code,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 405):           /* DIAMETER_EXP_RES_VENDOR_ID */
+        case ((VENDOR_NTOP << 16) | 405): /* DIAMETER_EXP_RES_VENDOR_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_exp_res_vendor_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 406):           /* DIAMETER_EXP_RES_RESULT_CODE */
+        case ((VENDOR_NTOP << 16) | 406): /* DIAMETER_EXP_RES_RESULT_CODE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_exp_res_result_code,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 407):           /* S1AP_ENB_UE_S1AP_ID */
+        case ((VENDOR_NTOP << 16) | 407): /* S1AP_ENB_UE_S1AP_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_s1ap_enb_ue_s1ap_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 408):           /* S1AP_MME_UE_S1AP_ID */
+        case ((VENDOR_NTOP << 16) | 408): /* S1AP_MME_UE_S1AP_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_s1ap_mme_ue_s1ap_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 409):           /* S1AP_MSG_EMM_TYPE_MME_TO_ENB */
+        case ((VENDOR_NTOP << 16) | 409): /* S1AP_MSG_EMM_TYPE_MME_TO_ENB */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_s1ap_msg_emm_type_mme_to_enb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 410):           /* S1AP_MSG_ESM_TYPE_MME_TO_ENB */
+        case ((VENDOR_NTOP << 16) | 410): /* S1AP_MSG_ESM_TYPE_MME_TO_ENB */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_s1ap_msg_esm_type_mme_to_enb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 411):           /* S1AP_MSG_EMM_TYPE_ENB_TO_MME */
+        case ((VENDOR_NTOP << 16) | 411): /* S1AP_MSG_EMM_TYPE_ENB_TO_MME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_s1ap_msg_emm_type_enb_to_mme,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 412):           /* S1AP_MSG_ESM_TYPE_ENB_TO_MME */
+        case ((VENDOR_NTOP << 16) | 412): /* S1AP_MSG_ESM_TYPE_ENB_TO_MME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_s1ap_msg_esm_type_enb_to_mme,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 413):           /* S1AP_CAUSE_ENB_TO_MME */
+        case ((VENDOR_NTOP << 16) | 413): /* S1AP_CAUSE_ENB_TO_MME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_s1ap_cause_enb_to_mme,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 414):           /* S1AP_DETAILED_CAUSE_ENB_TO_MME */
+        case ((VENDOR_NTOP << 16) | 414): /* S1AP_DETAILED_CAUSE_ENB_TO_MME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_s1ap_detailed_cause_enb_to_mme,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 415):           /* TCP_WIN_MIN_IN */
+        case ((VENDOR_NTOP << 16) | 415): /* TCP_WIN_MIN_IN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_tcp_win_min_in,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 416):           /* TCP_WIN_MAX_IN */
+        case ((VENDOR_NTOP << 16) | 416): /* TCP_WIN_MAX_IN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_tcp_win_max_in,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 417):           /* TCP_WIN_MSS_IN */
+        case ((VENDOR_NTOP << 16) | 417): /* TCP_WIN_MSS_IN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_tcp_win_mss_in,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 418):           /* TCP_WIN_SCALE_IN */
+        case ((VENDOR_NTOP << 16) | 418): /* TCP_WIN_SCALE_IN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_tcp_win_scale_in,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 419):           /* TCP_WIN_MIN_OUT */
+        case ((VENDOR_NTOP << 16) | 419): /* TCP_WIN_MIN_OUT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_tcp_win_min_out,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 420):           /* TCP_WIN_MAX_OUT */
+        case ((VENDOR_NTOP << 16) | 420): /* TCP_WIN_MAX_OUT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_tcp_win_max_out,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 421):           /* TCP_WIN_MSS_OUT */
+        case ((VENDOR_NTOP << 16) | 421): /* TCP_WIN_MSS_OUT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_tcp_win_mss_out,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 422):           /* TCP_WIN_SCALE_OUT */
+        case ((VENDOR_NTOP << 16) | 422): /* TCP_WIN_SCALE_OUT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_tcp_win_scale_out,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 423):           /* DHCP_REMOTE_ID */
+        case ((VENDOR_NTOP << 16) | 423): /* DHCP_REMOTE_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dhcp_remote_id,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 424):           /* DHCP_SUBSCRIBER_ID */
+        case ((VENDOR_NTOP << 16) | 424): /* DHCP_SUBSCRIBER_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dhcp_subscriber_id,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 425):           /* SRC_PROC_UID */
+        case ((VENDOR_NTOP << 16) | 425): /* SRC_PROC_UID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_proc_uid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 426):           /* DST_PROC_UID */
+        case ((VENDOR_NTOP << 16) | 426): /* DST_PROC_UID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_proc_uid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 427):           /* APPLICATION_NAME */
+        case ((VENDOR_NTOP << 16) | 427): /* APPLICATION_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_application_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 428):           /* USER_NAME */
+        case ((VENDOR_NTOP << 16) | 428): /* USER_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_user_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 429):           /* DHCP_MESSAGE_TYPE */
+        case ((VENDOR_NTOP << 16) | 429): /* DHCP_MESSAGE_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dhcp_message_type,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 430):           /* RTP_IN_PKT_DROP */
+        case ((VENDOR_NTOP << 16) | 430): /* RTP_IN_PKT_DROP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_in_pkt_drop,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 431):           /* RTP_OUT_PKT_DROP */
+        case ((VENDOR_NTOP << 16) | 431): /* RTP_OUT_PKT_DROP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_out_pkt_drop,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 432):           /* RTP_OUT_MOS */
+        case ((VENDOR_NTOP << 16) | 432): /* RTP_OUT_MOS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_out_mos,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 433):           /* RTP_OUT_R_FACTOR */
+        case ((VENDOR_NTOP << 16) | 433): /* RTP_OUT_R_FACTOR */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_out_r_factor,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 434):           /* RTP_MOS */
+        case ((VENDOR_NTOP << 16) | 434): /* RTP_MOS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_mos,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 435):           /* GTPV2_S5_S8_GTPC_TEID */
+        case ((VENDOR_NTOP << 16) | 435): /* GTPV2_S5_S8_GTPC_TEID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gptv2_s5_s8_gtpc_teid,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 436):           /* RTP_R_FACTOR */
+        case ((VENDOR_NTOP << 16) | 436): /* RTP_R_FACTOR */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_r_factor,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 437):           /* RTP_SSRC */
+        case ((VENDOR_NTOP << 16) | 437): /* RTP_SSRC */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_rtp_ssrc,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 438):           /* PAYLOAD_HASH */
+        case ((VENDOR_NTOP << 16) | 438): /* PAYLOAD_HASH */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_payload_hash,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 439):           /* GTPV2_C2S_S5_S8_GTPU_TEID */
+        case ((VENDOR_NTOP << 16) | 439): /* GTPV2_C2S_S5_S8_GTPU_TEID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_c2s_s5_s8_gtpu_teid,
+>>>>>>> upstream/master-2.4
                                      tvb, offset, length, ENC_BIG_ENDIAN);
             break;
             /* END NTOP */
 
+<<<<<<< HEAD
             /* START Plixer International */
         case ((VENDOR_PLIXER << 16) | 100):    /* client_ip_v4 */
             ti = proto_tree_add_item(pdutree, hf_pie_plixer_client_ip_v4,
@@ -9201,6 +10462,24 @@ dissect_v9_v10_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, 
             gen_str = tvb_format_text(tvb, offset, length);
             ti = proto_tree_add_string(pdutree, hf_pie_plixer_client_hostname,
                                        tvb, offset, length, gen_str);
+=======
+        case (NTOP_BASE + 440):           /* GTPV2_S2C_S5_S8_GTPU_TEID */
+        case ((VENDOR_NTOP << 16) | 440): /* GTPV2_S2C_S5_S8_GTPU_TEID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_s2c_s5_s8_gtpu_teid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 441):           /* GTPV2_C2S_S5_S8_GTPU_IP */
+        case ((VENDOR_NTOP << 16) | 441): /* GTPV2_C2S_S5_S8_GTPU_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_c2s_s5_s8_gtpu_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 442):           /* GTPV2_S2C_S5_S8_GTPU_IP */
+        case ((VENDOR_NTOP << 16) | 442): /* GTPV2_S2C_S5_S8_GTPU_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_s2c_s5_s8_gtpu_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+>>>>>>> upstream/master-2.4
             break;
         case ((VENDOR_PLIXER << 16) | 102):    /* partner_name */
             gen_str = tvb_format_text(tvb, offset, length);
@@ -9278,6 +10557,7 @@ dissect_v9_v10_pdu_data(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, 
             break;
             /* END Plixer International */
 
+<<<<<<< HEAD
             /* START Ixia Communications */
         case ((VENDOR_IXIA << 16) | 110):
             ti = proto_tree_add_item(pdutree, hf_pie_ixia_l7_application_id,
@@ -10369,6 +11649,1471 @@ dissect_v9_v10_template_fields(tvbuff_t *tvb, packet_info *pinfo _U_, proto_tree
         if ((ver == 10) && (type & 0x8000)) {   /* IPFIX only */
             pen = tvb_get_ntohl(tvb, offset+4);
             pen_str = enterprises_lookup(pen, "(Unknown)");
+        }
+
+        if (tmplt_p->fields_p[fields_type] != NULL) {
+            DISSECTOR_ASSERT (i < count);
+            tmplt_p->fields_p[fields_type][i].type    = type;
+            tmplt_p->fields_p[fields_type][i].length  = length;
+            tmplt_p->fields_p[fields_type][i].pen     = pen;
+            tmplt_p->fields_p[fields_type][i].pen_str = pen_str;
+            if (length != VARIABLE_LENGTH) { /* Don't include "variable length" in the total */
+                tmplt_p->length    += length;
+            }
+        }
+
+        field_tree = proto_tree_add_subtree_format(tmplt_tree, tvb, offset, 4+((pen_str!=NULL)?4:0),
+                                                   ett_field, &field_item, "Field (%u/%u)", i+1, count);
+        if (fields_type == TF_SCOPES) {
+            proto_item_append_text(field_item, " [Scope]");
+        }
+
+        if (ver == 9) { /* v9 */
+            proto_tree_add_item(field_tree, *v9_template_type_hf_list[fields_type],
+                                tvb, offset, 2, ENC_BIG_ENDIAN);
+            proto_item_append_text(field_item, ": %s",
+                                   val_to_str_ext(type, v9_template_type_vse_list[fields_type], "Unknown(%d)"));
+        } else { /* v10 */
+            proto_tree_add_item(field_tree, hf_cflow_template_ipfix_pen_provided,
+                                tvb, offset, 2, ENC_BIG_ENDIAN);
+            if ( !(type & 0x8000) || (pen == REVPEN)) {
+                proto_item *rp_ti;
+                rp_ti = proto_tree_add_item(field_tree, *v10_template_type_hf_list[fields_type],
+                                            tvb, offset, 2, ENC_BIG_ENDIAN);
+                proto_item_append_text(field_item, ": %s",
+                                       val_to_str_ext(type&0x7fff, v10_template_type_vse_list[fields_type], "Unknown(%d)"));
+                if (pen == REVPEN) {
+                    proto_item_append_text(rp_ti, " [Reverse]");
+                    proto_item_append_text(field_item, " [Reverse]");
+                }
+            } else {
+                int fields_type_pen = pen_to_type_hf_list(pen);
+                if (fields_type_pen != TF_NO_VENDOR_INFO) {
+                    proto_tree_add_item(field_tree, *v10_template_type_hf_list[fields_type_pen],
+                                        tvb, offset, 2, ENC_BIG_ENDIAN);
+                    proto_item_append_text(field_item, ": %s",
+                                           val_to_str_ext(type&0x7fff, v10_template_type_vse_list[fields_type_pen], "Unknown(%d)"));
+                } else { /* Private Enterprise */
+                    proto_item *pen_ti;
+                    pen_ti = proto_tree_add_item(field_tree, hf_cflow_template_ipfix_field_type_enterprise,
+                                                 tvb, offset, 2, ENC_BIG_ENDIAN);
+                    proto_item_append_text(pen_ti, " [pen: %s]", pen_str);
+                    proto_item_append_text(field_item, ": %3u [pen: %s]", type&0x7fff, pen_str);
+                }
+            }
+        }
+
+        offset += 2;
+
+        ti = proto_tree_add_item(field_tree, hf_cflow_template_field_length, tvb,
+                                 offset, 2, ENC_BIG_ENDIAN);
+        if (length == VARIABLE_LENGTH) {
+            proto_item_append_text(ti, " [i.e.: \"Variable Length\"]");
+        }
+        offset += 2;
+
+        /* Private Enterprise Number (IPFIX only) */
+        if ((ver == 10) && (type & 0x8000)) {
+            proto_tree_add_uint_format_value(field_tree, hf_cflow_template_ipfix_field_pen, tvb, offset, 4,
+                                             pen, "%s (%u)", pen_str, pen);
+            offset += 4;
+        }
+    }
+    return offset;
+}
+
+/* Options Template Dissection */
+static int
+dissect_v9_v10_options_template(tvbuff_t *tvb, packet_info *pinfo, proto_tree *pdutree, int offset, int length,
+                                hdrinfo_t *hdrinfo_p, guint16 flowset_id)
+{
+    int remaining;
+    proto_item_append_text(pdutree, " (Options Template): ");
+    col_append_fstr(pinfo->cinfo, COL_INFO, " [Options-Template:");
+
+    remaining = length;
+    while (remaining > 3) { /* allow for padding */
+        v9_v10_tmplt_t *tmplt_p;
+        v9_v10_tmplt_t  tmplt;
+        proto_tree     *tmplt_tree;
+        proto_item     *tmplt_item;
+        proto_item     *ti;
+        guint16         id;
+        guint16         option_scope_field_count;
+        guint16         option_field_count;
+        int             orig_offset;
+
+        orig_offset = offset;
+
+        id = tvb_get_ntohs(tvb, offset);
+        /* Show set flow-id in set root and Info column */
+        col_append_fstr(pinfo->cinfo, COL_INFO,
+                        "%s%u", (remaining<length) ? "," : "", id);
+        proto_item_append_text(pdutree, "%s%u", (remaining<length) ? "," : "", id);
+
+        tmplt_tree = proto_tree_add_subtree_format(pdutree, tvb, offset, -1, ett_template, &tmplt_item, "Options Template (Id = %u)", id);
+
+        proto_tree_add_item(tmplt_tree, hf_cflow_template_id, tvb, offset, 2, ENC_BIG_ENDIAN);
+        offset += 2;
+
+        if (flowset_id == FLOWSET_ID_V9_OPTIONS_TEMPLATE) { /* V9 */
+            /* Note: v9: field_count = fields_byte_length/4 since each entry is 4 bytes */
+            /* XXX: validate byte_length is a multiple of 4 ? */
+            option_scope_field_count = tvb_get_ntohs(tvb, offset)/4;
+            proto_tree_add_item(tmplt_tree,
+                                hf_cflow_option_scope_length,
+                                tvb, offset, 2, ENC_BIG_ENDIAN);
+            offset += 2;
+
+            option_field_count = tvb_get_ntohs(tvb, offset)/4;
+            ti = proto_tree_add_item(tmplt_tree,
+                                     hf_cflow_option_length,
+                                     tvb, offset, 2, ENC_BIG_ENDIAN);
+            offset += 2;
+        } else { /* IPFIX (V10) */
+            guint16 option_total_field_count;
+=======
+        case (NTOP_BASE + 443):           /* SRC_AS_MAP */
+        case ((VENDOR_NTOP << 16) | 443): /* SRC_AS_MAP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_as_map,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 444):           /* DST_AS_MAP */
+        case ((VENDOR_NTOP << 16) | 444): /* DST_AS_MAP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_as_map,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 445):           /* DIAMETER_HOP_BY_HOP_ID */
+        case ((VENDOR_NTOP << 16) | 445): /* DIAMETER_HOP_BY_HOP_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_hop_by_hop_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 446):           /* UPSTREAM_SESSION_ID */
+        case ((VENDOR_NTOP << 16) | 446): /* UPSTREAM_SESSION_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_upstream_session_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 447):           /* DOWNSTREAM_SESSION_ID */
+        case ((VENDOR_NTOP << 16) | 447): /* DOWNSTREAM_SESSION_ID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_downstream_session_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 448):           /* SRC_IP_LONG */
+        case ((VENDOR_NTOP << 16) | 448): /* SRC_IP_LONG */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_ip_long,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 449):           /* SRC_IP_LAT */
+        case ((VENDOR_NTOP << 16) | 449): /* SRC_IP_LAT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_src_ip_lat,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 450):           /* DST_IP_LONG */
+        case ((VENDOR_NTOP << 16) | 450): /* DST_IP_LONG */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_ip_long,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 451):           /* DST_IP_LAT */
+        case ((VENDOR_NTOP << 16) | 451): /* DST_IP_LAT */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_dst_ip_lat,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 452):           /* DIAMETER_CLR_CANCEL_TYPE */
+        case ((VENDOR_NTOP << 16) | 452): /* DIAMETER_CLR_CANCEL_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_clr_cancel_type,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 453):           /* DIAMETER_CLR_FLAGS */
+        case ((VENDOR_NTOP << 16) | 453): /* DIAMETER_CLR_FLAGS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_diameter_clr_flags,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 454):           /* GTPV2_C2S_S5_S8_GTPC_IP */
+        case ((VENDOR_NTOP << 16) | 454): /* GTPV2_C2S_S5_S8_GTPC_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_c2s_s5_s8_gtpc_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 455):           /* GTPV2_S2C_S5_S8_GTPC_IP */
+        case ((VENDOR_NTOP << 16) | 455): /* GTPV2_S2C_S5_S8_GTPC_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_s2c_s5_s8_gtpc_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 456):           /* GTPV2_C2S_S5_S8_SGW_GTPU_TEID */
+        case ((VENDOR_NTOP << 16) | 456): /* GTPV2_C2S_S5_S8_SGW_GTPU_TEID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_c2s_s5_s8_sgw_gtpu_teid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 457):           /* GTPV2_S2C_S5_S8_SGW_GTPU_TEID */
+        case ((VENDOR_NTOP << 16) | 457): /* GTPV2_S2C_S5_S8_SGW_GTPU_TEID */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_s2c_s5_s8_sgw_gtpu_teid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 458):           /* GTPV2_C2S_S5_S8_SGW_GTPU_IP */
+        case ((VENDOR_NTOP << 16) | 458): /* GTPV2_C2S_S5_S8_SGW_GTPU_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_c2s_s5_s8_sgw_gtpu_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 459):           /* GTPV2_S2C_S5_S8_SGW_GTPU_IP */
+        case ((VENDOR_NTOP << 16) | 459): /* GTPV2_S2C_S5_S8_SGW_GTPU_IP */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_gtpv2_s2c_s5_s8_sgw_gtpu_ip,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case (NTOP_BASE + 460):           /* HTTP_X_FORWARDED_FOR */
+        case ((VENDOR_NTOP << 16) | 460): /* HTTP_X_FORWARDED_FOR */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_http_x_forwarded_for,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 461):           /* HTTP_VIA */
+        case ((VENDOR_NTOP << 16) | 461): /* HTTP_VIA */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_http_via,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 462):           /* SSDP_HOST */
+        case ((VENDOR_NTOP << 16) | 462): /* SSDP_HOST */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ssdp_host,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 463):           /* SSDP_USN */
+        case ((VENDOR_NTOP << 16) | 463): /* SSDP_USN */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ssdp_usn,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 464):           /* NETBIOS_QUERY_NAME */
+        case ((VENDOR_NTOP << 16) | 464): /* NETBIOS_QUERY_NAME */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_netbios_query_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 465):           /* NETBIOS_QUERY_TYPE */
+        case ((VENDOR_NTOP << 16) | 465): /* NETBIOS_QUERY_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_netbios_query_type,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 466):           /* NETBIOS_RESPONSE */
+        case ((VENDOR_NTOP << 16) | 466): /* NETBIOS_RESPONSE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_netbios_response,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 467):           /* NETBIOS_QUERY_OS */
+        case ((VENDOR_NTOP << 16) | 467): /* NETBIOS_QUERY_OS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_netbios_query_os,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 468):           /* SSDP_SERVER */
+        case ((VENDOR_NTOP << 16) | 468): /* SSDP_SERVER */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ssdp_server,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 469):           /* SSDP_TYPE */
+        case ((VENDOR_NTOP << 16) | 469): /* SSDP_TYPE */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ssdp_type,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+>>>>>>> upstream/master-2.4
+
+        case (NTOP_BASE + 470):           /* SSDP_METHOD */
+        case ((VENDOR_NTOP << 16) | 470): /* SSDP_METHOD */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_ssdp_method,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+
+        case (NTOP_BASE + 471):           /* NPROBE_IPV4_ADDRESS */
+        case ((VENDOR_NTOP << 16) | 471): /* NPROBE_IPV4_ADDRESS */
+            ti = proto_tree_add_item(pdutree, hf_pie_ntop_nprobe_ipv4_address,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+            /* END NTOP */
+
+            /* START Plixer International */
+        case ((VENDOR_PLIXER << 16) | 100):    /* client_ip_v4 */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_client_ip_v4,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_PLIXER << 16) | 101):    /* client_hostname */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_client_hostname,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 102):    /* partner_name */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_partner_name,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 103):    /* server_hostname */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_server_hostname,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 104):    /* server_ip_v4 */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_server_ip_v4,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_PLIXER << 16) | 105):    /* recipient_address */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_recipient_address,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 106):    /* event_id */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_event_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_PLIXER << 16) | 107):    /* msgid */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_msgid,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 108):    /* priority */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_priority,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_PLIXER << 16) | 109):    /* recipient_report_status */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_recipient_report_status,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_PLIXER << 16) | 110):    /* number_recipients */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_number_recipients,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_PLIXER << 16) | 111):    /* origination_time */
+            /* XXX - what format is this? */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_origination_time,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_PLIXER << 16) | 112):    /* encryption */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_encryption,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_PLIXER << 16) | 113):    /* service_version */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_service_version,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 114):    /* linked_msgid */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_linked_msgid,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 115):    /* message_subject */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_message_subject,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 116):    /* sender_address */
+            gen_str = tvb_format_text(tvb, offset, length);
+            ti = proto_tree_add_string(pdutree, hf_pie_plixer_sender_address,
+                                       tvb, offset, length, gen_str);
+            break;
+        case ((VENDOR_PLIXER << 16) | 117):    /* date_time */
+            /* XXX - what format is this? */
+            ti = proto_tree_add_item(pdutree, hf_pie_plixer_date_time,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+            /* END Plixer International */
+
+            /* START Ixia Communications */
+        case ((VENDOR_IXIA << 16) | 110):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_l7_application_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 111):
+            {
+            const guint8 *string;
+            ti = proto_tree_add_item_ret_string(pdutree, hf_pie_ixia_l7_application_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA, wmem_packet_scope(), &string);
+            proto_item_append_text(pdutree, " (%s)", string);
+            }
+
+            break;
+
+        case ((VENDOR_IXIA << 16) | 120):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_source_ip_country_code,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 121):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_source_ip_country_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 122):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_source_ip_region_code,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 123):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_source_ip_region_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 125):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_source_ip_city_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 126):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_source_ip_latitude,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 127):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_source_ip_longitude,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_IXIA << 16) | 140):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_destination_ip_country_code,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 141):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_destination_ip_country_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 142):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_destination_ip_region_code,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 143):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_destination_ip_region_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 145):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_destination_ip_city_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 146):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_destination_ip_latitude,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 147):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_destination_ip_longitude,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 160):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_os_device_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 161):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_os_device_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 162):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_browser_id,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 163):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_browser_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 176):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_reverse_octet_delta_count,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 177):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_reverse_packet_delta_count,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 178):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_conn_encryption_type,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 179):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_encryption_cipher,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 180):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_encryption_keylen,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_IXIA << 16) | 181):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_imsi,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 182):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_user_agent,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 183):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_host_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 184):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_uri,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 185):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_dns_txt,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 186):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_source_as_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 187):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_dest_as_name,
+                                     tvb, offset, length, ENC_ASCII|ENC_NA);
+            break;
+        case ((VENDOR_IXIA << 16) | 188):
+            ti = proto_tree_add_item(pdutree, hf_pie_ixia_transaction_latency,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+            /* END Ixia Communications */
+
+            /* START Netscaler Communications */
+        case ((VENDOR_NETSCALER << 16) | 128):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_roundtriptime,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 129):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_transactionid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 130):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httprequrl,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 131):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqcookie,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 132):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_flowflags,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 133):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_connectionid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 134):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_syslogpriority,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 135):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_syslogmessage,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 136):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_syslogtimestamp,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 140):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqreferer,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 141):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqmethod,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 142):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqhost,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 143):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httprequseragent,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 144):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httprspstatus,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 145):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httprsplen,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 146):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_serverttfb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 147):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_serverttlb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 150):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_appnameincarnationnumber,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 151):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_appnameappid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 152):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_appname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 153):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqrcvfb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 156):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqforwfb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 157):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpresrcvfb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 158):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpresforwfb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 159):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqrcvlb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 160):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqforwlb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 161):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_mainpageid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 162):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_mainpagecoreid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 163):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpclientinteractionstarttime,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 164):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpclientrenderendtime,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 165):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpclientrenderstarttime,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 167):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_apptemplatename,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 168):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpclientinteractionendtime,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 169):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpresrcvlb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 170):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpresforwlb,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 171):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_appunitnameappid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 172):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbloginflags,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 173):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbreqtype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 174):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbprotocolname,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 175):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbusername,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 176):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbdatabasename,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 177):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbclthostname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 178):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbreqstring,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 179):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbrespstatusstring,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 180):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbrespstatus,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 181):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_dbresplength,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 182):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_clientrtt,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 183):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpcontenttype,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 185):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqauthorization,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 186):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqvia,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 187):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreslocation,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 188):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpressetcookie,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 189):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpressetcookie2,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 190):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpreqxforwardedfor,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 192):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_connectionchainid,
+                                     tvb, offset, length, ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 193):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_connectionchainhopcount,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 200):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icasessionguid,
+                                     tvb, offset, length, ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 201):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientversion,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 202):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclienttype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 203):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientip,
+                                     tvb, offset, 4, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 204):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclienthostname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 205):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_aaausername,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 207):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icadomainname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 208):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientlauncher,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 209):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icasessionsetuptime,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 210):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaservername,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 214):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icasessionreconnects,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 215):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icartt,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 216):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsiderxbytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 217):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsidetxbytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 219):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsidepacketsretransmit,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 220):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaserversidepacketsretransmit,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 221):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsidertt,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 222):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaserversidertt,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 223):
+            /*
+             * XXX - this says "sec"; is it just seconds since the UN*X epoch,
+             * i.e. should it be ENC_TIME_SECS?
+             */
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icasessionupdatebeginsec,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 224):
+            /*
+             * XXX - this says "sec"; is it just seconds since the UN*X epoch,
+             * i.e. should it be ENC_TIME_SECS?
+             */
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icasessionupdateendsec,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 225):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid1,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 226):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid1bytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 227):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid2,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 228):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid2bytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 229):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid3,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 230):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid3bytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 231):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid4,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 232):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid4bytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 233):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid5,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 234):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icachannelid5bytes,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 235):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaconnectionpriority,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 236):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_applicationstartupduration,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 237):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icalaunchmechanism,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 238):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaapplicationname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 239):
+            /* XXX - what format is this? */
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_applicationstartuptime,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 240):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaapplicationterminationtype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 241):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaapplicationterminationtime,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 242):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icasessionendtime,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 243):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsidejitter,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 244):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaserversidejitter,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 245):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaappprocessid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 246):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaappmodulepath,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 247):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icadeviceserialno,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 248):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_msiclientcookie,
+                                     tvb, offset, length, ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 249):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaflags,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 250):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icausername,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 251):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_licensetype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 252):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_maxlicensecount,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 253):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_currentlicenseconsumed,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 254):
+            /* XXX - what format is this? */
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icanetworkupdatestarttime,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 255):
+            /* XXX - what format is this? */
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icanetworkupdateendtime,
+                                     tvb, offset, length, ENC_TIME_TIMESPEC|ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 256):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsidesrtt,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 257):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaserversidesrtt,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 258):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsidedelay,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 259):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaserversidedelay,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 260):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icahostdelay,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 261):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsidewindowsize,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 262):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaserversidewindowsize,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 263):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaclientsidertocount,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 264):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_icaserversidertocount,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 265):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_ical7clientlatency,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 266):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_ical7serverlatency,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 267):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_httpdomainname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 268):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_cacheredirclientconnectioncoreid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_NETSCALER << 16) | 269):
+            ti = proto_tree_add_item(pdutree, hf_pie_netscaler_cacheredirclientconnectiontransactionid,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+            /* END Netscaler Communications */
+
+            /* START Barracuda Communications */
+        case ((VENDOR_BARRACUDA << 16) | 1):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_timestamp,
+                                     tvb, offset, length, ENC_TIME_SECS|ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 2):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_logop,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 3):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_traffictype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 4):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_fwrule,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 5):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_servicename,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 6):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_reason,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 7):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_reasontext,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 8):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_bindipv4address,
+                                     tvb, offset, 4, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 9):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_bindtransportport,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 10):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_connipv4address,
+                                     tvb, offset, 4, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 11):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_conntransportport,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+        case ((VENDOR_BARRACUDA << 16) | 12):
+            ti = proto_tree_add_item(pdutree, hf_pie_barracuda_auditcounter,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+            /* END Barracuda Communications */
+
+            /* START Gigamon */
+        case ((VENDOR_GIGAMON << 16) | 1):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_httprequrl,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 2):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_httprspstatus,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 101):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificateissuercommonname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 102):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificatesubjectcommonname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 103):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificateissuer,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 104):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificatesubject,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 105):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificatevalidnotbefore,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 106):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificatevalidnotafter,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 107):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcetificateserialnumber,
+                                     tvb, offset, length, ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 108):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificatesignaturealgorithm,
+                                     tvb, offset, length, ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 109):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificatesubjectpubalgorithm,
+                                     tvb, offset, length, ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 110):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificatesubjectpubkeysize,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 111):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslcertificatesubjectaltname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 112):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslservernameindication,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 113):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslserverversion,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 114):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslservercipher,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 115):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslservercompressionmethod,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 116):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_sslserversessionid,
+                                     tvb, offset, length, ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 201):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsidentifier,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 202):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsopcode,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 203):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponsecode,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 204):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsqueryname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 205):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponsename,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 206):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponsettl,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 207):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponseipv4address,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 208):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponseipv6address,
+                                     tvb, offset, length, ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 209):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsbits,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 210):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsqdcount,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 211):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsancount,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 212):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsnscount,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 213):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsarcount,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 214):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsquerytype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 215):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsqueryclass,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 216):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponsetype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 217):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponseclass,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 218):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponserdlength,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 219):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsresponserdata,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 220):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsauthorityname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 221):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsauthoritytype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 222):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsauthorityclass,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 223):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsauthorityttl,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 224):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsauthorityrdlength,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 225):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsauthorityrdata,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 226):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsadditionalname,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 227):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsadditionaltype,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 228):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsadditionalclass,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 229):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsadditionalttl,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 230):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsadditionalrdlength,
+                                     tvb, offset, length, ENC_BIG_ENDIAN);
+            break;
+
+        case ((VENDOR_GIGAMON << 16) | 231):
+            ti = proto_tree_add_item(pdutree, hf_pie_gigamon_dnsadditionalrdata,
+                                     tvb, offset, length, ENC_UTF_8|ENC_NA);
+            break;
+
+            /* END Gigamon */
+
+        default:  /* Unknown Field ID */
+            if ((hdrinfo_p->vspec == 9) || (pen == REVPEN)) {
+                ti = proto_tree_add_bytes_format_value(pdutree, hf_cflow_unknown_field_type,
+                                                       tvb, offset, length, NULL,
+                                                       "Type %u: Value (hex bytes): %s",
+                                                       masked_type,
+                                                       tvb_bytes_to_str_punct(wmem_packet_scope(), tvb, offset, length, ' '));
+            } else { /* v10 PEN */
+                ti = proto_tree_add_bytes_format_value(pdutree, hf_ipfix_enterprise_private_entry,
+                                                       tvb, offset, length, NULL,
+                                                       "(%s) Type %u: Value (hex bytes): %s",
+                                                       pen_str ? pen_str : "(null)",
+                                                       masked_type,
+                                                       tvb_bytes_to_str_punct(wmem_packet_scope(), tvb, offset, length, ' '));
+            }
+            break;
+
+        } /* switch (pen_type) */
+
+        if (ti && (vstr_len != 0)) {
+            string_tree = proto_item_add_subtree(ti, ett_str_len);
+            proto_tree_add_uint(string_tree, hf_string_len_short, tvb,
+                                gen_str_offset-vstr_len, 1, string_len_short);
+            if (vstr_len == 3) {
+                proto_tree_add_uint(string_tree, hf_string_len_long, tvb,
+                                    gen_str_offset-2, 2, string_len_long);
+            }
+        }
+
+        if (ti && (pen == REVPEN)) {
+            /* XXX: why showing type ? type not shown if not reverse */
+            proto_item_append_text(ti, " (Reverse Type %u %s)",
+                                   masked_type,
+                                   val_to_str_ext_const(masked_type, &v9_v10_template_types_ext, "Unknown"));
+        }
+
+        offset += length;
+    } /* for (i=0; i < count; i++) */
+
+    /* If only "start" or "end" time, show it here */
+    /* XXX: length is actually 8 if millisec, microsec, nanosec time */
+    for (i = 0; i < 2; i++) {
+        for (j=0; j < (gint)duration_type_max; j++) {
+            if (!(offset_s[i][j] && offset_e[i][j])) {
+                if (offset_s[i][j]) {
+                    if (msec_start[i][j]) {
+                        proto_tree_add_time(pdutree, hf_cflow_timestart, tvb,
+                                            offset_s[i][j], 4, &ts_start[i][j]);
+                    } else {
+                        proto_tree_add_time(pdutree, hf_cflow_abstimestart, tvb,
+                                            offset_s[i][j], 4, &ts_start[i][j]);
+                    }
+                }
+                if (offset_e[i][j]) {
+                    if (msec_end[i][j]) {
+                        proto_tree_add_time(pdutree, hf_cflow_timeend, tvb,
+                                            offset_e[i][j], 4, &ts_end[i][j]);
+                    } else {
+                        proto_tree_add_time(pdutree, hf_cflow_abstimeend, tvb,
+                                            offset_e[i][j], 4, &ts_end[i][j]);
+                    }
+                }
+            }
+        }
+    }
+
+    /* XXX - These IDs are currently hard-coded in procflow.py. */
+    if (got_flags == GOT_TCP_UDP && (tmplt_p->tmplt_id == 256 || tmplt_p->tmplt_id == 258)) {
+        add_tcp_process_info(pinfo->num, &local_addr, &remote_addr, local_port, remote_port, uid, pid, uname_str, cmd_str);
+    }
+    if (got_flags == GOT_TCP_UDP && (tmplt_p->tmplt_id == 257 || tmplt_p->tmplt_id == 259)) {
+        add_udp_process_info(pinfo->num, &local_addr, &remote_addr, local_port, remote_port, uid, pid, uname_str, cmd_str);
+    }
+
+    return (guint) (offset - orig_offset);
+
+}
+
+/* --- Dissect Template ---*/
+/* Template Fields Dissection */
+static const int *v9_template_type_hf_list[TF_NUM] = {
+    &hf_cflow_template_scope_field_type,            /* scope */
+    &hf_cflow_template_field_type};                 /* entry */
+static const int *v10_template_type_hf_list[TF_NUM_EXT] = {
+    &hf_cflow_template_ipfix_field_type,            /* scope */
+    &hf_cflow_template_ipfix_field_type,
+    &hf_cflow_template_plixer_field_type,
+    &hf_cflow_template_ntop_field_type,
+    &hf_cflow_template_ixia_field_type,
+    &hf_cflow_template_netscaler_field_type,
+    &hf_cflow_template_barracuda_field_type,
+    &hf_cflow_template_gigamon_field_type,
+    NULL};
+
+static value_string_ext *v9_template_type_vse_list[TF_NUM] = {
+    &v9_scope_field_types_ext,                      /* scope */
+    &v9_v10_template_types_ext };                   /* entry */
+static value_string_ext *v10_template_type_vse_list[TF_NUM_EXT] = {
+    &v9_v10_template_types_ext,                     /* scope */
+    &v9_v10_template_types_ext,                     /* entry */
+    &v10_template_types_plixer_ext,
+    &v10_template_types_ntop_ext,
+    &v10_template_types_ixia_ext,
+    &v10_template_types_netscaler_ext,
+    &v10_template_types_barracuda_ext,
+    &v10_template_types_gigamon_ext,
+    NULL};
+
+static int
+dissect_v9_v10_template_fields(tvbuff_t *tvb, packet_info *pinfo _U_, proto_tree *tmplt_tree, int offset,
+                               hdrinfo_t *hdrinfo_p,
+                               v9_v10_tmplt_t *tmplt_p,
+                               v9_v10_tmplt_fields_type_t fields_type)
+{
+    int ver;
+    int count;
+    int i;
+
+    DISSECTOR_ASSERT((fields_type == TF_SCOPES) || (fields_type == TF_ENTRIES));
+
+    ver = hdrinfo_p->vspec;
+    DISSECTOR_ASSERT((ver == 9) || (ver == 10));
+
+    count = tmplt_p->field_count[fields_type];
+    for(i=0; i<count; i++) {
+        guint16      type;
+        guint16      length;
+        guint32      pen;
+        const gchar *pen_str;
+        proto_tree  *field_tree;
+        proto_item  *field_item;
+        proto_item  *ti;
+
+        pen     = 0;
+        pen_str = NULL;
+        type    = tvb_get_ntohs(tvb, offset);
+        length  = tvb_get_ntohs(tvb, offset+2); /* XXX: 0 length should not be allowed ? exception: "ScopeSystem" */
+        if ((ver == 10) && (type & 0x8000)) {   /* IPFIX only */
+            pen = tvb_get_ntohl(tvb, offset+4);
+            pen_str = val_to_str_ext_const(pen, &sminmpec_values_ext, "(Unknown)");
         }
 
         if (tmplt_p->fields_p[fields_type] != NULL) {
@@ -11926,6 +14671,7 @@ proto_register_netflow(void)
          {"CollectorPort", "cflow.collector_port",
           FT_UINT16, BASE_DEC, NULL, 0x0,
           "Flow Collector Port", HFILL}
+<<<<<<< HEAD
         },
         {&hf_cflow_exporter_port,
          {"ExporterPort", "cflow.exporter_port",
@@ -13884,6 +16630,1726 @@ proto_register_netflow(void)
           FT_UINT16, BASE_DEC, NULL, 0x0,
           NULL, HFILL}
         },
+=======
+        },
+        {&hf_cflow_exporter_port,
+         {"ExporterPort", "cflow.exporter_port",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "Flow Exporter Port", HFILL}
+        },
+        {&hf_cflow_total_tcp_syn,
+         {"Total TCP syn", "cflow.total_tcp_syn",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          "Count of total TCP syn", HFILL}
+        },
+        {&hf_cflow_total_tcp_fin,
+         {"Total TCP fin", "cflow.total_tcp_fin",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          "Count of total TCP fin", HFILL}
+        },
+        {&hf_cflow_total_tcp_rst,
+         {"Total TCP rst", "cflow.total_tcp_rst",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          "Count of total TCP rst", HFILL}
+        },
+        {&hf_cflow_total_tcp_psh,
+         {"Total TCP psh", "cflow.total_tcp_psh",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          "Count of total TCP psh", HFILL}
+        },
+        {&hf_cflow_total_tcp_ack,
+         {"Total TCP ack", "cflow.total_tcp_ack",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          "Count of total TCP ack", HFILL}
+        },
+        {&hf_cflow_total_tcp_urg,
+         {"Total TCP urg", "cflow.total_tcp_urg",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          "Count of total TCP urg", HFILL}
+        },
+        {&hf_cflow_ip_total_length,
+         {"IP Total Length", "cflow.ip_total_length",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_natsource_ipv4_address,
+         {"Post NAT Source IPv4 Address", "cflow.post_natsource_ipv4_address",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_natdestination_ipv4_address,
+         {"Post NAT Destination IPv4 Address", "cflow.post_natdestination_ipv4_address",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_naptsource_transport_port,
+         {"Post NAPT Source Transport Port", "cflow.post_naptsource_transport_port",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_naptdestination_transport_port,
+         {"Post NAPT Destination Transport Port", "cflow.post_naptdestination_transport_port",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_nat_originating_address_realm,
+         {"Nat Originating Address Realm", "cflow.nat_originating_address_realm",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_nat_event,
+         {"Nat Event", "cflow.nat_event",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_initiator_octets,
+         {"Initiator Octets", "cflow.initiator_octets",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_responder_octets,
+         {"Responder Octets", "cflow.responder_octets",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_firewall_event,
+         {"Firewall Event", "cflow.firewall_event",
+          FT_UINT8, BASE_DEC, VALS(v9_firewall_event), 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_ingress_vrfid,
+         {"Ingress VRFID", "cflow.ingress_vrfid",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_egress_vrfid,
+         {"Egress VRFID", "cflow.egress_vrfid",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_vrfname,
+         {"VRFname", "cflow.vrfname",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_mpls_top_label_exp,
+         {"Post MPLS Top Label Exp", "cflow.post_mpls_top_label_exp",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_tcp_window_scale,
+         {"Tcp Window Scale", "cflow.tcp_window_scale",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_biflow_direction,
+         {"Biflow Direction", "cflow.biflow_direction",
+          FT_UINT8, BASE_DEC, VALS(v9_biflow_direction), 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_ethernet_header_length,
+         {"Ethernet Header Length", "cflow.ethernet_header_length",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_ethernet_payload_length,
+         {"Ethernet Payload Length", "cflow.ethernet_payload_length",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_ethernet_total_length,
+         {"Ethernet Total Length", "cflow.ethernet_total_length",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_vlan_id,
+         {"Dot1q Vlan Id", "cflow.dot1q_vlan_id",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_priority,
+         {"Dot1q Priority", "cflow.dot1q_priority",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_customer_vlan_id,
+         {"Dot1q Customer Vlan Id", "cflow.dot1q_customer_vlan_id",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_customer_priority,
+         {"Dot1q Customer Priority", "cflow.dot1q_customer_priority",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_metro_evc_id,
+         {"Metro Evc Id", "cflow.metro_evc_id",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_metro_evc_type,
+         {"Metro Evc Type", "cflow.metro_evc_type",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_pseudo_wire_id,
+         {"Pseudo Wire Id", "cflow.pseudo_wire_id",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_pseudo_wire_type,
+         {"Pseudo Wire Type", "cflow.pseudo_wire_type",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_pseudo_wire_control_word,
+         {"Pseudo Wire Control Word", "cflow.pseudo_wire_control_word",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_ingress_physical_interface,
+         {"Ingress Physical Interface", "cflow.ingress_physical_interface",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_egress_physical_interface,
+         {"Egress Physical Interface", "cflow.egress_physical_interface",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_dot1q_vlan_id,
+         {"Post Dot1q Vlan Id", "cflow.post_dot1q_vlan_id",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_dot1q_customer_vlan_id,
+         {"Post Dot1q Customer Vlan Id", "cflow.post_dot1q_customer_vlan_id",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_ethernet_type,
+         {"Ethernet Type", "cflow.ethernet_type",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_ip_precedence,
+         {"Post Ip Precedence", "cflow.post_ip_precedence",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_collection_time_milliseconds,
+         {"Collection Time Milliseconds", "cflow.collection_time_milliseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_export_sctp_stream_id,
+         {"Export Sctp Stream Id", "cflow.export_sctp_stream_id",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_max_export_seconds,
+         {"Max Export Seconds", "cflow.max_export_seconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_max_flow_end_seconds,
+         {"Max Flow End Seconds", "cflow.max_flow_end_seconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_message_md5_checksum,
+         {"Message MD5 Checksum", "cflow.message_md5_checksum",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_message_scope,
+         {"Message Scope", "cflow.message_scope",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_min_export_seconds,
+         {"Min Export Seconds", "cflow.min_export_seconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_min_flow_start_seconds,
+         {"Min Flow Start Seconds", "cflow.min_flow_start_seconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_opaque_octets,
+         {"Opaque Octets", "cflow.opaque_octets",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_session_scope,
+         {"Session Scope", "cflow.session_scope",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_max_flow_end_microseconds,
+         {"Max Flow End Microseconds", "cflow.max_flow_end_microseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_UTC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_max_flow_end_milliseconds,
+         {"Max Flow End Milliseconds", "cflow.max_flow_end_milliseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_max_flow_end_nanoseconds,
+         {"Max Flow End Nanoseconds", "cflow.max_flow_end_nanoseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_UTC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_min_flow_start_microseconds,
+         {"Min Flow Start Microseconds", "cflow.min_flow_start_microseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_UTC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_min_flow_start_milliseconds,
+         {"Min Flow Start Milliseconds", "cflow.min_flow_start_milliseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_min_flow_start_nanoseconds,
+         {"Min Flow Start Nanoseconds", "cflow.min_flow_start_nanoseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_UTC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_collector_certificate,
+         {"Collector Certificate", "cflow.collector_certificate",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_exporter_certificate,
+         {"Exporter Certificate", "cflow.exporter_certificate",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_data_records_reliability,
+         {"Data Records Reliability", "cflow.data_records_reliability",
+          FT_BOOLEAN, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_observation_point_type,
+         {"Observation Point Type", "cflow.observation_point_type",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_new_connection_delta_count,
+         {"New Connection Delta Count", "cflow.new_connection_delta_count",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_connection_sum_duration_seconds,
+         {"Connection Sum Duration Seconds", "cflow.connection_sum_duration_seconds",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_connection_transaction_id,
+         {"Connection Transaction Id", "cflow.connection_transaction_id",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_nat_source_ipv6_address,
+         {"Post NAT Source IPv6 Address", "cflow.post_nat_source_ipv6_address",
+          FT_IPv6, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_post_nat_destination_ipv6_address,
+         {"Post NAT Destination IPv6 Address", "cflow.post_nat_destination_ipv6_address",
+          FT_IPv6, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_nat_pool_id,
+         {"Nat Pool Id", "cflow.nat_pool_id",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_nat_pool_name,
+         {"Nat Pool Name", "cflow.nat_pool_name",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_anonymization_flags,
+         {"Anonymization Flags", "cflow.anonymization_flags",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_anonymization_technique,
+         {"Anonymization Technique", "cflow.anonymization_technique",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_information_element_index,
+         {"Information Element Index", "cflow.information_element_index",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_p2p_technology,
+         {"P2p Technology", "cflow.p2p_technology",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_tunnel_technology,
+         {"Tunnel Technology", "cflow.tunnel_technology",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_encrypted_technology,
+         {"Encrypted Technology", "cflow.encrypted_technology",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_bgp_validity_state,
+         {"Bgp Validity State", "cflow.bgp_validity_state",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_ipsec_spi,
+         {"IPSec SPI", "cflow.ipsec_spi",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_gre_key,
+         {"Gre Key", "cflow.gre_key",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_nat_type,
+         {"Nat Type", "cflow.nat_type",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_initiator_packets,
+         {"Initiator Packets", "cflow.initiator_packets",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_responder_packets,
+         {"Responder Packets", "cflow.responder_packets",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_observation_domain_name,
+         {"Observation Domain Name", "cflow.observation_domain_name",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_selection_sequence_id,
+         {"Selection Sequence Id", "cflow.selection_sequence_id",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_selector_id,
+         {"Selector Id", "cflow.selector_id",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_information_element_id,
+         {"Information Element Id", "cflow.information_element_id",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_selector_algorithm,
+         {"Selector Algorithm", "cflow.selector_algorithm",
+          FT_UINT16, BASE_DEC|BASE_EXT_STRING, &selector_algorithm_ext, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_sampling_packet_interval,
+         {"Sampling Packet Interval", "cflow.sampling_packet_interval",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_sampling_packet_space,
+         {"Sampling Packet Space", "cflow.sampling_packet_space",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_sampling_time_interval,
+         {"Sampling Time Interval", "cflow.sampling_time_interval",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_sampling_time_space,
+         {"Sampling Time Space", "cflow.sampling_time_space",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_sampling_size,
+         {"Sampling Size", "cflow.sampling_size",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_sampling_population,
+         {"Sampling Population", "cflow.sampling_population",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_sampling_probability_float32,
+         {"Sampling Probability", "cflow.sampling_probability",
+          FT_FLOAT, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_sampling_probability_float64,
+         {"Sampling Probability", "cflow.sampling_probability",
+          FT_DOUBLE, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_data_link_frame_size,
+         {"Data Link Frame Size", "cflow.data_link_frame_size",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_data_link_frame_section,
+         {"Data Link Frame Section", "cflow.data_link_frame_section",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_mpls_label_stack_section,
+         {"MPLS Label Stack Section", "cflow.mpls_label_stack_section",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_mpls_payload_packet_section,
+         {"MPLS Payload Packet Section", "cflow.mpls_payload_packet_section",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_selector_id_total_pkts_observed,
+         {"Selector Id Total Pkts Observed", "cflow.selector_id_total_pkts_observed",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_selector_id_total_pkts_selected,
+         {"Selector Id Total Pkts Selected", "cflow.selector_id_total_pkts_selected",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_absolute_error_float32,
+         {"Absolute Error", "cflow.absolute_error",
+          FT_FLOAT, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_absolute_error_float64,
+         {"Absolute Error", "cflow.absolute_error",
+          FT_DOUBLE, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_relative_error_float32,
+         {"Relative Error", "cflow.relative_error",
+          FT_FLOAT, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_relative_error_float64,
+         {"Relative Error", "cflow.relative_error",
+          FT_DOUBLE, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_observation_time_seconds,
+         {"Observation Time Seconds", "cflow.observation_time_seconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_observation_time_milliseconds,
+         {"Observation Time Milliseconds", "cflow.observation_time_milliseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_observation_time_microseconds,
+         {"Observation Time Microseconds", "cflow.observation_time_microseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_UTC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_observation_time_nanoseconds,
+         {"Observation Time Nanoseconds", "cflow.observation_time_nanoseconds",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_UTC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_digest_hash_value,
+         {"Digest Hash Value", "cflow.digest_hash_value",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_hash_ippayload_offset,
+         {"Hash IPPayload Offset", "cflow.hash_ippayload_offset",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_hash_ippayload_size,
+         {"Hash IPPayload Size", "cflow.hash_ippayload_size",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_hash_output_range_min,
+         {"Hash Output Range Min", "cflow.hash_output_range_min",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_hash_output_range_max,
+         {"Hash Output Range Max", "cflow.hash_output_range_max",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_hash_selected_range_min,
+         {"Hash Selected Range Min", "cflow.hash_selected_range_min",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_hash_selected_range_max,
+         {"Hash Selected Range Max", "cflow.hash_selected_range_max",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_hash_digest_output,
+         {"Hash Digest Output", "cflow.hash_digest_output",
+          FT_BOOLEAN, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_hash_initialiser_value,
+         {"Hash Initialiser Value", "cflow.hash_initialiser_value",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_selector_name,
+         {"Selector Name", "cflow.selector_name",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_upper_cilimit_float32,
+         {"Upper CILimit", "cflow.upper_cilimit",
+          FT_FLOAT, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_upper_cilimit_float64,
+         {"Upper CILimit", "cflow.upper_cilimit",
+          FT_DOUBLE, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_lower_cilimit_float32,
+         {"Lower CILimit", "cflow.lower_cilimit",
+          FT_FLOAT, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_lower_cilimit_float64,
+         {"Lower CILimit", "cflow.lower_cilimit",
+          FT_DOUBLE, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_confidence_level_float32,
+         {"Confidence Level", "cflow.confidence_level",
+          FT_FLOAT, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_confidence_level_float64,
+         {"Confidence Level", "cflow.confidence_level",
+          FT_DOUBLE, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* TODO: want to add a value_string, but where defined in RFCs? */
+        {&hf_cflow_information_element_data_type,
+         {"Information Element Data Type", "cflow.information_element_data_type",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_information_element_description,
+         {"Information Element Description", "cflow.information_element_description",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_information_element_name,
+         {"Information Element Name", "cflow.information_element_name",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_information_element_range_begin,
+         {"Information Element Range Begin", "cflow.information_element_range_begin",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_information_element_range_end,
+         {"Information Element Range End", "cflow.information_element_range_end",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_information_element_semantics,
+         {"Information Element Semantics", "cflow.information_element_semantics",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_information_element_units,
+         {"Information Element Units", "cflow.information_element_units",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_private_enterprise_number,
+         {"Private Enterprise Number", "cflow.private_enterprise_number",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+
+        {&hf_cflow_virtual_station_interface_id,
+         {"Virtual Station Interface Id", "cflow.virtual_station_interface_id",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_virtual_station_interface_name,
+          {"Virtual Station Interface Name", "cflow.virtual_station_interface_name",
+           FT_STRING, STR_UNICODE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_virtual_station_uuid,
+          {"Virtual Station Uuid", "cflow.virtual_station_uuid",
+           FT_BYTES, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_virtual_station_name,
+          {"Virtual Station Name", "cflow.virtual_station_name",
+           FT_STRING, STR_UNICODE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_layer2_segment_id,
+          {"Layer2 Segment Id", "cflow.layer2_segment_id",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_layer2_octet_delta_count,
+          {"Layer2 Octet Delta Count", "cflow.layer2_octet_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_layer2_octet_total_count,
+          {"Layer2 Octet Total Count", "cflow.layer2_octet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_ingress_unicast_packet_total_count,
+          {"Ingress Unicast Packet Total Count", "cflow.ingress_unicast_packet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_ingress_multicast_packet_total_count,
+          {"Ingress Multicast Packet Total Count", "cflow.ingress_multicast_packet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_ingress_broadcast_packet_total_count,
+          {"Ingress Broadcast Packet Total Count", "cflow.ingress_broadcast_packet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_egress_unicast_packet_total_count,
+          {"Egress Unicast Packet Total Count", "cflow.egress_unicast_packet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_egress_broadcast_packet_total_count,
+          {"Egress Broadcast Packet Total Count", "cflow.egress_broadcast_packet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_monitoring_interval_start_milliseconds,
+          {"Monitoring Interval Start MilliSeconds", "cflow.monitoring_interval_start_milliseconds",
+           FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_monitoring_interval_end_milliseconds,
+          {"Monitoring Interval End MilliSeconds", "cflow.monitoring_interval_end_milliseconds",
+           FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_port_range_start,
+          {"Port Range Start", "cflow.port_range_start",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_port_range_end,
+          {"Port Range End", "cflow.port_range_end",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_port_range_step_size,
+          {"Port Range Step Size", "cflow.port_range_step_size",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_port_range_num_ports,
+          {"Port Range Num Ports", "cflow.port_range_num_ports",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_sta_mac_address,
+          {"Sta Mac Address", "cflow.sta_mac_address",
+           FT_ETHER, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_sta_ipv4_address,
+          {"Sta Ipv4 Address", "cflow.sta_ipv4_address",
+           FT_IPv4, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_wtp_mac_address,
+          {"Wtp Mac Address", "cflow.wtp_mac_address",
+           FT_ETHER, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_ingress_interface_type,
+          {"Ingress Interface Type", "cflow.ingress_interface_type",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_egress_interface_type,
+          {"Egress Interface Type", "cflow.egress_interface_type",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_rtp_sequence_number,
+          {"Rtp Sequence Number", "cflow.rtp_sequence_number",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_user_name,
+          {"User Name", "cflow.user_name",
+           FT_STRING, STR_UNICODE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_application_category_name,
+          {"Application Category Name", "cflow.application_category_name",
+           FT_STRING, STR_UNICODE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_application_sub_category_name,
+          {"Application Sub Category Name", "cflow.application_sub_category_name",
+           FT_STRING, STR_UNICODE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_application_group_name,
+          {"Application Group Name", "cflow.application_group_name",
+           FT_STRING, STR_UNICODE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_original_flows_present,
+          {"Original Flows Present", "cflow.original_flows_present",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_original_flows_initiated,
+          {"Original Flows Initiated", "cflow.original_flows_initiated",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_original_flows_completed,
+          {"Original Flows Completed", "cflow.original_flows_completed",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_distinct_count_of_source_ip_address,
+          {"Distinct Count Of Source Ip Address", "cflow.distinct_count_of_source_ip_address",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_distinct_count_of_destinationip_address,
+          {"Distinct Count Of Destinationip Address", "cflow.distinct_count_of_destinationip_address",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_distinct_count_of_source_ipv4_address,
+          {"Distinct Count Of Source Ipv4 Address", "cflow.distinct_count_of_source_ipv4_address",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_distinct_count_of_destination_ipv4_address,
+          {"Distinct Count Of Destination Ipv4 Address", "cflow.distinct_count_of_destination_ipv4_address",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_distinct_count_of_source_ipv6_address,
+          {"Distinct Count Of Source Ipv6 Address", "cflow.distinct_count_of_source_ipv6_address",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_distinct_count_of_destination_ipv6_address,
+          {"Distinct Count Of Destination Ipv6 Address", "cflow.distinct_count_of_destination_ipv6_address",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_value_distribution_method,
+          {"Value Distribution Method", "cflow.value_distribution_method",
+           FT_UINT8, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_rfc3550_jitter_milliseconds,
+          {"Rfc3550 Jitter Milliseconds", "cflow.rfc3550_jitter_milliseconds",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_rfc3550_jitter_microseconds,
+          {"Rfc3550 Jitter Microseconds", "cflow.rfc3550_jitter_microseconds",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_rfc3550_jitter_nanoseconds,
+          {"Rfc3550 Jitter Nanoseconds", "cflow.rfc3550_jitter_nanoseconds",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_dei,
+          {"Dot1q DEI", "cflow.dot1q_dei",
+           FT_BOOLEAN, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_customer_dei,
+          {"Dot1q Customer DEI", "cflow.dot1q_customer_dei",
+           FT_BOOLEAN, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_flow_selector_algorithm,
+          {"Flow_Selector_Algorithm", "cflow.flow_selector_algorithm",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_flow_selected_octet_delta_count,
+          {"Flow_Selected_Octet_Delta_Count", "cflow.flow_selected_octet_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_flow_selected_packet_delta_count,
+          {"Flow_Selected_Packet_Delta_Count", "cflow.flow_selected_packet_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_flow_selected_flow_delta_count,
+          {"Flow_Selected_Flow_Delta_Count", "cflow.flow_selected_flow_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_selectorid_total_flows_observed,
+          {"Selectorid_Total_Flows_Observed", "cflow.selectorid_total_flows_observed",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_selectorid_total_flows_selected,
+          {"Selectorid_Total_Flows_Selected", "cflow.selectorid_total_flows_selected",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_sampling_flow_interval,
+          {"Sampling_Flow_Interval", "cflow.sampling_flow_interval",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_sampling_flow_spacing,
+          {"Sampling_Flow_Spacing", "cflow.sampling_flow_spacing",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_flow_sampling_time_interval,
+          {"Flow_Sampling_Time_Interval", "cflow.flow_sampling_time_interval",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_flow_sampling_time_spacing,
+          {"Flow_Sampling_Time_Spacing", "cflow.flow_sampling_time_spacing",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_hash_flow_domain,
+          {"Hash_Flow_Domain", "cflow.hash_flow_domain",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_transport_octet_delta_count,
+          {"Transport_Octet_Delta_Count", "cflow.transport_octet_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_transport_packet_delta_count,
+          {"Transport_Packet_Delta_Count", "cflow.transport_packet_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_original_exporter_ipv4_address,
+          {"Original_Exporter_Ipv4_Address", "cflow.original_exporter_ipv4_address",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_original_exporter_ipv6_address,
+          {"Original_Exporter_Ipv6_Address", "cflow.original_exporter_ipv6_address",
+           FT_IPv6, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_original_observation_domain_id,
+          {"Original_Observation_Domain_Id", "cflow.original_observation_domain_id",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_intermediate_process_id,
+          {"Intermediate_Process_Id", "cflow.intermediate_process_id",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_ignored_data_record_total_count,
+          {"Ignored_Data_Record_Total_Count", "cflow.ignored_data_record_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_data_link_frame_type,
+          {"Data_Link_Frame_Type", "cflow.data_link_frame_type",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_section_offset,
+          {"Section_Offset", "cflow.section_offset",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_section_exported_octets,
+          {"Section_Exported_Octets", "cflow.section_exported_octets",
+           FT_UINT16, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_service_instance_tag,
+          {"Dot1q_Service_Instance_Tag", "cflow.dot1q_service_instance_tag",
+           FT_BYTES, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_service_instance_id,
+          {"Dot1q_Service_Instance_Id", "cflow.dot1q_service_instance_id",
+           FT_UINT32, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_service_instance_priority,
+          {"Dot1q_Service_Instance_Priority", "cflow.dot1q_service_instance_priority",
+           FT_UINT8, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_customer_source_mac_address,
+          {"Dot1q_Customer_Source_Mac_Address", "cflow.dot1q_customer_source_mac_address",
+           FT_ETHER, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dot1q_customer_destination_mac_address,
+          {"Dot1q_Customer_Destination_Mac_Address", "cflow.dot1q_customer_destination_mac_address",
+           FT_ETHER, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_post_layer2_octet_delta_count,
+          {"Post_Layer2_Octet_Delta_Count", "cflow.post_layer2_octet_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_postm_cast_layer2_octet_delta_count,
+          {"Postm_Cast_Layer2_Octet_Delta_Count", "cflow.postm_cast_layer2_octet_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_post_layer2_octet_total_count,
+          {"Post_Layer2_Octet_Total_Count", "cflow.post_layer2_octet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_postm_cast_layer2_octet_total_count,
+          {"Postm_Cast_Layer2_Octet_Total_Count", "cflow.postm_cast_layer2_octet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_minimum_layer2_total_length,
+          {"Minimum_Layer2_Total_Length", "cflow.minimum_layer2_total_length",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_maximum_layer2_total_length,
+          {"Maximum_Layer2_Total_Length", "cflow.maximum_layer2_total_length",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dropped_layer2_octet_delta_count,
+          {"Dropped_Layer2_Octet_Delta_Count", "cflow.dropped_layer2_octet_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_dropped_layer2_octet_total_count,
+          {"Dropped_Layer2_Octet_Total_Count", "cflow.dropped_layer2_octet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_ignored_layer2_octet_total_count,
+          {"Ignored_Layer2_Octet_Total_Count", "cflow.ignored_layer2_octet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_not_sent_layer2_octet_total_count,
+          {"Not_Sent_Layer2_Octet_Total_Count", "cflow.not_sent_layer2_octet_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_layer2_octet_delta_sum_of_squares,
+          {"Layer2_Octet_Delta_Sum_Of_Squares", "cflow.layer2_octet_delta_sum_of_squares",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_layer2_octet_total_sum_of_squares,
+          {"Layer2_Octet_Total_Sum_Of_Squares", "cflow.layer2_octet_total_sum_of_squares",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_layer2_frame_delta_count,
+          {"Layer2_Frame_Delta_Count", "cflow.layer2_frame_delta_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_layer2_frame_total_count,
+          {"Layer2_Frame_Total_Count", "cflow.layer2_frame_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_pseudo_wire_destination_ipv4_address,
+          {"Pseudo_Wire_Destination_Ipv4_Address", "cflow.pseudo_wire_destination_ipv4_address",
+           FT_IPv4, BASE_NONE, NULL, 0x0,
+           NULL, HFILL}
+        },
+        {&hf_cflow_ignored_layer2_frame_total_count,
+          {"Ignored_Layer2_Frame_Total_Count", "cflow.ignored_layer2_frame_total_count",
+           FT_UINT64, BASE_DEC, NULL, 0x0,
+           NULL, HFILL}
+        },
+
+        /*
+         * end pdu content storage
+         */
+        {&hf_cflow_scope_system,
+         {"ScopeSystem", "cflow.scope_system",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          "Option Scope System", HFILL}
+        },
+        {&hf_cflow_scope_interface,
+         {"ScopeInterface", "cflow.scope_interface",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          "Option Scope Interface", HFILL}
+        },
+        {&hf_cflow_scope_linecard,
+         {"ScopeLinecard", "cflow.scope_linecard",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          "Option Scope Linecard", HFILL}
+        },
+        {&hf_cflow_scope_cache,
+         {"ScopeCache", "cflow.scope_cache",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          "Option Scope Cache", HFILL}
+        },
+        {&hf_cflow_scope_template,
+         {"ScopeTemplate", "cflow.scope_template",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          "Option Scope Template", HFILL}
+        },
+
+        {&hf_cflow_padding,
+         {"Padding", "cflow.padding",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+
+        {&hf_cflow_reserved,
+         {"Reserved", "cflow.reserved",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+
+        {&hf_cflow_extra_packets,
+         {"Extra packets", "cflow.extra_packets",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+
+        /* IPFIX */
+        {&hf_cflow_unknown_field_type,
+         {"Unknown Field Type", "cflow.unknown_field_type",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_template_ipfix_total_field_count,
+         {"Total Field Count", "cflow.template_ipfix_total_field_count",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "IPFIX Options Template Total Field Count", HFILL}
+        },
+        {&hf_cflow_template_ipfix_scope_field_count,
+         {"Scope Field Count", "cflow.template_ipfix_scope_field_count",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "IPFIX Options Template Scope Field Count", HFILL}
+        },
+        {&hf_cflow_template_ipfix_pen_provided,
+         {"Pen provided", "cflow.template_ipfix_pen_provided",
+          FT_BOOLEAN, 16, TFS(&tfs_yes_no), 0x8000,
+          "Is Template Enterprise Specific", HFILL}
+        },
+        {&hf_cflow_template_ipfix_field_type,
+         {"Type", "cflow.template_ipfix_field_type",
+          FT_UINT16, BASE_DEC|BASE_EXT_STRING, &v9_v10_template_types_ext, 0x7FFF,
+          "Template field type", HFILL}
+        },
+        {&hf_cflow_template_plixer_field_type,
+         {"Type", "cflow.template_plixer_field_type",
+          FT_UINT16, BASE_DEC|BASE_EXT_STRING, &v10_template_types_plixer_ext, 0x7FFF,
+          "Template field type", HFILL}
+        },
+        {&hf_cflow_template_ntop_field_type,
+         {"Type", "cflow.template_ntop_field_type",
+          FT_UINT16, BASE_DEC|BASE_EXT_STRING, &v10_template_types_ntop_ext, 0x7FFF,
+          "Template field type", HFILL}
+        },
+        {&hf_cflow_template_ixia_field_type,
+         {"Type", "cflow.template_ixia_field_type",
+          FT_UINT16, BASE_DEC|BASE_EXT_STRING, &v10_template_types_ixia_ext, 0x7FFF,
+          "Template field type", HFILL}
+        },
+        {&hf_cflow_template_netscaler_field_type,
+         {"Type", "cflow.template_netscaler_field_type",
+          FT_UINT16, BASE_DEC|BASE_EXT_STRING, &v10_template_types_netscaler_ext, 0x7FFF,
+          "Template field type", HFILL}
+        },
+        {&hf_cflow_template_barracuda_field_type,
+         {"Type", "cflow.template_barracuda_field_type",
+          FT_UINT16, BASE_DEC|BASE_EXT_STRING, &v10_template_types_barracuda_ext, 0x7FFF,
+          "Template field type", HFILL}
+        },
+        {&hf_cflow_template_gigamon_field_type,
+         {"Type", "cflow.template_gigamon_field_type",
+          FT_UINT16, BASE_DEC|BASE_EXT_STRING, &v10_template_types_gigamon_ext, 0x7FFF,
+          "Template field type", HFILL}
+        },
+        {&hf_cflow_template_ipfix_field_type_enterprise,
+         {"Type", "cflow.template_ipfix_field_type_enterprise",
+          FT_UINT16, BASE_DEC, NULL, 0x7FFF,
+          "Template field type", HFILL}
+        },
+        {&hf_cflow_template_ipfix_field_pen,
+         {"PEN",
+          "cflow.template_ipfix_field_pen",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          "IPFIX Private Enterprise Number", HFILL}
+        },
+        {&hf_cflow_cts_sgt_source_tag,
+         {"Source SGT",
+          "cflow.source_sgt_tag",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_cts_sgt_destination_tag,
+         {"Destination SGT",
+          "cflow.destination_sgt_tag",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_cts_sgt_source_name,
+         {"Source SGT Name",
+          "cflow.source_sgt_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_cts_sgt_destination_name,
+         {"Destination SGT Name",
+          "cflow.destination_sgt_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_packets_dropped,
+         {"Packets Dropped",
+          "cflow.packets_dropped",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_byte_rate,
+         {"Byte Rate",
+          "cflow.byte_rate",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_application_media_bytes,
+         {"Media Bytes",
+          "cflow.application_media_bytes",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_application_media_byte_rate,
+         {"Media Byte Rate",
+          "cflow.media_byte_rate",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_application_media_packets,
+         {"Media Packets",
+          "cflow.application_media_packets",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_application_media_packet_rate,
+         {"Media Packet Rate",
+          "cflow.media_packet_rate",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_application_media_event,
+         {"Media Event",
+          "cflow.application_media_event",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_monitor_event,
+         {"Monitor Event",
+          "cflow.monitor_event",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_timestamp_interval,
+         {"Timestamp Interval",
+          "cflow.timestamp_interval",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_packets_expected,
+         {"Transport Packets Expected",
+          "cflow.transport_packets_expected",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_round_trip_time_string,
+         {"Transport Round-Trip-Time",
+          "cflow.transport_rtt.string",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_round_trip_time,
+         {"Transport Round-Trip-Time",
+          "cflow.transport_rtt",
+          FT_RELATIVE_TIME, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_event_packet_loss,
+         {"Transport Packet Loss Events",
+          "cflow.transport_packet_loss_event",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_packets_lost,
+         {"Transport Packets Lost",
+          "cflow.transport_packets_lost",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_packets_lost_string,
+         {"Transport Packets Lost",
+          "cflow.transport_packets_lost",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_packets_lost_rate,
+         {"Transport Packet Loss Rate",
+          "cflow.transport_packet_loss_rate",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_packets_lost_rate_string,
+         {"Transport Packet Loss Rate",
+          "cflow.transport_packet_loss_rate",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials) , 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_rtp_ssrc,
+         {"RTP SSRC",
+          "cflow.transport_rtp_ssrc",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_rtp_jitter_mean,
+         {"RTP Mean Jitter",
+          "cflow.transport_jitter_mean",
+          FT_RELATIVE_TIME, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_rtp_jitter_mean_string,
+         {"RTP Mean Jitter",
+          "cflow.transport_jitter_mean.string",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_rtp_jitter_min,
+         {"RTP Min Jitter",
+          "cflow.transport_jitter_min",
+          FT_RELATIVE_TIME, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_rtp_jitter_min_string,
+         {"RTP Min Jitter",
+          "cflow.transport_jitter_min.string",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_rtp_jitter_max,
+         {"RTP Max Jitter",
+          "cflow.transport_jitter_max",
+          FT_RELATIVE_TIME, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_rtp_jitter_max_string,
+         {"RTP Max Jitter",
+          "cflow.transport_jitter_max.string",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+
+        {&hf_cflow_transport_rtp_payload_type,
+         {"RTP Payload Type",
+          "cflow.rtp_payload_type",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_rtp_payload_type_string,
+         {"RTP Payload Type",
+          "cflow.rtp_payload_type",
+          FT_UINT8, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_transport_bytes_out_of_order,
+         {"Transport Bytes Out of Order",
+          "cflow.transport_bytes_out_of_ordera",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+#if 0
+        {&hf_cflow_transport_packets_out_of_order,
+         {"Transport Packets Out of Order",
+          "cflow.transport_packets_out_of_order",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+#endif
+        {&hf_cflow_transport_packets_out_of_order_string,
+         {"Transport Packets Out of Order",
+          "cflow.transport_packets_out_of_order",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_transport_tcp_window_size_min,
+         {"Transport TCP Window Size Min",
+          "cflow.transport_tcp_window_size_min",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_transport_tcp_window_size_min_string,
+         {"Transport TCP Window Size Min",
+          "cflow.transport_tcp_window_size_min",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_transport_tcp_window_size_max,
+         {"Transport TCP Window Size Max",
+          "cflow.transport_tcp_window_size_max",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_transport_tcp_window_size_max_string,
+         {"Transport TCP Window Size Max",
+          "cflow.transport_tcp_window_size_max",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_transport_tcp_window_size_mean,
+         {"Transport TCP Window Size Mean",
+          "cflow.transport_tcp_window_size_mean",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_transport_tcp_window_size_mean_string,
+         {"Transport TCP Window Size Mean",
+          "cflow.transport_tcp_window_size_mean",
+          FT_UINT32, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_transport_tcp_maximum_segment_size,
+         {"Transport TCP Maximum Segment Size",
+          "cflow.transport_tcp_maximum_segment_size",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_transport_tcp_maximum_segment_size_string,
+         {"Transport TCP Maximum Segment Size",
+          "cflow.transport_tcp_maximum_segment_size",
+          FT_UINT16, BASE_HEX, VALS(performance_monitor_specials), 0x0,
+          NULL, HFILL}
+        },
+        /* Sequence analysis fields */
+       {&hf_cflow_sequence_analysis_expected_sn,
+         {"Expected Sequence Number",
+          "cflow.sequence_analysis.expected_sn",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+       {&hf_cflow_sequence_analysis_previous_frame,
+         {"Previous Frame in Sequence",
+          "cflow.sequence_analysis.previous_frame",
+          FT_FRAMENUM, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+
+        /* Ericsson SE NAT Logging */
+        {&hf_cflow_nat_context_id,
+         {"NAT Context ID", "cflow.nat_context_id",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          "Internal context ID", HFILL}
+        },
+        {&hf_cflow_nat_context_name,
+         {"NAT Context Name", "cflow.nat_context_name",
+          FT_STRING, STR_UNICODE, NULL, 0x0,
+          "Zero terminated context Name", HFILL}
+        },
+        {&hf_cflow_nat_assign_time,
+         {"NAT Assign Time", "cflow.nat_assign_time",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          "Seconds of UNIX timestamp for assign", HFILL}
+        },
+        {&hf_cflow_nat_unassign_time,
+         {"NAT Unassign Time", "cflow.nat_unassign_time",
+          FT_ABSOLUTE_TIME, ABSOLUTE_TIME_LOCAL, NULL, 0x0,
+          "Seconds of UNIX timestamp for unassign", HFILL}
+        },
+        {&hf_cflow_nat_int_addr,
+         {"Internal IPv4 address", "cflow.nat_int_addr",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_nat_ext_addr,
+         {"External IPv4 address", "cflow.nat_ext_addr",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_nat_ext_port_first,
+         {"NAT port start", "cflow.nat_ext_port_first",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "External L4 port start", HFILL}
+        },
+        {&hf_cflow_nat_ext_port_last,
+         {"NAT port end", "cflow.nat_ext_port_last",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "External L4 port end", HFILL}
+        },
+        /* Cisco ASA 5500 Series */
+        {&hf_cflow_ingress_acl_id,
+         {"Ingress ACL ID", "cflow.ingress_acl_id",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_egress_acl_id,
+         {"Egress ACL ID", "cflow.egress_acl_id",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_fw_ext_event,
+         {"Extended firewall event code", "cflow.fw_ext_event",
+          FT_UINT16, BASE_DEC, VALS(v9_extended_firewall_event), 0x0,
+          NULL, HFILL}
+        },
+        {&hf_cflow_aaa_username,
+         {"AAA username", "cflow.aaa_username",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+
+        {&hf_ipfix_enterprise_private_entry,
+         {"Enterprise Private entry", "cflow.enterprise_private_entry",
+          FT_BYTES, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* Private Information Elements */
+
+        /* CACE root (a hidden item to allow filtering) */
+        {&hf_pie_cace,
+         {"CACE", "cflow.pie.cace",
+          FT_NONE, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* CACE Technologies, 32622 / 0 */
+        {&hf_pie_cace_local_ipv4_address,
+         {"Local IPv4 Address", "cflow.pie.cace.localaddr4",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          "Local IPv4 Address (caceLocalIPv4Address)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 1 */
+        {&hf_pie_cace_remote_ipv4_address,
+         {"Remote IPv4 Address", "cflow.pie.cace.remoteaddr4",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          "Remote IPv4 Address (caceRemoteIPv4Address)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 2 */
+        {&hf_pie_cace_local_ipv6_address,
+         {"Local IPv6 Address", "cflow.pie.cace.localaddr6",
+          FT_IPv6, BASE_NONE, NULL, 0x0,
+          "Local IPv6 Address (caceLocalIPv6Address)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 3 */
+        {&hf_pie_cace_remote_ipv6_address,
+         {"Remote IPv6 Address", "cflow.pie.cace.remoteaddr6",
+          FT_IPv6, BASE_NONE, NULL, 0x0,
+          "Remote IPv6 Address (caceRemoteIPv6Address)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 4 */
+        {&hf_pie_cace_local_port,
+         {"Local Port", "cflow.pie.cace.localport",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "Local Transport Port (caceLocalTransportPort)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 5 */
+        {&hf_pie_cace_remote_port,
+         {"Remote Port", "cflow.pie.cace.remoteport",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "Remote Transport Port (caceRemoteTransportPort)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 6 */
+        {&hf_pie_cace_local_ipv4_id,
+         {"Local IPv4 ID", "cflow.pie.cace.localip4id",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "The IPv4 identification header field from a locally-originated packet (caceLocalIPv4id)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 7 */
+        {&hf_pie_cace_local_icmp_id,
+         {"Local ICMP ID", "cflow.pie.cace.localicmpid",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          "The ICMP identification header field from a locally-originated ICMPv4 or ICMPv6 echo request (caceLocalICMPid)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 8 */
+        {&hf_pie_cace_local_uid,
+         {"Local User ID", "cflow.pie.cace.localuid",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          "Local User ID (caceLocalProcessUserId)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 9 */
+        {&hf_pie_cace_local_pid,
+         {"Local Process ID", "cflow.pie.cace.localpid",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          "Local Process ID (caceLocalProcessId)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 10 */
+        {&hf_pie_cace_local_username_len,
+         {"Local Username Length", "cflow.pie.cace.localusernamelen",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          "Local User Name Length (caceLocalProcessUserName)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 10 */
+        {&hf_pie_cace_local_username,
+         {"Local User Name", "cflow.pie.cace.localusername",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          "Local User Name (caceLocalProcessUserName)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 11 */
+        {&hf_pie_cace_local_cmd_len,
+         {"Local Command Length", "cflow.pie.cace.localcmdlen",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          "Local Command Length (caceLocalProcessCommand)", HFILL}
+        },
+        /* CACE Technologies, 32622 / 11 */
+        {&hf_pie_cace_local_cmd,
+         {"Local Command", "cflow.pie.cace.localcmd",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          "Local Command (caceLocalProcessCommand)", HFILL}
+        },
+
+        /* ntop root (a hidden item to allow filtering) */
+        {&hf_pie_ntop,
+         {"Ntop", "cflow.pie.ntop",
+          FT_NONE, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 80 */
+        {&hf_pie_ntop_src_fragments,
+         {"Num fragmented packets src->dst", "cflow.pie.ntop.src_fragments",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 81 */
+        {&hf_pie_ntop_dst_fragments,
+         {"Num fragmented packets dst->src", "cflow.pie.ntop.dst_fragments",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 82 */
+        {&hf_pie_ntop_src_to_dst_max_throughput,
+         {"Src to dst max throughput", "cflow.pie.ntop.src_to_dst_max_throughput",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_bit_sec, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 83 */
+        {&hf_pie_ntop_src_to_dst_min_throughput,
+         {"Src to dst min throughput", "cflow.pie.ntop.src_to_dst_min_throughput",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_bit_sec, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 84 */
+        {&hf_pie_ntop_src_to_dst_avg_throughput,
+         {"Src to dst average throughput", "cflow.pie.ntop.src_to_dst_avg_throughput",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_bit_sec, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 85 */
+        {&hf_pie_ntop_dst_to_src_max_throughput,
+         {"Dst to src max throughput", "cflow.pie.ntop.dst_to_src_max_throughput",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_bit_sec, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 86 */
+        {&hf_pie_ntop_dst_to_src_min_throughput,
+         {"Dst to src min throughput", "cflow.pie.ntop.dst_to_src_min_throughput",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 87 */
+        {&hf_pie_ntop_dst_to_src_avg_throughput,
+         {"Dst to src average throughput", "cflow.pie.ntop.dst_to_src_avg_throughput",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_bit_sec, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 88 */
+        {&hf_pie_ntop_num_pkts_up_to_128_bytes,
+         {"# packets whose IP size <= 128", "cflow.pie.ntop.num_pkts_up_to_128_bytes",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 89 */
+        {&hf_pie_ntop_num_pkts_128_to_256_bytes,
+         {"# packets whose IP size > 128 and <= 256", "cflow.pie.ntop.num_pkts_128_to_256_bytes",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 90 */
+        {&hf_pie_ntop_num_pkts_256_to_512_bytes,
+         {"# packets whose IP size > 256 and < 512", "cflow.pie.ntop.num_pkts_256_to_512_bytes",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 91 */
+        {&hf_pie_ntop_num_pkts_512_to_1024_bytes,
+         {"# packets whose IP size > 512 and < 1024", "cflow.pie.ntop.num_pkts_512_to_1024_bytes",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 92 */
+        {&hf_pie_ntop_num_pkts_1024_to_1514_bytes,
+         {"# packets whose IP size > 1024 and <= 1514", "cflow.pie.ntop.num_pkts_1024_to_1514_bytes",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 93 */
+        {&hf_pie_ntop_num_pkts_over_1514_bytes,
+         {"# packets whose IP size > 1514", "cflow.pie.ntop.num_pkts_over_1514_bytes",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 98 */
+        {&hf_pie_ntop_cumulative_icmp_type,
+         {"Cumulative OR of ICMP type packets", "cflow.pie.ntop.cumulative_icmp_type",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+>>>>>>> upstream/master-2.4
         /* ntop, 35632 / 101 */
         {&hf_pie_ntop_src_ip_country,
          {"Country where the src IP is located", "cflow.pie.ntop.src_ip_country",
@@ -14556,6 +19022,7 @@ proto_register_netflow(void)
          {"RADIUS User IMSI (Extension)", "cflow.pie.ntop.radius_user_imsi",
           FT_STRING, STR_ASCII, NULL, 0x0,
           NULL, HFILL}
+<<<<<<< HEAD
         },
         /* ntop, 35632 / 248 */
         {&hf_pie_ntop_radius_user_imei,
@@ -14581,6 +19048,33 @@ proto_register_netflow(void)
           FT_STRING, STR_ASCII, NULL, 0x0,
           NULL, HFILL}
         },
+=======
+        },
+        /* ntop, 35632 / 248 */
+        {&hf_pie_ntop_radius_user_imei,
+         {"RADIUS User MSISDN (Extension)", "cflow.pie.ntop.radius_user_imei",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 249 */
+        {&hf_pie_ntop_radius_framed_ip_addr,
+         {"RADIUS Framed IP", "cflow.pie.ntop.radius_framed_ip_addr",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 250 */
+        {&hf_pie_ntop_radius_acct_session_id,
+         {"RADIUS Accounting Session Name", "cflow.pie.ntop.radius_acct_session_id",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 251 */
+        {&hf_pie_ntop_radius_acct_status_type,
+         {"RADIUS Accounting Status Type", "cflow.pie.ntop.radius_acct_status_type",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+>>>>>>> upstream/master-2.4
         /* ntop, 35632 / 252 */
         {&hf_pie_ntop_radius_acct_in_octects,
          {"RADIUS Accounting Input Octets", "cflow.pie.ntop.radius_acct_in_octects",
@@ -14594,8 +19088,13 @@ proto_register_netflow(void)
           NULL, HFILL}
         },
         /* ntop, 35632 / 254 */
+<<<<<<< HEAD
         {&hf_pie_ntop_radius_acct_in_pkts,
          {"RADIUS Accounting Input Packets", "cflow.pie.ntop.radius_acct_in_pkts",
+=======
+        {&hf_pie_ntop_radus_acct_in_pkts,
+         {"RADIUS Accounting Input Packets", "cflow.pie.ntop.radus_acct_in_pkts",
+>>>>>>> upstream/master-2.4
           FT_UINT32, BASE_DEC, NULL, 0x0,
           NULL, HFILL}
         },
@@ -14837,6 +19336,7 @@ proto_register_netflow(void)
         {&hf_pie_ntop_gtpv0_req_msg_type,
          {"GTPv0 Request Msg Type", "cflow.pie.ntop.gtpv0_req_msg_type",
           FT_UINT8, BASE_DEC, NULL, 0x0,
+<<<<<<< HEAD
           NULL, HFILL}
         },
         /* ntop, 35632 / 322 */
@@ -14893,6 +19393,64 @@ proto_register_netflow(void)
           FT_UINT16, BASE_DEC, NULL, 0x0,
           NULL, HFILL}
         },
+=======
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 322 */
+        {&hf_pie_ntop_gtpv0_rsp_msg_type,
+         {"GTPv0 Response Msg Type", "cflow.pie.ntop.gtpv0_rsp_msg_type",
+          FT_UINT8, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 323 */
+        {&hf_pie_ntop_gtpv0_tid,
+         {"GTPv0 Tunnel Identifier", "cflow.pie.ntop.gtpv0_tid",
+          FT_UINT64, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 324 */
+        {&hf_pie_ntop_gtpv0_end_user_ip,
+         {"GTPv0 End User IP Address", "cflow.pie.ntop.gtpv0_end_user_ip",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 325 */
+        {&hf_pie_ntop_gtpv0_end_user_msisdn,
+         {"GTPv0 End User MSISDN", "cflow.pie.ntop.gtpv0_end_user_msisdn",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 326 */
+        {&hf_pie_ntop_gtpv0_apn_name,
+         {"GTPv0 APN Name", "cflow.pie.ntop.gtpv0_apn_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 327 */
+        {&hf_pie_ntop_gtpv0_rai_mcc,
+         {"GTPv0 Mobile Country Code", "cflow.pie.ntop.gtpv0_rai_mcc",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 328 */
+        {&hf_pie_ntop_gtpv0_rai_mnc,
+         {"GTPv0 Mobile Network Code", "cflow.pie.ntop.gtpv0_rai_mnc",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 329 */
+        {&hf_pie_ntop_gtpv0_rai_cell_lac,
+         {"GTPv0 Cell Location Area Code", "cflow.pie.ntop.gtpv0_rai_cell_lac",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 330 */
+        {&hf_pie_ntop_gtpv0_rai_cell_rac,
+         {"GTPv0 Cell Routing Area Code", "cflow.pie.ntop.gtpv0_rai_cell_rac",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+>>>>>>> upstream/master-2.4
         /* ntop, 35632 / 331 */
         {&hf_pie_ntop_gtpv0_response_cause,
          {"GTPv0 Cause of Operation", "cflow.pie.ntop.gtpv0_response_cause",
@@ -14975,6 +19533,7 @@ proto_register_netflow(void)
         {&hf_pie_ntop_gtpv1_uli_mcc,
          {"GTPv1 ULI Mobile Country Code", "cflow.pie.ntop.gtpv1_uli_mcc",
           FT_UINT16, BASE_DEC, NULL, 0x0,
+<<<<<<< HEAD
           NULL, HFILL}
         },
         /* ntop, 35632 / 345 */
@@ -15289,6 +19848,322 @@ proto_register_netflow(void)
           FT_STRING, STR_ASCII, NULL, 0x0,
           NULL, HFILL}
         },
+=======
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 345 */
+        {&hf_pie_ntop_gtpv1_uli_mnc,
+         {"GTPv1 ULI Mobile Network Code", "cflow.pie.ntop.gtpv1_uli_mnc",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 346 */
+        {&hf_pie_ntop_num_pkts_ttl_2_5,
+         {"# packets with TTL > 1 and TTL <= 5", "cflow.pie.ntop.num_pkts_ttl_2_5",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 347 */
+        {&hf_pie_ntop_num_pkts_ttl_eq_1,
+         {"# packets with TTL = 1", "cflow.pie.ntop.num_pkts_ttl_eq_1",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 348 */
+        {&hf_pie_ntop_rtp_sip_call_id,
+         {"SIP call-id corresponding to this RTP stream", "cflow.pie.ntop.rtp_sip_call_id",
+          FT_STRING, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 349 */
+        {&hf_pie_ntop_in_src_osi_sap,
+         {"OSI Source SAP (OSI Traffic Only)", "cflow.pie.ntop.in_src_osi_sap",
+          FT_STRING, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 350 */
+        {&hf_pie_ntop_out_dst_osi_sap,
+         {"OSI Destination SAP (OSI Traffic Only)", "cflow.pie.ntop.out_dst_osi_sap",
+          FT_STRING, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 351 */
+        {&hf_pie_ntop_whois_das_domain,
+         {"Whois/DAS Domain name", "cflow.pie.ntop.whois_das_domain",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 352 */
+        {&hf_pie_ntop_dns_ttl_answer,
+         {"TTL of the first A record (if any)", "cflow.pie.ntop.dns_ttl_answer",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 353 */
+        {&hf_pie_ntop_dhcp_client_mac,
+         {"MAC of the DHCP client", "cflow.pie.ntop.dhcp_client_mac",
+          FT_ETHER, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 354 */
+        {&hf_pie_ntop_dhcp_client_ip,
+         {"DHCP assigned client IPv4 address", "cflow.pie.ntop.dhcp_client_ip",
+          FT_IPv4, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 355 */
+        {&hf_pie_ntop_dhcp_client_name,
+         {"DHCP client name", "cflow.pie.ntop.dhcp_clien_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 356 */
+        {&hf_pie_ntop_ftp_login,
+         {"FTP client login", "cflow.pie.ntop.ftp_login",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 357 */
+        {&hf_pie_ntop_ftp_password,
+         {"FTP client password", "cflow.pie.ntop.ftp_password",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 358 */
+        {&hf_pie_ntop_ftp_command,
+         {"FTP client command", "cflow.pie.ntop.ftp_command",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 359 */
+        {&hf_pie_ntop_ftp_command_ret_code,
+         {"FTP client command return code", "cflow.pie.ntop.ftp_command_ret_code",
+          FT_UINT16, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 360 */
+        {&hf_pie_ntop_http_method,
+         {"HTTP METHOD", "cflow.pie.ntop.http_method",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 361 */
+        {&hf_pie_ntop_http_site,
+         {"HTTP server without host name", "cflow.pie.ntop.http_site",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 362 */
+        {&hf_pie_ntop_sip_c_ip,
+         {"SIP C IP addresses", "cflow.pie.ntop.sip_c_ip",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 363 */
+        {&hf_pie_ntop_sip_call_state,
+         {"SIP Call State", "cflow.pie.ntop.sip_call_state",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 370 */
+        {&hf_pie_ntop_rtp_in_mos,
+         {"RTP pseudo-MOS (value * 100) (src->dst)", "cflow.pie.ntop.rtp_in_mos",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 371 */
+        {&hf_pie_ntop_rtp_in_r_factor,
+         {"RTP pseudo-R_FACTOR (value * 100) (src->dst)", "cflow.pie.ntop.rtp_in_r_factor",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 372 */
+        {&hf_pie_ntop_src_proc_user_name,
+         {"Src process user name", "cflow.pie.ntop.src_proc_user_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 373 */
+        {&hf_pie_ntop_src_father_proc_pid,
+         {"Src father process PID", "cflow.pie.ntop.src_father_proc_pid",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 374 */
+        {&hf_pie_ntop_src_father_proc_name,
+         {"Src father process name", "cflow.pie.ntop.src_father_proc_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 375 */
+        {&hf_pie_ntop_dst_proc_pid,
+         {"Dst process PID", "cflow.pie.ntop.dst_proc_pid",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 376 */
+        {&hf_pie_ntop_dst_proc_name,
+         {"Dst process name", "cflow.pie.ntop.dst_proc_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 377 */
+        {&hf_pie_ntop_dst_proc_user_name,
+         {"Dst process user name", "cflow.pie.ntop.dst_proc_user_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 378 */
+        {&hf_pie_ntop_dst_father_proc_pid,
+         {"Dst father process PID", "cflow.pie.ntop.dst_father_proc_pid",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 379 */
+        {&hf_pie_ntop_dst_father_proc_name,
+         {"Dst father process name", "cflow.pie.ntop.dst_father_proc_name",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 380 */
+        {&hf_pie_ntop_rtp_rtt,
+         {"RTP Round Trip Time", "cflow.pie.ntop.rtp_rtt",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_milliseconds, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 381 */
+        {&hf_pie_ntop_rtp_in_transit,
+         {"RTP Transit (value * 100) (src->dst)", "cflow.pie.ntop.rtp_in_transit",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 382 */
+        {&hf_pie_ntop_rtp_out_transit,
+         {"RTP Transit (value * 100) (dst->src)", "cflow.pie.ntop.rtp_out_transit",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 383 */
+        {&hf_pie_ntop_src_proc_actual_memory,
+         {"Src process actual memory", "cflow.pie.ntop.src_proc_actual_memory",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_byte_bytes, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 384 */
+        {&hf_pie_ntop_src_proc_peak_memory,
+         {"Src process peak memory", "cflow.pie.ntop.src_proc_peak_memory",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_byte_bytes, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 385 */
+        {&hf_pie_ntop_src_proc_average_cpu_load,
+         {"Src process avg load (% * 100)", "cflow.pie.ntop.src_proc_average_cpu_load",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 386 */
+        {&hf_pie_ntop_src_proc_num_page_faults,
+         {"Src process num pagefaults", "cflow.pie.ntop.src_proc_num_page_faults",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 387 */
+        {&hf_pie_ntop_dst_proc_actual_memory,
+         {"Dst process actual memory", "cflow.pie.ntop.dst_proc_actual_memory",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_byte_bytes, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 388 */
+        {&hf_pie_ntop_dst_proc_peak_memory,
+         {"Dst process peak memory", "cflow.pie.ntop.dst_proc_peak_memory",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_byte_bytes, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 389 */
+        {&hf_pie_ntop_dst_proc_average_cpu_load,
+         {"Dst process avg load (% * 100)", "cflow.pie.ntop.dst_proc_average_cpu_load",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 390 */
+        {&hf_pie_ntop_dst_proc_num_page_faults,
+         {"Dst process num pagefaults", "cflow.pie.ntop.dst_proc_num_page_faults",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 391 */
+        {&hf_pie_ntop_duration_in,
+         {"Client to Server stream duration", "cflow.pie.ntop.duration_in",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_milliseconds, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 392 */
+        {&hf_pie_ntop_duration_out,
+         {"Client to Server stream duration", "cflow.pie.ntop.duration_out",
+          FT_UINT32, BASE_DEC|BASE_UNIT_STRING, &units_milliseconds, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 393 */
+        {&hf_pie_ntop_src_proc_pctg_iowait,
+         {"Src process iowait time % (% * 100)", "cflow.pie.ntop.src_proc_pctg_iowait",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 394 */
+        {&hf_pie_ntop_dst_proc_pctg_iowait,
+         {"Dst process iowait time % (% * 100)", "cflow.pie.ntop.dst_proc_pctg_iowait",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 395 */
+        {&hf_pie_ntop_rtp_dtmf_tones,
+         {"DTMF tones sent (if any) during the call", "cflow.pie.ntop.rtp_dtmf_tones",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 396 */
+        {&hf_pie_ntop_untunneled_ipv6_src_addr,
+         {"Untunneled IPv6 source address", "cflow.pie.ntop.untunneled_ipv6_src_addr",
+          FT_IPv6, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 397 */
+        {&hf_pie_ntop_untunneled_ipv6_dst_addr,
+         {"Untunneled IPv6 destination address", "cflow.pie.ntop.untunneled_ipv6_dst_addr",
+          FT_IPv6, BASE_NONE, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 398 */
+        {&hf_pie_ntop_dns_response,
+         {"DNS response(s)", "cflow.pie.ntop.dns_response",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 399 */
+        {&hf_pie_ntop_diameter_req_msg_type,
+         {"DIAMETER Request Msg Type", "cflow.pie.ntop.diameter_req_msg_type",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 400 */
+        {&hf_pie_ntop_diameter_rsp_msg_type,
+         {"DIAMETER Response Msg Type", "cflow.pie.ntop.diameter_rsp_msg_type",
+          FT_UINT32, BASE_DEC, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 401 */
+        {&hf_pie_ntop_diameter_req_origin_host,
+         {"DIAMETER Origin Host Request", "cflow.pie.ntop.diameter_req_origin_host",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+        /* ntop, 35632 / 402 */
+        {&hf_pie_ntop_diameter_rsp_origin_host,
+         {"DIAMETER Origin Host Response", "cflow.pie.ntop.diameter_rsp_origin_host",
+          FT_STRING, STR_ASCII, NULL, 0x0,
+          NULL, HFILL}
+        },
+>>>>>>> upstream/master-2.4
         /* ntop, 35632 / 403 */
         {&hf_pie_ntop_diameter_req_user_name,
          {"DIAMETER Request User Name", "cflow.pie.ntop.diameter_req_user_name",

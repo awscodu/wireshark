@@ -308,7 +308,11 @@ cf_open(capture_file *cf, const char *fname, unsigned int type, gboolean is_temp
   cf->ref_time_count = 0;
   cf->drops_known = FALSE;
   cf->drops     = 0;
+<<<<<<< HEAD
   cf->snap      = wtap_snapshot_length(cf->provider.wth);
+=======
+  cf->snap      = wtap_snapshot_length(cf->wth);
+>>>>>>> upstream/master-2.4
 
   /* Allocate a frame_data_sequence for the frames in this file */
   cf->provider.frames = new_frame_data_sequence();
@@ -3808,6 +3812,19 @@ cf_update_section_comment(capture_file *cf, gchar *comment)
   cf->unsaved_changes = TRUE;
 }
 
+<<<<<<< HEAD
+=======
+static const char *
+cf_get_user_packet_comment(capture_file *cf, const frame_data *fd)
+{
+  if (cf->frames_user_comments)
+     return (const char *)g_tree_lookup(cf->frames_user_comments, fd);
+
+  /* g_warning? */
+  return NULL;
+}
+
+>>>>>>> upstream/master-2.4
 /*
  * Get the comment on a packet (record).
  * If the comment has been edited, it returns the result of the edit,
@@ -3841,6 +3858,20 @@ cf_get_packet_comment(capture_file *cf, const frame_data *fd)
   return NULL;
 }
 
+<<<<<<< HEAD
+=======
+static int
+frame_cmp(gconstpointer a, gconstpointer b, gpointer user_data _U_)
+{
+  const frame_data *fdata1 = (const frame_data *) a;
+  const frame_data *fdata2 = (const frame_data *) b;
+
+  return (fdata1->num < fdata2->num) ? -1 :
+    (fdata1->num > fdata2->num) ? 1 :
+    0;
+}
+
+>>>>>>> upstream/master-2.4
 /*
  * Update(replace) the comment on a capture from a frame
  */
@@ -3935,11 +3966,54 @@ save_record(capture_file *cf, frame_data *fdata, wtap_rec *rec,
   if (fdata->flags.has_user_comment)
     pkt_comment = cap_file_provider_get_user_comment(&cf->provider, fdata);
   else
+<<<<<<< HEAD
     pkt_comment = rec->opt_comment;
   new_rec.opt_comment  = g_strdup(pkt_comment);
   new_rec.has_comment_changed = fdata->flags.has_user_comment ? TRUE : FALSE;
   /* XXX - what if times have been shifted? */
 
+=======
+    pkt_comment = phdr->opt_comment;
+
+  /* init the wtap header for saving */
+  /* TODO: reuse phdr */
+  /* XXX - these are the only flags that correspond to data that we have
+     in the frame_data structure and that matter on a per-packet basis.
+
+     For WTAP_HAS_CAP_LEN, either the file format has separate "captured"
+     and "on the wire" lengths, or it doesn't.
+
+     For WTAP_HAS_DROP_COUNT, Wiretap doesn't actually supply the value
+     to its callers.
+
+     For WTAP_HAS_PACK_FLAGS, we currently don't save the FCS length
+     from the packet flags. */
+  hdr.rec_type = phdr->rec_type;
+  hdr.presence_flags = 0;
+  if (fdata->flags.has_ts)
+    hdr.presence_flags |= WTAP_HAS_TS;
+  if (phdr->presence_flags & WTAP_HAS_INTERFACE_ID)
+    hdr.presence_flags |= WTAP_HAS_INTERFACE_ID;
+  if (phdr->presence_flags & WTAP_HAS_PACK_FLAGS)
+    hdr.presence_flags |= WTAP_HAS_PACK_FLAGS;
+  hdr.ts           = phdr->ts;
+  hdr.caplen       = phdr->caplen;
+  hdr.len          = phdr->len;
+  hdr.pkt_encap    = phdr->pkt_encap;
+  /* pcapng */
+  hdr.interface_id = phdr->interface_id;   /* identifier of the interface. */
+  /* options */
+  hdr.pack_flags   = phdr->pack_flags;
+  hdr.opt_comment  = g_strdup(pkt_comment);
+  hdr.has_comment_changed = fdata->flags.has_user_comment ? TRUE : FALSE;
+
+  /* pseudo */
+  hdr.pseudo_header = phdr->pseudo_header;
+#if 0
+  hdr.drop_count   =
+  hdr.pack_flags   =     /* XXX - 0 for now (any value for "we don't have it"?) */
+#endif
+>>>>>>> upstream/master-2.4
   /* and save the packet */
   if (!wtap_dump(args->pdh, &new_rec, pd, &err, &err_info)) {
     cfile_write_failure_alert_box(NULL, args->fname, err, err_info, fdata->num,
@@ -4110,7 +4184,11 @@ rescan_file(capture_file *cf, const char *fname, gboolean is_tempfile)
   cf->cd_t        = wtap_file_type_subtype(cf->provider.wth);
   cf->linktypes = g_array_sized_new(FALSE, FALSE, (guint) sizeof(int), 1);
 
+<<<<<<< HEAD
   cf->snap      = wtap_snapshot_length(cf->provider.wth);
+=======
+  cf->snap      = wtap_snapshot_length(cf->wth);
+>>>>>>> upstream/master-2.4
 
   name_ptr = g_filename_display_basename(cf->filename);
 

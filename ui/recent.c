@@ -476,6 +476,7 @@ recent_get_remote_host(const gchar *host)
 static gboolean
 capture_remote_combo_add_recent(const gchar *s)
 {
+<<<<<<< HEAD
     GList *vals = prefs_get_string_list (s);
     GList *valp = vals;
     capture_auth auth_type;
@@ -500,6 +501,43 @@ capture_remote_combo_add_recent(const gchar *s)
         return FALSE;
     }
     rh->auth_type = CAPTURE_AUTH_NULL;
+=======
+  GList *vals = prefs_get_string_list (s);
+  GList *valp = vals;
+  capture_auth auth_type;
+  char  *p;
+  struct remote_host *rh;
+
+  if (valp == NULL)
+    return FALSE;
+
+  if (remote_host_list == NULL) {
+    remote_host_list = g_hash_table_new (g_str_hash, g_str_equal);
+  }
+
+  rh =(struct remote_host *) g_malloc (sizeof (*rh));
+
+  /* First value is the host */
+  rh->r_host = (gchar *)g_strdup ((const gchar *)valp->data);
+  if (strlen(rh->r_host) == 0) {
+    /* Empty remote host */
+    g_free(rh->r_host);
+    g_free(rh);
+    return FALSE;
+  }
+  rh->auth_type = CAPTURE_AUTH_NULL;
+  valp = valp->next;
+
+  if (valp) {
+    /* Found value 2, this is the port number */
+    if (!strcmp((const char*)valp->data, "0")) {
+      /* Port 0 isn't valid, so leave port blank */
+      rh->remote_port = (gchar *)g_strdup ("");
+    }
+    else {
+      rh->remote_port = (gchar *)g_strdup ((const gchar *)valp->data);
+    }
+>>>>>>> upstream/master-2.4
     valp = valp->next;
 
     if (valp) {

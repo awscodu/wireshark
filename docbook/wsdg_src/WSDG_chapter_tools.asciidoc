@@ -50,7 +50,11 @@ development tasks in <<ChapterSources>>.
 
 Chocolatey is a Windows package manager that can be used to install (and update)
 many of the packages required for Wireshark development. Chocolatey can be
+<<<<<<< HEAD
 obtained from the http://chocolatey.org[website] or from a Command Prompt:
+=======
+obtained from the http://chocolatey.org[website] or from a DOS command prompt:
+>>>>>>> upstream/master-2.4
 
 ----
 C:\>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString(_https://chocolatey.org/install.ps1_))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
@@ -63,8 +67,13 @@ PS:\>iex ((new-object net.webclient).DownloadString(_https://chocolatey.org/inst
 ----
 
 Chocolatey sometimes installs packages in unexpected locations. Cygwin is a notable
+<<<<<<< HEAD
 example -- recent versions of the Cygwin package are installed in _C:\ProgramData\chocolatey\lib\Cygwin\tools\cygwin_ instead of Cygwin’s default location
 (_C:\cygwin_ or _C:\cygwin64_).
+=======
+example -- recent versions of the Cygwin package are installed in `C:\ProgramData\chocolatey\lib\Cygwin\tools\cygwin` instead of Cygwin's default location
+(`C:\cygwin` or `C:\cygwin64`).
+>>>>>>> upstream/master-2.4
 
 [[ChToolsCygwin]]
 
@@ -80,22 +89,38 @@ Over time the Wireshark development toolchain has been migrating away from Cygwi
 toward native tools and we hope to eliminate it as a requirement someday.
 
 Although Cygwin consists of several separate packages, the installation
+<<<<<<< HEAD
 and update is done through a single utility, _setup-x86.exe_ or
 _setup-x86_64.exe_, which acts similarly to other web based installers.
 You can install Cygwin and its packages using Chocolatey, but this is not
 recommended due to Chocolatey’s default installation location, described
+=======
+and update is done through a single utility, 'setup-x86.exe' or
+'setup-x86_64.exe', which acts similarly to other web based installers.
+You can install Cygwin and its packages using Chocolatey, but this is not
+recommended due to Chocolatey's default installation location, described
+>>>>>>> upstream/master-2.4
 in the previous section.
 
 ==== Installing Cygwin using the Cygwin installer
 
+<<<<<<< HEAD
 You will find _setup-x86.exe_, for 32-bit systems, and
 _setup-x86_64.exe_, for 64-bit systems, at
+=======
+You will find 'setup-x86.exe', for 32-bit systems, and
+'setup-x86_64.exe', for 64-bit systems, at
+>>>>>>> upstream/master-2.4
 http://www.cygwin.com/install.html[]. Click on the link for the
 appropriate setup utility to download it. After the download completes,
 run it.
 
 All tools will be installed into one base folder. The default is
+<<<<<<< HEAD
 _C:\cygwin_ for the 32-bit installer and _C:\cygwin64_ for the 64-bit
+=======
+'C:\cygwin' for the 32-bit installer and `C:\cygwin64` for the 64-bit
+>>>>>>> upstream/master-2.4
 installer.
 
 The setup utility will ask you for some settings. The defaults
@@ -153,7 +178,11 @@ PS$>choco install cygwin
 PS$>choco install cyg-get
 ----
 
+<<<<<<< HEAD
 Chocolatey installs Cygwin in _C:\ProgramData\chocolatey\lib\Cygwin\tools\cygwin_ by default.
+=======
+Chocolatey installs Cygwin in 'C:\ProgramData\chocolatey\lib\Cygwin\tools\cygwin' by default.
+>>>>>>> upstream/master-2.4
 
 One or more Cygwin packages can be installed using `cyg-get`:
 
@@ -196,7 +225,11 @@ Your version string may vary, of course.
 
 [[ChToolsCMake]]
 
+<<<<<<< HEAD
 Wireshark’s build environment can be configured using CMake on Windows
+=======
+Wireshark's build environment can be configured using CMake on Windows
+>>>>>>> upstream/master-2.4
 and either CMake or Autotools on Linux, macOS, and UNIX. CMake is designed
 to support out of tree builds. So much so, that in tree builds do not work
 properly in all cases. Along with being cross-platform, CMake supports
@@ -206,15 +239,24 @@ In particular, the macOS and Windows packages are built using CMake.
 
 Building with CMake typically includes creating a build directory and
 specifying a *generator*, aka a build tool. For example, to build
+<<<<<<< HEAD
 Wireshark using Ninja in the directory _wireshark-ninja_ you might
+=======
+Wireshark using Ninja in the directory `wireshark-ninja` you might
+>>>>>>> upstream/master-2.4
 run the following commands:
 
 ----
 # Starting from your Wireshark source directory, create a build directory
 # alongside it.
 $ cd ..
+<<<<<<< HEAD
 $ mkdir wireshark-ninja
 $ cd wireshark-ninja
+=======
+$ mkdir wsbuild
+$ cd wsbuild
+>>>>>>> upstream/master-2.4
 # Assumes your source directory is named "wireshark".
 $ cmake -G Ninja ../wireshark
 $ ninja (or cmake --build .)
@@ -231,6 +273,7 @@ using the `-D` flag. Useful variables and generators include the following:
 
 -DENABLE_GTK3=ON:: Enable GTK+ 3
 
+<<<<<<< HEAD
 +++-DCMAKE_C_FLAGS='-Qunused-arguments'+++:: Make ccache and clang work together
 
 -DPYTHON_EXECUTABLE=c:/Python27/python:: Force the Python path. Useful on Windows since Cygwin’s /usrbin/python is a symlink.
@@ -242,6 +285,21 @@ You can list all build variables (with help) by running *`cmake -LH [options]
 after the cmake run. To only view the current cache, add option `-N`.
 
 After running cmake, you can always run *`make help`* to see a list of all possible make targets.
+=======
+-DENABLE_HTML_GUIDES=ON -DENABLE_PDF_GUIDES=ON:: Build documentation
+
+-DCMAKE_C_FLAGS='-Qunused-arguments':: Make ccache and clang work together
+
+-DPYTHON_EXECUTABLE=c:/Python27/python:: Force the Python path. Useful on Windows since Cygwin's /usrbin/python is a symlink.
+
+-DENABLE_APPLICATION_BUNDLE=OFF:: Disable building an application bundle (Wireshark.app) on macOS
+
+You can list all build variables (with help) using `cmake -LH [options]
+../<Name_of_WS_source_dir>`. This lists the cache of build variables
+after the cmake run. To only view the current cache, add option `-N`.
+
+After running cmake, you can always run "make help" to see a list of all possible make targets.
+>>>>>>> upstream/master-2.4
 
 Note that CMake honors user umask for creating directories as of now. You should set
 the umask explicitly before running the `install` target.
@@ -369,14 +427,21 @@ compiler, you'll need:
 
 . Linker (_link.exe_)
 
+<<<<<<< HEAD
 . Resource Compiler (_rc.exe_)
 
 . C runtime headers and libraries (e.g. _stdio.h_, _msvcrt.lib_)
+=======
+. Resource Compiler (`rc.exe`)
+
+. C runtime headers and libraries (e.g. 'stdio.h', 'msvcrt.lib')
+>>>>>>> upstream/master-2.4
 
 . Windows platform headers and libraries (e.g.
 _windows.h_, _WSock32.lib_)
 +
 // Can we drop support for CHM?
+<<<<<<< HEAD
 . HTML help headers and libraries (_htmlhelp.h_, _htmlhelp.lib_)
 
 ==== Official Toolchain Packages And Alternatives
@@ -389,6 +454,20 @@ The 1.8 releases were compiled using
 Microsoft Visual {cpp} 2010 SP1 as well.
 The 1.6, 1.4, and 1.2 releases were compiled using
 Microsoft Visual {cpp} 2008 SP1.
+=======
+. HTML help headers and libraries ('htmlhelp.h', 'htmlhelp.lib')
+
+==== Official Toolchain Packages And Alternatives
+
+The official Wireshark 2.4.x releases are compiled using Microsoft Visual $$C++$$ 2015.
+The Wireshark 2.2.x and 2.0.x releases are compiled using Microsoft Visual $$C++$$ 2013.
+The Wireshark 1.12.x and 1.10.x releases were compiled using
+Microsoft Visual $$C++$$ 2010 SP1.
+The 1.8 releases were compiled using
+Microsoft Visual $$C++$$ 2010 SP1 as well.
+The 1.6, 1.4, and 1.2 releases were compiled using
+Microsoft Visual $$C++$$ 2008 SP1.
+>>>>>>> upstream/master-2.4
 Other past releases, including the 1.0 branch,
 were compiled using Microsoft Visual {cpp} 6.0.
 

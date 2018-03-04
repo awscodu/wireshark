@@ -166,15 +166,45 @@ preview_do(GtkWidget *prev, wtap *wth)
   GtkWidget    *label;
   int           err;
   gchar        *err_info;
+<<<<<<< HEAD
   ws_file_preview_stats stats;
   ws_file_preview_stats_status status;
+=======
+  gint64        data_offset;
+  double        start_time   = 0; /* seconds, with nsec resolution */
+  double        stop_time    = 0; /* seconds, with nsec resolution */
+  gboolean      have_times   = FALSE;
+  double        cur_time;
+  unsigned int  packets    = 0;
+  gboolean      is_breaked = FALSE;
+>>>>>>> upstream/master-2.4
   gchar         string_buff[PREVIEW_STR_MAX];
   gchar         first_buff[PREVIEW_STR_MAX];
   time_t        ti_time;
   struct tm    *ti_tm;
   unsigned int  elapsed_time;
 
+<<<<<<< HEAD
   status = get_stats_for_preview(wth, &stats, &err, &err_info);
+=======
+  time(&time_preview);
+  while ( (wtap_read(wth, &err, &err_info, &data_offset)) ) {
+    phdr = wtap_phdr(wth);
+    if (phdr->presence_flags & WTAP_HAS_TS) {
+      cur_time = nstime_to_sec(&phdr->ts);
+      if (!have_times) {
+        start_time = cur_time;
+        stop_time = cur_time;
+        have_times = TRUE;
+      }
+      if (cur_time < start_time) {
+        start_time = cur_time;
+      }
+      if (cur_time > stop_time) {
+        stop_time = cur_time;
+      }
+    }
+>>>>>>> upstream/master-2.4
 
   if(status == PREVIEW_READ_ERROR) {
     /* XXX - give error details? */
@@ -195,6 +225,7 @@ preview_do(GtkWidget *prev, wtap *wth)
   label = (GtkWidget *)g_object_get_data(G_OBJECT(prev), PREVIEW_DATA_RECORDS_KEY);
   gtk_label_set_text(GTK_LABEL(label), string_buff);
 
+<<<<<<< HEAD
   /* First packet */
   if(stats.have_times) {
     /*
@@ -240,7 +271,43 @@ preview_do(GtkWidget *prev, wtap *wth)
                  first_buff, elapsed_time%86400/3600, elapsed_time%3600/60, elapsed_time%60);
     }
   } else {
+=======
+  /* first packet */
+  if (!have_times) {
+    g_snprintf(first_buff, PREVIEW_STR_MAX, "unknown");
+  } else {
+    ti_time = (long)start_time;
+    ti_tm = localtime( &ti_time );
+    if (ti_tm) {
+      g_snprintf(first_buff, PREVIEW_STR_MAX,
+                 "%04d-%02d-%02d %02d:%02d:%02d",
+                 ti_tm->tm_year + 1900,
+                 ti_tm->tm_mon + 1,
+                 ti_tm->tm_mday,
+                 ti_tm->tm_hour,
+                 ti_tm->tm_min,
+                 ti_tm->tm_sec);
+    } else {
+      g_snprintf(first_buff, PREVIEW_STR_MAX, "?");
+    }
+  }
+
+  /* elapsed time */
+  if (!have_times) {
+>>>>>>> upstream/master-2.4
     g_snprintf(string_buff, PREVIEW_STR_MAX, "%s / unknown", first_buff);
+  } else {
+    elapsed_time = (unsigned int)(stop_time-start_time);
+    if (elapsed_time/86400) {
+      g_snprintf(string_buff, PREVIEW_STR_MAX, "%s / %02u days %02u:%02u:%02u",
+                 first_buff, elapsed_time/86400, elapsed_time%86400/3600, elapsed_time%3600/60, elapsed_time%60);
+    } else {
+      g_snprintf(string_buff, PREVIEW_STR_MAX, "%s / %02u:%02u:%02u",
+                 first_buff, elapsed_time%86400/3600, elapsed_time%3600/60, elapsed_time%60);
+    }
+    if (is_breaked) {
+      g_snprintf(string_buff, PREVIEW_STR_MAX, "%s / unknown", first_buff);
+    }
   }
   label = (GtkWidget *)g_object_get_data(G_OBJECT(prev), PREVIEW_FIRST_ELAPSED_KEY);
   gtk_label_set_text(GTK_LABEL(label), string_buff);

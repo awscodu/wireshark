@@ -16,7 +16,11 @@
 
 #include <epan/packet.h>
 #include "cfile.h"
+<<<<<<< HEAD:ui/summary.c
 #include "ui/summary.h"
+=======
+#include "summary.h"
+>>>>>>> upstream/master-2.4:summary.c
 
 static void
 tally_frame_data(frame_data *cur_frame, summary_tally *sum_tally)
@@ -208,8 +212,13 @@ summary_fill_in_capture(capture_file *cf,capture_options *capture_opts, summary_
       iface.descr = g_strdup(device->display_name);
       iface.drops_known = cf->drops_known;
       iface.drops = cf->drops;
+<<<<<<< HEAD:ui/summary.c
       iface.snap = device->snaplen;
       iface.encap_type = wtap_pcap_encap_to_wtap_encap(device->active_dlt);
+=======
+      iface.snap = device.snaplen;
+      iface.encap_type = wtap_pcap_encap_to_wtap_encap(device.active_dlt);
+>>>>>>> upstream/master-2.4:summary.c
       g_array_append_val(st->ifaces, iface);
     }
   }

@@ -213,7 +213,11 @@
    <customwidget>
      <class>ExpertInfoTreeView</class>
      <extends>QTreeView</extends>
+<<<<<<< HEAD
      <header>widgets/expert_info_view.h</header>
+=======
+     <header>expert_info_view.h</header>
+>>>>>>> upstream/master-2.4
    </customwidget>
  </customwidgets>
  <resources/>

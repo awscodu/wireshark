@@ -486,7 +486,11 @@ k12text_dump(wtap_dumper *wdh, const wtap_rec *rec,
 	struct tm *tmp;
 
 	/* Don't write anything bigger than we're willing to read. */
+<<<<<<< HEAD
 	if (rec->rec_header.packet_header.caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+	if (phdr->caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
 		*err = WTAP_ERR_PACKET_TOO_LARGE;
 		return FALSE;
 	}

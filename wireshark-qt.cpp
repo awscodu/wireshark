@@ -79,7 +79,10 @@
 #include "ui/commandline.h"
 #include "ui/capture_ui_utils.h"
 #include "ui/preference_utils.h"
+<<<<<<< HEAD
 #include "ui/taps.h"
+=======
+>>>>>>> upstream/master-2.4
 
 #include "ui/qt/conversation_dialog.h"
 #include "ui/qt/utils/color_utils.h"

@@ -300,7 +300,7 @@ libwireshark_la_SOURCES = \
 libwireshark_la_CPPFLAGS = $(AM_CPPFLAGS) -DWS_BUILD_DLL
 
 # http://www.gnu.org/software/libtool/manual/html_node/Updating-version-info.html
-libwireshark_la_LDFLAGS = -version-info 0:0:0 @LDFLAGS_BIGSHAREDLIB@ @LDFLAGS_SHAREDLIB@
+libwireshark_la_LDFLAGS = -version-info 10:6:1 @LDFLAGS_BIGSHAREDLIB@ @LDFLAGS_SHAREDLIB@
 
 if HAVE_LIBLUA
 wslua_lib = wslua/libwslua.la
@@ -424,7 +424,11 @@ dtd_grammar.h: dtd_grammar.c
 dtd_grammar.c : $(LEMON) $(lemon_srcdir)/lempar.c $(srcdir)/dtd_grammar.lemon
 	$(AM_V_LEMON)$(LEMON) T=$(lemon_srcdir)/lempar.c $(srcdir)/dtd_grammar.lemon
 
+<<<<<<< HEAD
 version_info.c: $(top_srcdir)/version_info.c
+=======
+ws_version_info.c: $(top_srcdir)/ws_version_info.c
+>>>>>>> upstream/master-2.4
 	$(AM_V_LN_S)$(LN_S) $< $(builddir)
 
 tvbtest.o exntest.o oids_test.o: exceptions.h

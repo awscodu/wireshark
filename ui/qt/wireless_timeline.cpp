@@ -8,7 +8,24 @@
  * Copyright 2012 Parc Inc and Samsung Electronics
  * Copyright 2015, 2016 & 2017 Cisco Inc
  *
+<<<<<<< HEAD
  * SPDX-License-Identifier: GPL-2.0-or-later*/
+=======
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+>>>>>>> upstream/master-2.4
 
 #include "wireless_timeline.h"
 
@@ -22,14 +39,23 @@
 #include <cmath>
 
 #include "globals.h"
+<<<<<<< HEAD
+=======
+#include "color_utils.h"
+>>>>>>> upstream/master-2.4
 #include "../../log.h"
 #include <epan/dissectors/packet-ieee80211-radio.h>
 
 #include <epan/color_filters.h>
 #include "frame_tvbuff.h"
 
+<<<<<<< HEAD
 #include <ui/qt/utils/color_utils.h>
 #include <ui/qt/utils/qt_ui_utils.h>
+=======
+#include "color_utils.h"
+#include "qt_ui_utils.h"
+>>>>>>> upstream/master-2.4
 #include "wireshark_application.h"
 #include "wsutil/utf8_entities.h"
 
@@ -44,7 +70,11 @@
 #include <QToolTip>
 
 #include "packet_list.h"
+<<<<<<< HEAD
 #include <ui/qt/models/packet_list_model.h>
+=======
+#include "packet_list_model.h"
+>>>>>>> upstream/master-2.4
 
 #include "ui/main_statusbar.h"
 
@@ -161,7 +191,11 @@ void WirelessTimeline::mouseReleaseEvent(QMouseEvent *event)
     if (num == 0)
         return;
 
+<<<<<<< HEAD
     frame_data *fdata = frame_data_sequence_find(cfile.provider.frames, num);
+=======
+    frame_data *fdata = frame_data_sequence_find(cfile.frames, num);
+>>>>>>> upstream/master-2.4
     if (!fdata->flags.passed_dfilter && fdata->prev_dis_num > 0)
         num = fdata->prev_dis_num;
 
@@ -186,10 +220,15 @@ void WirelessTimeline::clip_tsf()
 }
 
 
+<<<<<<< HEAD
 void WirelessTimeline::selectedFrameChanged(int frameNum)
 {
     Q_UNUSED(frameNum);
 
+=======
+void WirelessTimeline::packetSelectionChanged()
+{
+>>>>>>> upstream/master-2.4
     if (isHidden())
         return;
 
@@ -291,7 +330,11 @@ void WirelessTimeline::captureFileReadFinished()
     zoom_level = 0;
 
     show();
+<<<<<<< HEAD
     selectedFrameChanged(0);
+=======
+    packetSelectionChanged();
+>>>>>>> upstream/master-2.4
     // TODO: show or ungrey the toolbar controls
     update();
 }
@@ -326,6 +369,7 @@ WirelessTimeline::WirelessTimeline(QWidget *parent) : QWidget(parent)
     setFixedHeight(TIMELINE_HEIGHT);
     first_packet = 1;
     setMouseTracking(true);
+<<<<<<< HEAD
     start_x = 0;
     last_x = 0;
     packet_list = NULL;
@@ -337,11 +381,24 @@ WirelessTimeline::WirelessTimeline(QWidget *parent) : QWidget(parent)
 
     radio_packet_list = NULL;
     connect(wsApp, SIGNAL(appInitialized()), this, SLOT(appInitialized()));
+=======
+
+    radio_packet_list = NULL;
+>>>>>>> upstream/master-2.4
 }
 
 void WirelessTimeline::setPacketList(PacketList *packet_list)
 {
     this->packet_list = packet_list;
+<<<<<<< HEAD
+=======
+    connect(packet_list->packetListModel(), SIGNAL(bgColorizationProgress(int,int)),
+            this, SLOT(bgColorizationProgress(int,int)));
+    connect(packet_list, SIGNAL(packetSelectionChanged()),
+            this, SLOT(packetSelectionChanged()));
+    connect(wsApp, SIGNAL(appInitialized()),
+        this, SLOT(appInitialized()));
+>>>>>>> upstream/master-2.4
 }
 
 void WirelessTimeline::tap_timeline_reset(void* tapdata)
@@ -523,7 +580,11 @@ WirelessTimeline::paintEvent(QPaintEvent *qpe)
 
     QGraphicsScene qs;
     for (packet = find_packet_tsf(start_tsf + left/zoom - RENDER_EARLY); packet <= cfile.count; packet++) {
+<<<<<<< HEAD
         frame_data *fdata = frame_data_sequence_find(cfile.provider.frames, packet);
+=======
+        frame_data *fdata = frame_data_sequence_find(cfile.frames, packet);
+>>>>>>> upstream/master-2.4
         struct wlan_radio *ri = get_wlan_radio(fdata->num);
         float x, width, red, green, blue;
 

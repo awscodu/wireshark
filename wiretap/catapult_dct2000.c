@@ -1297,7 +1297,11 @@ process_parsed_line(wtap *wth, dct2000_file_externals_t *file_externals,
                    1 +                                 /* direction */
                    1 +                                 /* encap */
                    (is_comment ? data_chars : (data_chars/2));
+<<<<<<< HEAD
     if (rec->rec_header.packet_header.caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+    if (phdr->caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
         /*
          * Probably a corrupt capture file; return an error,
          * so that our caller doesn't blow up trying to allocate
@@ -1305,7 +1309,11 @@ process_parsed_line(wtap *wth, dct2000_file_externals_t *file_externals,
          */
         *err = WTAP_ERR_BAD_FILE;
         *err_info = g_strdup_printf("catapult dct2000: File has %u-byte packet, bigger than maximum of %u",
+<<<<<<< HEAD
                                     rec->rec_header.packet_header.caplen, WTAP_MAX_PACKET_SIZE_STANDARD);
+=======
+                                    phdr->caplen, WTAP_MAX_PACKET_SIZE_STANDARD);
+>>>>>>> upstream/master-2.4
         return FALSE;
     }
     rec->rec_header.packet_header.len = rec->rec_header.packet_header.caplen;

@@ -1069,7 +1069,10 @@ dissect_ntp_ctrl(tvbuff_t *tvb, packet_info *pinfo _U_, proto_tree *ntp_tree)
 	guint16		 datalen;
 	guint16		 data_offset;
 	gint		 length_remaining;
+<<<<<<< HEAD
 	gboolean	 auth_diss = FALSE;
+=======
+>>>>>>> upstream/master-2.4
 
 	tvbparse_t	*tt;
 	tvbparse_elem_t *element;

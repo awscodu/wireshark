@@ -19,9 +19,16 @@
 
 #include "main_welcome.h"
 #include <ui_main_welcome.h>
+<<<<<<< HEAD
 #include <ui/qt/utils/tango_colors.h>
 #include <ui/qt/utils/color_utils.h>
 #include <ui/qt/utils/qt_ui_utils.h>
+=======
+#include "tango_colors.h"
+
+#include "color_utils.h"
+#include "qt_ui_utils.h"
+>>>>>>> upstream/master-2.4
 #include "wireshark_application.h"
 
 #include <QClipboard>
@@ -34,6 +41,13 @@
 #include <QUrl>
 #include <QWidget>
 
+<<<<<<< HEAD
+=======
+#if QT_VERSION > QT_VERSION_CHECK(5, 0, 0)
+#include <QGraphicsBlurEffect>
+#endif
+
+>>>>>>> upstream/master-2.4
 #ifndef VERSION_FLAVOR
 #define VERSION_FLAVOR ""
 #endif
@@ -181,6 +195,15 @@ MainWelcome::MainWelcome(QWidget *parent) :
     connect(recent_files_, SIGNAL(itemActivated(QListWidgetItem *)), this, SLOT(openRecentItem(QListWidgetItem *)));
     updateRecentCaptures();
 
+<<<<<<< HEAD
+=======
+#if QT_VERSION > QT_VERSION_CHECK(5, 0, 0)
+    QGraphicsBlurEffect *blur = new QGraphicsBlurEffect(welcome_ui_->childContainer);
+    blur->setBlurRadius(2);
+    welcome_ui_->childContainer->setGraphicsEffect(blur);
+#endif
+
+>>>>>>> upstream/master-2.4
     splash_overlay_ = new SplashOverlay(this);
 }
 
@@ -244,6 +267,13 @@ void MainWelcome::appInitialized()
 #endif
     welcome_ui_->fullReleaseLabel->setText(full_release);
 
+<<<<<<< HEAD
+=======
+#if QT_VERSION > QT_VERSION_CHECK(5, 0, 0)
+    welcome_ui_->childContainer->setGraphicsEffect(NULL);
+#endif
+
+>>>>>>> upstream/master-2.4
 #ifdef HAVE_LIBPCAP
     welcome_ui_->captureFilterComboBox->lineEdit()->setText(global_capture_opts.default_options.cfilter);
 #endif // HAVE_LIBPCAP

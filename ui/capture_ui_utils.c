@@ -163,6 +163,7 @@ capture_dev_user_snaplen_find(const gchar *if_name, gboolean *hassnap, int *snap
      *
      * XXX - this relies on the items not themselves containing commas.
      */
+<<<<<<< HEAD
     if_tokens = g_strsplit(prefs.capture_devices_snaplen, ",", -1);
     for (i = 0; if_tokens[i] != NULL; i++) {
         gchar *colonp, *next;
@@ -185,6 +186,31 @@ capture_dev_user_snaplen_find(const gchar *if_name, gboolean *hassnap, int *snap
         if (colonp == NULL) {
             /* No separating colon. Give up. */
             break;
+=======
+    colonp = strrchr(if_tokens[i], ':');
+    if (colonp == NULL) {
+      /* No separating colon. Give up. */
+      break;
+    }
+    *colonp = '\0'; /* Split {name} from what follows */
+    if (strcmp(if_tokens[i], if_name) == 0) {
+      /* OK, this matches. */
+      if (*(colonp + 1) == '0') {
+        /* {hassnap} is false, so just set the snaplen to WTAP_MAX_PACKET_SIZE_STANDARD. */
+        found = TRUE;
+        *hassnap = FALSE;
+        *snaplen = WTAP_MAX_PACKET_SIZE_STANDARD;
+      } else if (*(colonp + 1) == '1') {
+        /* {hassnap} is true, so extract {snaplen} */
+        if (*(colonp + 2) != '(') {
+          /* Not followed by a parenthesis. Give up. */
+          break;
+        }
+        value = strtol(colonp + 3, &next, 10);
+        if (next == colonp + 3 || *next != ')' || value < 0) {
+          /* Syntax error. Give up. */
+          break;
+>>>>>>> upstream/master-2.4
         }
         *colonp = '\0'; /* Split {name} from what follows */
         if (strcmp(if_tokens[i], if_name) == 0) {

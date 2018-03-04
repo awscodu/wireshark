@@ -7086,9 +7086,15 @@ dissect_gtpv2_ie_common(tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree, 
 static int
 dissect_gtpv2(tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree, void* data _U_)
 {
+<<<<<<< HEAD
     proto_tree *gtpv2_tree;
     proto_item *ti;
     guint8      message_type, t_flag, p_flag, mp_flag, cause_aux;
+=======
+    proto_tree *gtpv2_tree, *flags_tree;
+    proto_item *ti;
+    guint8      message_type, t_flag, p_flag, cause_aux;
+>>>>>>> upstream/master-2.4
     int         offset = 0;
     guint16     msg_length;
     tvbuff_t   *msg_tvb;
@@ -7168,6 +7174,7 @@ dissect_gtpv2(tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree, void* data
         * (n+3)      Spare
         * Figure 5.1-1: General format of GTPv2 Header for Control Plane
         */
+<<<<<<< HEAD
 
     /* 5.4  EPC specific GTP-C header
      * Bits          8  7  6   5       4   3       2       1
@@ -7184,6 +7191,11 @@ dissect_gtpv2(tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree, void* data
      *            11 Sequence Number (3rd Octet)
      *            12 Message Priority  Spare
      */
+=======
+    gtpv2_hdr->flags = tvb_get_guint8(tvb, offset);
+    ti = proto_tree_add_uint(gtpv2_tree, hf_gtpv2_flags, tvb, offset, 1, gtpv2_hdr->flags);
+    flags_tree = proto_item_add_subtree(ti, ett_gtpv2_flags);
+>>>>>>> upstream/master-2.4
 
     /* Octet 1 */
     proto_tree_add_bitmask_with_flags_ret_uint64(gtpv2_tree, tvb, offset, hf_gtpv2_flags,

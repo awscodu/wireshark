@@ -203,14 +203,22 @@ _5views_read(wtap *wth, int *err, gchar **err_info, gint64 *data_offset)
 			return FALSE;
 	} while (1);
 
+<<<<<<< HEAD
 	if (wth->rec.rec_header.packet_header.caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+	if (wth->phdr.caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
 		/*
 		 * Probably a corrupt capture file; don't blow up trying
 		 * to allocate space for an immensely-large packet.
 		 */
 		*err = WTAP_ERR_BAD_FILE;
 		*err_info = g_strdup_printf("5views: File has %u-byte packet, bigger than maximum of %u",
+<<<<<<< HEAD
 		    wth->rec.rec_header.packet_header.caplen, WTAP_MAX_PACKET_SIZE_STANDARD);
+=======
+		    wth->phdr.caplen, WTAP_MAX_PACKET_SIZE_STANDARD);
+>>>>>>> upstream/master-2.4
 		return FALSE;
 	}
 
@@ -349,7 +357,11 @@ static gboolean _5views_dump(wtap_dumper *wdh,
 	}
 
 	/* Don't write out something bigger than we can read. */
+<<<<<<< HEAD
 	if (rec->rec_header.packet_header.caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+	if (phdr->caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
 		*err = WTAP_ERR_PACKET_TOO_LARGE;
 		return FALSE;
 	}

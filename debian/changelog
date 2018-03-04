@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 wireshark (2.5.1) unstable; urgency=low
+=======
+wireshark (2.4.6) unstable; urgency=low
+>>>>>>> upstream/master-2.4
 
   * Self-made package
 

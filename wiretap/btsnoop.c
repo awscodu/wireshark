@@ -314,7 +314,11 @@ static gboolean btsnoop_dump_h1(wtap_dumper *wdh,
      * Don't write out anything bigger than we can read.
      * (This will also fail on a caplen of 0, as it should.)
      */
+<<<<<<< HEAD
     if (rec->rec_header.packet_header.caplen-1 > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+    if (phdr->caplen-1 > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
         *err = WTAP_ERR_PACKET_TOO_LARGE;
         return FALSE;
     }
@@ -356,7 +360,11 @@ static gboolean btsnoop_dump_h4(wtap_dumper *wdh,
     }
 
     /* Don't write out anything bigger than we can read. */
+<<<<<<< HEAD
     if (rec->rec_header.packet_header.caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+    if (phdr->caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
         *err = WTAP_ERR_PACKET_TOO_LARGE;
         return FALSE;
     }

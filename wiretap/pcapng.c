@@ -1191,8 +1191,13 @@ pcapng_read_packet_block(FILE_T fh, pcapng_block_header_t *bh, pcapng_t *pn, wta
         return FALSE;
     }
 
+<<<<<<< HEAD
     wblock->rec->rec_type = REC_TYPE_PACKET;
     wblock->rec->presence_flags = WTAP_HAS_TS|WTAP_HAS_CAP_LEN|WTAP_HAS_INTERFACE_ID;
+=======
+    wblock->packet_header->rec_type = REC_TYPE_PACKET;
+    wblock->packet_header->presence_flags = WTAP_HAS_TS|WTAP_HAS_CAP_LEN|WTAP_HAS_INTERFACE_ID;
+>>>>>>> upstream/master-2.4
 
     pcapng_debug("pcapng_read_packet_block: encapsulation = %d (%s), pseudo header size = %d.",
                   iface_info.wtap_encap,
@@ -2986,7 +2991,11 @@ pcapng_write_enhanced_packet_block(wtap_dumper *wdh, const wtap_rec *rec,
     wtapng_if_descr_mandatory_t *int_data_mand;
 
     /* Don't write anything we're not willing to read. */
+<<<<<<< HEAD
     if (rec->rec_header.packet_header.caplen > wtap_max_snaplen_for_encap(wdh->encap)) {
+=======
+    if (phdr->caplen > wtap_max_snaplen_for_encap(wdh->encap)) {
+>>>>>>> upstream/master-2.4
         *err = WTAP_ERR_PACKET_TOO_LARGE;
         return FALSE;
     }
@@ -3173,7 +3182,11 @@ pcapng_write_sysdig_event_block(wtap_dumper *wdh, const wtap_rec *rec,
     guint16 event_type;
 
     /* Don't write anything we're not willing to read. */
+<<<<<<< HEAD
     if (rec->rec_header.syscall_header.event_filelen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+    if (phdr->caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
         *err = WTAP_ERR_PACKET_TOO_LARGE;
         return FALSE;
     }

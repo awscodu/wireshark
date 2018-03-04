@@ -7367,8 +7367,12 @@ tmp_fld_check_assert(header_field_info *hfinfo)
 	   report those that have same value but different string. */
 	if ((hfinfo->strings != NULL) &&
 	    !(hfinfo->display & BASE_RANGE_STRING) &&
+<<<<<<< HEAD
 	    !(hfinfo->display & BASE_UNIT_STRING) &&
 	    !((hfinfo->display & FIELD_DISPLAY_E_MASK) == BASE_CUSTOM) &&
+=======
+	    !(FIELD_DISPLAY(hfinfo->display) == BASE_CUSTOM) &&
+>>>>>>> upstream/master-2.4
 	    (
 		    (hfinfo->type == FT_CHAR)  ||
 		    (hfinfo->type == FT_UINT8)  ||
@@ -9157,9 +9161,23 @@ hfinfo_number_value_format_display64(const header_field_info *hfinfo, int displa
 
 	*ptr = '\0';
 	/* Properly format value */
+<<<<<<< HEAD
 	switch (FIELD_DISPLAY(display)) {
 		case BASE_DEC:
 			return isint ? int64_to_str_back(ptr, (gint64) value) : uint64_to_str_back(ptr, value);
+=======
+		switch (FIELD_DISPLAY(display)) {
+			case BASE_DEC:
+				return isint ? int64_to_str_back(ptr, (gint64) value) : uint64_to_str_back(ptr, value);
+
+			case BASE_DEC_HEX:
+				*(--ptr) = ')';
+				ptr = hex64_to_str_back(ptr, hfinfo_hex_digits(hfinfo), value);
+				*(--ptr) = '(';
+				*(--ptr) = ' ';
+				ptr = isint ? int64_to_str_back(ptr, (gint64) value) : uint64_to_str_back(ptr, value);
+				return ptr;
+>>>>>>> upstream/master-2.4
 
 		case BASE_DEC_HEX:
 			*(--ptr) = ')';

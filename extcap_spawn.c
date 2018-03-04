@@ -122,11 +122,16 @@ gboolean extcap_spawn_sync(gchar *dirname, gchar *command, gint argc, gchar **ar
 
         WaitForSingleObject(processInfo.hProcess, INFINITE);
         buffer = (gchar*)g_malloc(BUFFER_SIZE);
+<<<<<<< HEAD
         status = ws_read_string_from_pipe(child_stdout_rd, buffer, BUFFER_SIZE);
         if (status)
         {
             local_output = g_strdup_printf("%s", buffer);
         }
+=======
+        win32_readfrompipe(child_stdout_rd, BUFFER_SIZE, buffer);
+        local_output = g_strdup_printf("%s", buffer);
+>>>>>>> upstream/master-2.4
         g_free(buffer);
 
         CloseHandle(child_stdout_rd);
@@ -285,6 +290,7 @@ extcap_wait_for_pipe(HANDLE * pipe_handles, int num_pipe_handles, HANDLE pid)
         handles[i] = pipeinsts[i].ol.hEvent;
         BOOL connected = ConnectNamedPipe(pipeinsts[i].pipeHandle, &pipeinsts[i].ol);
         if (connected)
+<<<<<<< HEAD
         {
             error_code = GetLastError();
             g_log(LOG_DOMAIN_CAPTURE, G_LOG_LEVEL_DEBUG, "ConnectNamedPipe failed with %d \n.", error_code);
@@ -293,6 +299,16 @@ extcap_wait_for_pipe(HANDLE * pipe_handles, int num_pipe_handles, HANDLE pid)
 
         switch (GetLastError())
         {
+=======
+        {
+            error_code = GetLastError();
+            g_log(LOG_DOMAIN_CAPTURE, G_LOG_LEVEL_DEBUG, "ConnectNamedPipe failed with %d \n.", error_code);
+            return FALSE;
+        }
+
+        switch (GetLastError())
+        {
+>>>>>>> upstream/master-2.4
         case ERROR_IO_PENDING:
             num_waiting_to_connect++;
             pipeinsts[i].pendingIO = TRUE;

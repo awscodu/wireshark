@@ -69,12 +69,12 @@ their compressed archives.
 A date stamp (current-tag.txt)
 
 .EXAMPLE
-C:\PS> .\tools\win-setup.ps1 -Destination C:\wireshark-master-64-libs -Platform win64
+C:\PS> .\tools\win-setup.ps1 -Destination C:\wireshark-win64-libs-2.4 -Platform win64
 #>
 
 Param(
     [Parameter(Mandatory=$true, Position=0)]
-    [ValidateScript({$_ -like "*\wireshark-*-libs"})]
+    [ValidateScript({$_ -like "*\wireshark-*-libs-2.4"})]
     [String]
     $Destination,
 
@@ -99,8 +99,13 @@ Param(
 # trouble instead of trying to catch exceptions everywhere.
 $ErrorActionPreference = "Stop"
 
+<<<<<<< HEAD
 $Win64CurrentTag = "2017-08-26"
 $Win32CurrentTag = "2017-08-26"
+=======
+$Win64CurrentTag = "2017-08-26-2.4"
+$Win32CurrentTag = "2017-08-26-2.4"
+>>>>>>> upstream/master-2.4
 
 # Archive file / subdir.
 $Win64Archives = @{
@@ -122,6 +127,10 @@ $Win64Archives = @{
     "sbc-1.3-1-win64ws.zip" = "";
     "snappy-1.1.3-1-win64ws.zip" = "";
     "spandsp-0.0.6-1-win64ws.zip" = "";
+<<<<<<< HEAD
+=======
+    "upx303w.zip" = "";
+>>>>>>> upstream/master-2.4
     "WinSparkle-0.5.6.zip" = "";
     "WpdPack_4_1_2.zip" = "";
     "zlib-1.2.11-ws.zip" = "";
@@ -146,6 +155,10 @@ $Win32Archives = @{
     "sbc-1.3-1-win32ws.zip" = "";
     "snappy-1.1.3-1-win32ws.zip" = "";
     "spandsp-0.0.6-1-win32ws.zip" = "";
+<<<<<<< HEAD
+=======
+    "upx303w.zip" = "";
+>>>>>>> upstream/master-2.4
     "WinSparkle-0.5.6.zip" = "";
     "WpdPack_4_1_2.zip" = "";
     "zlib-1.2.11-ws.zip" = "";

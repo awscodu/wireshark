@@ -36,7 +36,38 @@ ByteViewTab::ByteViewTab(QWidget *parent) :
     setTabPosition(QTabWidget::South);
     setDocumentMode(true);
 
+<<<<<<< HEAD
     connect(wsApp, SIGNAL(appInitialized()), this, SLOT(connectToMainWindow()));
+=======
+void ByteViewTab::addTab(const char *name, tvbuff_t *tvb, proto_tree *tree, QTreeWidget *protoTree, packet_char_enc encoding) {
+    if (count() == 1) { // Remove empty placeholder.
+        ByteViewText *cur_text = qobject_cast<ByteViewText *>(currentWidget());
+        if (cur_text && cur_text->isEmpty()) delete currentWidget();
+    }
+
+    ByteViewText *byte_view_text = new ByteViewText(this, tvb, tree, protoTree, encoding);
+    byte_view_text->setAccessibleName(name);
+    byte_view_text->setMonospaceFont(mono_font_);
+    connect(this, SIGNAL(monospaceFontChanged(QFont)), byte_view_text, SLOT(setMonospaceFont(QFont)));
+    connect(byte_view_text, SIGNAL(byteFieldHovered(const QString&)), this, SIGNAL(byteFieldHovered(const QString&)));
+    int idx = QTabWidget::addTab(byte_view_text, name);
+    QTabWidget::setTabToolTip(idx, name);
+}
+
+void ByteViewTab::clear()
+{
+    bool visible = isVisible();
+    if (visible) {
+        hide();
+    }
+    while (currentWidget()) {
+        delete currentWidget();
+    }
+    addTab();
+    if (visible) {
+        show();
+    }
+>>>>>>> upstream/master-2.4
 }
 
 void ByteViewTab::connectToMainWindow()

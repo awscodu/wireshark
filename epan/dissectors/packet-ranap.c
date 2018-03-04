@@ -18336,7 +18336,11 @@ void proto_register_ranap(void) {
         NULL, HFILL }},
 
 /*--- End of included file: packet-ranap-hfarr.c ---*/
+<<<<<<< HEAD
 #line 421 "./asn1/ranap/packet-ranap-template.c"
+=======
+#line 358 "./asn1/ranap/packet-ranap-template.c"
+>>>>>>> upstream/master-2.4
   };
 
   /* List of subtrees */
@@ -18700,7 +18704,11 @@ void proto_register_ranap(void) {
     &ett_ranap_Outcome,
 
 /*--- End of included file: packet-ranap-ettarr.c ---*/
+<<<<<<< HEAD
 #line 429 "./asn1/ranap/packet-ranap-template.c"
+=======
+#line 366 "./asn1/ranap/packet-ranap-template.c"
+>>>>>>> upstream/master-2.4
   };
 
 
@@ -19127,7 +19135,11 @@ proto_reg_handoff_ranap(void)
 
 
 /*--- End of included file: packet-ranap-dis-tab.c ---*/
+<<<<<<< HEAD
 #line 478 "./asn1/ranap/packet-ranap-template.c"
+=======
+#line 415 "./asn1/ranap/packet-ranap-template.c"
+>>>>>>> upstream/master-2.4
   } else {
     dissector_delete_uint("sccp.ssn", local_ranap_sccp_ssn, ranap_handle);
   }

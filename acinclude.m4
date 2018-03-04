@@ -131,9 +131,12 @@ AC_DEFUN([AC_WIRESHARK_PCAP_BREAKLOOP_TRY_LINK],
 #
 AC_DEFUN([AC_WIRESHARK_PCAP_CHECK],
 [
+<<<<<<< HEAD
 	AC_WIRESHARK_PUSH_FLAGS
 	ws_ac_save_LIBS="$LIBS"
 
+=======
+>>>>>>> upstream/master-2.4
 	if test -z "$pcap_dir"
 	then
 	  # Pcap header checks
@@ -448,8 +451,25 @@ install a newer version of the header file.])
 	  AC_CHECK_FUNCS(bpf_image pcap_set_tstamp_precision pcap_set_tstamp_type)
 	fi
 
+<<<<<<< HEAD
 	AC_WIRESHARK_POP_FLAGS
 	LIBS="$ws_ac_save_LIBS"
+=======
+	LIBS="$ac_save_LIBS"
+])
+
+AC_DEFUN([AC_WIRESHARK_PCAP_REMOTE_CHECK],
+[
+    ac_save_LIBS="$LIBS"
+    LIBS="$PCAP_LIBS $LIBS"
+    AC_CHECK_FUNCS(pcap_open)
+    if test $ac_cv_func_pcap_open = "yes" ; then
+        AC_DEFINE(HAVE_PCAP_REMOTE, 1,
+            [Define to 1 if you have libpcap/WinPcap remote capturing support and prefer to use these new API features.])
+    fi
+    AC_CHECK_FUNCS(pcap_setsampling)
+    LIBS="$ac_save_LIBS"
+>>>>>>> upstream/master-2.4
 ])
 
 #

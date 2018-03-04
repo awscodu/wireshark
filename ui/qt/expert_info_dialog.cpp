@@ -25,7 +25,12 @@
 #include <QPushButton>
 
 // To do:
+<<<<<<< HEAD
 // - Test with custom expert levels (Preferences -> Expert).
+=======
+// - Test with custom expert levels (Preferences -> Protocols -> Expert).
+//   - Figure out why the expert level prefs are buried under "Protocols".
+>>>>>>> upstream/master-2.4
 // - Test with large captures.
 // - Promote to a fourth pane in the main window?
 // - Make colors configurable? In theory we could condense image/expert_indicators.svg,
@@ -102,8 +107,16 @@ ExpertInfoDialog::ExpertInfoDialog(QWidget &parent, CaptureFile &capture_file) :
     ctx_menu_.addAction(expand);
     connect(expand, SIGNAL(triggered()), this, SLOT(expandTree()));
 
+<<<<<<< HEAD
     connect(&cap_file_, SIGNAL(captureEvent(CaptureEvent *)),
             this, SLOT(captureEvent(CaptureEvent *)));
+=======
+
+    connect(&cap_file_, SIGNAL(captureFileRetapStarted()),
+            this, SLOT(retapStarted()));
+    connect(&cap_file_, SIGNAL(captureFileRetapFinished()),
+            this, SLOT(retapFinished()));
+>>>>>>> upstream/master-2.4
     setDisplayFilter();
     QTimer::singleShot(0, this, SLOT(retapPackets()));
 }
@@ -151,6 +164,7 @@ void ExpertInfoDialog::retapPackets()
     cap_file_.retapPackets();
 }
 
+<<<<<<< HEAD
 void ExpertInfoDialog::captureEvent(CaptureEvent *e)
 {
     if (e->captureContext() == CaptureEvent::Retap)
@@ -168,6 +182,17 @@ void ExpertInfoDialog::captureEvent(CaptureEvent *e)
             break;
         }
     }
+=======
+void ExpertInfoDialog::retapStarted()
+{
+    ui->limitCheckBox->setEnabled(false);
+    ui->groupBySummaryCheckBox->setEnabled(false);
+}
+
+void ExpertInfoDialog::retapFinished()
+{
+    updateWidgets();
+>>>>>>> upstream/master-2.4
 }
 
 void ExpertInfoDialog::updateWidgets()
@@ -200,6 +225,7 @@ void ExpertInfoDialog::updateWidgets()
     ui->hintLabel->setText(hint);
 
     ui->groupBySummaryCheckBox->setEnabled(!file_closed_);
+<<<<<<< HEAD
 }
 
 void ExpertInfoDialog::on_actionShowError_toggled(bool checked)
@@ -232,6 +258,40 @@ void ExpertInfoDialog::on_actionShowComment_toggled(bool checked)
     updateWidgets();
 }
 
+=======
+}
+
+void ExpertInfoDialog::on_actionShowError_toggled(bool checked)
+{
+    proxyModel_->setSeverityFilter(PI_ERROR, !checked);
+    updateWidgets();
+}
+
+void ExpertInfoDialog::on_actionShowWarning_toggled(bool checked)
+{
+    proxyModel_->setSeverityFilter(PI_WARN, !checked);
+    updateWidgets();
+}
+
+void ExpertInfoDialog::on_actionShowNote_toggled(bool checked)
+{
+    proxyModel_->setSeverityFilter(PI_NOTE, !checked);
+    updateWidgets();
+}
+
+void ExpertInfoDialog::on_actionShowChat_toggled(bool checked)
+{
+    proxyModel_->setSeverityFilter(PI_CHAT, !checked);
+    updateWidgets();
+}
+
+void ExpertInfoDialog::on_actionShowComment_toggled(bool checked)
+{
+    proxyModel_->setSeverityFilter(PI_COMMENT, !checked);
+    updateWidgets();
+}
+
+>>>>>>> upstream/master-2.4
 
 void ExpertInfoDialog::showExpertInfoMenu(QPoint pos)
 {
@@ -299,7 +359,11 @@ void ExpertInfoDialog::collapseTree()
 void ExpertInfoDialog::expandTree()
 {
     ui->expertInfoTreeView->expandAll();
+<<<<<<< HEAD
 }
+=======
+    }
+>>>>>>> upstream/master-2.4
 
 void ExpertInfoDialog::on_limitCheckBox_toggled(bool)
 {
@@ -309,13 +373,21 @@ void ExpertInfoDialog::on_limitCheckBox_toggled(bool)
 void ExpertInfoDialog::on_groupBySummaryCheckBox_toggled(bool)
 {
     expert_info_model_->setGroupBySummary(ui->groupBySummaryCheckBox->isChecked());
+<<<<<<< HEAD
 }
+=======
+    }
+>>>>>>> upstream/master-2.4
 
 // Show child (packet list) items that match the contents of searchLineEdit.
 void ExpertInfoDialog::on_searchLineEdit_textChanged(const QString &search_re)
 {
     proxyModel_->setSummaryFilter(search_re);
+<<<<<<< HEAD
 }
+=======
+        }
+>>>>>>> upstream/master-2.4
 
 void ExpertInfoDialog::on_buttonBox_helpRequested()
 {

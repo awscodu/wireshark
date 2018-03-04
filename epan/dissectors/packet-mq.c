@@ -3598,6 +3598,7 @@ static int reassemble_mq(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, vo
                 */
                 iBegL = (bSeg1st) ? 0 : iNxtP;
 
+<<<<<<< HEAD
                 if (iSegL <= iBegL)
                 {
                     /* negative or null fragment length - something is wrong; skip reassembly */
@@ -3610,6 +3611,17 @@ static int reassemble_mq(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, vo
                                                     tvb, iBegL,
                                                     pinfo, iConnectionId, NULL,
                                                     iSegL - iBegL, bMore);
+=======
+                if (iSegL <= iBegL) {
+                    /* negative or null fragment length - something is wrong; skip reassembly */
+                    fd_head = NULL;
+                    reassembly_error = TRUE;
+                } else {
+                    fd_head = fragment_add_seq_next(&mq_reassembly_table,
+                        tvb, iBegL,
+                        pinfo, iConnectionId, NULL,
+                        iSegL - iBegL, bMore);
+>>>>>>> upstream/master-2.4
                 }
 
                 if (tree)
@@ -3630,7 +3642,16 @@ static int reassemble_mq(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, vo
                         expert_add_info_format(pinfo, ti, &ei_mq_reassembly_error,
                                                "Wrong fragment length (%d) - skipping reassembly", iSegL - iBegL);
                     }
+<<<<<<< HEAD
                     mq_tree = proto_item_add_subtree(ti, ett_mq_reassemb);
+=======
+                    if (reassembly_error)
+                    {
+                        expert_add_info_format(pinfo, ti, &ei_mq_reassembly_error,
+                                               "Wrong fragment length (%d) - skipping reassembly", iSegL - iBegL);
+                    }
+                    mq_tree = proto_item_add_subtree(ti, ett_mq_reaasemb);
+>>>>>>> upstream/master-2.4
                 }
                 else
                 {

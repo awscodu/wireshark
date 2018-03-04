@@ -15,9 +15,15 @@
 
 #include "filter_action.h"
 #include "wireshark_dialog.h"
+<<<<<<< HEAD
 #include <ui/qt/models/expert_info_model.h>
 #include <ui/qt/models/expert_info_proxy_model.h>
 #include <ui/qt/widgets/expert_info_view.h>
+=======
+#include "expert_info_model.h"
+#include "expert_info_proxy_model.h"
+#include "expert_info_view.h"
+>>>>>>> upstream/master-2.4
 
 #include <QMenu>
 

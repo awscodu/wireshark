@@ -220,10 +220,17 @@ dissect_frame(tvbuff_t *tvb, packet_info *pinfo, proto_tree *parent_tree, void* 
 
 	case REC_TYPE_PACKET:
 		pinfo->current_proto = "Frame";
+<<<<<<< HEAD
 		if (pinfo->rec->presence_flags & WTAP_HAS_PACK_FLAGS) {
 			if (pinfo->rec->rec_header.packet_header.pack_flags & 0x00000001)
 				pinfo->p2p_dir = P2P_DIR_RECV;
 			if (pinfo->rec->rec_header.packet_header.pack_flags & 0x00000002)
+=======
+		if (pinfo->phdr->presence_flags & WTAP_HAS_PACK_FLAGS) {
+			if (pinfo->phdr->pack_flags & 0x00000001)
+				pinfo->p2p_dir = P2P_DIR_RECV;
+			if (pinfo->phdr->pack_flags & 0x00000002)
+>>>>>>> upstream/master-2.4
 				pinfo->p2p_dir = P2P_DIR_SENT;
 		}
 
@@ -395,6 +402,20 @@ dissect_frame(tvbuff_t *tvb, packet_info *pinfo, proto_tree *parent_tree, void* 
 			break;
 		}
 
+<<<<<<< HEAD
+=======
+		if (pinfo->phdr->presence_flags & WTAP_HAS_INTERFACE_ID) {
+			proto_item_append_text(ti, " on interface %u",
+			    pinfo->phdr->interface_id);
+		}
+		if (pinfo->phdr->presence_flags & WTAP_HAS_PACK_FLAGS) {
+			if (pinfo->phdr->pack_flags & 0x00000001)
+				proto_item_append_text(ti, " (inbound)");
+			if (pinfo->phdr->pack_flags & 0x00000002)
+				proto_item_append_text(ti, " (outbound)");
+		}
+
+>>>>>>> upstream/master-2.4
 		fh_tree = proto_item_add_subtree(ti, ett_frame);
 
 		if (pinfo->rec->presence_flags & WTAP_HAS_INTERFACE_ID &&

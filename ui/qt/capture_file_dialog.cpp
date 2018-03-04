@@ -689,8 +689,21 @@ void CaptureFileDialog::preview(const QString & path)
     wtap        *wth;
     int          err;
     gchar       *err_info;
+<<<<<<< HEAD
     ws_file_preview_stats stats;
     ws_file_preview_stats_status status;
+=======
+    gint64       data_offset;
+    const struct wtap_pkthdr *phdr;
+    double       start_time = 0; /* seconds, with nsec resolution */
+    double       stop_time = 0;  /* seconds, with nsec resolution */
+    gboolean     have_times = FALSE;
+    double       cur_time;
+    unsigned int packets = 0;
+    bool         timed_out = FALSE;
+    time_t       time_preview;
+    time_t       time_current;
+>>>>>>> upstream/master-2.4
     time_t       ti_time;
     struct tm   *ti_tm;
     unsigned int elapsed_time;
@@ -735,7 +748,38 @@ void CaptureFileDialog::preview(const QString & path)
     // Finder and Windows Explorer use IEC. What do the various Linux file managers use?
     QString size_str(gchar_free_to_qstring(format_size(filesize, format_size_unit_bytes|format_size_prefix_iec)));
 
+<<<<<<< HEAD
     status = get_stats_for_preview(wth, &stats, &err, &err_info);
+=======
+    time(&time_preview);
+    while ((wtap_read(wth, &err, &err_info, &data_offset))) {
+        phdr = wtap_phdr(wth);
+        if (phdr->presence_flags & WTAP_HAS_TS) {
+            cur_time = nstime_to_sec(&phdr->ts);
+            if (!have_times) {
+                start_time = cur_time;
+                stop_time = cur_time;
+                have_times = TRUE;
+            }
+            if (cur_time < start_time) {
+                start_time = cur_time;
+            }
+            if (cur_time > stop_time){
+                stop_time = cur_time;
+            }
+        }
+
+        packets++;
+        if(packets%1000 == 0) {
+            /* do we have a timeout? */
+            time(&time_current);
+            if(time_current-time_preview >= (time_t) prefs.gui_fileopen_preview) {
+                timed_out = TRUE;
+                break;
+            }
+        }
+    }
+>>>>>>> upstream/master-2.4
 
     if(status == PREVIEW_READ_ERROR) {
         // XXX - give error details?
@@ -756,6 +800,7 @@ void CaptureFileDialog::preview(const QString & path)
 
     // First packet + elapsed time
     QString first_elapsed;
+<<<<<<< HEAD
     if(stats.have_times) {
         //
         // We saw at least one record with a time stamp, so we can give
@@ -764,6 +809,12 @@ void CaptureFileDialog::preview(const QString & path)
         // before the first one with a time stamp, this may be inaccurate).
         //
         ti_time = (long)stats.start_time;
+=======
+    if(!have_times) {
+        first_elapsed = tr("unknown");
+    } else {
+        ti_time = (long)start_time;
+>>>>>>> upstream/master-2.4
         ti_tm = localtime(&ti_time);
         first_elapsed = "?";
         if(ti_tm) {
@@ -777,12 +828,16 @@ void CaptureFileDialog::preview(const QString & path)
                      ti_tm->tm_sec
                      );
         }
+<<<<<<< HEAD
     } else {
         first_elapsed = tr("unknown");
+=======
+>>>>>>> upstream/master-2.4
     }
 
     // Elapsed time
     first_elapsed += " / ";
+<<<<<<< HEAD
     if(status == PREVIEW_SUCCEEDED && stats.have_times) {
         //
         // We didn't time out, so we looked at all packets, and we got
@@ -802,6 +857,21 @@ void CaptureFileDialog::preview(const QString & path)
         }
     } else {
         first_elapsed += tr("unknown");
+=======
+    if(!have_times) {
+        first_elapsed += tr("unknown");
+    } else {
+        elapsed_time = (unsigned int)(stop_time-start_time);
+        if(timed_out) {
+            first_elapsed += tr("unknown");
+        } else if(elapsed_time/86400) {
+            first_elapsed += QString().sprintf("%02u days %02u:%02u:%02u",
+                    elapsed_time/86400, elapsed_time%86400/3600, elapsed_time%3600/60, elapsed_time%60);
+        } else {
+            first_elapsed += QString().sprintf("%02u:%02u:%02u",
+                    elapsed_time%86400/3600, elapsed_time%3600/60, elapsed_time%60);
+        }
+>>>>>>> upstream/master-2.4
     }
     preview_first_elapsed_.setText(first_elapsed);
 

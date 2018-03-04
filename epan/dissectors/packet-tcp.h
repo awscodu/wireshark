@@ -284,7 +284,11 @@ typedef enum {
 typedef struct tcp_analyze_seq_flow_info_t {
 	tcp_unacked_t *segments;/* List of segments for which we haven't seen an ACK */
 	guint16 segment_count;	/* How many unacked segments we're currently storing */
+<<<<<<< HEAD
     guint32 lastack;	/* Last seen ack for the reverse flow */
+=======
+	guint32 lastack;	/* Last seen ack for the reverse flow */
+>>>>>>> upstream/master-2.4
 	nstime_t lastacktime;	/* Time of the last ack packet */
 	guint32 lastnondupack;	/* frame number of last seen non dupack */
 	guint32 dupacknum;	/* dupack number */

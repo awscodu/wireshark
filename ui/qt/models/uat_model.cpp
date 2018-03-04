@@ -164,11 +164,19 @@ QVariant UatModel::headerData(int section, Qt::Orientation orientation, int role
     if (role == Qt::ToolTipRole && uat_->fields[section].desc) {
         return uat_->fields[section].desc;
     }
+<<<<<<< HEAD:ui/qt/models/uat_model.cpp
 
     if (role == Qt::DisplayRole) {
         return uat_->fields[section].title;
     }
 
+=======
+
+    if (role == Qt::DisplayRole) {
+        return uat_->fields[section].title;
+    }
+
+>>>>>>> upstream/master-2.4:ui/qt/uat_model.cpp
     return QVariant();
 }
 

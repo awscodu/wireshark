@@ -19,10 +19,13 @@
 
 #include <epan/packet.h>
 #include <epan/expert.h>
+<<<<<<< HEAD
 
 #include "packet-ssl.h"
 #include "packet-thrift.h"
 
+=======
+>>>>>>> upstream/master-2.4
 
 void proto_register_thrift(void);
 void proto_reg_handoff_thrift(void);
@@ -77,8 +80,11 @@ static int hf_thrift_double = -1;
 static int ett_thrift = -1;
 
 static expert_field ei_thrift_wrong_type = EI_INIT;
+<<<<<<< HEAD
 static expert_field ei_thrift_struct_type_not_imp = EI_INIT;
 static expert_field ei_thrift_struct_type_not_in_seq = EI_INIT;
+=======
+>>>>>>> upstream/master-2.4
 
 static const value_string thrift_type_vals[] = {
     {  0, "T_STOP" },
@@ -118,6 +124,7 @@ static const value_string thrift_bool_vals[] = {
 };
 
 static int dissect_thrift_type(tvbuff_t* tvb, packet_info* pinfo, proto_tree* tree, proto_item* pi, int type, int* offset, int length);
+<<<<<<< HEAD
 
 int
 dissect_thrift_t_stop(tvbuff_t* tvb, packet_info* pinfo _U_, proto_tree* tree, int offset)
@@ -364,6 +371,8 @@ dissect_thrift_t_struct(tvbuff_t* tvb, packet_info* pinfo _U_, proto_tree* tree,
 
     return offset;
 }
+=======
+>>>>>>> upstream/master-2.4
 
 static int
 dissect_thrift_utf7(tvbuff_t* tvb, packet_info* pinfo _U_, proto_tree* tree, int offset, int length _U_)
@@ -553,8 +562,11 @@ dissect_thrift_common(tvbuff_t* tvb, packet_info* pinfo, proto_tree* tree, void 
     guint8 *method_str;
     int length = tvb_reported_length(tvb);
     guint32 type;
+<<<<<<< HEAD
     tvbuff_t *msg_tvb;
     int len;
+=======
+>>>>>>> upstream/master-2.4
 
     col_set_str(pinfo->cinfo, COL_PROTOCOL, "THRIFT");
     col_clear(pinfo->cinfo, COL_INFO);
@@ -606,6 +618,7 @@ dissect_thrift_common(tvbuff_t* tvb, packet_info* pinfo, proto_tree* tree, void 
     }
     /* len = 0, no subdissector */
     sub_tree = proto_tree_add_subtree(tree, tvb, offset, -1, ett_thrift, NULL, "Data");
+<<<<<<< HEAD
     while (offset < length){
         /*Read type and field id */
         type_pi = proto_tree_add_item_ret_uint(sub_tree, hf_thrift_type, tvb, offset, 1, ENC_BIG_ENDIAN, &type);
@@ -618,6 +631,22 @@ dissect_thrift_common(tvbuff_t* tvb, packet_info* pinfo, proto_tree* tree, void 
 
         if (dissect_thrift_type(tvb, pinfo, sub_tree, type_pi, type, &offset, length) < 0) {
             break;
+=======
+    if (tree){
+        while (offset < length){
+            /*Read type and field id */
+            type_pi = proto_tree_add_item_ret_uint(sub_tree, hf_thrift_type, tvb, offset, 1, ENC_BIG_ENDIAN, &type);
+            if (type == 0){
+                return;
+            }
+            offset++;
+            proto_tree_add_item(sub_tree, hf_thrift_fid, tvb, offset, 2, ENC_BIG_ENDIAN);
+            offset += 2;
+
+            if (dissect_thrift_type(tvb, pinfo, sub_tree, type_pi, type, &offset, length) < 0) {
+                break;
+            }
+>>>>>>> upstream/master-2.4
         }
     }
     /* We did not encounter T_STOP*/
@@ -851,6 +880,7 @@ void proto_register_thrift(void) {
     };
 
     static ei_register_info ei[] = {
+<<<<<<< HEAD
         { &ei_thrift_wrong_type,{ "thrift.wrong_type", PI_PROTOCOL, PI_ERROR, "Type value not expected", EXPFILL } },
         { &ei_thrift_struct_type_not_imp,{ "thrift.struct_type_not_imp", PI_PROTOCOL, PI_ERROR, "Struct type handling not implemented in Wireshak yet", EXPFILL } },
         { &ei_thrift_struct_type_not_in_seq,{ "thrift.struct_type_not_in_seq", PI_PROTOCOL, PI_ERROR, "Wrong element in struct", EXPFILL } },
@@ -861,10 +891,21 @@ void proto_register_thrift(void) {
     expert_module_t* expert_thrift;
 
 
+=======
+        { &ei_thrift_wrong_type,{ "thrift.wrong_type", PI_PROTOCOL, PI_ERROR, "Type value not expected", EXPFILL } }
+    };
+
+    expert_module_t* expert_thrift;
+
+>>>>>>> upstream/master-2.4
     /* Register protocol name and description */
     proto_thrift = proto_register_protocol("Thrift Protocol", "Thrift", "thrift");
 
     expert_thrift = expert_register_protocol(proto_thrift);
+<<<<<<< HEAD
+=======
+    expert_register_field_array(expert_thrift, ei, array_length(ei));
+>>>>>>> upstream/master-2.4
 
     /* register field array */
     proto_register_field_array(proto_thrift, hf, array_length(hf));

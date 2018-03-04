@@ -8,7 +8,24 @@
  * Copyright 2012 Parc Inc and Samsung Electronics
  * Copyright 2015, 2016 & 2017 Cisco Inc
  *
+<<<<<<< HEAD
  * SPDX-License-Identifier: GPL-2.0-or-later*/
+=======
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+>>>>>>> upstream/master-2.4
 
 #include <QScrollArea>
 
@@ -23,7 +40,11 @@
 
 #include "file.h"
 
+<<<<<<< HEAD
 #include "ui/ws_ui_util.h"
+=======
+#include "ui/ui_util.h"
+>>>>>>> upstream/master-2.4
 
 #include <epan/prefs.h>
 #include <epan/plugin_if.h>
@@ -65,7 +86,11 @@ protected:
 
 public slots:
     void bgColorizationProgress(int first, int last);
+<<<<<<< HEAD
     void selectedFrameChanged(int frameNum);
+=======
+    void packetSelectionChanged();
+>>>>>>> upstream/master-2.4
     void appInitialized();
 
 protected:

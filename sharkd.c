@@ -429,7 +429,11 @@ cf_open(capture_file *cf, const char *fname, unsigned int type, gboolean is_temp
   cf->count     = 0;
   cf->drops_known = FALSE;
   cf->drops     = 0;
+<<<<<<< HEAD
   cf->snap      = wtap_snapshot_length(cf->provider.wth);
+=======
+  cf->snap      = wtap_snapshot_length(cf->wth);
+>>>>>>> upstream/master-2.4
   nstime_set_zero(&cf->elapsed_time);
   cf->provider.ref = NULL;
   cf->provider.prev_dis = NULL;

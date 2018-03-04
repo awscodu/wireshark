@@ -1374,10 +1374,17 @@ rfc1867_angle(tvbuff_t *tvb, int offset, gboolean longitude)
 
   if (angle < 0x80000000U) {
     angle = 0x80000000U - angle;
+<<<<<<< HEAD
     direction = nsew[1 + longitude ? 2 : 0];
   } else {
     angle = angle - 0x80000000U;
     direction = nsew[longitude ? 2 : 0];
+=======
+    direction = longitude ? 'W' : 'S';
+  } else {
+    angle = angle - 0x80000000U;
+    direction = longitude ? 'E' : 'N';
+>>>>>>> upstream/master-2.4
   }
 
   if (longitude ? (angle > 648000000) : (angle > 324000000))

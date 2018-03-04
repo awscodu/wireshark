@@ -316,11 +316,19 @@ WSLUA_METHOD Dumper_dump(lua_State* L) {
     rec.ts.secs  = (unsigned int)(floor(ts));
     rec.ts.nsecs = (unsigned int)(floor((ts - (double)rec.ts.secs) * 1000000000));
 
+<<<<<<< HEAD
     rec.rec_header.packet_header.len       = ba->len;
     rec.rec_header.packet_header.caplen    = ba->len;
     rec.rec_header.packet_header.pkt_encap = DUMPER_ENCAP(d);
     if (ph->wph) {
         rec.rec_header.packet_header.pseudo_header = *ph->wph;
+=======
+    pkthdr.len       = ba->len;
+    pkthdr.caplen    = ba->len;
+    pkthdr.pkt_encap = DUMPER_ENCAP(d);
+    if (ph->wph) {
+        pkthdr.pseudo_header = *ph->wph;
+>>>>>>> upstream/master-2.4
     }
 
     /* TODO: Can we get access to pinfo->pkt_comment here somehow? We
@@ -427,6 +435,7 @@ WSLUA_METHOD Dumper_dump_current(lua_State* L) {
 
     tvb = get_data_source_tvb(data_src);
 
+<<<<<<< HEAD
     memset(&rec, 0, sizeof rec);
 
     rec.rec_type                           = REC_TYPE_PACKET;
@@ -442,6 +451,23 @@ WSLUA_METHOD Dumper_dump_current(lua_State* L) {
         rec.has_comment_changed = TRUE;
     } else if (lua_pinfo->fd->flags.has_phdr_comment) {
         rec.opt_comment = wmem_strdup(wmem_packet_scope(), lua_pinfo->rec->opt_comment);
+=======
+    memset(&pkthdr, 0, sizeof(pkthdr));
+
+    pkthdr.rec_type = REC_TYPE_PACKET;
+    pkthdr.presence_flags = WTAP_HAS_TS|WTAP_HAS_CAP_LEN;
+    pkthdr.ts        = lua_pinfo->abs_ts;
+    pkthdr.len       = tvb_reported_length(tvb);
+    pkthdr.caplen    = tvb_captured_length(tvb);
+    pkthdr.pkt_encap = lua_pinfo->pkt_encap;
+    pkthdr.pseudo_header = *lua_pinfo->pseudo_header;
+
+    if (lua_pinfo->fd->flags.has_user_comment) {
+        pkthdr.opt_comment = wmem_strdup(wmem_packet_scope(), epan_get_user_comment(lua_pinfo->epan, lua_pinfo->fd));
+        pkthdr.has_comment_changed = TRUE;
+    } else if (lua_pinfo->fd->flags.has_phdr_comment) {
+        pkthdr.opt_comment = wmem_strdup(wmem_packet_scope(), lua_pinfo->phdr->opt_comment);
+>>>>>>> upstream/master-2.4
     }
 
     data = (const guchar *)tvb_memdup(wmem_packet_scope(),tvb,0,rec.rec_header.packet_header.caplen);

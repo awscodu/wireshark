@@ -2178,7 +2178,7 @@ load_link_state_data(packet_info *pinfo) {
 }
 
 /*
- * Detect IPv4 prefixes  conform to BGP Additional Path but NOT conform to standard BGP
+ * Detect IPv4/IPv6 prefixes  conform to BGP Additional Path but NOT conform to standard BGP
  *
  * A real BGP speaker would rely on the BGP Additional Path in the BGP Open messages.
  * But it is not suitable for a packet analyse because the BGP sessions are not supposed to
@@ -2187,14 +2187,14 @@ load_link_state_data(packet_info *pinfo) {
  * Code inspired from the decode_prefix4 function
  */
 static int
-detect_add_path_prefix4(tvbuff_t *tvb, gint offset, gint end) {
+detect_add_path_prefix46(tvbuff_t *tvb, gint offset, gint end, gint max_bit_length) {
     guint32 addr_len;
     guint8 prefix_len;
     gint o;
     /* Must be compatible with BGP Additional Path  */
     for (o = offset + 4; o < end; o += 4) {
         prefix_len = tvb_get_guint8(tvb, o);
-        if( prefix_len > 32) {
+        if( prefix_len > max_bit_length) {
             return 0; /* invalid prefix length - not BGP add-path */
         }
         addr_len = (prefix_len + 7) / 8;
@@ -2215,7 +2215,7 @@ detect_add_path_prefix4(tvbuff_t *tvb, gint offset, gint end) {
         if( prefix_len == 0 && end - offset > 1 ) {
             return 1; /* prefix length is zero (i.e. matching all IP prefixes) and remaining bytes within the NLRI is greater than or equal to 1 - may be BGP add-path */
         }
-        if( prefix_len > 32) {
+        if( prefix_len > max_bit_length) {
             return 1; /* invalid prefix length - may be BGP add-path */
         }
         addr_len = (prefix_len + 7) / 8;
@@ -2231,6 +2231,14 @@ detect_add_path_prefix4(tvbuff_t *tvb, gint offset, gint end) {
         }
     }
     return 0; /* valid - do not assume Additional Path */
+}
+static int
+detect_add_path_prefix4(tvbuff_t *tvb, gint offset, gint end) {
+    return detect_add_path_prefix46(tvb, offset, end, 32);
+}
+static int
+detect_add_path_prefix6(tvbuff_t *tvb, gint offset, gint end) {
+    return detect_add_path_prefix46(tvb, offset, end, 128);
 }
 /*
  * Decode an IPv4 prefix with Path Identifier
@@ -2309,6 +2317,44 @@ decode_prefix4(proto_tree *tree, packet_info *pinfo, proto_item *parent_item, in
     proto_tree_add_ipv4(prefix_tree, hf_addr, tvb, offset + 1, length,
             ip_addr.addr);
     return(1 + length);
+}
+
+/*
+ * Decode an IPv6 prefix with path ID.
+ */
+static int
+decode_path_prefix6(proto_tree *tree, packet_info *pinfo, int hf_path_id, int hf_addr, tvbuff_t *tvb, gint offset,
+               const char *tag)
+{
+    proto_tree          *prefix_tree;
+    guint32 path_identifier;
+    struct e_in6_addr   addr;     /* IPv6 address                       */
+    address             addr_str;
+    int                 plen;     /* prefix length                      */
+    int                 length;   /* number of octets needed for prefix */
+
+    /* snarf length and prefix */
+    path_identifier = tvb_get_ntohl(tvb, offset);
+    plen = tvb_get_guint8(tvb, offset + 4);
+    length = tvb_get_ipv6_addr_with_prefix_len(tvb, offset + 4 + 1, &addr, plen);
+    if (length < 0) {
+        proto_tree_add_expert_format(tree, pinfo, &ei_bgp_length_invalid, tvb, offset + 4, 1, "%s length %u invalid",
+            tag, plen);
+        return -1;
+    }
+
+    /* put prefix into protocol tree */
+    set_address(&addr_str, AT_IPv6, 16, addr.bytes);
+    prefix_tree = proto_tree_add_subtree_format(tree, tvb, offset,  4 + 1 + length,
+                            ett_bgp_prefix, NULL, "%s/%u PathId %u ",
+                            address_to_str(wmem_packet_scope(), &addr_str), plen, path_identifier);
+
+    proto_tree_add_item(prefix_tree, hf_path_id, tvb, offset, 4, ENC_BIG_ENDIAN);
+    proto_tree_add_uint_format(prefix_tree, hf_bgp_prefix_length, tvb, offset + 4, 1, plen, "%s prefix length: %u",
+        tag, plen);
+    proto_tree_add_ipv6(prefix_tree, hf_addr, tvb, offset + 4 + 1, length, &addr);
+
+    return(4 + 1 + length);
 }
 
 /*
@@ -4435,6 +4481,11 @@ static int decode_evpn_nlri_esi(proto_tree *tree, tvbuff_t *tvb, gint offset, pa
         case BGP_NLRI_EVPN_ESI_VALUE :
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_value_type0, tvb,
                                 offset+1, 9, ENC_NA);
+<<<<<<< HEAD
+=======
+            proto_item_append_text(ti, ": %s",
+                                   tvb_bytes_to_str_punct(wmem_packet_scope(), tvb, offset + 1, 9, ' '));
+>>>>>>> upstream/master-2.4
             break;
         case BGP_NLRI_EVPN_ESI_LACP :
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_lacp_mac, tvb,
@@ -4443,6 +4494,12 @@ static int decode_evpn_nlri_esi(proto_tree *tree, tvbuff_t *tvb, gint offset, pa
                                 offset+7, 2, ENC_NA);
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_remain, tvb,
                                 offset+9, 1, ENC_NA);
+<<<<<<< HEAD
+=======
+            proto_item_append_text(ti, ": %s, Key: %s",
+                                   tvb_ether_to_str(tvb,offset+1),
+                                   tvb_bytes_to_str_punct(wmem_packet_scope(), tvb, offset + 7, 2, ' '));
+>>>>>>> upstream/master-2.4
             break;
         case BGP_NLRI_EVPN_ESI_MSTP :
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_rb_mac, tvb,
@@ -4451,6 +4508,12 @@ static int decode_evpn_nlri_esi(proto_tree *tree, tvbuff_t *tvb, gint offset, pa
                                 offset+7, 2, ENC_NA);
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_remain, tvb,
                                 offset+9, 1, ENC_NA);
+<<<<<<< HEAD
+=======
+            proto_item_append_text(ti, ": %s, Priority: %s",
+                                   tvb_ether_to_str(tvb,offset+1),
+                                   tvb_bytes_to_str_punct(wmem_packet_scope(), tvb, offset + 7, 2, ' '));
+>>>>>>> upstream/master-2.4
             break;
         case BGP_NLRI_EVPN_ESI_MAC :
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_sys_mac, tvb,
@@ -4459,6 +4522,12 @@ static int decode_evpn_nlri_esi(proto_tree *tree, tvbuff_t *tvb, gint offset, pa
                                 offset+7, 2, ENC_NA);
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_remain, tvb,
                                 offset+9, 1, ENC_NA);
+<<<<<<< HEAD
+=======
+            proto_item_append_text(ti, ": %s, Discriminator: %s",
+                                   tvb_ether_to_str(tvb,offset+1),
+                                   tvb_bytes_to_str_punct(wmem_packet_scope(), tvb, offset + 7, 2, ' '));
+>>>>>>> upstream/master-2.4
             break;
         case BGP_NLRI_EVPN_ESI_RID :
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_router_id, tvb,
@@ -4467,6 +4536,12 @@ static int decode_evpn_nlri_esi(proto_tree *tree, tvbuff_t *tvb, gint offset, pa
                                 offset+5, 4, ENC_NA);
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_remain, tvb,
                                 offset+9, 1, ENC_NA);
+<<<<<<< HEAD
+=======
+            proto_item_append_text(ti, ": %s, Discriminator: %s",
+                                   tvb_ip_to_str(tvb,offset+1),
+                                   tvb_bytes_to_str_punct(wmem_packet_scope(), tvb, offset + 5, 4, ' '));
+>>>>>>> upstream/master-2.4
             break;
         case BGP_NLRI_EVPN_ESI_ASN :
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_asn, tvb,
@@ -4475,6 +4550,12 @@ static int decode_evpn_nlri_esi(proto_tree *tree, tvbuff_t *tvb, gint offset, pa
                                 offset+5, 4, ENC_NA);
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_remain, tvb,
                                 offset+9, 1, ENC_NA);
+<<<<<<< HEAD
+=======
+            proto_item_append_text(ti, ": %u, Discriminator: %s",
+                                   tvb_get_ntohl(tvb,offset+1),
+                                   tvb_bytes_to_str_punct(wmem_packet_scope(), tvb, offset + 5, 4, ' '));
+>>>>>>> upstream/master-2.4
             break;
         case BGP_NLRI_EVPN_ESI_RES :
             proto_tree_add_item(esi_tree, hf_bgp_evpn_nlri_esi_reserved, tvb,
@@ -4870,7 +4951,11 @@ static int decode_evpn_nlri(proto_tree *tree, tvbuff_t *tvb, gint offset, packet
  */
 static int
 decode_prefix_MP(proto_tree *tree, int hf_path_id, int hf_addr4, int hf_addr6,
+<<<<<<< HEAD
                  guint16 afi, guint8 safi, tvbuff_t *tvb, gint offset,
+=======
+                 guint16 afi, guint8 safi, gint tlen, tvbuff_t *tvb, gint offset,
+>>>>>>> upstream/master-2.4
                  const char *tag, packet_info *pinfo)
 {
     int                 start_offset = offset;
@@ -4896,6 +4981,7 @@ decode_prefix_MP(proto_tree *tree, int hf_path_id, int hf_addr4, int hf_addr6,
     guint16             rd_type;            /* Route Distinguisher type     */
     guint16             nlri_type;          /* NLRI Type                    */
     guint16             tmp16;
+    gint                end=0;              /* Message End                  */
 
     wmem_strbuf_t      *stack_strbuf;       /* label stack                  */
     wmem_strbuf_t      *comm_strbuf;
@@ -5121,7 +5207,21 @@ decode_prefix_MP(proto_tree *tree, int hf_path_id, int hf_addr4, int hf_addr6,
             case SAFNUM_UNICAST:
             case SAFNUM_MULCAST:
             case SAFNUM_UNIMULC:
+<<<<<<< HEAD
                 total_length = decode_path_prefix6(tree, pinfo, hf_path_id, hf_addr6, tvb, offset, tag);
+=======
+                /* parse each prefix */
+
+                end = offset + tlen;
+
+                /* Heuristic to detect if IPv6 prefix are using Path Identifiers */
+                if( detect_add_path_prefix6(tvb, offset, end) ) {
+                    /* IPv4 prefixes with Path Id */
+                    total_length = decode_path_prefix6(tree, pinfo, hf_path_id, hf_addr6, tvb, offset, tag);
+                } else {
+                    total_length = decode_prefix6(tree, pinfo, hf_addr6, tvb, offset, 0, tag);
+                }
+>>>>>>> upstream/master-2.4
                 if (total_length < 0)
                     return -1;
                 break;
@@ -7208,7 +7308,7 @@ dissect_bgp_path_attr(proto_tree *subtree, tvbuff_t *tvb, guint16 path_attr_len,
                                                        hf_bgp_nlri_path_id,
                                                        hf_bgp_mp_reach_nlri_ipv4_prefix,
                                                        hf_bgp_mp_reach_nlri_ipv6_prefix,
-                                                       af, saf,
+                                                       af, saf, tlen,
                                                        tvb, o + i + aoff, "MP Reach NLRI", pinfo);
                             if (advance < 0)
                                 break;
@@ -7241,7 +7341,7 @@ dissect_bgp_path_attr(proto_tree *subtree, tvbuff_t *tvb, guint16 path_attr_len,
                                                    hf_bgp_nlri_path_id,
                                                    hf_bgp_mp_unreach_nlri_ipv4_prefix,
                                                    hf_bgp_mp_unreach_nlri_ipv6_prefix,
-                                                   af, saf,
+                                                   af, saf, tlen,
                                                    tvb, o + i + aoff, "MP Unreach NLRI", pinfo);
                         if (advance < 0)
                             break;

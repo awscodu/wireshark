@@ -1017,19 +1017,48 @@ gboolean MainWindow::filter_expression_add_action(const void *key _U_, void *val
 
 void MainWindow::filterExpressionsChanged()
 {
+<<<<<<< HEAD
     struct filter_expression_data data;
 
     data.window = this;
     data.actions_added = false;
 
     filter_expression_toolbar_->clear();
+=======
+    // Recreate filter buttons
+    foreach (QAction *act, filter_expression_toolbar_->actions()) {
+        // Permanent actions shouldn't have data
+        if (act->property(dfe_property_).isValid()) {
+            filter_expression_toolbar_->removeAction(act);
+            delete act;
+        }
+    }
+>>>>>>> upstream/master-2.4
+
+    setUpdatesEnabled(false);
+    filter_expression_toolbar_->hide();
 
     // XXX Add a context menu for removing and changing buttons.
+<<<<<<< HEAD
     filter_expression_iterate_expressions(filter_expression_add_action, &data);
 
     if (data.actions_added) {
         main_ui_->displayFilterToolBar->adjustSize();
     }
+=======
+    for (struct filter_expression *fe = *pfilter_expression_head; fe != NULL; fe = fe->next) {
+        if (!fe->enabled) continue;
+        QAction *dfb_action = new QAction(fe->label, filter_expression_toolbar_);
+        dfb_action->setToolTip(fe->expression);
+        dfb_action->setData(fe->expression);
+        dfb_action->setProperty(dfe_property_, true);
+        filter_expression_toolbar_->addAction(dfb_action);
+        connect(dfb_action, SIGNAL(triggered()), this, SLOT(displayFilterButtonClicked()));
+    }
+
+    filter_expression_toolbar_->show();
+    setUpdatesEnabled(true);
+>>>>>>> upstream/master-2.4
 }
 
 //

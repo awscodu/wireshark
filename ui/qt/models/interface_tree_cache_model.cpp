@@ -199,8 +199,13 @@ void InterfaceTreeCacheModel::save()
                     }
                     else
                     {
+<<<<<<< HEAD:ui/qt/models/interface_tree_cache_model.cpp
                         device->has_snaplen = false;
                         device->snaplen = WTAP_MAX_PACKET_SIZE_STANDARD;
+=======
+                        device.has_snaplen = false;
+                        device.snaplen = WTAP_MAX_PACKET_SIZE_STANDARD;
+>>>>>>> upstream/master-2.4:ui/qt/interface_tree_cache_model.cpp
                     }
                 }
 #ifdef CAN_SET_CAPTURE_BUFFER_SIZE
@@ -246,9 +251,15 @@ void InterfaceTreeCacheModel::save()
             {
                 int value = content.toInt();
                 prefStorage[&prefs.capture_devices_snaplen]  <<
+<<<<<<< HEAD:ui/qt/models/interface_tree_cache_model.cpp
                         QString("%1:%2(%3)").arg(device->name).
                         arg(device->has_snaplen ? 1 : 0).
                         arg(device->has_snaplen ? value : WTAP_MAX_PACKET_SIZE_STANDARD);
+=======
+                        QString("%1:%2(%3)").arg(device.name).
+                        arg(device.has_snaplen ? 1 : 0).
+                        arg(device.has_snaplen ? value : WTAP_MAX_PACKET_SIZE_STANDARD);
+>>>>>>> upstream/master-2.4:ui/qt/interface_tree_cache_model.cpp
             }
 
 #ifdef CAN_SET_CAPTURE_BUFFER_SIZE
@@ -328,9 +339,15 @@ const interface_t * InterfaceTreeCacheModel::lookup(const QModelIndex &index) co
  * other method.*/
 bool InterfaceTreeCacheModel::isAllowedToBeEdited(const QModelIndex &index) const
 {
+<<<<<<< HEAD:ui/qt/models/interface_tree_cache_model.cpp
 #ifndef HAVE_LIBPCAP
     Q_UNUSED(index);
 #else
+=======
+    Q_UNUSED(index)
+
+#ifdef HAVE_LIBPCAP
+>>>>>>> upstream/master-2.4:ui/qt/interface_tree_cache_model.cpp
     const interface_t * device = lookup(index);
     if ( device == 0 )
         return false;
@@ -353,9 +370,15 @@ bool InterfaceTreeCacheModel::isAllowedToBeEdited(const QModelIndex &index) cons
 // Whether this field is available for modification and display.
 bool InterfaceTreeCacheModel::isAvailableField(const QModelIndex &index) const
 {
+<<<<<<< HEAD:ui/qt/models/interface_tree_cache_model.cpp
 #ifndef HAVE_LIBPCAP
     Q_UNUSED(index);
 #else
+=======
+    Q_UNUSED(index)
+
+#ifdef HAVE_LIBPCAP
+>>>>>>> upstream/master-2.4:ui/qt/interface_tree_cache_model.cpp
     const interface_t * device = lookup(index);
 
     if ( device == 0 )

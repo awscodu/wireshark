@@ -1467,6 +1467,10 @@ cap_pipe_open_live(char *pipename,
     char* extcap_pipe_name;
 #endif
     gboolean extcap_pipe = FALSE;
+<<<<<<< HEAD
+=======
+#endif
+>>>>>>> upstream/master-2.4
     ssize_t  b;
     int      fd = -1, sel_ret;
     size_t   bytes_read;
@@ -1494,6 +1498,10 @@ cap_pipe_open_live(char *pipename,
        }
     } else {
 #ifndef _WIN32
+<<<<<<< HEAD
+=======
+#ifdef HAVE_EXTCAP
+>>>>>>> upstream/master-2.4
         if ( g_strrstr(pipename, EXTCAP_PIPE_PREFIX) != NULL )
             extcap_pipe = TRUE;
 
@@ -2243,6 +2251,7 @@ pcap_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int errms
             return 0;
         }
 
+<<<<<<< HEAD
         /*
          * No data following the record header? Then no more data needs to be
          * read and we will fallthrough and emit an empty packet.
@@ -2254,6 +2263,26 @@ pcap_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int errms
         phdr.ts.tv_usec = pcap_info->rechdr.hdr.ts_usec;
         phdr.caplen = pcap_info->rechdr.hdr.incl_len;
         phdr.len = pcap_info->rechdr.hdr.orig_len;
+=======
+    if (pcap_src->cap_pipe_byte_swapped) {
+        /* Byte-swap the header fields about which we care. */
+        hdr->version_major = GUINT16_SWAP_LE_BE(hdr->version_major);
+        hdr->version_minor = GUINT16_SWAP_LE_BE(hdr->version_minor);
+        hdr->snaplen = GUINT32_SWAP_LE_BE(hdr->snaplen);
+        hdr->network = GUINT32_SWAP_LE_BE(hdr->network);
+    }
+    pcap_src->linktype = hdr->network;
+#ifdef DLT_DBUS
+    if (pcap_src->linktype == DLT_DBUS) {
+        /*
+         * The maximum D-Bus message size is 128MB, so allow packets up
+         * to that size.
+         */
+        pcap_src->cap_pipe_max_pkt_size = WTAP_MAX_PACKET_SIZE_DBUS;
+    } else
+#endif
+        pcap_src->cap_pipe_max_pkt_size = WTAP_MAX_PACKET_SIZE_STANDARD;
+>>>>>>> upstream/master-2.4
 
         if (use_threads) {
             capture_loop_queue_packet_cb((u_char *)pcap_src, &phdr, pcap_src->cap_pipe_databuf);
@@ -2290,7 +2319,11 @@ pcap_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int errms
 }
 
 static int
+<<<<<<< HEAD
 pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int errmsgl)
+=======
+cap_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int errmsgl)
+>>>>>>> upstream/master-2.4
 {
     enum { PD_REC_HDR_READ, PD_DATA_READ, PD_PIPE_EOF, PD_PIPE_ERR,
            PD_ERR } result;
@@ -2301,8 +2334,13 @@ pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int err
     gpointer  q_status;
     wchar_t  *err_str;
 #endif
+<<<<<<< HEAD
     guint new_bufsize;
     struct pcapng_block_header_s *bh = &pcap_src->cap_pipe_info.pcapng.bh;
+=======
+    ssize_t   b;
+    guint new_bufsize;
+>>>>>>> upstream/master-2.4
 
 #ifdef LOG_CAPTURE_VERBOSE
     g_log(LOG_DOMAIN_CAPTURE_CHILD, G_LOG_LEVEL_DEBUG, "pcapng_pipe_dispatch");
@@ -2372,8 +2410,12 @@ pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int err
 
 
 #ifdef _WIN32
+<<<<<<< HEAD
             pcap_src->cap_pipe_bytes_to_read -= pcap_src->cap_pipe_bytes_read;
             pcap_src->cap_pipe_buf = pcap_src->cap_pipe_databuf + pcap_src->cap_pipe_bytes_read;
+=======
+            pcap_src->cap_pipe_buf = pcap_src->cap_pipe_databuf;
+>>>>>>> upstream/master-2.4
             g_async_queue_push(pcap_src->cap_pipe_pending_q, pcap_src->cap_pipe_buf);
             g_mutex_unlock(pcap_src->cap_pipe_read_mtx);
         }
@@ -2385,8 +2427,21 @@ pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int err
         if (pcap_src->from_cap_socket)
 #endif
         {
+<<<<<<< HEAD
             if (cap_pipe_read_data_bytes(pcap_src, errmsg, errmsgl)) {
                 return -1;
+=======
+            b = cap_pipe_read(pcap_src->cap_pipe_fd,
+                              pcap_src->cap_pipe_databuf+pcap_src->cap_pipe_bytes_read,
+                              pcap_src->cap_pipe_bytes_to_read - pcap_src->cap_pipe_bytes_read,
+                              pcap_src->from_cap_socket);
+            if (b <= 0) {
+                if (b == 0)
+                    result = PD_PIPE_EOF;
+                else
+                    result = PD_PIPE_ERR;
+                break;
+>>>>>>> upstream/master-2.4
             }
             if (pcap_src->cap_pipe_bytes_read < pcap_src->cap_pipe_bytes_to_read)
                 return 0;
@@ -2439,6 +2494,7 @@ pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int err
         }
 
         /* We've read the header. Take care of byte order. */
+<<<<<<< HEAD
         if (pcap_src->cap_pipe_byte_swapped) {
             /* Byte-swap the record header fields. */
             bh->block_type = GUINT32_SWAP_LE_BE(bh->block_type);
@@ -2451,11 +2507,23 @@ pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int err
             * STATE_EXPECT_DATA) as that would not fit in the buffer and
             * instead stop with an error.
             */
+=======
+        cap_pipe_adjust_header(pcap_src->cap_pipe_byte_swapped, &pcap_src->cap_pipe_hdr,
+                               &pcap_src->cap_pipe_rechdr.hdr);
+        if (pcap_src->cap_pipe_rechdr.hdr.incl_len > pcap_src->cap_pipe_max_pkt_size) {
+            /*
+             * The record contains more data than the advertised/allowed in the
+             * pcap header, do not try to read more data (do not change to
+             * STATE_EXPECT_DATA) as that would not fit in the buffer and
+             * instead stop with an error.
+             */
+>>>>>>> upstream/master-2.4
             g_snprintf(errmsg, errmsgl, "Frame %u too long (%d bytes)",
                     ld->packet_count+1, bh->block_total_length);
             break;
         }
 
+<<<<<<< HEAD
         if (bh->block_total_length > pcap_src->cap_pipe_databuf_size) {
             /*
             * Grow the buffer to the packet size, rounded up to a power of
@@ -2465,6 +2533,17 @@ pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int err
             /*
             * http://graphics.stanford.edu/~seander/bithacks.html#RoundUpPowerOf2
             */
+=======
+        if (pcap_src->cap_pipe_rechdr.hdr.incl_len > pcap_src->cap_pipe_databuf_size) {
+            /*
+             * Grow the buffer to the packet size, rounded up to a power of
+             * 2.
+             */
+            new_bufsize = pcap_src->cap_pipe_rechdr.hdr.incl_len;
+            /*
+             * http://graphics.stanford.edu/~seander/bithacks.html#RoundUpPowerOf2
+             */
+>>>>>>> upstream/master-2.4
             new_bufsize--;
             new_bufsize |= new_bufsize >> 1;
             new_bufsize |= new_bufsize >> 2;
@@ -2474,7 +2553,32 @@ pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int err
             new_bufsize++;
             pcap_src->cap_pipe_databuf = (guchar*)g_realloc(pcap_src->cap_pipe_databuf, new_bufsize);
             pcap_src->cap_pipe_databuf_size = new_bufsize;
+<<<<<<< HEAD
         }
+=======
+        }
+
+        /*
+         * The record has some data following the header, try to read it next
+         * time.
+         */
+        if (pcap_src->cap_pipe_rechdr.hdr.incl_len) {
+            pcap_src->cap_pipe_state = STATE_EXPECT_DATA;
+            return 0;
+        }
+
+        /*
+         * No data following the record header? Then no more data needs to be
+         * read and we will fallthrough and emit an empty packet.
+         */
+        /* FALLTHROUGH */
+    case PD_DATA_READ:
+        /* Fill in a "struct pcap_pkthdr", and process the packet. */
+        phdr.ts.tv_sec = pcap_src->cap_pipe_rechdr.hdr.ts_sec;
+        phdr.ts.tv_usec = pcap_src->cap_pipe_rechdr.hdr.ts_usec;
+        phdr.caplen = pcap_src->cap_pipe_rechdr.hdr.incl_len;
+        phdr.len = pcap_src->cap_pipe_rechdr.hdr.orig_len;
+>>>>>>> upstream/master-2.4
 
         /* The record always has at least the block total length following the header */
         if (bh->block_total_length < sizeof(struct pcapng_block_header_s)+sizeof(guint32)) {
@@ -2490,9 +2594,15 @@ pcapng_pipe_dispatch(loop_data *ld, capture_src *pcap_src, char *errmsg, int err
             return -1;
         }
         if (use_threads) {
+<<<<<<< HEAD
             capture_loop_queue_pcapng_cb(pcap_src, bh, pcap_src->cap_pipe_databuf);
         } else {
             capture_loop_write_pcapng_cb(pcap_src, bh, pcap_src->cap_pipe_databuf);
+=======
+            capture_loop_queue_packet_cb((u_char *)pcap_src, &phdr, pcap_src->cap_pipe_databuf);
+        } else {
+            capture_loop_write_packet_cb((u_char *)pcap_src, &phdr, pcap_src->cap_pipe_databuf);
+>>>>>>> upstream/master-2.4
         }
         pcap_src->cap_pipe_state = STATE_EXPECT_REC_HDR;
         return 1;
@@ -2776,10 +2886,13 @@ static void capture_loop_close_input(loop_data *ld)
                 g_free(pcap_src->cap_pipe_databuf);
                 pcap_src->cap_pipe_databuf = NULL;
             }
+<<<<<<< HEAD
             if (pcap_src->from_pcapng) {
                 g_list_free_full(pcap_src->cap_pipe_info.pcapng.saved_blocks, g_free);
                 pcap_src->cap_pipe_info.pcapng.saved_blocks = NULL;
             }
+=======
+>>>>>>> upstream/master-2.4
 	} else {
 	    /* Capture device.  If open, close the pcap_t. */
             if (pcap_src->pcap_h != NULL) {
@@ -3045,7 +3158,11 @@ capture_loop_dispatch(loop_data *ld,
              * "select()" says we can read from the pipe without blocking
              */
 #endif
+<<<<<<< HEAD
             inpkts = pcap_src->cap_pipe_dispatch(ld, pcap_src, errmsg, errmsg_len);
+=======
+            inpkts = cap_pipe_dispatch(ld, pcap_src, errmsg, errmsg_len);
+>>>>>>> upstream/master-2.4
             if (inpkts < 0) {
                 ld->go = FALSE;
             }
@@ -3374,6 +3491,7 @@ do_file_switch_or_stop(capture_options *capture_opts,
 
             /* File switch succeeded: reset the conditions */
             global_ld.bytes_written = 0;
+<<<<<<< HEAD
             pcap_src = g_array_index(global_ld.pcaps, capture_src *, 0);
             if (pcap_src->from_pcapng) {
                 /* Write the saved SHB and all IDBs to start of next file */
@@ -3384,6 +3502,45 @@ do_file_switch_or_stop(capture_options *capture_opts,
                 while (list && successful) {
                     successful = pcapng_write_saved_block(pcap_src, (struct pcapng_block_header_s *) list->data);
                     list = g_list_next(list);
+=======
+            if (capture_opts->use_pcapng) {
+                char    *appname;
+                GString *cpu_info_str;
+                GString *os_info_str;
+
+                cpu_info_str = g_string_new("");
+                os_info_str = g_string_new("");
+                get_cpu_info(cpu_info_str);
+                get_os_version_info(os_info_str);
+
+                appname = g_strdup_printf("Dumpcap (Wireshark) %s", get_ws_vcs_version_info());
+                successful = pcapng_write_session_header_block(global_ld.pdh,
+                                (const char *)capture_opts->capture_comment,   /* Comment */
+                                cpu_info_str->str,           /* HW */
+                                os_info_str->str,            /* OS */
+                                appname,
+                                -1,                          /* section_length */
+                                &(global_ld.bytes_written),
+                                &global_ld.err);
+                g_string_free(cpu_info_str, TRUE);
+                g_free(appname);
+
+                for (i = 0; successful && (i < capture_opts->ifaces->len); i++) {
+                    interface_opts = g_array_index(capture_opts->ifaces, interface_options, i);
+                    pcap_src = g_array_index(global_ld.pcaps, capture_src *, i);
+                    successful = pcapng_write_interface_description_block(global_ld.pdh,
+                                                                          NULL,                       /* OPT_COMMENT       1 */
+                                                                          interface_opts.name,        /* IDB_NAME          2 */
+                                                                          interface_opts.descr,       /* IDB_DESCRIPTION   3 */
+                                                                          interface_opts.cfilter,     /* IDB_FILTER       11 */
+                                                                          os_info_str->str,           /* IDB_OS           12 */
+                                                                          pcap_src->linktype,
+                                                                          pcap_src->snaplen,
+                                                                          &(global_ld.bytes_written),
+                                                                          0,                          /* IDB_IF_SPEED      8 */
+                                                                          pcap_src->ts_nsec ? 9 : 6, /* IDB_TSRESOL       9 */
+                                                                          &global_ld.err);
+>>>>>>> upstream/master-2.4
                 }
                 pcap_src->cap_pipe_info.pcapng.saved_blocks = g_list_reverse(rlist);
             } else {

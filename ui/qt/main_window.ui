@@ -126,7 +126,11 @@
      <widget class="FilterExpressionFrame" name="filterExpressionFrame"/>
     </item>
     <item>
+<<<<<<< HEAD
      <widget class="WirelessTimeline" name="wirelessTimelineWidget" native="true"/>
+=======
+     <widget class="WirelessTimeline" name="wirelessTimelineWidget"/>
+>>>>>>> upstream/master-2.4
     </item>
     <item>
      <widget class="QStackedWidget" name="mainStack">

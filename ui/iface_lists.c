@@ -324,7 +324,11 @@ scan_local_interfaces(void (*update_cb)(void))
      * the list of all interfaces (all_ifaces).
      */
     for (j = 0; j < global_capture_opts.ifaces->len; j++) {
+<<<<<<< HEAD
         interface_opts = &g_array_index(global_capture_opts.ifaces, interface_options, j);
+=======
+        interface_opts = g_array_index(global_capture_opts.ifaces, interface_options, j);
+>>>>>>> upstream/master-2.4
 
         found = FALSE;
         for (i = 0; i < (int)global_capture_opts.all_ifaces->len; i++) {
@@ -342,7 +346,11 @@ scan_local_interfaces(void (*update_cb)(void))
                 g_strdup(device.name);
             device.hidden       = FALSE;
             device.selected     = TRUE;
+<<<<<<< HEAD
             device.type         = interface_opts->if_type;
+=======
+            device.type         = interface_opts.if_type;
+>>>>>>> upstream/master-2.4
 #ifdef CAN_SET_CAPTURE_BUFFER_SIZE
             device.buffer = interface_opts->buffer_size;
 #endif

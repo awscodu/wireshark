@@ -273,9 +273,15 @@ void ServiceResponseTimeDialog::fillTree()
     }
     srt_data_.srt_array = g_array_new(FALSE, TRUE, sizeof(srt_stat_table*));
     srt_data_.user_data = this;
+<<<<<<< HEAD
 
     provideParameterData();
 
+=======
+
+    provideParameterData();
+
+>>>>>>> upstream/master-2.4
     srt_table_dissector_init(srt_, srt_data_.srt_array, NULL, NULL);
 
     QString display_filter = displayFilter();

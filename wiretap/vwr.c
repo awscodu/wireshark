@@ -1635,7 +1635,11 @@ static gboolean vwr_read_s2_W_rec(vwr_t *vwr, wtap_rec *record,
             *err = WTAP_ERR_BAD_FILE;
             return FALSE;
         }
+<<<<<<< HEAD
     } else {
+=======
+    } else if (actual_octets > 4) {
+>>>>>>> upstream/master-2.4
         actual_octets -= 4;
     }
 
@@ -2107,6 +2111,7 @@ static gboolean vwr_read_s3_W_rec(vwr_t *vwr, wtap_rec *record,
          * lsb nibble is set to 1 always as this function is applicable for only FPGA version >= 48
          */
         if (log_mode == 3) {
+<<<<<<< HEAD
             if (frame_size >= (int) msdu_length) {
                 /*
                  * The MSDU length includes the FCS.
@@ -2133,6 +2138,29 @@ static gboolean vwr_read_s3_W_rec(vwr_t *vwr, wtap_rec *record,
                     actual_octets -= 4;
                 }
             }
+=======
+            /*
+             * The MSDU length includes the FCS.
+             *
+             * The packet data does *not* include the FCS - it's just 4 bytes
+             * of junk - so we have to remove it.
+             *
+             * We'll be stripping off an FCS (?), so make sure we have at
+             * least 4 octets worth of FCS.
+             *
+             * XXX - is the FCS actually present here, as it appears to be
+             * if log_mode isn't 3?
+             */
+            if (actual_octets < 4) {
+                if (actual_octets != 0) {
+                    *err_info = g_strdup_printf("vwr: Invalid data length %u (too short to include 4 bytes of FCS)",
+                                                actual_octets);
+                    *err = WTAP_ERR_BAD_FILE;
+                    return FALSE;
+                }
+            } else if (actual_octets > 4 && (frame_size >= (int) msdu_length))
+                actual_octets -=4;
+>>>>>>> upstream/master-2.4
             ver_fpga = 0x11;
         } else {
             ver_fpga = 0x01;
@@ -2192,14 +2220,22 @@ static gboolean vwr_read_s3_W_rec(vwr_t *vwr, wtap_rec *record,
             record->rec_header.packet_header.len = OCTO_TIMESTAMP_FIELDS_LEN + OCTO_LAYER1TO4_LEN + actual_octets;
             record->rec_header.packet_header.caplen = OCTO_TIMESTAMP_FIELDS_LEN + OCTO_LAYER1TO4_LEN + actual_octets;
         }
+<<<<<<< HEAD
         if (record->rec_header.packet_header.caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+        if (phdr->caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
             /*
              * Probably a corrupt capture file; return an error,
              * so that our caller doesn't blow up trying to allocate
              * space for an immensely-large packet.
              */
             *err_info = g_strdup_printf("vwr: File has %u-byte packet, bigger than maximum of %u",
+<<<<<<< HEAD
                                         record->rec_header.packet_header.caplen, WTAP_MAX_PACKET_SIZE_STANDARD);
+=======
+                                        phdr->caplen, WTAP_MAX_PACKET_SIZE_STANDARD);
+>>>>>>> upstream/master-2.4
             *err = WTAP_ERR_BAD_FILE;
             return FALSE;
         }
@@ -2628,8 +2664,13 @@ static gboolean vwr_read_rec_data_ethernet(vwr_t *vwr, wtap_rec *record,
      * The packet data does *not* include the FCS - it's just 4 bytes
      * of junk - so we have to remove it.
      *
+<<<<<<< HEAD
      * We'll be stripping off that junk, so make sure we have at least
      * 4 octets worth of packet data.
+=======
+     * We'll be stripping off an FCS (?), so make sure we have at
+     * least 4 octets worth of FCS.
+>>>>>>> upstream/master-2.4
      *
      * There seems to be a special case of a length of 0.
      */

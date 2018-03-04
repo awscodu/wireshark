@@ -52,8 +52,13 @@ if (WIN32)
       "C:/Cygwin"
       "C:/Cygwin64"
       "C:/tools/cygwin"
+<<<<<<< HEAD
       "C:/tools/cygwin64"
       "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Cygwin\\setup;rootdir]"
+=======
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Cygwin\\setup;rootdir]"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Cygwin\\setup;rootdir]"
+>>>>>>> upstream/master-2.4
       "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Cygnus Solutions\\Cygwin\\mounts v2\\/;native]"
   )
 

@@ -1292,12 +1292,21 @@ dissect_opensafety_ssdo_message(tvbuff_t *message_tvb, packet_info *pinfo, proto
                         frag_msg = fragment_add_seq_check(&os_reassembly_table, message_tvb, payloadOffset, pinfo,
                                                           fragmentId, NULL, 0, calcDataLength, TRUE );
                         fragment_add_seq_offset ( &os_reassembly_table, pinfo, fragmentId, NULL, ct );
+<<<<<<< HEAD
 
                         if ( frag_msg != NULL )
                         {
                             item = proto_tree_add_bytes_format_value(ssdo_tree, hf_oss_ssdo_payload, message_tvb, 0, 0, NULL, "Reassembled" );
                             PROTO_ITEM_SET_GENERATED(item);
 
+=======
+
+                        if ( frag_msg != NULL )
+                        {
+                            item = proto_tree_add_bytes_format_value(ssdo_tree, hf_oss_ssdo_payload, message_tvb, 0, 0, NULL, "Reassembled" );
+                            PROTO_ITEM_SET_GENERATED(item);
+
+>>>>>>> upstream/master-2.4
                             ssdo_payload = proto_item_add_subtree(item, ett_opensafety_ssdo_payload);
                             process_reassembled_data(message_tvb, 0, pinfo, "Reassembled Message", frag_msg, &oss_frag_items, NULL, ssdo_payload );
                         }

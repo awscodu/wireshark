@@ -965,8 +965,13 @@ load_cap_file(capture_file *cf)
     epan_dissect_init(&edt, cf->epan, TRUE, FALSE);
 
     pd = (guchar*)g_malloc(WTAP_MAX_PACKET_SIZE_STANDARD);
+<<<<<<< HEAD
     while (raw_pipe_read(&rec, pd, &err, &err_info, &data_offset)) {
         process_packet(cf, &edt, data_offset, &rec, pd);
+=======
+    while (raw_pipe_read(&phdr, pd, &err, &err_info, &data_offset)) {
+        process_packet(cf, &edt, data_offset, &phdr, pd);
+>>>>>>> upstream/master-2.4
     }
 
     epan_dissect_cleanup(&edt);

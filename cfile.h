@@ -80,6 +80,10 @@ typedef struct _capture_file {
   guint32      drops;                /* Dropped packets */
   nstime_t     elapsed_time;         /* Elapsed time */
   int          snap;                 /* Maximum captured packet length; 0 if unknown */
+<<<<<<< HEAD
+=======
+  wtap        *wth;                  /* Wiretap session */
+>>>>>>> upstream/master-2.4
   dfilter_t   *rfcode;               /* Compiled read filter program */
   dfilter_t   *dfcode;               /* Compiled display filter program */
   gchar       *dfilter;              /* Display filter string */

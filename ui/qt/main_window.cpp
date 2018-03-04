@@ -478,12 +478,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
     packet_list_ = new PacketList(&master_split_);
     main_ui_->wirelessTimelineWidget->setPacketList(packet_list_);
+<<<<<<< HEAD
     connect(packet_list_, SIGNAL(frameSelected(int)),
             this, SIGNAL(frameSelected(int)));
     connect(this, SIGNAL(frameSelected(int)),
             this, SLOT(setMenusForSelectedPacket()));
     connect(packet_list_->packetListModel(), SIGNAL(bgColorizationProgress(int,int)),
             main_ui_->wirelessTimelineWidget, SLOT(bgColorizationProgress(int,int)));
+=======
+>>>>>>> upstream/master-2.4
 
     proto_tree_ = new ProtoTree(&master_split_);
     proto_tree_->installEventFilter(this);

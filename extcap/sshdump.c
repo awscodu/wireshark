@@ -481,7 +481,12 @@ int main(int argc, char **argv)
 		}
 	}
 
+<<<<<<< HEAD
 	extcap_cmdline_debug(argv, argc);
+=======
+	for (i = 0; i < argc; i++)
+		g_debug("%s", argv[i]);
+>>>>>>> upstream/master-2.4
 
 	if (extcap_base_handle_interface(extcap_conf)) {
 		ret = EXIT_SUCCESS;

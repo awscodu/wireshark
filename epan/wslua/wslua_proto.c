@@ -743,6 +743,14 @@ int Proto_commit(lua_State* L) {
             eiri.eiinfo.severity = e->severity;
             eiri.eiinfo.summary  = e->text;
 
+<<<<<<< HEAD
+=======
+            if (!eiri.eiinfo.summary || !eiri.eiinfo.summary[0]) {
+                /* Copy this because it will be free'd when deregistering fields */
+                eiri.eiinfo.hf_info.hfinfo.name = g_strdup(eiri.eiinfo.hf_info.hfinfo.name);
+            }
+
+>>>>>>> upstream/master-2.4
             if (e->ids.ei != EI_INIT_EI || e->ids.hf != EI_INIT_HF) {
                 return luaL_error(L,"expert fields can be registered only once");
             }

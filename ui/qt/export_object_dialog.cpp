@@ -153,8 +153,13 @@ void ExportObjectDialog::saveCurrentEntry()
     if (entry_filename.isEmpty())
         return;
 
+<<<<<<< HEAD
     GString *safe_filename = eo_massage_str(entry_filename.toUtf8().constData(), EXPORT_OBJECT_MAXFILELEN-path.canonicalPath().length(), 0);
     QString file_name = QFileDialog::getSaveFileName(this, wsApp->windowTitleString(tr("Save Object As" UTF8_HORIZONTAL_ELLIPSIS)),
+=======
+    GString *safe_filename = eo_massage_str(entry->filename, EXPORT_OBJECT_MAXFILELEN-path.canonicalPath().length(), 0);
+    file_name = QFileDialog::getSaveFileName(this, wsApp->windowTitleString(tr("Save Object As" UTF8_HORIZONTAL_ELLIPSIS)),
+>>>>>>> upstream/master-2.4
                                              safe_filename->str);
     g_string_free(safe_filename, TRUE);
 

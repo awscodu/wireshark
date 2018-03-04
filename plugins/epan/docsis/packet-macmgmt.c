@@ -8548,8 +8548,12 @@ proto_reg_handoff_docsis_mgmt (void)
   /* Create dissection function handles for all Mac Management commands */
   dissector_add_uint ("docsis_mgmt", MGT_SYNC, create_dissector_handle( dissect_sync, proto_docsis_sync ));
   dissector_add_uint ("docsis_mgmt", MGT_UCD, docsis_ucd_handle);
+<<<<<<< HEAD:plugins/epan/docsis/packet-macmgmt.c
   dissector_add_uint ("docsis_mgmt", 256*MAP_v1 + MGT_MAP, create_dissector_handle( dissect_map_v1, proto_docsis_map_v1 ));
   dissector_add_uint ("docsis_mgmt", 256*MAP_v5 + MGT_MAP, create_dissector_handle( dissect_map_v5, proto_docsis_map_v5 ));
+=======
+  dissector_add_uint ("docsis_mgmt", MGT_MAP, create_dissector_handle( dissect_map, proto_docsis_map ));
+>>>>>>> upstream/master-2.4:plugins/docsis/packet-macmgmt.c
   dissector_add_uint ("docsis_mgmt", MGT_RNG_REQ, create_dissector_handle( dissect_rngreq, proto_docsis_rngreq ));
   dissector_add_uint ("docsis_mgmt", MGT_RNG_RSP, create_dissector_handle( dissect_rngrsp, proto_docsis_rngrsp ));
   dissector_add_uint ("docsis_mgmt", MGT_REG_REQ, create_dissector_handle( dissect_regreq, proto_docsis_regreq ));

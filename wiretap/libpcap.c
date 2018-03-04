@@ -941,13 +941,22 @@ static gboolean libpcap_dump(wtap_dumper *wdh,
 	 * Don't write anything we're not willing to read.
 	 * (The cast is to prevent an overflow.)
 	 */
+<<<<<<< HEAD
 	if ((guint64)rec->rec_header.packet_header.caplen + phdrsize > wtap_max_snaplen_for_encap(wdh->encap)) {
+=======
+	if ((guint64)phdr->caplen + phdrsize > wtap_max_snaplen_for_encap(wdh->encap)) {
+>>>>>>> upstream/master-2.4
 		*err = WTAP_ERR_PACKET_TOO_LARGE;
 		return FALSE;
 	}
 
+<<<<<<< HEAD
 	rec_hdr.hdr.incl_len = rec->rec_header.packet_header.caplen + phdrsize;
 	rec_hdr.hdr.orig_len = rec->rec_header.packet_header.len + phdrsize;
+=======
+	rec_hdr.hdr.incl_len = phdr->caplen + phdrsize;
+	rec_hdr.hdr.orig_len = phdr->len + phdrsize;
+>>>>>>> upstream/master-2.4
 
 	switch (wdh->file_type_subtype) {
 

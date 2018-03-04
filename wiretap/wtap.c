@@ -866,6 +866,7 @@ static struct encap_type_info encap_table_base[] = {
 	/* WTAP_ENCAP_USB_DARWIN */
 	{ "USB packets with Darwin (macOS, etc.) headers", "usb-darwin" },
 
+<<<<<<< HEAD
 	/* WTAP_ENCAP_LORATAP */
 	{ "LoRaTap", "loratap"},
 
@@ -907,6 +908,10 @@ static struct encap_type_info encap_table_base[] = {
 
 	/* WTAP_ENCAP_MA_WFP_CAPTURE_AUTH_V6 */
 	{ "Message Analyzer WFP Capture Auth v6", "message_analyzer_wfp_capture_auth_v6" },
+=======
+	/* Nordic BLE Sniffer */
+	{ "Nordic BLE Sniffer", "nordic_ble" },
+>>>>>>> upstream/master-2.4
 };
 
 WS_DLL_LOCAL

@@ -100,6 +100,10 @@
         <translation>名称:</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="address_editor_frame.cpp" line="166"/>
+>>>>>>> upstream/master-2.4
         <source>Can&apos;t assign %1 to %2</source>
         <translation>不能分配 %1 到 %2</translation>
     </message>
@@ -745,6 +749,10 @@
         <translation>自动检测文件类型</translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="791"/>
+>>>>>>> upstream/master-2.4
         <source>%1, error after %Ln packet(s)</source>
         <oldsource>%1, error after %2 packets</oldsource>
         <translation type="vanished">
@@ -752,6 +760,10 @@
         </translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="798"/>
+>>>>>>> upstream/master-2.4
         <source>%1, timed out at %Ln packet(s)</source>
         <oldsource>%1, timed out at %2 packets</oldsource>
         <translation type="vanished">
@@ -759,6 +771,10 @@
         </translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="801"/>
+>>>>>>> upstream/master-2.4
         <source>%1, %Ln packet(s)</source>
         <translation type="vanished">
             <numerusform>%1，%Ln 个分组</numerusform>
@@ -825,14 +841,26 @@
         <translation>合并捕获文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="734"/>
+>>>>>>> upstream/master-2.4
         <source>directory</source>
         <translation>目录</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="741"/>
+>>>>>>> upstream/master-2.4
         <source>unknown file format</source>
         <translation>未知文件格式</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="743"/>
+>>>>>>> upstream/master-2.4
         <source>error opening file</source>
         <translation>打开文件出错</translation>
     </message>
@@ -855,6 +883,12 @@
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_file_dialog.cpp" line="808"/>
+        <location filename="capture_file_dialog.cpp" line="829"/>
+        <location filename="capture_file_dialog.cpp" line="833"/>
+>>>>>>> upstream/master-2.4
         <source>unknown</source>
         <translation>未知</translation>
     </message>
@@ -1058,23 +1092,49 @@
 <context>
     <name>CaptureFilterEdit</name>
     <message>
+<<<<<<< HEAD
         <source>Capture filter entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="capture_filter_edit.cpp" line="174"/>
+        <source>Capture filter entry</source>
+        <translation>捕获过滤器</translation>
+    </message>
+    <message>
+        <location filename="capture_filter_edit.cpp" line="331"/>
+        <source>Enter a capture filter %1</source>
+        <translation>输入捕获过滤器 %1</translation>
+    </message>
+    <message>
+        <location filename="capture_filter_edit.cpp" line="187"/>
+>>>>>>> upstream/master-2.4
         <source>Manage saved bookmarks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="224"/>
+>>>>>>> upstream/master-2.4
         <source>Apply this filter string to the display.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="326"/>
+>>>>>>> upstream/master-2.4
         <source>Multiple filters selected. Override them here or leave this blank to preserve them.</source>
         <extracomment>This is a very long concept that needs to fit into a short space.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="327"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;p&gt;The interfaces you have selected have different capture filters. Typing a filter here will override them. Doing nothing will preserve them.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1083,14 +1143,26 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="429"/>
+>>>>>>> upstream/master-2.4
         <source>Save this filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="431"/>
+>>>>>>> upstream/master-2.4
         <source>Remove this filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="capture_filter_edit.cpp" line="433"/>
+>>>>>>> upstream/master-2.4
         <source>Manage Capture Filters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1576,6 +1648,7 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation>发生:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Missing fields.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1586,6 +1659,21 @@ PLEASE NOTE: One option MUST be selected.</source>
     <message>
         <source>Invalid occurrence value.</source>
         <translation type="unfinished"></translation>
+=======
+        <location filename="column_editor_frame.cpp" line="176"/>
+        <source>Missing fields.</source>
+        <translation>缺少字段。</translation>
+    </message>
+    <message>
+        <location filename="column_editor_frame.cpp" line="178"/>
+        <source>Invalid fields.</source>
+        <translation>无效字段。</translation>
+    </message>
+    <message>
+        <location filename="column_editor_frame.cpp" line="180"/>
+        <source>Invalid occurrence value.</source>
+        <translation>无效的实例值。</translation>
+>>>>>>> upstream/master-2.4
     </message>
 </context>
 <context>
@@ -1857,7 +1945,9 @@ PLEASE NOTE: One option MUST be selected.</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Relations can be used to restrict fields to specific values. Each relation does the following:&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;is present&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Match any packet that contains this field&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;==, !=, etc.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Compare the field to a specific value.&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;contains, matches&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Check the field against a string (contains) or a regular expression (matches)&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;in&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Compare the field to a specific set of values&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;关系可用于将字段限制为特定值。每个关系都有以下几点：&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;可用&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;匹配包含此字段的任何数据包&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;==, !=, etc.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;将该字段与特定值进行比较。&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;contains, matches&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;根据字符串（包含）或正则表达式（匹配）检查字段&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;in&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;将该字段与特定的一组值进行比较&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;
+
+</translation>
     </message>
     <message>
         <source>Relation</source>
@@ -2022,75 +2112,145 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation>对话框</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="30"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;small&gt;&lt;i&gt;A hint.&lt;/i&gt;&lt;/small&gt;</source>
         <translation>&lt;small&gt;&lt;i&gt;提示&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="39"/>
+>>>>>>> upstream/master-2.4
         <source>Limit to Display Filter</source>
         <translation>显示过滤器的限制</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="59"/>
+>>>>>>> upstream/master-2.4
         <source>Group by summary</source>
         <translation>按摘要分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="82"/>
+        <location filename="expert_info_dialog.ui" line="92"/>
+>>>>>>> upstream/master-2.4
         <source>Search expert summaries.</source>
         <translation>搜索专家概要。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="85"/>
+>>>>>>> upstream/master-2.4
         <source>Search:</source>
         <translation>搜索：</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="112"/>
+>>>>>>> upstream/master-2.4
         <source>Show…</source>
         <oldsource>Show...</oldsource>
         <translation>显示…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="144"/>
+>>>>>>> upstream/master-2.4
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="147"/>
+>>>>>>> upstream/master-2.4
         <source>Show error packets.</source>
         <translation>显示错误分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="158"/>
+>>>>>>> upstream/master-2.4
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="161"/>
+>>>>>>> upstream/master-2.4
         <source>Show warning packets.</source>
         <translation>显示警告分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="172"/>
+>>>>>>> upstream/master-2.4
         <source>Note</source>
         <translation>注意</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="175"/>
+>>>>>>> upstream/master-2.4
         <source>Show note packets.</source>
         <translation>显示注意分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="186"/>
+>>>>>>> upstream/master-2.4
         <source>Chat</source>
         <translation>聊天</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="189"/>
+>>>>>>> upstream/master-2.4
         <source>Show chat packets.</source>
         <translation>显示聊天分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="200"/>
+>>>>>>> upstream/master-2.4
         <source>Comment</source>
         <translation>注释</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.ui" line="203"/>
+>>>>>>> upstream/master-2.4
         <source>Show comment packets.</source>
         <translation>显示注释分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="61"/>
+>>>>>>> upstream/master-2.4
         <source>Expert Information</source>
         <translation>专家信息</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Collapse All</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2099,22 +2259,52 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="expert_info_dialog.cpp" line="111"/>
+        <source>Collapse All</source>
+        <translation>全部收起</translation>
+    </message>
+    <message>
+        <location filename="expert_info_dialog.cpp" line="115"/>
+        <source>Expand All</source>
+        <translation>全部展开</translation>
+    </message>
+    <message>
+        <location filename="expert_info_dialog.cpp" line="194"/>
+        <location filename="expert_info_dialog.cpp" line="195"/>
+>>>>>>> upstream/master-2.4
         <source>Capture file closed.</source>
         <translation>捕获文件已关闭。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="197"/>
+>>>>>>> upstream/master-2.4
         <source>No display filter</source>
         <translation>无显示过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="198"/>
+>>>>>>> upstream/master-2.4
         <source>No display filter set.</source>
         <translation>没有设置显示过滤器。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="200"/>
+>>>>>>> upstream/master-2.4
         <source>Limit information to &quot;%1&quot;.</source>
         <translation>限制信息至“%1”。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="expert_info_dialog.cpp" line="201"/>
+>>>>>>> upstream/master-2.4
         <source>Display filter: &quot;%1&quot;</source>
         <translation>显示过滤器：“%1”</translation>
     </message>
@@ -2122,6 +2312,7 @@ PLEASE NOTE: One option MUST be selected.</source>
 <context>
     <name>ExpertInfoProxyModel</name>
     <message>
+<<<<<<< HEAD
         <source>Packet</source>
         <translation type="unfinished">分组</translation>
     </message>
@@ -2130,10 +2321,24 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="expert_info_proxy_model.cpp" line="196"/>
+        <source>Packet</source>
+        <translation>包</translation>
+    </message>
+    <message>
+        <location filename="expert_info_proxy_model.cpp" line="198"/>
+        <source>Severity</source>
+        <translation>严重</translation>
+    </message>
+    <message>
+        <location filename="expert_info_proxy_model.cpp" line="200"/>
+>>>>>>> upstream/master-2.4
         <source>Summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2144,6 +2349,21 @@ PLEASE NOTE: One option MUST be selected.</source>
     <message>
         <source>Count</source>
         <translation type="unfinished">计数</translation>
+=======
+        <location filename="expert_info_proxy_model.cpp" line="202"/>
+        <source>Group</source>
+        <translation>组</translation>
+    </message>
+    <message>
+        <location filename="expert_info_proxy_model.cpp" line="204"/>
+        <source>Protocol</source>
+        <translation>协议</translation>
+    </message>
+    <message>
+        <location filename="expert_info_proxy_model.cpp" line="206"/>
+        <source>Count</source>
+        <translation>计数</translation>
+>>>>>>> upstream/master-2.4
     </message>
 </context>
 <context>
@@ -2202,18 +2422,34 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation>%1 对象列表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="export_object_dialog.cpp" line="316"/>
+>>>>>>> upstream/master-2.4
         <source>Save Object As</source>
         <translation>保存对象为</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="export_object_dialog.cpp" line="343"/>
+>>>>>>> upstream/master-2.4
         <source>Save All Objects In</source>
         <translation>保存所有对象在</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="export_object_dialog.cpp" line="389"/>
+>>>>>>> upstream/master-2.4
         <source>Object Export</source>
         <translation>对象导出</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="export_object_dialog.cpp" line="390"/>
+>>>>>>> upstream/master-2.4
         <source>Some files could not be saved.</source>
         <translation>部分文件无法保存。</translation>
     </message>
@@ -2425,9 +2661,34 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation>过滤器:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Enter a filter expression to be applied</source>
         <translation type="unfinished"></translation>
     </message>
+=======
+        <location filename="filter_expression_frame.cpp" line="61"/>
+        <source>Apply this filter</source>
+        <translation>应用此过滤器</translation>
+    </message>
+    <message>
+        <location filename="filter_expression_frame.cpp" line="129"/>
+        <source>Missing label.</source>
+        <translation>缺少标签。</translation>
+    </message>
+    <message>
+        <location filename="filter_expression_frame.cpp" line="131"/>
+        <source>Missing filter expression.</source>
+        <translation>缺少过滤器表达式。</translation>
+    </message>
+    <message>
+        <location filename="filter_expression_frame.cpp" line="133"/>
+        <source>Invalid filter expression.</source>
+        <translation>无效的过滤器表达式。</translation>
+    </message>
+</context>
+<context>
+    <name>FilterExpressionsPreferencesFrame</name>
+>>>>>>> upstream/master-2.4
     <message>
         <source>Comment:</source>
         <translation>注释：</translation>
@@ -2641,94 +2902,151 @@ PLEASE NOTE: One option MUST be selected.</source>
 <context>
     <name>FollowStreamDialog</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="129"/>
+>>>>>>> upstream/master-2.4
         <source>Filter Out This Stream</source>
         <oldsource>Hide this stream</oldsource>
         <translation>滤掉此流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="132"/>
+>>>>>>> upstream/master-2.4
         <source>Print</source>
         <translation>打印</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="135"/>
+>>>>>>> upstream/master-2.4
         <source>Save as</source>
         <oldsource>Save as...</oldsource>
         <translation>另存为</translation>
     </message>
-    <message numerus="yes">
-        <source>%Ln client pkt(s), </source>
-        <translation type="vanished">
-            <numerusform>%Ln 客户端分组数,</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <source>%Ln server pkt(s), </source>
-        <translation type="vanished">
-            <numerusform>%Ln 服务器分组数,</numerusform>
-        </translation>
-    </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="119"/>
+>>>>>>> upstream/master-2.4
         <source>ASCII</source>
         <translation>ASCII</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="120"/>
+>>>>>>> upstream/master-2.4
         <source>C Arrays</source>
         <translation>C Arrays</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="121"/>
+>>>>>>> upstream/master-2.4
         <source>EBCDIC</source>
         <translation>EBCDIC</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="122"/>
+>>>>>>> upstream/master-2.4
         <source>Hex Dump</source>
         <translation>Hex 转储</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="123"/>
+>>>>>>> upstream/master-2.4
         <source>UTF-8</source>
         <translation>UTF-8</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="124"/>
+>>>>>>> upstream/master-2.4
         <source>UTF-16</source>
         <translation>UTF-16</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="125"/>
+>>>>>>> upstream/master-2.4
         <source>YAML</source>
         <translation>YAML</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="126"/>
+>>>>>>> upstream/master-2.4
         <source>Raw</source>
         <translation>原始数据</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="138"/>
+>>>>>>> upstream/master-2.4
         <source>Back</source>
         <translation>返回</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="182"/>
+>>>>>>> upstream/master-2.4
         <source>Packet %1. </source>
         <translation>分组 %1。</translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="185"/>
+>>>>>>> upstream/master-2.4
         <source>%Ln &lt;span style=&quot;color: %1; background-color:%2&quot;&gt;client&lt;/span&gt; pkt(s), </source>
         <translation>
             <numerusform>%Ln &lt;span style=&quot;color: %1; background-color:%2&quot;&gt;客户端&lt;/span&gt; 分组, </numerusform>
         </translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="188"/>
+>>>>>>> upstream/master-2.4
         <source>%Ln &lt;span style=&quot;color: %1; background-color:%2&quot;&gt;server&lt;/span&gt; pkt(s), </source>
         <translation>
             <numerusform>%Ln &lt;span style=&quot;color: %1; background-color:%2&quot;&gt;服务器&lt;/span&gt; 分组, </numerusform>
         </translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="191"/>
+>>>>>>> upstream/master-2.4
         <source>%Ln turn(s).</source>
         <translation>
             <numerusform>%Ln turn(s).</numerusform>
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="194"/>
+>>>>>>> upstream/master-2.4
         <source> Click to select.</source>
         <translation>点击选择。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Regex Find:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2737,52 +3055,111 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation>保存流的内容为</translation>
     </message>
     <message>
+=======
+        <location filename="follow_stream_dialog.cpp" line="245"/>
+        <source>Regex Find:</source>
+        <translation>正则表达式查找：</translation>
+    </message>
+    <message>
+        <location filename="follow_stream_dialog.cpp" line="276"/>
+        <source>Save Stream Content As</source>
+        <translation>保存流的内容为</translation>
+    </message>
+    <message>
+        <location filename="follow_stream_dialog.cpp" line="815"/>
+>>>>>>> upstream/master-2.4
         <source>No capture file.</source>
         <translation>无捕获文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="815"/>
+>>>>>>> upstream/master-2.4
         <source>Please make sure you have a capture file opened.</source>
         <translation>请确认您已经打开一个捕获文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="821"/>
+        <location filename="follow_stream_dialog.cpp" line="827"/>
+>>>>>>> upstream/master-2.4
         <source>Error following stream.</source>
         <translation>追踪流错误。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="821"/>
+>>>>>>> upstream/master-2.4
         <source>Capture file invalid.</source>
         <translation>捕获文件无效。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="827"/>
+>>>>>>> upstream/master-2.4
         <source>Please make sure you have a %1 packet selected.</source>
         <translation>请确保您已选中一个 %1 分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="940"/>
+>>>>>>> upstream/master-2.4
         <source>Entire conversation (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="944"/>
+>>>>>>> upstream/master-2.4
         <source>Follow %1 Stream (%2)</source>
         <translation>追踪 %1 流 (%2)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="849"/>
+>>>>>>> upstream/master-2.4
         <source>Error creating filter for this stream.</source>
         <translation>为这个流创建过滤器时出错。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="539"/>
+>>>>>>> upstream/master-2.4
         <source>[Stream output truncated]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="850"/>
+>>>>>>> upstream/master-2.4
         <source>A transport or network layer header is needed.</source>
         <translation>需要传输层或网络层头部。</translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="881"/>
+        <location filename="follow_stream_dialog.cpp" line="893"/>
+>>>>>>> upstream/master-2.4
         <source>%Ln total stream(s).</source>
         <translation>
             <numerusform>%Ln 全部流。</numerusform>
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.cpp" line="964"/>
+>>>>>>> upstream/master-2.4
         <source>File closed.</source>
         <translation>文件关闭。</translation>
     </message>
@@ -2804,6 +3181,11 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation>流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="follow_stream_dialog.ui" line="109"/>
+        <location filename="follow_stream_dialog.cpp" line="247"/>
+>>>>>>> upstream/master-2.4
         <source>Find:</source>
         <translation>查找:</translation>
     </message>
@@ -2855,6 +3237,10 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation>无效过滤器示例</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="font_color_preferences_frame.ui" line="219"/>
+>>>>>>> upstream/master-2.4
         <source>Sample warning filter</source>
         <oldsource>Sample deprecated filter</oldsource>
         <translation type="unfinished"></translation>
@@ -3002,6 +3388,17 @@ PLEASE NOTE: One option MUST be selected.</source>
     </message>
 </context>
 <context>
+<<<<<<< HEAD
+=======
+    <name>IOGraph</name>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="1910"/>
+        <source>Unknown</source>
+        <translation>未知</translation>
+    </message>
+</context>
+<context>
+>>>>>>> upstream/master-2.4
     <name>IOGraphDialog</name>
     <message>
         <source>Dialog</source>
@@ -3379,58 +3776,114 @@ PLEASE NOTE: One option MUST be selected.</source>
         <translation>TCP 错误</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="935"/>
+>>>>>>> upstream/master-2.4
         <source>Hover over the graph for details.</source>
         <translation>悬停在图片上来查看详情。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="937"/>
+>>>>>>> upstream/master-2.4
         <source>No packets in interval</source>
         <translation>间隔期没有分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="942"/>
+>>>>>>> upstream/master-2.4
         <source>Click to select packet</source>
         <translation>点击选取分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="942"/>
+>>>>>>> upstream/master-2.4
         <source>Packet</source>
         <translation>分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="946"/>
+>>>>>>> upstream/master-2.4
         <source>%1 (%2s%3).</source>
         <translation>%1 (%2s%3).</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="957"/>
+>>>>>>> upstream/master-2.4
         <source>Release to zoom, x = %1 to %2, y = %3 to %4</source>
         <translation>释放缩放, x = % 到 %2, y = %3 到 %4</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="963"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to select range.</source>
         <translation>无法选择范围。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="966"/>
+>>>>>>> upstream/master-2.4
         <source>Click to select a portion of the graph.</source>
         <translation>点击选择图形的一部分.</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1602"/>
+>>>>>>> upstream/master-2.4
         <source>Portable Document Format (*.pdf)</source>
         <translation>便携式文档格式 (*.pdf)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1603"/>
+>>>>>>> upstream/master-2.4
         <source>Portable Network Graphics (*.png)</source>
         <translation>便携式网络图形格式 (*.png)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1604"/>
+>>>>>>> upstream/master-2.4
         <source>Windows Bitmap (*.bmp)</source>
         <translation>Windows 位图 (*.bmp)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1606"/>
+>>>>>>> upstream/master-2.4
         <source>JPEG File Interchange Format (*.jpeg *.jpg)</source>
         <translation>JPEG 文件交换格式 (*.jpeg *.jpg)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1607"/>
+>>>>>>> upstream/master-2.4
         <source>Comma Separated Values (*.csv)</source>
         <translation>逗号分隔值 (*.csv)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="1619"/>
+>>>>>>> upstream/master-2.4
         <source>Save Graph As</source>
         <translation>图形保存为</translation>
     </message>
@@ -5645,18 +6098,34 @@ text-decoration: underline;
 &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="68"/>
+>>>>>>> upstream/master-2.4
         <source>Show in Finder</source>
         <translation>在 Finder 中显示</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="70"/>
+>>>>>>> upstream/master-2.4
         <source>Show in Folder</source>
         <translation>在 Finder 中显示</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="238"/>
+>>>>>>> upstream/master-2.4
         <source>All interfaces shown</source>
-        <translation type="unfinished"></translation>
+        <translation>显示的所有接口</translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="240"/>
+>>>>>>> upstream/master-2.4
         <source>%n interface(s) shown, %1 hidden</source>
         <oldsource>%Ln interface(s) shown</oldsource>
         <translation type="unfinished">
@@ -5664,34 +6133,62 @@ text-decoration: underline;
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>You are sniffing the glue that holds the Internet together using Wireshark </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_welcome.cpp" line="251"/>
+>>>>>>> upstream/master-2.4
         <source>You are running Wireshark </source>
         <translation>正在运行 Wireshark</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="253"/>
+>>>>>>> upstream/master-2.4
         <source>.</source>
         <translation>.</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="256"/>
+>>>>>>> upstream/master-2.4
         <source> You receive automatic updates.</source>
         <translation>接受自动更新。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="258"/>
+>>>>>>> upstream/master-2.4
         <source> You have disabled automatic updates.</source>
         <translation>禁止自动更新。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="395"/>
+>>>>>>> upstream/master-2.4
         <source>not found</source>
         <translation>未找到</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="474"/>
+>>>>>>> upstream/master-2.4
         <source>Copy file path</source>
         <translation>复制文件路径</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_welcome.cpp" line="480"/>
+>>>>>>> upstream/master-2.4
         <source>Remove</source>
         <translation>移除</translation>
     </message>
@@ -5699,6 +6196,11 @@ text-decoration: underline;
 <context>
     <name>MainWindow</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="17"/>
+        <location filename="main_window.ui" line="874"/>
+>>>>>>> upstream/master-2.4
         <source>Wireshark</source>
         <translation>Wireshark</translation>
     </message>
@@ -5711,62 +6213,123 @@ text-decoration: underline;
         <translation>取消</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="156"/>
+>>>>>>> upstream/master-2.4
         <source>Open Recent</source>
         <translation>打开最近</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="162"/>
+>>>>>>> upstream/master-2.4
         <source>File Set</source>
         <translation>文件集合</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="170"/>
+>>>>>>> upstream/master-2.4
         <source>Export Packet Dissections</source>
         <translation>导出分组解析结果</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="182"/>
+>>>>>>> upstream/master-2.4
         <source>Export Objects</source>
         <translation>导出对象</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="281"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Zoom</source>
         <translation>缩放(&amp;Z)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="289"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Time Display Format</source>
         <translation>时间显示格式(&amp;T)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="314"/>
+>>>>>>> upstream/master-2.4
         <source>Name Resolution</source>
         <translation>解析名称</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="627"/>
+>>>>>>> upstream/master-2.4
         <source>Copy</source>
         <translation>复制</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="225"/>
+>>>>>>> upstream/master-2.4
         <source>Manual pages</source>
         <translation>说明文档</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="394"/>
+>>>>>>> upstream/master-2.4
         <source>Apply as Filter</source>
         <translation>作为过滤器应用</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="405"/>
+>>>>>>> upstream/master-2.4
         <source>Prepare a Filter</source>
         <translation>准备过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="416"/>
+        <location filename="main_window.ui" line="572"/>
+>>>>>>> upstream/master-2.4
         <source>SCTP</source>
         <translation>SCTP</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="461"/>
+>>>>>>> upstream/master-2.4
         <source>TCP Stream Graphs</source>
         <translation>TCP 流图形</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="471"/>
+>>>>>>> upstream/master-2.4
         <source>BACnet</source>
         <translation>BACnet</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="480"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
@@ -5775,330 +6338,662 @@ text-decoration: underline;
         <translation>900000000</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="152"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;File</source>
         <translation>文件(&amp;F)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="209"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Capture</source>
         <translation>捕获(&amp;C)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="221"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Help</source>
         <translation>帮助(&amp;H)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="254"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Go</source>
         <translation>跳转(&amp;G)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="272"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;View</source>
         <translation>视图(&amp;V)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="390"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Analyze</source>
         <translation>分析(&amp;A)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="423"/>
+>>>>>>> upstream/master-2.4
         <source>Follow</source>
         <translation>追踪流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="457"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Statistics</source>
         <translation>统计(&amp;S)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="488"/>
+        <location filename="main_window.ui" line="1982"/>
+>>>>>>> upstream/master-2.4
         <source>29West</source>
         <translation>29West</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="492"/>
+>>>>>>> upstream/master-2.4
         <source>Topics</source>
         <translation>主题</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="504"/>
+>>>>>>> upstream/master-2.4
         <source>Queues</source>
         <translation>队列</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="513"/>
+>>>>>>> upstream/master-2.4
         <source>UIM</source>
         <translation>UIM</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="555"/>
+>>>>>>> upstream/master-2.4
         <source>Telephon&amp;y</source>
         <translation>电话(&amp;Y)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="559"/>
+>>>>>>> upstream/master-2.4
         <source>RTSP</source>
         <translation>RTSP</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="565"/>
+>>>>>>> upstream/master-2.4
         <source>RTP</source>
         <translation>RTP</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="623"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Edit</source>
         <translation>编辑(&amp;E)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="700"/>
+>>>>>>> upstream/master-2.4
         <source>Main Toolbar</source>
         <translation>主工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="748"/>
+>>>>>>> upstream/master-2.4
         <source>Display Filter Toolbar</source>
         <translation>显示过滤器工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="785"/>
+>>>>>>> upstream/master-2.4
         <source>Open</source>
         <translation>打开</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="788"/>
+>>>>>>> upstream/master-2.4
         <source>Open a capture file</source>
         <translation>打开已保存的捕获文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="799"/>
+>>>>>>> upstream/master-2.4
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="802"/>
+>>>>>>> upstream/master-2.4
         <source>Quit Wireshark</source>
         <translation>退出 Wireshark</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="816"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Start</source>
         <translation>开始(&amp;S)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="819"/>
+>>>>>>> upstream/master-2.4
         <source>Start capturing packets</source>
         <translation>开始捕获分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="827"/>
+>>>>>>> upstream/master-2.4
         <source>S&amp;top</source>
         <translation>停止(&amp;T)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="830"/>
+>>>>>>> upstream/master-2.4
         <source>Stop capturing packets</source>
         <translation>停止捕获分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="838"/>
+>>>>>>> upstream/master-2.4
         <source>Close</source>
         <translation>关闭</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="855"/>
+>>>>>>> upstream/master-2.4
         <source>No files found</source>
         <translation>未找到文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="860"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Contents</source>
         <translation>内容(&amp;C)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="879"/>
+>>>>>>> upstream/master-2.4
         <source>Wireshark Filter</source>
         <translation>Wireshark 过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="884"/>
+>>>>>>> upstream/master-2.4
         <source>TShark</source>
         <translation>TShark</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="889"/>
+>>>>>>> upstream/master-2.4
         <source>RawShark</source>
         <translation>RawShark</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="894"/>
+>>>>>>> upstream/master-2.4
         <source>Dumpcap</source>
         <translation>Dumpcap</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="899"/>
+>>>>>>> upstream/master-2.4
         <source>Mergecap</source>
         <translation>Mergecap</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="904"/>
+>>>>>>> upstream/master-2.4
         <source>Editcap</source>
         <translation>Editcap</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="909"/>
+>>>>>>> upstream/master-2.4
         <source>Text2cap</source>
         <translation>Text2cap</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="918"/>
+>>>>>>> upstream/master-2.4
         <source>Website</source>
         <translation>网站</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="923"/>
+>>>>>>> upstream/master-2.4
         <source>FAQ&apos;s</source>
         <translation>常见问题</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="928"/>
+>>>>>>> upstream/master-2.4
         <source>Downloads</source>
         <translation>下载</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="937"/>
+>>>>>>> upstream/master-2.4
         <source>Wiki</source>
         <translation>Wiki</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="945"/>
+>>>>>>> upstream/master-2.4
         <source>Sample Captures</source>
         <translation>捕获示例</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="950"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;About Wireshark</source>
         <translation>关于 Wireshark (&amp;A)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="962"/>
+>>>>>>> upstream/master-2.4
         <source>Ask (Q&amp;&amp;A)</source>
         <translation>提问 (问答平台)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="970"/>
+>>>>>>> upstream/master-2.4
         <source>Next Packet</source>
         <translation>下一分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="973"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next packet</source>
         <translation>转到下一分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="981"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Packet</source>
         <translation>前一分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="984"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous packet</source>
         <translation>转到前一分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1036"/>
+>>>>>>> upstream/master-2.4
         <source>First Packet</source>
         <translation>首个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1039"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the first packet</source>
         <translation>转到首个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1047"/>
+>>>>>>> upstream/master-2.4
         <source>Last Packet</source>
         <translation>最新分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1050"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the last packet</source>
         <translation>转到最新分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1061"/>
+>>>>>>> upstream/master-2.4
         <source>E&amp;xpand Subtrees</source>
         <translation>展开子树(&amp;X)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1064"/>
+>>>>>>> upstream/master-2.4
         <source>Expand the current packet detail</source>
         <translation>展开当前分组详情</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1072"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Expand All</source>
         <translation>展开全部(&amp;E)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1075"/>
+>>>>>>> upstream/master-2.4
         <source>Expand packet details</source>
         <translation>展开分组详情</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1083"/>
+>>>>>>> upstream/master-2.4
         <source>Collapse &amp;All</source>
         <translation>收起全部(&amp;A)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1086"/>
+>>>>>>> upstream/master-2.4
         <source>Collapse all packet details</source>
         <translation>收起所有分组详情</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1100"/>
+>>>>>>> upstream/master-2.4
         <source>Go to specified packet</source>
         <translation>转到特定分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1111"/>
+>>>>>>> upstream/master-2.4
         <source>Merge one or more files</source>
         <translation>合并一或多个文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1119"/>
+>>>>>>> upstream/master-2.4
         <source>Import a file</source>
         <translation>导入文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1124"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Save</source>
         <translation>保存(&amp;S)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1141"/>
+>>>>>>> upstream/master-2.4
         <source>Save as a different file</source>
         <translation>另存为不同的文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1152"/>
+>>>>>>> upstream/master-2.4
         <source>Export specified packets</source>
         <translation>导出指定分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1178"/>
+>>>>>>> upstream/master-2.4
         <source>List Files</source>
         <translation>列出文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1183"/>
+>>>>>>> upstream/master-2.4
         <source>Next File</source>
         <translation>下一文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1188"/>
+>>>>>>> upstream/master-2.4
         <source>Previous File</source>
         <translation>上一文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1193"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Reload</source>
         <translation>重新加载(&amp;R)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1218"/>
+>>>>>>> upstream/master-2.4
         <source>Options</source>
         <translation>选项</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1221"/>
+>>>>>>> upstream/master-2.4
         <source>Capture options</source>
         <translation>捕获选项</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1235"/>
+>>>>>>> upstream/master-2.4
         <source>Capture filters</source>
         <translation>捕获过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1240"/>
+>>>>>>> upstream/master-2.4
         <source>Refresh Interfaces</source>
         <translation>刷新接口列表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1243"/>
+>>>>>>> upstream/master-2.4
         <source>Refresh interfaces</source>
         <translation>刷新接口列表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1251"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Restart</source>
         <translation>重新开始(&amp;R)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1254"/>
+>>>>>>> upstream/master-2.4
         <source>Restart current capture</source>
         <translation>重新开始当前捕获</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1292"/>
+>>>>>>> upstream/master-2.4
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1316"/>
+>>>>>>> upstream/master-2.4
         <source>Field Name</source>
         <translation>字段名称</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1327"/>
+>>>>>>> upstream/master-2.4
         <source>Value</source>
         <translation>值</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1338"/>
+>>>>>>> upstream/master-2.4
         <source>As Filter</source>
         <translation>作为过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1349"/>
+        <location filename="main_window.ui" line="1394"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Selected</source>
         <translation>选中(&amp;S)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1354"/>
+        <location filename="main_window.ui" line="1399"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Not Selected</source>
         <translation>非选中(&amp;N)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1357"/>
+        <location filename="main_window.ui" line="1402"/>
+>>>>>>> upstream/master-2.4
         <source>Not Selected</source>
         <translation>非选中</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="841"/>
+>>>>>>> upstream/master-2.4
         <source>Close this capture file</source>
         <translation>关闭捕获文件</translation>
     </message>
@@ -6107,95 +7002,184 @@ text-decoration: underline;
         <translation>分组:</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="276"/>
+>>>>>>> upstream/master-2.4
         <source>Interface Toolbars</source>
         <translation>接口工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="324"/>
+>>>>>>> upstream/master-2.4
         <source>Colorize Conversation</source>
         <translation>对话着色</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="342"/>
+>>>>>>> upstream/master-2.4
         <source>Internals</source>
         <translation>内部</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="350"/>
+>>>>>>> upstream/master-2.4
         <source>Additional Toolbars</source>
         <translation>额外工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="432"/>
+>>>>>>> upstream/master-2.4
         <source>Conversation Filter</source>
         <translation>对话过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="526"/>
+>>>>>>> upstream/master-2.4
         <source>Service Response Time</source>
         <translation>服务响应时间</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="579"/>
+>>>>>>> upstream/master-2.4
         <source>ANSI</source>
         <translation>ANSI</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="585"/>
+>>>>>>> upstream/master-2.4
         <source>GSM</source>
         <translation>GSM</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="591"/>
+>>>>>>> upstream/master-2.4
         <source>LTE</source>
         <translation>LTE</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="597"/>
+>>>>>>> upstream/master-2.4
         <source>MTP3</source>
         <translation>MTP3</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="603"/>
+>>>>>>> upstream/master-2.4
         <source>Osmux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="676"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Tools</source>
         <oldsource>Tools</oldsource>
         <translation>工具(&amp;T)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="771"/>
+>>>>>>> upstream/master-2.4
         <source>Wireless Toolbar</source>
         <translation>无线工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="863"/>
+>>>>>>> upstream/master-2.4
         <source>Help contents</source>
         <translation>帮助内容</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="992"/>
+>>>>>>> upstream/master-2.4
         <source>Next Packet in Conversation</source>
         <translation>对话中的下一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="995"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next packet in this conversation</source>
         <translation>转至此对话中的下一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1003"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Packet in Conversation</source>
         <translation>对话中的上一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1006"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous packet in this conversation</source>
         <translation>转至此对话中的上一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1014"/>
+>>>>>>> upstream/master-2.4
         <source>Next Packet In History</source>
         <translation>历史中的下一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1017"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next packet in your selection history</source>
         <translation>转至您的选定历史中的下一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1025"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Packet In History</source>
         <translation>历史中的上一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1028"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous packet in your selection history</source>
         <translation>转至您的选定历史中的上一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Collapse Subtrees</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6204,194 +7188,382 @@ text-decoration: underline;
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window.ui" line="1097"/>
+>>>>>>> upstream/master-2.4
         <source>Go to Packet…</source>
         <translation>转至分组…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1108"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Merge…</source>
         <translation>合并(&amp;M)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1116"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Import from Hex Dump…</source>
         <translation>从 Hex 转储导入(&amp;I)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1127"/>
+>>>>>>> upstream/master-2.4
         <source>Save this capture file</source>
         <translation>保存捕获文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1138"/>
+>>>>>>> upstream/master-2.4
         <source>Save &amp;As…</source>
         <translation>另存为(&amp;A)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1149"/>
+>>>>>>> upstream/master-2.4
         <source>Export Specified Packets…</source>
         <translation>导出特定分组…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1157"/>
+>>>>>>> upstream/master-2.4
         <source>Export Packet &amp;Bytes…</source>
         <translation>导出分组字节流(&amp;B)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1165"/>
+>>>>>>> upstream/master-2.4
         <source>Export SSL Session Keys…</source>
         <translation>导出 SSL 会话密钥…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1170"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Print…</source>
         <translation>打印(&amp;P)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1196"/>
+>>>>>>> upstream/master-2.4
         <source>Reload this file</source>
         <translation>重新加载文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1207"/>
+>>>>>>> upstream/master-2.4
         <source>Reload as File Format/Capture</source>
         <translation>重新载入为文件格式/捕获</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1287"/>
+>>>>>>> upstream/master-2.4
         <source>As JSON…</source>
         <translation>为 JSON…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1295"/>
+>>>>>>> upstream/master-2.4
         <source>Copy this item&apos;s description</source>
         <translation>复制此项的描述</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1319"/>
+>>>>>>> upstream/master-2.4
         <source>Copy this item&apos;s field name</source>
         <translation>复制此项的字段名称</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1330"/>
+>>>>>>> upstream/master-2.4
         <source>Copy this item&apos;s value</source>
         <translation>复制此项的值</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1341"/>
+>>>>>>> upstream/master-2.4
         <source>Copy this item as a display filter</source>
         <translation>复制此项为显示过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1449"/>
+>>>>>>> upstream/master-2.4
         <source>Apply as Column</source>
         <translation>应用为列</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1452"/>
+>>>>>>> upstream/master-2.4
         <source>Create a packet list column from the selected field.</source>
         <translation>从选择的字段创建分组列表列。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1460"/>
+>>>>>>> upstream/master-2.4
         <source>Find a packet</source>
         <translation>查找一个分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1471"/>
+>>>>>>> upstream/master-2.4
         <source>Find the next packet</source>
         <translation>查找下一分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1482"/>
+>>>>>>> upstream/master-2.4
         <source>Find the previous packet</source>
         <translation>查找上一分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1490"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Mark/Unmark Packet</source>
         <translation>标记/取消标记 分组(&amp;M)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1493"/>
+>>>>>>> upstream/master-2.4
         <source>Mark or unmark this packet</source>
         <translation>标记或取消标记该分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1501"/>
+>>>>>>> upstream/master-2.4
         <source>Mark All Displayed</source>
         <translation>标记所有显示的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1504"/>
+>>>>>>> upstream/master-2.4
         <source>Mark all displayed packets</source>
         <translation>标记所有已经显示的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1512"/>
+>>>>>>> upstream/master-2.4
         <source>Unmark All Displayed</source>
         <translation>取消标记所有显示的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1515"/>
+>>>>>>> upstream/master-2.4
         <source>Unmark all displayed packets</source>
         <translation>取消标记所有已经显示的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1523"/>
+>>>>>>> upstream/master-2.4
         <source>Next Mark</source>
         <translation>下一标记</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1526"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next marked packet</source>
         <translation>转到下一个已标记的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1534"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Mark</source>
         <translation>前一标记</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1537"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous marked packet</source>
         <translation>转到前一个已标记的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1545"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Ignore/Unignore Packet</source>
         <translation>忽略/取消忽略 分组(&amp;I)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1548"/>
+>>>>>>> upstream/master-2.4
         <source>Ignore or unignore this packet</source>
         <translation>忽略或取消忽略该分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1556"/>
+>>>>>>> upstream/master-2.4
         <source>Ignore All Displayed</source>
         <translation>忽略所有显示的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1559"/>
+>>>>>>> upstream/master-2.4
         <source>Ignore all displayed packets</source>
         <translation>忽略所有已经显示的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1567"/>
+>>>>>>> upstream/master-2.4
         <source>Unignore All Displayed</source>
         <translation>取消忽略所有显示的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1570"/>
+>>>>>>> upstream/master-2.4
         <source>Unignore all displayed packets</source>
         <translation>取消忽略所有已经显示的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1578"/>
+>>>>>>> upstream/master-2.4
         <source>Set/Unset Time Reference</source>
         <translation>设置/取消设置 时间参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1581"/>
+>>>>>>> upstream/master-2.4
         <source>Set or unset a time reference for this packet</source>
         <translation>设置或取消设置该分组的时间参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1589"/>
+>>>>>>> upstream/master-2.4
         <source>Unset All Time References</source>
         <translation>取消设置所有时间参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1592"/>
+>>>>>>> upstream/master-2.4
         <source>Remove all time references</source>
         <translation>移除所有时间参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1600"/>
+>>>>>>> upstream/master-2.4
         <source>Next Time Reference</source>
         <translation>下一时间参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1603"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next time reference</source>
         <translation>转到下一个时间参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1611"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Time Reference</source>
         <translation>前一时间参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1614"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous time reference</source>
         <translation>转到前一时间参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1625"/>
+>>>>>>> upstream/master-2.4
         <source>Shift or change packet timestamps</source>
         <translation>平移或更改分组时间戳</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1636"/>
+>>>>>>> upstream/master-2.4
         <source>Add or change a packet comment</source>
         <translation>添加或更改分组注释</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Delete All Packet Comments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6400,206 +7572,408 @@ text-decoration: underline;
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window.ui" line="1650"/>
+>>>>>>> upstream/master-2.4
         <source>Configuration profiles</source>
         <translation>配置文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1653"/>
+>>>>>>> upstream/master-2.4
         <source>Manage your configuration profiles</source>
         <translation>管理配置文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1667"/>
+>>>>>>> upstream/master-2.4
         <source>Manage Wireshark&apos;s preferences</source>
         <translation>管理 Wireshark 的首选项设置</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1681"/>
+>>>>>>> upstream/master-2.4
         <source>Capture File Properties</source>
         <translation>捕获文件属性</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1684"/>
+>>>>>>> upstream/master-2.4
         <source>Capture file properties</source>
         <translation>捕获文件属性</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1695"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Protocol Hierarchy</source>
         <translation>协议分级(&amp;P)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1698"/>
+>>>>>>> upstream/master-2.4
         <source>Show a summary of protocols present in the capture file.</source>
         <translation>显示捕获文件中存在协议的概要。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1703"/>
+>>>>>>> upstream/master-2.4
         <source>Capinfos</source>
         <translation>捕获信息</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1708"/>
+>>>>>>> upstream/master-2.4
         <source>Reordercap</source>
         <translation>Reordercap</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1713"/>
+>>>>>>> upstream/master-2.4
         <source>Time Sequence (Stevens)</source>
         <translation>时间序列 (Stevens)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1716"/>
+>>>>>>> upstream/master-2.4
         <source>TCP time sequence graph (Stevens)</source>
         <translation>TCP 时间序列图 (Stevens)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1721"/>
+>>>>>>> upstream/master-2.4
         <source>Throughput</source>
         <translation>吞吐量</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1724"/>
+>>>>>>> upstream/master-2.4
         <source>TCP througput</source>
         <translation>TCP 吞吐量</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1729"/>
+>>>>>>> upstream/master-2.4
         <source>Round Trip Time</source>
         <translation>往返时间</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1732"/>
+>>>>>>> upstream/master-2.4
         <source>TCP round trip time</source>
         <translation>TCP 往返时间</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1737"/>
+>>>>>>> upstream/master-2.4
         <source>Window Scaling</source>
         <translation>窗口尺寸</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1740"/>
+>>>>>>> upstream/master-2.4
         <source>TCP window scaling</source>
         <translation>TCP 窗口尺寸</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1772"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP Stream</source>
         <translation>HTTP 流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1777"/>
+>>>>>>> upstream/master-2.4
         <source>Time Sequence (tcptrace)</source>
         <translation>时间序列 (tcptrace)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1780"/>
+>>>>>>> upstream/master-2.4
         <source>TCP time sequence graph (tcptrace)</source>
         <translation>TCP 时间序列图 (tcptrace)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1785"/>
+>>>>>>> upstream/master-2.4
         <source>Analyse this Association</source>
         <translation>分析关联</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1790"/>
+>>>>>>> upstream/master-2.4
         <source>Show All Associations</source>
         <translation>显示所有助手</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1795"/>
+>>>>>>> upstream/master-2.4
         <source>Flow Graph</source>
         <translation>流量图</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1798"/>
+>>>>>>> upstream/master-2.4
         <source>Flow sequence diagram</source>
         <translation>流序列图</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1803"/>
+>>>>>>> upstream/master-2.4
         <source>ANCP</source>
         <translation>ANCP</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1806"/>
+>>>>>>> upstream/master-2.4
         <source>ANCP statistics</source>
         <translation>ANCP统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1811"/>
+>>>>>>> upstream/master-2.4
         <source>Packets sorted by Instance ID</source>
         <translation>分组按实例ID排序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1814"/>
+>>>>>>> upstream/master-2.4
         <source>BACapp statistics sorted by instance ID</source>
         <translation>BACapp 统计按实例ID排序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1819"/>
+>>>>>>> upstream/master-2.4
         <source>Packets sorted by IP</source>
         <translation>分组按IP排序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1822"/>
+>>>>>>> upstream/master-2.4
         <source>BACapp statistics sorted by IP</source>
         <translation>BACapp 统计按实例IP排序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1827"/>
+>>>>>>> upstream/master-2.4
         <source>Packets sorted by object type</source>
         <translation>分组按对象类型排序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1830"/>
+>>>>>>> upstream/master-2.4
         <source>BACapp statistics sorted by object type</source>
         <translation>BACapp 统计按实例对象类型排序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1835"/>
+>>>>>>> upstream/master-2.4
         <source>Packets sorted by service</source>
         <translation>分组按服务排序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1838"/>
+>>>>>>> upstream/master-2.4
         <source>BACapp statistics sorted by service</source>
         <translation>BACapp 统计按实例服务排序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1843"/>
+>>>>>>> upstream/master-2.4
         <source>Collectd</source>
         <translation>Collectd</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1846"/>
+>>>>>>> upstream/master-2.4
         <source>Collectd statistics</source>
         <translation>Collectd协议统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1851"/>
+>>>>>>> upstream/master-2.4
         <source>DNS</source>
         <translation>DNS</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1854"/>
+>>>>>>> upstream/master-2.4
         <source>DNS statistics</source>
         <translation>DNS统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1859"/>
+>>>>>>> upstream/master-2.4
         <source>HART-IP</source>
         <translation>HART-IP</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1862"/>
+>>>>>>> upstream/master-2.4
         <source>HART-IP statistics</source>
         <translation>HART-IP 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1867"/>
+>>>>>>> upstream/master-2.4
         <source>HPFEEDS</source>
         <translation>HPFEEDS</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1870"/>
+>>>>>>> upstream/master-2.4
         <source>hpfeeds statistics</source>
         <translation>hpfeeds 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1875"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP2</source>
         <translation>HTTP2</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1878"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP2 statistics</source>
         <translation>HTTP2 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1883"/>
+        <location filename="main_window.ui" line="1931"/>
+        <location filename="main_window.ui" line="1939"/>
+>>>>>>> upstream/master-2.4
         <source>Packet Counter</source>
         <translation>分组计数器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1886"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP packet counter</source>
         <translation>HTTP 分组计数器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1891"/>
+>>>>>>> upstream/master-2.4
         <source>Requests</source>
         <translation>请求</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1894"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP requests</source>
         <translation>HTTP 请求</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1899"/>
+>>>>>>> upstream/master-2.4
         <source>Load Distribution</source>
         <translation>负载分配</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1902"/>
+>>>>>>> upstream/master-2.4
         <source>HTTP load distribution</source>
         <translation>HTTP 负载分配</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Referers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6608,1019 +7982,2116 @@ text-decoration: underline;
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window.ui" line="1907"/>
+>>>>>>> upstream/master-2.4
         <source>Packet Lengths</source>
         <translation>分组长度</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1910"/>
+>>>>>>> upstream/master-2.4
         <source>Packet length statistics</source>
         <translation>分组长度统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1915"/>
+>>>>>>> upstream/master-2.4
         <source>Sametime</source>
         <translation>Sametime</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1918"/>
+>>>>>>> upstream/master-2.4
         <source>Sametime statistics</source>
         <translation>Sametime协议统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1923"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;ISUP Messages</source>
         <translation>ISUP 消息(&amp;I)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1926"/>
+>>>>>>> upstream/master-2.4
         <source>ISUP message statistics</source>
         <translation>ISUP 消息统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1934"/>
+>>>>>>> upstream/master-2.4
         <source>Osmux packet counts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1942"/>
+>>>>>>> upstream/master-2.4
         <source>RTSP packet counts</source>
         <translation>RTSP分组计数</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1947"/>
+>>>>>>> upstream/master-2.4
         <source>SM&amp;PP Operations</source>
         <translation>SMPP 操作(&amp;P)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1950"/>
+>>>>>>> upstream/master-2.4
         <source>SMPP operation statistics</source>
         <translation>SMPP操作统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1955"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;UCP Messages</source>
         <translation>UCP 消息(&amp;U)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1958"/>
+>>>>>>> upstream/master-2.4
         <source>UCP message statistics</source>
         <translation>UCP 消息统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1966"/>
+>>>>>>> upstream/master-2.4
         <source>Change the way packets are dissected</source>
         <translation>修改分组解析方式</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1971"/>
+>>>>>>> upstream/master-2.4
         <source>Reload Lua Plugins</source>
         <translation>重新载入 Lua 插件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1974"/>
+>>>>>>> upstream/master-2.4
         <source>Reload Lua plugins</source>
         <translation>重新载入 Lua 插件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1987"/>
+>>>>>>> upstream/master-2.4
         <source>Advertisements by Topic</source>
         <translation>根据主题的通告</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1992"/>
+        <location filename="main_window.ui" line="2027"/>
+>>>>>>> upstream/master-2.4
         <source>Advertisements by Source</source>
         <translation>根据源的通告</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1997"/>
+>>>>>>> upstream/master-2.4
         <source>Advertisements by Transport</source>
         <translation>根据传输层的通告</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2002"/>
+>>>>>>> upstream/master-2.4
         <source>Queries by Topic</source>
         <translation>根据主题的查询</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2007"/>
+        <location filename="main_window.ui" line="2037"/>
+>>>>>>> upstream/master-2.4
         <source>Queries by Receiver</source>
         <translation>根据接收者的查询</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2012"/>
+>>>>>>> upstream/master-2.4
         <source>Wildcard Queries by Pattern</source>
         <translation>根据模式的通配查询</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2017"/>
+>>>>>>> upstream/master-2.4
         <source>Wildcard Queries by Receiver</source>
         <translation>根据接收者的通配查询</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2022"/>
+>>>>>>> upstream/master-2.4
         <source>Advertisements by Queue</source>
         <translation>根据队列的通告</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2032"/>
+>>>>>>> upstream/master-2.4
         <source>Queries by Queue</source>
         <translation>根据队列的查询</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2042"/>
+>>>>>>> upstream/master-2.4
         <source>Streams</source>
         <translation>流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2047"/>
+        <source>Stream Flow Graph</source>
+        <translation>流图</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2052"/>
+>>>>>>> upstream/master-2.4
         <source>LBT-RM</source>
         <translation>LBT-RM</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2057"/>
+>>>>>>> upstream/master-2.4
         <source>LBT-RU</source>
         <translation>LBT-RU</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2062"/>
+        <location filename="main_window.ui" line="2065"/>
+>>>>>>> upstream/master-2.4
         <source>Filter this Association</source>
         <translation>筛选该助手</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2152"/>
+>>>>>>> upstream/master-2.4
         <source>Shrink the main window text</source>
         <translation>收缩主窗口文字</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2163"/>
+>>>>>>> upstream/master-2.4
         <source>Return the main window text to its normal size</source>
         <translation>使主窗口文字返回正常大小</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2171"/>
+>>>>>>> upstream/master-2.4
         <source>Reset Layout</source>
         <translation>重置布局</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2174"/>
+>>>>>>> upstream/master-2.4
         <source>Reset appearance layout to default size</source>
         <translation>重置外观布局为默认尺寸</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2497"/>
+>>>>>>> upstream/master-2.4
         <source>Conversation Hash Tables</source>
         <translation>对话哈希表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2500"/>
+>>>>>>> upstream/master-2.4
         <source>Show each conversation hash table</source>
         <translation>显示每个对话哈希表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2505"/>
+>>>>>>> upstream/master-2.4
         <source>Dissector Tables</source>
         <translation>解析器表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2508"/>
+>>>>>>> upstream/master-2.4
         <source>Show each dissector table and its entries</source>
         <translation>显示每个解析器表及其项</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2513"/>
+>>>>>>> upstream/master-2.4
         <source>Supported Protocols</source>
         <translation>支持的协议</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2516"/>
+>>>>>>> upstream/master-2.4
         <source>Show the currently supported protocols and display filter fields</source>
         <translation>显示当前支持的协议和显示过滤器字段</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2569"/>
+>>>>>>> upstream/master-2.4
         <source>MAC Statistics</source>
         <translation>MAC 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2572"/>
+>>>>>>> upstream/master-2.4
         <source>LTE MAC statistics</source>
         <translation>LTE MAC 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2577"/>
+>>>>>>> upstream/master-2.4
         <source>RLC Statistics</source>
         <translation>RLC 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2580"/>
+>>>>>>> upstream/master-2.4
         <source>LTE RLC statistics</source>
         <translation>LTE RLC 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2585"/>
+>>>>>>> upstream/master-2.4
         <source>RLC Graph</source>
         <translation>RLC 图表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2588"/>
+>>>>>>> upstream/master-2.4
         <source>LTE RLC graph</source>
         <translation>LTE RLC 图表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2593"/>
+>>>>>>> upstream/master-2.4
         <source>MTP3 Summary</source>
         <translation>MTP3 汇总</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2596"/>
+>>>>>>> upstream/master-2.4
         <source>MTP3 summary statistics</source>
         <translation>MTP3 汇总统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2635"/>
+>>>>>>> upstream/master-2.4
         <source>Bluetooth Devices</source>
         <translation>蓝牙设备</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2640"/>
+>>>>>>> upstream/master-2.4
         <source>Bluetooth HCI Summary</source>
         <translation>蓝牙 HCI 摘要</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2716"/>
+>>>>>>> upstream/master-2.4
         <source>No GSM statistics registered</source>
         <translation>没有已注册的 GSM 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2724"/>
+>>>>>>> upstream/master-2.4
         <source>No LTE statistics registered</source>
         <translation>没有 LTE 统计已注册</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2732"/>
+>>>>>>> upstream/master-2.4
         <source>No MTP3 statistics registered</source>
         <translation>没有已注册的 MTP3 统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2871"/>
+>>>>>>> upstream/master-2.4
         <source>Stream Analysis</source>
         <translation>流分析</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2879"/>
+        <location filename="main_window.ui" line="2882"/>
+>>>>>>> upstream/master-2.4
         <source>IAX2 Stream Analysis</source>
         <translation>IAX2 流分析</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2906"/>
+>>>>>>> upstream/master-2.4
         <source>Show Packet Bytes…</source>
         <translation>显示分组字节…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2935"/>
+>>>>>>> upstream/master-2.4
         <source>UDP Multicast Streams</source>
         <translation>UDP 多播流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2938"/>
+>>>>>>> upstream/master-2.4
         <source>Show UTP multicast stream statistics.</source>
         <translation>显示 UTP 多播流统计。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2943"/>
+>>>>>>> upstream/master-2.4
         <source>WLAN Traffic</source>
         <translation>WLAN 流量</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2946"/>
+>>>>>>> upstream/master-2.4
         <source>Show IEEE 802.11 wireless LAN statistics.</source>
         <translation>显示 IEEE 802.11 无线 LAN 统计。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2955"/>
+>>>>>>> upstream/master-2.4
         <source>Add a filter button</source>
         <translation>添加一个过滤器按钮</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2961"/>
+>>>>>>> upstream/master-2.4
         <source>Add a display filter button.</source>
         <translation>添加一个显示过滤器按钮。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2966"/>
+>>>>>>> upstream/master-2.4
         <source>Firewall ACL Rules</source>
         <translation>防火墙 ACL 规则</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2969"/>
+>>>>>>> upstream/master-2.4
         <source>Create firewall ACL rules</source>
         <translation>创建防火墙 ACL 规则</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2974"/>
+        <source>…as Escaped String</source>
+        <translation>…为转义字符串</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2977"/>
+        <source>Copy packet bytes as a Escaped string</source>
+        <translation>复制分组字节为转义字符串。</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2985"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Full Screen</source>
         <translation>全屏(&amp;F)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1215"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Options…</source>
         <translation>选项(&amp;O)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="666"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Wireless</source>
         <translation>无线(&amp;W)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1232"/>
+>>>>>>> upstream/master-2.4
         <source>Capture &amp;Filters…</source>
         <translation>捕获过滤器(&amp;F)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1262"/>
+>>>>>>> upstream/master-2.4
         <source>As Plain &amp;Text…</source>
         <translation>为纯文本(&amp;T)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1267"/>
+>>>>>>> upstream/master-2.4
         <source>As CSV…</source>
         <translation>为 CSV…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1272"/>
+>>>>>>> upstream/master-2.4
         <source>As &quot;C&quot; Arrays…</source>
         <translation>为 C 语言数组…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1277"/>
+>>>>>>> upstream/master-2.4
         <source>As PSML XML…</source>
         <translation>为 PSML XML…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1282"/>
+>>>>>>> upstream/master-2.4
         <source>As PDML XML…</source>
         <translation>为 PDML XML…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1303"/>
+>>>>>>> upstream/master-2.4
         <source>All Visible Items</source>
         <translation>所有可见项目</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1311"/>
+>>>>>>> upstream/master-2.4
         <source>All Visible Selected Tree Items</source>
         <translation>选中树的所有可见项目</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1362"/>
+        <location filename="main_window.ui" line="1407"/>
+>>>>>>> upstream/master-2.4
         <source>…&amp;and Selected</source>
         <translation>…与选中(&amp;A)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1365"/>
+        <location filename="main_window.ui" line="1410"/>
+>>>>>>> upstream/master-2.4
         <source>…and Selected</source>
         <translation>…与选中</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1370"/>
+        <location filename="main_window.ui" line="1415"/>
+>>>>>>> upstream/master-2.4
         <source>…&amp;or Selected</source>
         <translation>…或选中(&amp;O)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1373"/>
+        <location filename="main_window.ui" line="1418"/>
+>>>>>>> upstream/master-2.4
         <source>…or Selected</source>
         <translation>…或选中</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1378"/>
+        <location filename="main_window.ui" line="1423"/>
+>>>>>>> upstream/master-2.4
         <source>…a&amp;nd not Selected</source>
         <translation>…与非选中(&amp;N)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1381"/>
+        <location filename="main_window.ui" line="1426"/>
+>>>>>>> upstream/master-2.4
         <source>…and not Selected</source>
         <translation>…与非选中</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1386"/>
+        <location filename="main_window.ui" line="1431"/>
+>>>>>>> upstream/master-2.4
         <source>…o&amp;r not Selected</source>
         <translation>…或非选中(&amp;R)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1389"/>
+        <location filename="main_window.ui" line="1434"/>
+>>>>>>> upstream/master-2.4
         <source>…or not Selected</source>
         <translation>…或非选中</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1439"/>
+>>>>>>> upstream/master-2.4
         <source>Display Filters…</source>
         <translation>显示过滤器…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1444"/>
+>>>>>>> upstream/master-2.4
         <source>Display Filter &amp;Macros…</source>
         <translation>显示过滤器宏(&amp;M)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1457"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Find Packet…</source>
         <translation>查找分组(&amp;F)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1468"/>
+>>>>>>> upstream/master-2.4
         <source>Find Ne&amp;xt</source>
         <translation>查找下一个(&amp;N)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1479"/>
+>>>>>>> upstream/master-2.4
         <source>Find Pre&amp;vious</source>
         <translation>查找上一个(&amp;v)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1622"/>
+>>>>>>> upstream/master-2.4
         <source>Time Shift…</source>
         <translation>时间平移…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1633"/>
+>>>>>>> upstream/master-2.4
         <source>Packet Comment…</source>
         <translation>分组注释…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1647"/>
+>>>>>>> upstream/master-2.4
         <source>Configuration Profiles…</source>
         <translation>配置文件…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1664"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Preferences…</source>
         <translation>首选项(&amp;P)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1748"/>
+>>>>>>> upstream/master-2.4
         <source>TCP Stream</source>
         <translation>TCP 流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1756"/>
+>>>>>>> upstream/master-2.4
         <source>UDP Stream</source>
         <translation>UDP 流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1764"/>
+>>>>>>> upstream/master-2.4
         <source>SSL Stream</source>
         <translation>SSL 流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="1963"/>
+>>>>>>> upstream/master-2.4
         <source>Decode &amp;As…</source>
         <translation>解码为(&amp;A)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2070"/>
+>>>>>>> upstream/master-2.4
         <source>Export PDUs to File…</source>
         <translation>导出 PDU 到文件…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2075"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;I/O Graph</source>
         <translation>I/O 图表(&amp;I)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2078"/>
+>>>>>>> upstream/master-2.4
         <source>Create graphs based on display filter fields</source>
         <translation>基于显示过滤器字段创建图形</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2089"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Main Toolbar</source>
         <translation>主工具栏(&amp;M)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2092"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the main toolbar</source>
         <translation>显示或隐藏主工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2103"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Filter Toolbar</source>
         <translation>过滤器工具栏(&amp;F)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2106"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the display filter toolbar</source>
         <translation>显示或隐藏显示过滤器工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2111"/>
+>>>>>>> upstream/master-2.4
         <source>Conversations</source>
         <translation>对话</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2114"/>
+>>>>>>> upstream/master-2.4
         <source>Conversations at different protocol levels</source>
         <translation>对话在不同的协议层</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2119"/>
+>>>>>>> upstream/master-2.4
         <source>Endpoints</source>
         <translation>端点</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2122"/>
+>>>>>>> upstream/master-2.4
         <source>Endpoints at different protocol levels</source>
         <translation>端点在不同的协议层</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2130"/>
+>>>>>>> upstream/master-2.4
         <source>Colorize Packet List</source>
         <translation>着色分组列表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2133"/>
+>>>>>>> upstream/master-2.4
         <source>Draw packets using your coloring rules</source>
         <translation>使用您的着色规则来绘制分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2138"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Zoom In</source>
         <translation>放大(&amp;Z)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2141"/>
+>>>>>>> upstream/master-2.4
         <source>Enlarge the main window text</source>
         <translation>放大主窗口文本</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2149"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom Out</source>
         <translation>缩小</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2160"/>
+>>>>>>> upstream/master-2.4
         <source>Normal Size</source>
         <translation>普通大小</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2182"/>
+>>>>>>> upstream/master-2.4
         <source>Resize Columns</source>
         <translation>调整列宽</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2185"/>
+>>>>>>> upstream/master-2.4
         <source>Resize packet list columns to fit contents</source>
         <translation>调整分组列表列以适应内容</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2196"/>
+>>>>>>> upstream/master-2.4
         <source>Date and Time of Day (1970-01-01 01:02:03.123456)</source>
         <translation>日期和时间 (1970-01-01 01:02:03.123456)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2199"/>
+        <location filename="main_window.ui" line="2224"/>
+        <location filename="main_window.ui" line="2252"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the date and time of day.</source>
         <translation>使用日期和时间来显示分组时间。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2210"/>
+>>>>>>> upstream/master-2.4
         <source>Year, Day of Year, and Time of Day (1970/001 01:02:03.123456)</source>
         <translation>年、年积日、时间 (1970/001 01:02:03.123456)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2213"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the year, day of the year and time of day.</source>
         <translation>使用年、年积日和时间来显示分组时间。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2221"/>
+>>>>>>> upstream/master-2.4
         <source>Time of Day (01:02:03.123456)</source>
         <translation>时间 (01:02:03.123456)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2235"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds Since 1970-01-01</source>
         <translation>自1970-01-01经过的秒数</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2238"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the seconds since the UNIX / POSIX epoch (1970-01-01).</source>
         <translation>使用自 UNIX / POSIX 时间戳 (1970-01-01) 以来的秒数来显示分组时间。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2249"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds Since Beginning of Capture</source>
         <translation>自捕获开始经过的秒数</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2263"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds Since Previous Captured Packet</source>
         <translation>自上一个捕获分组经过的秒数</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2266"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the seconds since the previous captured packet.</source>
         <translation>使用自上一个被捕获分组的秒数来显示分组时间。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2277"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds Since Previous Displayed Packet</source>
         <translation>自上一个显示分组经过的秒数</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2280"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the seconds since the previous displayed packet.</source>
         <translation>使用自上一个被显示分组的秒数来显示分组时间。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2291"/>
+>>>>>>> upstream/master-2.4
         <source>UTC Date and Time of Day (1970-01-01 01:02:03.123456)</source>
         <translation>UTC 日期和时间 (1970-01-01 01:02:03.123456)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2294"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the UTC date and time of day.</source>
         <translation>使用 UTC 日期和时间来显示分组时间。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2305"/>
+>>>>>>> upstream/master-2.4
         <source>UTC Year, Day of Year, and Time of Day (1970/001 01:02:03.123456)</source>
         <translation>UTC 年、年积日、时间 (1970/001 01:02:03.123456)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2308"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the UTC year, day of the year and time of day.</source>
         <translation>使用 UTC 年、年积日和时间来显示分组时间。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2316"/>
+>>>>>>> upstream/master-2.4
         <source>UTC Time of Day (01:02:03.123456)</source>
         <translation>UTC 时间 (01:02:03.123456)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2319"/>
+>>>>>>> upstream/master-2.4
         <source>Show packet times as the UTC time of day.</source>
         <translation>使用 UTC 时间来显示分组时间。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2330"/>
+>>>>>>> upstream/master-2.4
         <source>Automatic (from capture file)</source>
         <translation>自动 (根据捕获文件)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2333"/>
+>>>>>>> upstream/master-2.4
         <source>Use the time precision indicated in the capture file.</source>
         <translation>使用捕获文件中指示的时间精度。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2341"/>
+>>>>>>> upstream/master-2.4
         <source>Seconds</source>
         <translation>秒</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2349"/>
+>>>>>>> upstream/master-2.4
         <source>Tenths of a second</source>
         <translation>十分之一秒</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2357"/>
+>>>>>>> upstream/master-2.4
         <source>Hundredths of a second</source>
         <translation>百分之一秒</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2365"/>
+>>>>>>> upstream/master-2.4
         <source>Milliseconds</source>
         <translation>毫秒</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2373"/>
+>>>>>>> upstream/master-2.4
         <source>Microseconds</source>
         <translation>微秒</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2381"/>
+>>>>>>> upstream/master-2.4
         <source>Nanoseconds</source>
         <translation>纳秒</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2389"/>
+>>>>>>> upstream/master-2.4
         <source>Display Seconds With Hours and Minutes</source>
         <translation>显示小时、分钟和秒</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2392"/>
+>>>>>>> upstream/master-2.4
         <source>Display seconds with hours and minutes</source>
         <translation>显示小时、分钟、秒</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2400"/>
+>>>>>>> upstream/master-2.4
         <source>Resolve &amp;Physical Addresses</source>
         <translation>解析物理地址(&amp;P)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2403"/>
+>>>>>>> upstream/master-2.4
         <source>Show names for known MAC addresses. Lookups use a local database.</source>
         <translation>显示已知 MAC 地址的名称。使用本地数据库查询。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2411"/>
+>>>>>>> upstream/master-2.4
         <source>Resolve &amp;Network Addresses</source>
         <translation>解析网络地址(&amp;N)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2414"/>
+>>>>>>> upstream/master-2.4
         <source>Show names for known IPv4, IPv6, and IPX addresses. Lookups can generate network traffic.</source>
         <translation>显示已知的IPv4、IPv6和IPX地址的名称。查找会产生网络流量。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2422"/>
+>>>>>>> upstream/master-2.4
         <source>Resolve &amp;Transport Addresses</source>
         <translation>解析传输层地址(&amp;T)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2425"/>
+>>>>>>> upstream/master-2.4
         <source>Show names for known TCP, UDP, and SCTP services. Lookups can generate traffic on some systems.</source>
         <translation>显示已知的 TCP、UDP 和 SCTP 服务的名称。在一些系统中，查找会产生流量。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2433"/>
+>>>>>>> upstream/master-2.4
         <source>Wire&amp;less Toolbar</source>
         <translation>无线工具栏(&amp;l)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2436"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the wireless toolbar</source>
         <translation>显示或隐藏无线工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2447"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Status Bar</source>
         <translation>状态栏(&amp;S)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2450"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the status bar</source>
         <translation>显示或隐藏状态栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2461"/>
+>>>>>>> upstream/master-2.4
         <source>Packet &amp;List</source>
         <translation>分组列表(&amp;L)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2464"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the packet list</source>
         <translation>显示或隐藏分组列表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2475"/>
+>>>>>>> upstream/master-2.4
         <source>Packet &amp;Details</source>
         <translation>分组详情(&amp;D)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2478"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the packet details</source>
         <translation>显示或隐藏分组详情</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2489"/>
+>>>>>>> upstream/master-2.4
         <source>Packet &amp;Bytes</source>
         <translation>分组字节流(&amp;B)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2492"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the packet bytes</source>
         <translation>显示或隐藏分组字节流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2521"/>
+        <source>Bytes as Hex + ASCII Dump</source>
+        <translation>字节为 Hex + ASCII 转储</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2524"/>
+        <source>Copy packet bytes as a hex and ASCII dump.</source>
+        <translation>复制分组字节为 Hex 和 ASCII 转储。</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2529"/>
+        <source>…as Hex Dump</source>
+        <translation>…为 Hex 转储</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2532"/>
+        <source>Copy packet bytes as a hex dump.</source>
+        <translation>复制分组字节为 Hex 转储。</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2537"/>
+        <source>…as Printable Text</source>
+        <translation>为纯文本</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2540"/>
+        <source>Copy only the printable text in the packet.</source>
+        <translation>只复制分组中的可打印文本。</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2545"/>
+        <source>…as a Hex Stream</source>
+        <translation>…为一个 Hex 流</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2548"/>
+        <source>Copy packet bytes as a stream of hex.</source>
+        <translation>复制分组字节为 Hex 流。</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2553"/>
+        <source>…as Raw Binary</source>
+        <translation>…为原始二进制</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2556"/>
+        <source>Copy packet bytes as application/octet-stream MIME data.</source>
+        <translation>复制分组字节为 application/octet-stream MIME 数据。</translation>
+    </message>
+    <message>
+        <location filename="main_window.ui" line="2561"/>
+>>>>>>> upstream/master-2.4
         <source>MAP Summary</source>
         <translation>MAP 摘要</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2564"/>
+>>>>>>> upstream/master-2.4
         <source>GSM MAP summary statistics</source>
         <translation>GSM MAP 摘要统计</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2622"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Coloring Rules…</source>
         <translation>着色规则(&amp;C)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2653"/>
+>>>>>>> upstream/master-2.4
         <source>Show Linked Packet in New Window</source>
         <translation>在新窗口中显示已链接的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2680"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;Expression…</source>
         <translation>表达式(&amp;E)…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2683"/>
+        <location filename="main_window.ui" line="2958"/>
+>>>>>>> upstream/master-2.4
         <source>Expression…</source>
         <translation>表达式…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2852"/>
+>>>>>>> upstream/master-2.4
         <source>New Coloring Rule…</source>
         <oldsource>New Conversation Rule…</oldsource>
         <translation>新建着色规则…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2895"/>
+>>>>>>> upstream/master-2.4
         <source>Enabled Protocols…</source>
         <oldsource>Enable Protocols…</oldsource>
         <translation>启用的协议…</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2911"/>
+>>>>>>> upstream/master-2.4
         <source>Wiki Protocol Page</source>
         <translation>Wiki 协议页面</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2914"/>
+>>>>>>> upstream/master-2.4
         <source>Open the Wireshark wiki page for this protocol.</source>
         <translation>打开针对此协议的 Wireshark Wiki 页面。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2919"/>
+>>>>>>> upstream/master-2.4
         <source>Filter Field Reference</source>
         <translation>过滤器字段参考</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2922"/>
+>>>>>>> upstream/master-2.4
         <source>Open the display filter reference page for this filter field.</source>
         <translation>打开此过滤器字段的显示过滤器参考。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2927"/>
+>>>>>>> upstream/master-2.4
         <source>Go to Linked Packet</source>
         <translation>转至链接的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2930"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the packet referenced by the selected field.</source>
         <translation>转至选定字段引用的分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2601"/>
+>>>>>>> upstream/master-2.4
         <source>&amp;VoIP Calls</source>
         <translation>&amp;VoIP 通话</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2604"/>
+>>>>>>> upstream/master-2.4
         <source>All VoIP Calls</source>
         <translation>全部VoIP呼叫</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2609"/>
+>>>>>>> upstream/master-2.4
         <source>SIP &amp;Flows</source>
         <translation>SIP 流(&amp;F)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2612"/>
+>>>>>>> upstream/master-2.4
         <source>SIP Flows</source>
         <translation>SIP流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2617"/>
+>>>>>>> upstream/master-2.4
         <source>RTP Streams</source>
         <translation>RTP 流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2625"/>
+>>>>>>> upstream/master-2.4
         <source>Edit the packet list coloring rules.</source>
         <translation>编辑分组列表着色规则。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2630"/>
+>>>>>>> upstream/master-2.4
         <source>Bluetooth ATT Server Attributes</source>
         <oldsource>ATT Server Attributes</oldsource>
         <translation>蓝牙 ATT 服务器属性</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2645"/>
+>>>>>>> upstream/master-2.4
         <source>Show Packet in New &amp;Window</source>
         <translation>在新窗口显示分组(&amp;W)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2648"/>
+>>>>>>> upstream/master-2.4
         <source>Show this packet in a separate window.</source>
         <translation>在单独窗口中显示此分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2656"/>
+>>>>>>> upstream/master-2.4
         <source>Show the linked packet in a separate window.</source>
         <translation>在独立窗口中显示链接分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2664"/>
+>>>>>>> upstream/master-2.4
         <source>Auto Scroll in Li&amp;ve Capture</source>
         <translation>实时捕获时自动滚动(&amp;V)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2667"/>
+>>>>>>> upstream/master-2.4
         <source>Automatically scroll to the last packet during a live capture.</source>
         <translation>在实时捕获时，自动滚动屏幕到最新的分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2672"/>
+>>>>>>> upstream/master-2.4
         <source>Expert Information</source>
         <translation>专家信息</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2675"/>
+>>>>>>> upstream/master-2.4
         <source>Show expert notifications</source>
         <translation>显示专家通知</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2686"/>
+>>>>>>> upstream/master-2.4
         <source>Add an expression to the display filter.</source>
         <translation>添加一个表达式到显示过滤器。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2691"/>
+>>>>>>> upstream/master-2.4
         <source>REGISTER_STAT_GROUP_UNSORTED</source>
         <translation>REGISTER_STAT_GROUP_UNSORTED</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2694"/>
+>>>>>>> upstream/master-2.4
         <source>Start of &quot;REGISTER_STAT_GROUP_UNSORTED&quot;</source>
         <translation>&quot;REGISTER_STAT_GROUP_UNSORTED&quot; 的启动</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2708"/>
+>>>>>>> upstream/master-2.4
         <source>No ANSI statistics registered</source>
         <oldsource>No tools registered</oldsource>
         <translation>没有 ANSI 统计已注册</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2737"/>
+>>>>>>> upstream/master-2.4
         <source>Resolved Addresses</source>
         <translation>已解析的地址</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2740"/>
+>>>>>>> upstream/master-2.4
         <source>Show each table of resolved addresses as copyable text.</source>
         <translation>将每个已解析地址的表格表示为可复制的文本。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2745"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;1</source>
         <translation>颜色 &amp;1</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2748"/>
+        <location filename="main_window.ui" line="2759"/>
+        <location filename="main_window.ui" line="2770"/>
+        <location filename="main_window.ui" line="2781"/>
+        <location filename="main_window.ui" line="2792"/>
+        <location filename="main_window.ui" line="2803"/>
+        <location filename="main_window.ui" line="2814"/>
+        <location filename="main_window.ui" line="2825"/>
+        <location filename="main_window.ui" line="2836"/>
+        <location filename="main_window.ui" line="2847"/>
+>>>>>>> upstream/master-2.4
         <source>Mark the current conversation with its own color.</source>
         <oldsource>Mark the current coversation with its own color.</oldsource>
         <translation>让当前的对话使用自己的颜色。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2756"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;2</source>
         <translation>颜色 &amp;2</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2767"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;3</source>
         <translation>颜色 &amp;3</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2778"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;4</source>
         <translation>颜色 &amp;4</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2789"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;5</source>
         <translation>颜色 &amp;5</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2800"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;6</source>
         <translation>颜色 &amp;6</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2811"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;7</source>
         <translation>颜色 &amp;7</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2822"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;8</source>
         <translation>颜色 &amp;8</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2833"/>
+>>>>>>> upstream/master-2.4
         <source>Color &amp;9</source>
         <translation>颜色 &amp;9</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2844"/>
+>>>>>>> upstream/master-2.4
         <source>Color 1&amp;0</source>
         <translation>颜色 1&amp;0</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2855"/>
+>>>>>>> upstream/master-2.4
         <source>Create a new coloring rule based on this field.</source>
         <oldsource>Create a new coloring rule based on this conversation.</oldsource>
         <translation>基于此栏创建一个新的着色规则。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2860"/>
+>>>>>>> upstream/master-2.4
         <source>Reset Colorization</source>
         <translation>重置着色</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2863"/>
+>>>>>>> upstream/master-2.4
         <source>Reset colorized conversations.</source>
         <translation>重置着色的对话。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2874"/>
+>>>>>>> upstream/master-2.4
         <source>RTP Stream Analysis</source>
         <translation>RTP 流分析</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2887"/>
+>>>>>>> upstream/master-2.4
         <source>Edit Resolved Name</source>
         <translation>编辑解析的名称</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2890"/>
+>>>>>>> upstream/master-2.4
         <source>Manually edit a name resolution entry.</source>
         <translation>手动编辑一个名称解析项。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.ui" line="2898"/>
+>>>>>>> upstream/master-2.4
         <source>Enable and disable specific protocols</source>
         <translation>启用和禁用特定的协议</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="297"/>
+>>>>>>> upstream/master-2.4
         <source>Check for Updates</source>
         <oldsource>Check for Updates...</oldsource>
         <translation>检查更新</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="930"/>
+>>>>>>> upstream/master-2.4
         <source> before quitting</source>
         <translation>在退出前</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1166"/>
+>>>>>>> upstream/master-2.4
         <source>Save packets before merging?</source>
         <translation>是否在合并之前保存分组？</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1167"/>
+>>>>>>> upstream/master-2.4
         <source>A temporary capture file can&apos;t be merged.</source>
         <translation>无法合并临时捕获文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1173"/>
+>>>>>>> upstream/master-2.4
         <source>Save changes in &quot;%1&quot; before merging?</source>
         <translation>是否在合并前保存对“%1”的更改？</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1175"/>
+>>>>>>> upstream/master-2.4
         <source>Changes must be saved before the files can be merged.</source>
         <translation>在文件合并之前，其更改必须先保存。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="229"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid Display Filter</source>
         <translation>无效显示过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1212"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid Read Filter</source>
         <translation>无效读取过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1213"/>
+>>>>>>> upstream/master-2.4
         <source>The filter expression %1 isn&apos;t a valid read filter. (%2).</source>
         <translation>过滤器表达式 %1 不是有效的读取过滤器 (%2)。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1302"/>
+>>>>>>> upstream/master-2.4
         <source> before importing a capture</source>
         <oldsource> before importing a new capture</oldsource>
         <translation> 导入新捕获前</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1578"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to export to &quot;%1&quot;.</source>
         <translation>无法导出“%1”。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1579"/>
+>>>>>>> upstream/master-2.4
         <source>You cannot export packets to the current capture file.</source>
         <translation>您不能将分组导出到当前捕获文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1667"/>
+        <location filename="main_window.cpp" line="1692"/>
+>>>>>>> upstream/master-2.4
         <source>.</source>
         <translation>.</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1737"/>
+>>>>>>> upstream/master-2.4
         <source>Do you want to save the changes you&apos;ve made%1?</source>
         <oldsource>Do you want to save the captured packets</oldsource>
         <translation>您是否要保存已做出的更改%1？</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1733"/>
+        <location filename="main_window.cpp" line="1741"/>
+>>>>>>> upstream/master-2.4
         <source>Your captured packets will be lost if you don&apos;t save them.</source>
         <translation>若不保存，您已经捕获的分组将会丢失。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1746"/>
+>>>>>>> upstream/master-2.4
         <source>Do you want to save the changes you&apos;ve made to the capture file &quot;%1&quot;%2?</source>
         <translation>是否希望保存对捕获文件“%1”%2 的更改？</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1738"/>
+        <location filename="main_window.cpp" line="1747"/>
+>>>>>>> upstream/master-2.4
         <source>Your changes will be lost if you don&apos;t save them.</source>
         <translation>若不保存，您的更改将会丢失。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="967"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to drop files during capture.</source>
         <translation>无法在捕获时拖放文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1732"/>
+>>>>>>> upstream/master-2.4
         <source>Do you want to stop the capture and save the captured packets%1?</source>
         <translation>您是否要停止捕获，并保存已捕获的分组%1？</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1740"/>
+>>>>>>> upstream/master-2.4
         <source>Do you want to save the captured packets%1?</source>
         <translation>您是否要保存已捕获的分组%1？</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1764"/>
+>>>>>>> upstream/master-2.4
         <source>Save before Continue</source>
         <translation>继续前保存</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1766"/>
+>>>>>>> upstream/master-2.4
         <source>Stop and Save</source>
         <translation>停止并保存</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1778"/>
+>>>>>>> upstream/master-2.4
         <source>Stop and Quit &amp;without Saving</source>
         <oldsource>Stop and Quit without Saving</oldsource>
         <translation>停止并退出，不保存(&amp;W)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1790"/>
+>>>>>>> upstream/master-2.4
         <source>Quit &amp;without Saving</source>
         <oldsource>Quit without Saving</oldsource>
         <translation>直接退出，不保存(&amp;W)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="773"/>
+        <location filename="main_window.cpp" line="2740"/>
+>>>>>>> upstream/master-2.4
         <source>Show or hide the toolbar</source>
         <translation>显示或隐藏该工具栏</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1781"/>
+        <location filename="main_window.cpp" line="1794"/>
+>>>>>>> upstream/master-2.4
         <source>Continue &amp;without Saving</source>
         <oldsource>Continue without Saving</oldsource>
         <translation>继续，不保存(&amp;W)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="1784"/>
+>>>>>>> upstream/master-2.4
         <source>Stop and Continue &amp;without Saving</source>
         <oldsource>Stop and Continue without Saving</oldsource>
         <translation>停止并继续，不保存(&amp;W)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="2162"/>
+>>>>>>> upstream/master-2.4
         <source>(File name can&apos;t be mapped to UTF-8)</source>
         <translation>文件名不能映射到UTF-8</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="2183"/>
+>>>>>>> upstream/master-2.4
         <source>The Wireshark Network Analyzer</source>
         <translation>Wireshark 网络分析器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.cpp" line="2208"/>
+>>>>>>> upstream/master-2.4
         <source>Capturing from %1</source>
         <translation>正在捕获 %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="217"/>
+>>>>>>> upstream/master-2.4
         <source> before opening another file</source>
         <translation>打开另一个文件前</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="786"/>
+>>>>>>> upstream/master-2.4
         <source>%1: %2</source>
         <translation>%1: %2</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="895"/>
+>>>>>>> upstream/master-2.4
         <source>Saving %1</source>
         <translation>正在保存 %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="940"/>
+>>>>>>> upstream/master-2.4
         <source>No interface selected</source>
         <translation>未选中接口</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="950"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid capture filter</source>
         <translation>无效捕获过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1198"/>
+>>>>>>> upstream/master-2.4
         <source>Clear Menu</source>
         <translation>清除菜单</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1696"/>
+>>>>>>> upstream/master-2.4
         <source>Please wait while Wireshark is initializing</source>
         <translation>Wireshark 正在初始化，请稍候</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1800"/>
+>>>>>>> upstream/master-2.4
         <source> before closing the file</source>
         <translation>关闭文件前</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1882"/>
+>>>>>>> upstream/master-2.4
         <source>Export Selected Packet Bytes</source>
         <translation>导出选择分组字节流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1948"/>
+>>>>>>> upstream/master-2.4
         <source>No Keys</source>
         <translation>无密钥</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1949"/>
+>>>>>>> upstream/master-2.4
         <source>There are no SSL Session Keys to save.</source>
         <translation>没有可以保存的 SSL 会话密钥。</translation>
     </message>
     <message numerus="yes">
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1955"/>
+>>>>>>> upstream/master-2.4
         <source>Export SSL Session Keys (%Ln key(s))</source>
         <oldsource>Export SSL Session Keys (%1 key%2</oldsource>
         <translation>
@@ -7628,66 +10099,125 @@ text-decoration: underline;
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1884"/>
+>>>>>>> upstream/master-2.4
         <source>Raw data (*.bin *.dat *.raw);;All Files (</source>
         <translation>原始数据 (*.bin *.dat *.raw);;所有文件 (</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="840"/>
+>>>>>>> upstream/master-2.4
         <source>Merging files</source>
         <translation>合并文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="1959"/>
+>>>>>>> upstream/master-2.4
         <source>SSL Session Keys (*.keys *.txt);;All Files (</source>
         <translation>SSL 会话密钥 (*.keys *.txt);;所有文件 (</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="2077"/>
+>>>>>>> upstream/master-2.4
         <source>Couldn&apos;t copy text. Try another item.</source>
         <translation>无法复制文本。请尝试其他对象。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Are you sure you want to remove all packet comments?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="main_window_slots.cpp" line="2495"/>
+        <location filename="main_window_slots.cpp" line="3604"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to build conversation filter.</source>
         <translation>无法建立对话过滤器。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="2653"/>
+        <location filename="main_window_slots.cpp" line="2666"/>
+>>>>>>> upstream/master-2.4
         <source> before reloading the file</source>
         <translation>重新载入文件前</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="2700"/>
+>>>>>>> upstream/master-2.4
         <source>No filter available. Try another </source>
         <translation>无过滤器可用。请尝试其他 </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3611"/>
+>>>>>>> upstream/master-2.4
         <source>Error compiling filter for this conversation.</source>
         <translation>为此对话编译过滤器时出错。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3620"/>
+>>>>>>> upstream/master-2.4
         <source>No previous/next packet in conversation.</source>
         <translation>此对话中没有上一个/下一个分组。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3697"/>
+>>>>>>> upstream/master-2.4
         <source>No Interface Selected</source>
         <translation>未选中接口</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3704"/>
+>>>>>>> upstream/master-2.4
         <source> before starting a new capture</source>
         <translation>在开始新捕获前</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3722"/>
+>>>>>>> upstream/master-2.4
         <source> before restarting the capture</source>
         <translation>重新开始捕获前</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3933"/>
+>>>>>>> upstream/master-2.4
         <source>Wiki Page for %1</source>
         <translation>%1 的 Wiki 页面</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window_slots.cpp" line="3934"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;p&gt;The Wireshark Wiki is maintained by the community.&lt;/p&gt;&lt;p&gt;The page you are about to load might be wonderful, incomplete, wrong, or nonexistent.&lt;/p&gt;&lt;p&gt;Proceed to the wiki?&lt;/p&gt;</source>
         <translation>&lt;p&gt;Wireshark Wiki 由社区进行维护。&lt;/p&gt;&lt;p&gt;您即将加载的页面可能是良好的、不完整的、有错误的，甚至不存在的。&lt;/p&gt;&lt;p&gt;继续访问该 Wiki？&lt;/p&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Filter Button Preferences...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7704,14 +10234,25 @@ text-decoration: underline;
         <translation>移除</translation>
     </message>
     <message>
+=======
+        <location filename="main_window.h" line="288"/>
+>>>>>>> upstream/master-2.4
         <source>Loading</source>
         <translation>正在载入</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.h" line="290"/>
+>>>>>>> upstream/master-2.4
         <source>Reloading</source>
         <translation>正在重新加载</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="main_window.h" line="291"/>
+>>>>>>> upstream/master-2.4
         <source>Rescanning</source>
         <translation>正在重新扫描</translation>
     </message>
@@ -7867,18 +10408,34 @@ text-decoration: underline;
         <translation>&lt;small&gt;&lt;i&gt;&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="249"/>
+>>>>>>> upstream/master-2.4
         <source>This version of Wireshark does not save pipe settings.</source>
         <translation>这个版本的 Wireshark 无法保存管道设置。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="253"/>
+>>>>>>> upstream/master-2.4
         <source>This version of Wireshark does not save remote settings.</source>
         <translation>这个版本的 Wireshark 无法保存远端设置。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="255"/>
+>>>>>>> upstream/master-2.4
         <source>This version of Wireshark does not support remote interfaces.</source>
         <translation>这个版本的 Wireshark 不支持远端接口。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="283"/>
+>>>>>>> upstream/master-2.4
         <source>New Pipe</source>
         <translation>新建管道</translation>
     </message>
@@ -8194,38 +10751,74 @@ text-decoration: underline;
         <translation>摘要为文本</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="718"/>
+>>>>>>> upstream/master-2.4
         <source>Align Left</source>
         <translation>左对齐</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="719"/>
+>>>>>>> upstream/master-2.4
         <source>Align Center</source>
         <translation>居中对齐</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="720"/>
+>>>>>>> upstream/master-2.4
         <source>Align Right</source>
         <translation>右对齐</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="722"/>
+>>>>>>> upstream/master-2.4
         <source>Column Preferences</source>
         <translation>列首选项</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="723"/>
+>>>>>>> upstream/master-2.4
         <source>Edit Column</source>
         <translation>编辑列</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="724"/>
+>>>>>>> upstream/master-2.4
         <source>Resize To Contents</source>
         <translation>适应内容</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="725"/>
+>>>>>>> upstream/master-2.4
         <source>Resolve Names</source>
         <translation>名称解析</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="730"/>
+>>>>>>> upstream/master-2.4
         <source>Remove This Column</source>
         <translation>删除此列</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="1140"/>
+>>>>>>> upstream/master-2.4
         <source>Frame %1: %2
 
 </source>
@@ -8233,6 +10826,10 @@ text-decoration: underline;
 </translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list.cpp" line="1144"/>
+>>>>>>> upstream/master-2.4
         <source>[ Comment text exceeds %1. Stopping. ]</source>
         <translation>[ 注释文本超过 %1。正在停止。 ]</translation>
     </message>
@@ -8240,10 +10837,18 @@ text-decoration: underline;
 <context>
     <name>PacketListModel</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list_model.cpp" line="320"/>
+>>>>>>> upstream/master-2.4
         <source>Dissecting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="packet_list_model.cpp" line="342"/>
+>>>>>>> upstream/master-2.4
         <source>Sorting &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8344,10 +10949,18 @@ text-decoration: underline;
         <translation>一个首选项</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="preference_editor_frame.cpp" line="80"/>
+>>>>>>> upstream/master-2.4
         <source>Open %1 preferences</source>
         <translation>打开 %1 首选项</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="preference_editor_frame.cpp" line="260"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8366,8 +10979,14 @@ text-decoration: underline;
 <context>
     <name>PrefsModel</name>
     <message>
+<<<<<<< HEAD
         <source>Advanced</source>
         <extracomment>Names of special preferences handled by the GUI</extracomment>
+=======
+        <location filename="preferences_dialog.ui" line="64"/>
+        <source>Filter Buttons</source>
+        <oldsource>Filter Expressions</oldsource>
+>>>>>>> upstream/master-2.4
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8466,50 +11085,98 @@ text-decoration: underline;
         <translation>复制该配置文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="59"/>
+>>>>>>> upstream/master-2.4
         <source>Configuration Profiles</source>
         <translation>配置文件</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="164"/>
+>>>>>>> upstream/master-2.4
         <source>Will be reset to default values</source>
         <translation>将重置为默认值</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="180"/>
+>>>>>>> upstream/master-2.4
         <source>Created from %1</source>
         <translation>创建自 %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="182"/>
+>>>>>>> upstream/master-2.4
         <source>(system provided)</source>
         <translation>(系统提供)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="188"/>
+>>>>>>> upstream/master-2.4
         <source>Created from default settings</source>
         <translation>根据默认设置创建</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="191"/>
+>>>>>>> upstream/master-2.4
         <source>Renamed from %1</source>
         <translation>重命名自 %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="197"/>
+>>>>>>> upstream/master-2.4
         <source>Go to %1</source>
         <translation>转到 %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="222"/>
+>>>>>>> upstream/master-2.4
         <source>This is a system provided profile.</source>
         <translation>这是一个系统提供的配置文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="226"/>
+>>>>>>> upstream/master-2.4
         <source>A profile already exists with this name.</source>
         <translation>已存在该名称的配置文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="231"/>
+>>>>>>> upstream/master-2.4
         <source>A profile already exists with this name</source>
         <translation>已存在该名称的配置文件。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="235"/>
+>>>>>>> upstream/master-2.4
         <source>The profile will be reset to default values.</source>
         <translation>此配置文件将重置为默认值。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="profile_dialog.cpp" line="365"/>
+>>>>>>> upstream/master-2.4
         <source>Profile Error</source>
         <translation>配置文件错误</translation>
     </message>
@@ -8669,6 +11336,105 @@ text-decoration: underline;
         <translation>窗口大小 (B)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="io_graph_dialog.cpp" line="2010"/>
+        <source>Packets</source>
+        <translation>分组</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2011"/>
+        <source>Bytes</source>
+        <translation>字节</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2012"/>
+        <source>Bits</source>
+        <translation>比特</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2013"/>
+        <source>SUM(Y Field)</source>
+        <translation>总和 (Y字段)</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2014"/>
+        <source>COUNT FRAMES(Y Field)</source>
+        <translation>COUNT FRAMES (Y字段)</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2015"/>
+        <source>COUNT FIELDS(Y Field)</source>
+        <translation>COUNT FIELDS (Y字段)</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2016"/>
+        <source>MAX(Y Field)</source>
+        <translation>最大值 (Y字段)</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2017"/>
+        <source>MIN(Y Field)</source>
+        <translation>最小值 (Y字段)</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2018"/>
+        <source>AVG(Y Field)</source>
+        <translation>平均值 (Y字段)</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2019"/>
+        <source>LOAD(Y Field)</source>
+        <translation>星形 (Y字段)</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2028"/>
+        <source>Line</source>
+        <translation>折线</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2029"/>
+        <source>Impulse</source>
+        <translation>脉冲</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2030"/>
+        <source>Bar</source>
+        <translation>条形</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2031"/>
+        <source>Stacked Bar</source>
+        <translation>堆积条形图</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2032"/>
+        <source>Dot</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2033"/>
+        <source>Square</source>
+        <translation>方形</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2034"/>
+        <source>Diamond</source>
+        <translation>星形</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2045"/>
+        <source>None</source>
+        <translation>无</translation>
+    </message>
+    <message>
+        <location filename="io_graph_dialog.cpp" line="2047"/>
+        <source>%1 interval SMA</source>
+        <translation>%1 间隔 SMA</translation>
+    </message>
+    <message>
+        <location filename="capture_file.cpp" line="50"/>
+>>>>>>> upstream/master-2.4
         <source>[no capture file]</source>
         <translation>[无捕获文件]</translation>
     </message>
@@ -8737,14 +11503,27 @@ text-decoration: underline;
         <translation>任何</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="simple_dialog.cpp" line="115"/>
+>>>>>>> upstream/master-2.4
         <source>Don&apos;t show this message again.</source>
         <translation>不再显示此消息。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Multiple problems found</source>
         <translation>发现多个问题</translation>
     </message>
     <message>
+=======
+        <location filename="simple_dialog.cpp" line="295"/>
+        <source>Multiple problems found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rtp_stream_dialog.cpp" line="128"/>
+>>>>>>> upstream/master-2.4
         <source>%1 (%L2%)</source>
         <translation>%1 (%L2%)</translation>
     </message>
@@ -8989,26 +11768,50 @@ text-decoration: underline;
         <translation>DLT %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="../../wireshark-qt.cpp" line="876"/>
+>>>>>>> upstream/master-2.4
         <source>Invalid Display Filter</source>
         <translation>无效显示过滤器</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="../../wireshark-qt.cpp" line="877"/>
+>>>>>>> upstream/master-2.4
         <source>The filter expression %1 isn&apos;t a valid display filter. (%2).</source>
         <translation>筛选器表达式 %1 不是有效的显示筛选器 (%2)。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="121"/>
+        <location filename="manage_interfaces_dialog.cpp" line="124"/>
+        <location filename="manage_interfaces_dialog.cpp" line="127"/>
+        <location filename="manage_interfaces_dialog.cpp" line="130"/>
+>>>>>>> upstream/master-2.4
         <source>Error</source>
         <translation type="unfinished">错误</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="121"/>
+>>>>>>> upstream/master-2.4
         <source>No remote interfaces found.</source>
         <translation type="unfinished">远程接口没有发现。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="127"/>
+>>>>>>> upstream/master-2.4
         <source>PCAP not found</source>
         <translation type="unfinished">PCAP没有发现</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Unknown error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9028,6 +11831,12 @@ text-decoration: underline;
         <source>Default value is empty</source>
         <translation type="unfinished"></translation>
     </message>
+=======
+        <location filename="manage_interfaces_dialog.cpp" line="130"/>
+        <source>Unknown error</source>
+        <translation type="unfinished"></translation>
+    </message>
+>>>>>>> upstream/master-2.4
 </context>
 <context>
     <name>QObject::QObject</name>
@@ -9071,18 +11880,39 @@ text-decoration: underline;
         <translation>密码:</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="remote_capture_dialog.cpp" line="60"/>
+        <location filename="remote_capture_dialog.cpp" line="92"/>
+        <location filename="remote_capture_dialog.cpp" line="145"/>
+>>>>>>> upstream/master-2.4
         <source>Clear list</source>
         <translation>清除列表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="remote_capture_dialog.cpp" line="132"/>
+        <location filename="remote_capture_dialog.cpp" line="134"/>
+        <location filename="remote_capture_dialog.cpp" line="136"/>
+        <location filename="remote_capture_dialog.cpp" line="138"/>
+>>>>>>> upstream/master-2.4
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="remote_capture_dialog.cpp" line="132"/>
+>>>>>>> upstream/master-2.4
         <source>No remote interfaces found.</source>
         <translation>远程接口没有发现。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="remote_capture_dialog.cpp" line="136"/>
+>>>>>>> upstream/master-2.4
         <source>PCAP not found</source>
         <translation>PCAP没有发现</translation>
     </message>
@@ -9756,10 +12586,18 @@ text-decoration: underline;
 <context>
     <name>RtpAudioStream</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_audio_stream.cpp" line="573"/>
+>>>>>>> upstream/master-2.4
         <source>RTP stream is empty or codec is unsupported.</source>
         <translation>RTP 流是空的，或者编码器不支持。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_audio_stream.cpp" line="597"/>
+>>>>>>> upstream/master-2.4
         <source>%1 does not support PCM at %2. Preferred format is %3</source>
         <translation>%1 不支持 %2 上的 PCM。首选格式为 %3</translation>
     </message>
@@ -9767,6 +12605,11 @@ text-decoration: underline;
 <context>
     <name>RtpPlayerDialog</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.ui" line="14"/>
+        <location filename="rtp_player_dialog.cpp" line="115"/>
+>>>>>>> upstream/master-2.4
         <source>RTP Player</source>
         <translation>RTP 播放器</translation>
     </message>
@@ -10026,34 +12869,66 @@ text-decoration: underline;
         <translation>空格键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="175"/>
+>>>>>>> upstream/master-2.4
         <source>No devices available</source>
         <translation>无可用设备</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="195"/>
+>>>>>>> upstream/master-2.4
         <source>Play Streams</source>
         <translation>播放流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="301"/>
+>>>>>>> upstream/master-2.4
         <source>Out of Sequence</source>
         <translation>乱序</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="316"/>
+>>>>>>> upstream/master-2.4
         <source>Jitter Drops</source>
         <translation>抖动过滤</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="331"/>
+>>>>>>> upstream/master-2.4
         <source>Wrong Timestamps</source>
         <translation>错误的时间戳</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="346"/>
+>>>>>>> upstream/master-2.4
         <source>Inserted Silence</source>
         <translation>插入的静默</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="529"/>
+>>>>>>> upstream/master-2.4
         <source>%1. Press &quot;G&quot; to go to packet %2</source>
         <translation>%1. 按 &quot;G&quot; 去到数据包 %2</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="rtp_player_dialog.cpp" line="716"/>
+>>>>>>> upstream/master-2.4
         <source>Unknown</source>
         <translation>未知</translation>
     </message>
@@ -10919,14 +13794,26 @@ text-decoration: underline;
 <context>
     <name>ScsiServiceResponseTimeDialog</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="scsi_service_response_time_dialog.cpp" line="41"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;small&gt;&lt;i&gt;Select a command and enter a filter if desired, then press Apply.&lt;/i&gt;&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="scsi_service_response_time_dialog.cpp" line="48"/>
+>>>>>>> upstream/master-2.4
         <source>Command:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="scsi_service_response_time_dialog.cpp" line="50"/>
+>>>>>>> upstream/master-2.4
         <source>SCSI Service Response Times</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11410,6 +14297,11 @@ text-decoration: underline;
         <translation>结束</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="show_packet_bytes_dialog.ui" line="109"/>
+        <location filename="show_packet_bytes_dialog.cpp" line="230"/>
+>>>>>>> upstream/master-2.4
         <source>Find:</source>
         <translation>查找:</translation>
     </message>
@@ -11506,10 +14398,19 @@ text-decoration: underline;
         </translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Regex Find:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+=======
+        <location filename="show_packet_bytes_dialog.cpp" line="228"/>
+        <source>Regex Find:</source>
+        <translation type="unfinished">正则表达式查找：</translation>
+    </message>
+    <message>
+        <location filename="show_packet_bytes_dialog.cpp" line="305"/>
+>>>>>>> upstream/master-2.4
         <source>Save Selected Packet Bytes As</source>
         <translation>选中分组的字节另存为</translation>
     </message>
@@ -11778,6 +14679,10 @@ text-decoration: underline;
         <translation>允许通过点击图表来选择 SACK 段及数据包</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="130"/>
+>>>>>>> upstream/master-2.4
         <source>Select SACKs</source>
         <oldsource>select SACKs</oldsource>
         <translation type="unfinished"></translation>
@@ -11791,6 +14696,11 @@ text-decoration: underline;
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;切换连接的方向（查看反向流）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="166"/>
+        <location filename="tcp_stream_dialog.ui" line="491"/>
+>>>>>>> upstream/master-2.4
         <source>Switch Direction</source>
         <translation>切换方向</translation>
     </message>
@@ -11815,330 +14725,676 @@ text-decoration: underline;
         <translation>缩放</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="235"/>
+>>>>>>> upstream/master-2.4
         <source>Display Round Trip Time vs Sequence Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="238"/>
+>>>>>>> upstream/master-2.4
         <source>RTT By Sequence Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="248"/>
+>>>>>>> upstream/master-2.4
         <source>Display graph of Segment Length vs Time</source>
         <translation>显示段长度与时间的图表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="251"/>
+>>>>>>> upstream/master-2.4
         <source>Segment Length</source>
         <translation>段长度</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="261"/>
+>>>>>>> upstream/master-2.4
         <source>Display graph of Mean Transmitted Bytes vs Time</source>
         <translation>显示平均传输字节与时间的图表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="274"/>
+>>>>>>> upstream/master-2.4
         <source>Display graph of Mean ACKed Bytes vs Time</source>
         <translation>显示平均确认字节与时间的图表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="277"/>
+>>>>>>> upstream/master-2.4
         <source>Goodput</source>
         <translation>实际吞吐量</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="287"/>
+>>>>>>> upstream/master-2.4
         <source>Display graph of Receive Window Size vs Time</source>
         <translation>显示接收窗口大小与时间的图表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="290"/>
+>>>>>>> upstream/master-2.4
         <source>Rcv Win</source>
         <translation>接收窗口</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="300"/>
+>>>>>>> upstream/master-2.4
         <source>Display graph of Outstanding Bytes vs Time</source>
         <translation>显示未完成字节与时间的图表</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="303"/>
+>>>>>>> upstream/master-2.4
         <source>Bytes Out</source>
         <translation>发出字节</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="326"/>
+>>>>>>> upstream/master-2.4
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reset the graph to its initial state.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;复位图形到初始状态。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="329"/>
+>>>>>>> upstream/master-2.4
         <source>Reset</source>
         <translation>复位</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="348"/>
+>>>>>>> upstream/master-2.4
         <source>Reset Graph</source>
         <translation>复位图形</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="351"/>
+>>>>>>> upstream/master-2.4
         <source>Reset the graph to its initial state.</source>
         <translation>复位图形到初始状态。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="354"/>
+>>>>>>> upstream/master-2.4
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="359"/>
+        <location filename="tcp_stream_dialog.ui" line="362"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom In</source>
         <translation>放大</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="365"/>
+>>>>>>> upstream/master-2.4
         <source>+</source>
         <translation>+</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="370"/>
+        <location filename="tcp_stream_dialog.ui" line="373"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom Out</source>
         <translation>缩小</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="376"/>
+>>>>>>> upstream/master-2.4
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="381"/>
+        <location filename="tcp_stream_dialog.ui" line="384"/>
+>>>>>>> upstream/master-2.4
         <source>Move Up 10 Pixels</source>
         <translation>上移10像素</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="387"/>
+>>>>>>> upstream/master-2.4
         <source>Up</source>
         <translation>上键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="392"/>
+        <location filename="tcp_stream_dialog.ui" line="395"/>
+>>>>>>> upstream/master-2.4
         <source>Move Left 10 Pixels</source>
         <translation>左移10像素</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="398"/>
+>>>>>>> upstream/master-2.4
         <source>Left</source>
         <translation>左键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="403"/>
+        <location filename="tcp_stream_dialog.ui" line="406"/>
+>>>>>>> upstream/master-2.4
         <source>Move Right 10 Pixels</source>
         <translation>右移10像素</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="409"/>
+>>>>>>> upstream/master-2.4
         <source>Right</source>
         <translation>右键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="414"/>
+        <location filename="tcp_stream_dialog.ui" line="417"/>
+>>>>>>> upstream/master-2.4
         <source>Move Down 10 Pixels</source>
         <translation>下移10像素</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="420"/>
+>>>>>>> upstream/master-2.4
         <source>Down</source>
         <translation>下键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="425"/>
+        <location filename="tcp_stream_dialog.ui" line="428"/>
+>>>>>>> upstream/master-2.4
         <source>Move Up 1 Pixel</source>
         <translation>上移1像素</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="431"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Up</source>
         <translation>Shift+上键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="436"/>
+        <location filename="tcp_stream_dialog.ui" line="439"/>
+>>>>>>> upstream/master-2.4
         <source>Move Left 1 Pixel</source>
         <translation>左移1像素</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="442"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Left</source>
         <translation>Shift+右键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="447"/>
+        <location filename="tcp_stream_dialog.ui" line="450"/>
+>>>>>>> upstream/master-2.4
         <source>Move Right 1 Pixel</source>
         <translation>右移1像素</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="453"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Right</source>
         <translation>Shift+右键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="458"/>
+        <location filename="tcp_stream_dialog.ui" line="461"/>
+>>>>>>> upstream/master-2.4
         <source>Move Down 1 Pixel</source>
         <translation>下移1像素</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="464"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Down</source>
         <translation>Shift+下键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="469"/>
+>>>>>>> upstream/master-2.4
         <source>Next Stream</source>
         <translation>下一条流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="472"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the next stream in the capture</source>
         <translation>跳转到捕获的下一条流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="475"/>
+>>>>>>> upstream/master-2.4
         <source>PgUp</source>
         <translation>PgUp</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="480"/>
+>>>>>>> upstream/master-2.4
         <source>Previous Stream</source>
         <translation>前一条流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="483"/>
+>>>>>>> upstream/master-2.4
         <source>Go to the previous stream in the capture</source>
         <translation>跳转到捕获的前一条流</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="486"/>
+>>>>>>> upstream/master-2.4
         <source>PgDown</source>
         <translation>PgDown</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="494"/>
+>>>>>>> upstream/master-2.4
         <source>Switch direction (swap TCP endpoints)</source>
         <translation>切换方向（交换TCP端点）</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="497"/>
+>>>>>>> upstream/master-2.4
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="502"/>
+>>>>>>> upstream/master-2.4
         <source>Go To Packet Under Cursor</source>
         <translation>跳转到光标所在的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="505"/>
+>>>>>>> upstream/master-2.4
         <source>Go to packet currently under the cursor</source>
         <translation>跳转到当前光标所在的分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="508"/>
+>>>>>>> upstream/master-2.4
         <source>G</source>
         <translation>G</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="513"/>
+>>>>>>> upstream/master-2.4
         <source>Drag / Zoom</source>
         <translation>拖拽/缩放</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="516"/>
+>>>>>>> upstream/master-2.4
         <source>Toggle mouse drag / zoom behavior</source>
         <translation>触发鼠标拖拽/缩放行为</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="519"/>
+>>>>>>> upstream/master-2.4
         <source>Z</source>
         <translation>Z</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="524"/>
+>>>>>>> upstream/master-2.4
         <source>Relative / Absolute Sequence Numbers</source>
         <translation>相对/绝对 序列号</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="527"/>
+>>>>>>> upstream/master-2.4
         <source>Toggle relative / absolute sequence numbers</source>
         <translation>触发相对/绝对序列号</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="530"/>
+>>>>>>> upstream/master-2.4
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="535"/>
+>>>>>>> upstream/master-2.4
         <source>Capture / Session Time Origin</source>
         <translation>捕获/会话时间起源</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="538"/>
+>>>>>>> upstream/master-2.4
         <source>Toggle capture / session time origin</source>
         <translation>触发捕获/会话时间起源</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="541"/>
+>>>>>>> upstream/master-2.4
         <source>T</source>
         <translation>T</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="546"/>
+>>>>>>> upstream/master-2.4
         <source>Crosshairs</source>
         <translation>十字线</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="549"/>
+>>>>>>> upstream/master-2.4
         <source>Toggle crosshairs</source>
         <translation>切换十字线</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="552"/>
+>>>>>>> upstream/master-2.4
         <source>Space</source>
         <translation>空格键</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="557"/>
+        <location filename="tcp_stream_dialog.cpp" line="1365"/>
+>>>>>>> upstream/master-2.4
         <source>Round Trip Time</source>
         <translation>往返时间</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="560"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the Round Trip Time graph</source>
         <translation>切换到往返时间图</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="563"/>
+>>>>>>> upstream/master-2.4
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="264"/>
+        <location filename="tcp_stream_dialog.ui" line="568"/>
+        <location filename="tcp_stream_dialog.cpp" line="1093"/>
+>>>>>>> upstream/master-2.4
         <source>Throughput</source>
         <translation>吞吐量</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="571"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the Throughput graph</source>
         <translation>切换到吞吐量图</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="574"/>
+>>>>>>> upstream/master-2.4
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="579"/>
+>>>>>>> upstream/master-2.4
         <source>Time / Sequence (Stevens)</source>
         <translation>时间/序列 (Stevens)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="582"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the Stevens-style Time / Sequence graph</source>
         <translation>切换到Stevens样式的时间/序列图</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="585"/>
+>>>>>>> upstream/master-2.4
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="590"/>
+        <location filename="tcp_stream_dialog.cpp" line="1460"/>
+>>>>>>> upstream/master-2.4
         <source>Window Scaling</source>
         <translation>窗口尺寸</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="593"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the Window Scaling graph</source>
         <translation>切换到窗口尺寸图</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="596"/>
+>>>>>>> upstream/master-2.4
         <source>5</source>
         <translation>5</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="601"/>
+>>>>>>> upstream/master-2.4
         <source>Time / Sequence (tcptrace)</source>
         <translation>时间/序列 (tcptrace)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="604"/>
+>>>>>>> upstream/master-2.4
         <source>Switch to the tcptrace-style Time / Sequence graph</source>
         <translation>切换到tcptrace样式的时间/序列图</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="607"/>
+>>>>>>> upstream/master-2.4
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="612"/>
+        <location filename="tcp_stream_dialog.ui" line="615"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom In X Axis</source>
         <translation>放大 X 轴</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="618"/>
+>>>>>>> upstream/master-2.4
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="623"/>
+        <location filename="tcp_stream_dialog.ui" line="626"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom Out X Axis</source>
         <translation>缩小 X 轴</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="629"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+X</source>
         <translation>Shift+X</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="634"/>
+        <location filename="tcp_stream_dialog.ui" line="637"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom In Y Axis</source>
         <translation>放大 Y 轴</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="640"/>
+>>>>>>> upstream/master-2.4
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="645"/>
+        <location filename="tcp_stream_dialog.ui" line="648"/>
+>>>>>>> upstream/master-2.4
         <source>Zoom Out Y Axis</source>
         <translation>缩小 Y 轴</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.ui" line="651"/>
+>>>>>>> upstream/master-2.4
         <source>Shift+Y</source>
         <translation>Shift+Y</translation>
     </message>
@@ -12156,70 +15412,138 @@ text-decoration: underline;
         <translation>%1 %2 分组, %3 %4 %5 分组, %6</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="730"/>
+>>>>>>> upstream/master-2.4
         <source>Sequence Numbers (Stevens)</source>
         <translation>序列号 (Stevens)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="755"/>
+>>>>>>> upstream/master-2.4
         <source>Sequence Numbers (tcptrace)</source>
         <translation>序列号 (tcptrace)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1095"/>
+>>>>>>> upstream/master-2.4
         <source> (MA)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1097"/>
+>>>>>>> upstream/master-2.4
         <source> (%1 Segment MA)</source>
         <translation>(%1 Segment MA)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1118"/>
+>>>>>>> upstream/master-2.4
         <source> [not enough data]</source>
         <translation> [没有足够数据]</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1515"/>
+>>>>>>> upstream/master-2.4
         <source> for %1:%2 %3 %4:%5</source>
         <translation>对于 %1:%2 %3 %4:%5</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1702"/>
+>>>>>>> upstream/master-2.4
         <source>%1 %2 (%3s len %4 seq %5 ack %6 win %7)</source>
         <translation>%1 %2 (%3s len %4 seq %5 ack %6 win %7)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1703"/>
+>>>>>>> upstream/master-2.4
         <source>Click to select packet</source>
         <translation>点击选取分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1703"/>
+>>>>>>> upstream/master-2.4
         <source>Packet</source>
         <translation>分组</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1717"/>
+>>>>>>> upstream/master-2.4
         <source>Release to zoom, x = %1 to %2, y = %3 to %4</source>
         <translation>释放缩放, x = % 到 %2, y = %3 到 %4</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1723"/>
+>>>>>>> upstream/master-2.4
         <source>Unable to select range.</source>
         <translation>无法选择范围。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1726"/>
+>>>>>>> upstream/master-2.4
         <source>Click to select a portion of the graph.</source>
         <translation>点击选择图形的一部分。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1769"/>
+>>>>>>> upstream/master-2.4
         <source>Portable Document Format (*.pdf)</source>
         <translation>便携式文档格式 (*.pdf)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1770"/>
+>>>>>>> upstream/master-2.4
         <source>Portable Network Graphics (*.png)</source>
         <translation>便携式网络图形格式 (*.png)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1771"/>
+>>>>>>> upstream/master-2.4
         <source>Windows Bitmap (*.bmp)</source>
         <translation>Windows 位图 (*.bmp)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1773"/>
+>>>>>>> upstream/master-2.4
         <source>JPEG File Interchange Format (*.jpeg *.jpg)</source>
         <translation>JPEG 文件交换格式 (*.jpeg *.jpg)</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="tcp_stream_dialog.cpp" line="1780"/>
+>>>>>>> upstream/master-2.4
         <source>Save Graph As</source>
         <translation>保存图形为</translation>
     </message>
@@ -12360,7 +15684,7 @@ text-decoration: underline;
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show absolute times in the start time column.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在开始时间列显示绝对时间。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Absolute start time</source>
@@ -12671,18 +15995,34 @@ text-decoration: underline;
 <context>
     <name>WiresharkApplication</name>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="wireshark_application.cpp" line="599"/>
+>>>>>>> upstream/master-2.4
         <source>Dell Backup and Recovery Found</source>
         <translation>发现 Dell Backup and Recovery</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="wireshark_application.cpp" line="600"/>
+>>>>>>> upstream/master-2.4
         <source>You appear to be running Dell Backup and Recovery 1.8.</source>
         <translation>您似乎正在运行 Dell Backup and Recovery 1.8。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="wireshark_application.cpp" line="601"/>
+>>>>>>> upstream/master-2.4
         <source>DBAR can make many applications crash &lt;a href=&quot;https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=12036&quot;&gt;including Wireshark&lt;/a&gt;.</source>
         <translation>DBAR 可能使许多应用程序崩溃，&lt;a href=&quot;https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=12036&quot;&gt;包括 Wireshark&lt;/a&gt;。</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <location filename="wireshark_application.cpp" line="605"/>
+>>>>>>> upstream/master-2.4
         <source>Offending DLL: %1</source>
         <translation>违规 DLL：%1</translation>
     </message>

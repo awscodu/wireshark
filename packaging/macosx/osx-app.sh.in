@@ -82,8 +82,6 @@ do
 	fi
 done
 
-cs_binary_list=
-
 # Location for libraries (macosx-setup.sh defaults to whatever the
 # various support libraries use as their standard installation location,
 # which is /usr/local)
@@ -127,11 +125,9 @@ OPTIONS
 		Specify the path to Info.plist. Info.plist can be found
 		in the base directory of the source code once configure
 		has been run.
-	-sdkroot
-		Specify the root of the SDK to use.
 
 EXAMPLE
-	$0 -s -l /opt/local -bp ../../Build/bin -p Info.plist -sdkroot /Developer/SDKs/MacOSX10.5.sdk
+	$0 -s -l /opt/local -bp ../../Build/bin -p Info.plist
 "
 }
 
@@ -166,9 +162,6 @@ do
 		-h|--help)
 			help
 			exit 0 ;;
-		-sdkroot)
-			sdkroot="$2"
-			shift 1 ;;
 		*)
 			echo "Invalid command line option: $1"
 			exit 2 ;;
@@ -237,9 +230,113 @@ pkgplugin="$bundle/Contents/PlugIns/wireshark/@VERSION_MAJOR@.@VERSION_MINOR@"
 # Set the 'macosx' directory, usually the current directory.
 resdir=`pwd`
 
+<<<<<<< HEAD:packaging/macosx/osx-app.sh.in
 if [ -z "$cs_binary_list" ]; then
-	for binary in Wireshark $cli_binary_list ; do
+=======
+# Create the application bundle.
+# This is only used by Autotools. This can be removed if we start using
+# CMake exclusively.
+create_bundle() {
+	# Remove a previously existing bundle if necessary
+	if [ -d $bundle ]; then
+		echo "Removing previous $bundle"
+		rm -Rf $bundle
+	fi
+
+	# Prepare Package
+	#----------------------------------------------------------
+
+	mkdir -p "$pkgexec"
+	mkdir -p "$pkgexec/extcap"
+	mkdir -p "$pkgbin"
+	mkdir -p "$pkgplugin"
+
+	# Copy all files into the bundle
+	#----------------------------------------------------------
+	echo -e "\nFilling app bundle and utility directory...\n"
+
+	# Wireshark executables
+	cp -v "$binary_path/$wireshark_bin_name" "$pkgexec/Wireshark"
+	cs_binary_list="$cs_binary_list $pkgexec/Wireshark"
+	for binary in $cli_binary_list ; do
+		# Copy the binary to the executable directory
+		cp -v "$binary_path/$binary" "$pkgexec"
 		cs_binary_list="$cs_binary_list $pkgexec/$binary"
+	done
+
+	#
+	# extcap binaries
+	#
+	for binary in $extcap_binary_list ; do
+		# Copy the binary to its destination
+		binary=$( basename $binary )
+		bin_dest="$pkgexec/extcap"
+		cp -v "$extcap_path/$binary" "$bin_dest"
+		cs_binary_list="$cs_binary_list $bin_dest/$binary"
+	done
+
+	#
+	# Executable launchers in $pkgbin
+	#
+	# We can't just symbolically link to the executables, as
+	# that means that the executable won't be in Contents/MacOS,
+	# which means that all @executable_path-relative references
+	# will go to the wrong place if we run the executables using
+	# the symlink, which means that the executables could fail
+	# (they *do* fail to find the Cocoa Qt plugin, for example).
+	#
+	cp utility-launcher/wireshark $pkgbin
+	for binary in $cli_binary_list ; do
+		ln -s ./wireshark $pkgbin/$binary
+	done
+
+	# The rest of the Wireshark installation (we handled bin above)
+	rsync -av \
+		--exclude bin/ \
+		--exclude lib/ \
+		"$binary_path/.."/* "$pkgres"
+
+	rsync -av $library_path/*.dylib "$pkglib/"
+
+	# Copy the plugins from the "make install" location for them
+	# to the plugin directory, removing the version number
+	find "$plugin_path" \
+		-type f \
+		\( -name "*.so" -o -name "*.dylib" \) \
+		-exec cp -fv "{}" "$pkgplugin/" \;
+
+	cp "$plist" "$bundle/Contents/Info.plist"
+
+	# Icons and the rest of the script framework
+	res_list="
+		Wireshark.icns
+		Wiresharkdoc.icns
+	"
+
+	for rl_entry in $res_list ; do
+		rsync -av "$resdir"/$rl_entry "$bundle"/Contents/Resources/
+	done
+
+	# PkgInfo must match bundle type and creator code from Info.plist
+	echo "APPLWshk" > $bundle/Contents/PkgInfo
+
+} # create_bundle
+
+if [ "$create_bundle" = "true" ]; then
+	create_bundle
+fi
+
+#
+# Get a list of all binaries in the bundle.
+#
+bundle_binary_list=
+if [ -z "$bundle_binary_list" ]; then
+>>>>>>> upstream/master-2.4:packaging/macosx/osx-app.sh
+	for binary in Wireshark $cli_binary_list ; do
+		bundle_binary_list="$bundle_binary_list $pkgexec/$binary"
+	done
+	for binary in $extcap_binaries ; do
+		bundle_binary_list="$bundle_binary_list $pkgexec/extcap/$binary"
 	done
 fi
 
@@ -250,22 +347,37 @@ echo -e "\nFixing up $bundle...\n"
 a=1
 nfiles=0
 endl=true
-lib_dep_search_list="
-	$pkglib/*
-	$pkgexec/*
-	$pkgexec/extcap/*
-	"
-
 while $endl; do
 	echo -e "Looking for dependencies. Round" $a
 	#
-	# libssh, for some reason, has its "install name" set to
-	# just libssh.4.dylib, rather than /usr/local/lib/libssh.4.dylib,
-	# when built by macosx-setup.sh.  We have to fix that; that's
-	# what the sed command does.
+	# To find dependencies, we:
+	#
+	#    run otool -L on all the binaries in the bundle, and on all
+	#    the shared libraries in the $pkglib directory, to find all
+	#    the libraries they depend on (we don't bother with the
+	#    frameworks, as the only frameworks we ship are the Qt
+	#    frameworks, which don't depend on any libraries that
+	#    don't ship with the OS, and as it's hard to find the
+	#    framework libraries under $pkglib without getting
+	#    non-framework files);
+	#
+	#    filter out all lines that don't contain "compatibility" to
+	#    remove lines of output that don't correspond to dependencies;
+	#
+	#    use cut to extract the library name from the output;
+	#
+	#    replace "libssh" with "/usr/local/lib/libssh" because
+	#    libssh, for some reason, has its "install name" set to
+	#    just libssh.4.dylib, rather than /usr/local/lib/libssh.4.dylib,
+	#    when built by macosx-setup.sh;
+	#
+	#    strip out system libraries, as we don't bundle them with
+	#    Wireshark;
+	#
+	#    eliminate duplicates.
 	#
 	libs="`\
-		otool -L $lib_dep_search_list 2>/dev/null \
+		otool -L $bundle_binary_list "$pkglib"/*.dylib 2>/dev/null \
 		| fgrep compatibility \
 		| cut -d\( -f1 \
 		| sed '1,$s;^	libssh;	/usr/local/lib/libssh;' \
@@ -290,14 +402,14 @@ chmod 755 "$pkglib"/*.dylib
 if [ "$strip" = "true" ]; then
 	echo -e "\nStripping debugging symbols...\n"
 	strip -x "$pkglib"/*.dylib
-	strip -ur "$binpath"
+	strip -ur "$bundle_binary_list"
 fi
 
 #
 # This may not work on Qt 5.5.0 or 5.5.1:
 # https://bugreports.qt.io/browse/QTBUG-47868
 #
-macdeployqt "$bundle" -verbose=2 || exit 1
+macdeployqt "$bundle" -no-strip -verbose=2 || exit 1
 
 #
 # The build process added to the Wireshark binary an rpath entry
@@ -317,7 +429,7 @@ rpathify_file () {
 	#
 	# OK, what type of file is this?
 	#
-	filetype=$( otool -hv "$1" | sed -n '4p' | awk '{print $5}' ; exit ${PIPESTATUS[0]} )
+	filetype=$( otool -hv "$1" | egrep MH_MAGIC | awk '{print $5}' ; exit ${PIPESTATUS[0]} )
 	if [ $? -ne 0 ] ; then
 		echo "Unable to rpathify $1 in $( pwd ): file type failed."
 		exit 1
@@ -503,11 +615,11 @@ if [ -n "$CODE_SIGN_IDENTITY" ] ; then
 	security find-identity -v -s "$CODE_SIGN_IDENTITY" -p codesigning
 
 	echo "Signing executables"
-	if [ -z "$cs_binary_list" ] ; then
+	if [ -z "$bundle_binary_list" ] ; then
 		echo "No executables specified for code signing."
 		exit 1
 	fi
-	for binary in $cs_binary_list ; do
+	for binary in $bundle_binary_list ; do
 		if [ -e "$binary" ];then
 			codesign_file "$binary"
 		fi

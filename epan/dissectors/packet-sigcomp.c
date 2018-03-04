@@ -165,10 +165,14 @@ static dissector_handle_t sigcomp_handle;
 /* Default preference whether to display the bytecode in UDVM operands or not */
 static gboolean display_udvm_bytecode = FALSE;
 /* Default preference whether to dissect the UDVM code or not */
-static gboolean dissect_udvm_code = TRUE;
+/* WARNING: Setting this to true might result in the entire dissector being
+   disabled by default or removed completely. */
+static gboolean dissect_udvm_code = FALSE;
 static gboolean display_raw_txt = FALSE;
 /* Default preference whether to decompress the message or not */
-static gboolean decompress = TRUE;
+/* WARNING: Setting this to true might result in the entire dissector being
+   disabled by default or removed completely. */
+static gboolean decompress = FALSE;
 /* Default preference whether to print debug info at execution of UDVM
  * 0 = No printout
  * 1 = details level 1
@@ -1273,6 +1277,8 @@ decode_udvm_literal_operand(guint8 *buff,guint operand_address, guint16 *value)
     guint   offset = operand_address;
     guint8  temp_data;
 
+    if (operand_address >= UDVM_MEMORY_SIZE)
+        return -1;
     bytecode = buff[operand_address];
     test_bits = bytecode >> 7;
     if (test_bits == 1) {
@@ -1338,6 +1344,8 @@ dissect_udvm_reference_operand_memory(guint8 *buff,guint operand_address, guint1
     guint8  temp_data;
     guint16 temp_data16;
 
+    if (operand_address >= UDVM_MEMORY_SIZE)
+        return -1;
     bytecode = buff[operand_address];
     test_bits = bytecode >> 7;
     if (test_bits == 1) {
@@ -1385,7 +1393,7 @@ dissect_udvm_reference_operand_memory(guint8 *buff,guint operand_address, guint1
     }
 
     if (offset >= UDVM_MEMORY_SIZE || *result_dest >= UDVM_MEMORY_SIZE - 1 )
-        return 0;
+        return -1;
 
     return offset;
 }
@@ -1418,6 +1426,8 @@ decode_udvm_multitype_operand(guint8 *buff,guint operand_address, guint16 *value
 
     *value = 0;
 
+    if (operand_address >= UDVM_MEMORY_SIZE)
+        return -1;
     bytecode = buff[operand_address];
     test_bits = ( bytecode & 0xc0 ) >> 6;
     switch (test_bits ) {
@@ -1566,13 +1576,13 @@ decode_udvm_address_operand(guint8 *buff,guint operand_address, guint16 *value,g
 {
     guint32 result;
     guint16 value1;
-    guint   next_opreand_address;
+    gint   next_operand_address;
 
-    next_opreand_address = decode_udvm_multitype_operand(buff, operand_address, &value1);
+    next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &value1);
     result = value1 & 0xffff;
     result = result + current_address;
     *value = result & 0xffff;
-    return next_opreand_address;
+    return next_operand_address;
 }
 
 
@@ -1743,7 +1753,7 @@ decompress_sigcomp_message(tvbuff_t *bytecode_tvb, tvbuff_t *message_tvb, packet
     guint          operand_address;
     guint          input_address;
     guint16        output_address             = 0;
-    guint          next_operand_address;
+    gint           next_operand_address;
     guint8         octet;
     guint8         msb;
     guint8         lsb;
@@ -1969,7 +1979,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -1979,6 +1989,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2013,7 +2025,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2023,6 +2035,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2057,7 +2071,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2092,7 +2106,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2102,6 +2116,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             ti = proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2139,7 +2155,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2149,6 +2165,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             ti = proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2185,7 +2203,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2195,6 +2213,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2227,7 +2247,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2237,6 +2257,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2270,7 +2292,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2280,6 +2302,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2320,7 +2344,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2330,6 +2354,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2372,7 +2398,7 @@ execute_next_instruction:
         /* $operand_1*/
         operand_address = current_address + 1;
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &operand_1, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_1, bytecode_tvb, offset, (next_operand_address-operand_address), operand_1,
@@ -2382,6 +2408,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %operand_2*/
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &operand_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_operand_2, bytecode_tvb, offset, (next_operand_address-operand_address), operand_2,
                                 "Addr: %u      operand_2 %u", operand_address, operand_2);
@@ -2444,6 +2472,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %position */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &position);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (print_level_1 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_position, bytecode_tvb, offset, (next_operand_address-operand_address), position,
                                 "Addr: %u      position %u", operand_address, position);
@@ -2453,6 +2483,8 @@ execute_next_instruction:
 
         /* %length */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (print_level_1 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_length, bytecode_tvb, offset, (next_operand_address-operand_address), length,
                                 "Addr: %u      Length %u", operand_address, length);
@@ -2462,7 +2494,7 @@ execute_next_instruction:
 
         /* $destination */
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &ref_destination, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (print_level_1 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_ref_dest, bytecode_tvb, offset, (next_operand_address-operand_address), ref_destination,
@@ -2543,6 +2575,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %address */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &addr);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_address, bytecode_tvb, offset, (next_operand_address-operand_address), addr,
                                 "Addr: %u      Address %u", operand_address, addr);
@@ -2551,6 +2585,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %value */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &value);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2)
         {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_value, bytecode_tvb, offset, (next_operand_address-operand_address), value,
@@ -2587,6 +2623,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %address */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &addr);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_address, bytecode_tvb, offset, (next_operand_address-operand_address), addr,
                                 "Addr: %u      Address %u", operand_address, addr);
@@ -2596,6 +2634,8 @@ execute_next_instruction:
 
         /* #n */
         next_operand_address = decode_udvm_literal_operand(buff,operand_address, &n);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_literal_num, bytecode_tvb, offset, (next_operand_address-operand_address), n,
                                 "Addr: %u      n %u", operand_address, n);
@@ -2613,6 +2653,8 @@ execute_next_instruction:
             n = n - 1;
             /* %value */
             next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &value);
+            if (next_operand_address < 0)
+                goto decompression_failure;
             lsb = value & 0xff;
             msb = value >> 8;
 
@@ -2645,6 +2687,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %value */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &value);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_value, bytecode_tvb, offset, (next_operand_address-operand_address), value,
                                 "Addr: %u      Value %u", operand_address, value);
@@ -2689,6 +2733,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %value */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &destination);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_address, bytecode_tvb, offset, (next_operand_address-operand_address), destination,
                                 "Addr: %u      Value %u", operand_address, destination);
@@ -2745,6 +2791,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %position */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &position);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_position, bytecode_tvb, offset, (next_operand_address-operand_address), position,
                                 "Addr: %u      position %u", operand_address, position);
@@ -2754,6 +2802,8 @@ execute_next_instruction:
 
         /* %length */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_length, bytecode_tvb, offset, (next_operand_address-operand_address), length,
                                 "Addr: %u      Length %u", operand_address, length);
@@ -2763,6 +2813,8 @@ execute_next_instruction:
 
         /* %destination */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &destination);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_ref_dest, bytecode_tvb, offset, (next_operand_address-operand_address), destination,
                                 "Addr: %u      Destination %u", operand_address, destination);
@@ -2834,6 +2886,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %position */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &position);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_position, bytecode_tvb, offset, (next_operand_address-operand_address), position,
                                 "Addr: %u      position %u", operand_address, position);
@@ -2843,6 +2897,8 @@ execute_next_instruction:
 
         /* %length */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_length, bytecode_tvb, offset, (next_operand_address-operand_address), length,
                                 "Addr: %u      Length %u", operand_address, length);
@@ -2853,7 +2909,7 @@ execute_next_instruction:
 
         /* $destination */
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &ref_destination, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_ref_dest, bytecode_tvb, offset, (next_operand_address-operand_address), ref_destination,
@@ -2932,6 +2988,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %offset */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &multy_offset);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_offset, bytecode_tvb, offset, (next_operand_address-operand_address), multy_offset,
                                 "Addr: %u      offset %u", operand_address, multy_offset);
@@ -2941,6 +2999,8 @@ execute_next_instruction:
 
         /* %length */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_length, bytecode_tvb, offset, (next_operand_address-operand_address), length,
                                 "Addr: %u      Length %u", operand_address, length);
@@ -2951,7 +3011,7 @@ execute_next_instruction:
 
         /* $destination */
         next_operand_address = dissect_udvm_reference_operand_memory(buff, operand_address, &ref_destination, &result_dest);
-        if (next_operand_address < operand_address)
+        if (next_operand_address < 0)
             goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_ref_dest, bytecode_tvb, offset, (next_operand_address-operand_address), ref_destination,
@@ -3067,6 +3127,8 @@ execute_next_instruction:
 
         /* %address */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &addr);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_address, bytecode_tvb, offset, (next_operand_address-operand_address), addr,
                                 "Addr: %u      Address %u", operand_address, addr);
@@ -3076,6 +3138,8 @@ execute_next_instruction:
 
         /*  %length, */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_length, bytecode_tvb, offset, (next_operand_address-operand_address), length,
                                 "Addr: %u      Length %u", operand_address, length);
@@ -3084,6 +3148,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %start_value */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &start_value);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_start_value, bytecode_tvb, offset, (next_operand_address-operand_address), start_value,
                                 "Addr: %u      start_value %u", operand_address, start_value);
@@ -3093,6 +3159,8 @@ execute_next_instruction:
 
         /* %offset */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &multy_offset);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_offset, bytecode_tvb, offset, (next_operand_address-operand_address), multy_offset,
                                 "Addr: %u      offset %u", operand_address, multy_offset);
@@ -3148,6 +3216,8 @@ execute_next_instruction:
         /* @address */
         /* operand_value = (memory_address_of_instruction + D) modulo 2^16 */
         next_operand_address = decode_udvm_address_operand(buff,operand_address, &at_address, current_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address,
                                 "Addr: %u      @Address %u", operand_address, at_address);
@@ -3174,6 +3244,8 @@ execute_next_instruction:
 
         /* %value_1 */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &value_1);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_value, bytecode_tvb, offset, (next_operand_address-operand_address), value_1,
                                 "Addr: %u      Value %u", operand_address, value_1);
@@ -3183,6 +3255,8 @@ execute_next_instruction:
 
         /* %value_2 */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &value_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_value, bytecode_tvb, offset, (next_operand_address-operand_address), value_2,
                                 "Addr: %u      Value %u", operand_address, value_2);
@@ -3193,6 +3267,8 @@ execute_next_instruction:
         /* @address_1 */
         /* operand_value = (memory_address_of_instruction + D) modulo 2^16 */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &at_address_1);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         at_address_1 = ( current_address + at_address_1) & 0xffff;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address_1,
@@ -3205,6 +3281,8 @@ execute_next_instruction:
         /* @address_2 */
         /* operand_value = (memory_address_of_instruction + D) modulo 2^16 */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &at_address_2);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         at_address_2 = ( current_address + at_address_2) & 0xffff;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address_2,
@@ -3216,6 +3294,8 @@ execute_next_instruction:
         /* @address_3 */
         /* operand_value = (memory_address_of_instruction + D) modulo 2^16 */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &at_address_3);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         at_address_3 = ( current_address + at_address_3) & 0xffff;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address_3,
@@ -3251,6 +3331,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* @address */
         next_operand_address = decode_udvm_address_operand(buff,operand_address, &at_address, current_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address,
                                 "Addr: %u      @Address %u", operand_address, at_address);
@@ -3333,6 +3415,8 @@ execute_next_instruction:
          * Number of addresses in the instruction
          */
         next_operand_address = decode_udvm_literal_operand(buff,operand_address, &n);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (print_level_2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_literal_num, bytecode_tvb, offset, (next_operand_address-operand_address), n,
                                 "Addr: %u      n %u", operand_address, n);
@@ -3341,6 +3425,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %j */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &j);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (print_level_2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_j, bytecode_tvb, offset, (next_operand_address-operand_address), j,
                                 "Addr: %u      j %u", operand_address, j);
@@ -3352,6 +3438,8 @@ execute_next_instruction:
             /* @address_n-1 */
             /* operand_value = (memory_address_of_instruction + D) modulo 2^16 */
             next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &at_address_1);
+            if (next_operand_address < 0)
+                goto decompression_failure;
             at_address_1 = ( instruction_address + at_address_1) & 0xffff;
             if (print_level_2 ) {
                 proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address_1,
@@ -3388,6 +3476,8 @@ execute_next_instruction:
 
         /* %value */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &value);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (print_level_2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_value, bytecode_tvb, offset, (next_operand_address-operand_address), value,
                                 "Addr: %u      Value %u", operand_address, value);
@@ -3397,6 +3487,8 @@ execute_next_instruction:
 
         /* %position */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &position);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (print_level_2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_position, bytecode_tvb, offset, (next_operand_address-operand_address), position,
                                 "Addr: %u      position %u", operand_address, position);
@@ -3406,6 +3498,8 @@ execute_next_instruction:
 
         /* %length */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (print_level_2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_length, bytecode_tvb, offset, (next_operand_address-operand_address), length,
                                 "Addr: %u      Length %u", operand_address, length);
@@ -3415,6 +3509,8 @@ execute_next_instruction:
 
         /* @address */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &at_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         at_address = ( current_address + at_address) & 0xffff;
         if (print_level_2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address,
@@ -3481,6 +3577,8 @@ execute_next_instruction:
         operand_address = current_address + 1;
         /* %length */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_length, bytecode_tvb, offset, (next_operand_address-operand_address), length,
                                 "Addr: %u      Length %u", operand_address, length);
@@ -3490,6 +3588,8 @@ execute_next_instruction:
 
         /* %destination */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &destination);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_destination, bytecode_tvb, offset, (next_operand_address-operand_address), destination,
                                 "Addr: %u      Destination %u", operand_address, destination);
@@ -3500,6 +3600,8 @@ execute_next_instruction:
         /* @address */
         /* operand_value = (memory_address_of_instruction + D) modulo 2^16 */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &at_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         at_address = ( current_address + at_address) & 0xffff;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address,
@@ -3609,6 +3711,8 @@ execute_next_instruction:
 
         /* %length */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_length, bytecode_tvb, offset, (next_operand_address-operand_address), length,
                                 "Addr: %u      length %u", operand_address, length);
@@ -3617,6 +3721,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* %destination */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &destination);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_destination, bytecode_tvb, offset, (next_operand_address-operand_address), destination,
                                 "Addr: %u      Destination %u", operand_address, destination);
@@ -3627,6 +3733,8 @@ execute_next_instruction:
         /* @address */
         /* operand_value = (memory_address_of_instruction + D) modulo 2^16 */
         next_operand_address = decode_udvm_address_operand(buff,operand_address, &at_address, current_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address,
                                 "Addr: %u      @Address %u", operand_address, at_address);
@@ -3704,6 +3812,8 @@ execute_next_instruction:
 
         /* %destination */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &destination);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_destination, bytecode_tvb, offset, (next_operand_address-operand_address), destination,
                                 "Addr: %u      Destination %u", operand_address, destination);
@@ -3714,6 +3824,8 @@ execute_next_instruction:
         /* @address */
         /* operand_value = (memory_address_of_instruction + D) modulo 2^16 */
         next_operand_address = decode_udvm_address_operand(buff,operand_address, &at_address, current_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_at_address, bytecode_tvb, offset, (next_operand_address-operand_address), at_address,
                                 "Addr: %u      @Address %u", operand_address, at_address);
@@ -3723,6 +3835,8 @@ execute_next_instruction:
 
         /* #n */
         next_operand_address = decode_udvm_literal_operand(buff,operand_address, &n);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_literal_num, bytecode_tvb, offset, (next_operand_address-operand_address), n,
                                 "Addr: %u      n %u", operand_address, n);
@@ -3787,6 +3901,8 @@ execute_next_instruction:
         while ( m > 0 ) {
             /* %bits_n */
             next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &bits_n);
+            if (next_operand_address < 0)
+                goto decompression_failure;
             if (print_in_loop ) {
                 proto_tree_add_uint_format(udvm_tree, hf_udvm_bits, bytecode_tvb, offset, (next_operand_address-operand_address), bits_n,
                                     "Addr: %u      bits_n %u", operand_address, bits_n);
@@ -3799,6 +3915,8 @@ execute_next_instruction:
 
             /* %lower_bound_n */
             next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &lower_bound_n);
+            if (next_operand_address < 0)
+                goto decompression_failure;
             if (print_in_loop ) {
                 proto_tree_add_uint_format(udvm_tree, hf_udvm_lower_bound, bytecode_tvb, offset, (next_operand_address-operand_address), lower_bound_n,
                                     "Addr: %u      lower_bound_n %u", operand_address, lower_bound_n);
@@ -3807,6 +3925,8 @@ execute_next_instruction:
             operand_address = next_operand_address;
             /* %upper_bound_n */
             next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &upper_bound_n);
+            if (next_operand_address < 0)
+                goto decompression_failure;
             if (print_in_loop ) {
                 proto_tree_add_uint_format(udvm_tree, hf_udvm_upper_bound, bytecode_tvb, offset, (next_operand_address-operand_address), upper_bound_n,
                                     "Addr: %u      upper_bound_n %u", operand_address, upper_bound_n);
@@ -3815,6 +3935,8 @@ execute_next_instruction:
             operand_address = next_operand_address;
             /* %uncompressed_n */
             next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &uncompressed_n);
+            if (next_operand_address < 0)
+                goto decompression_failure;
             if (print_in_loop ) {
                 proto_tree_add_uint_format(udvm_tree, hf_udvm_uncompressed, bytecode_tvb, offset, (next_operand_address-operand_address), uncompressed_n,
                                     "Addr: %u      uncompressed_n %u", operand_address, uncompressed_n);
@@ -3913,6 +4035,8 @@ execute_next_instruction:
          * %partial_identifier_start
          */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &p_id_start);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_partial_identifier_start, bytecode_tvb, offset, (next_operand_address-operand_address), p_id_start,
                                 "Addr: %u       partial_identifier_start %u", operand_address, p_id_start);
@@ -3924,6 +4048,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &p_id_length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_partial_identifier_length, bytecode_tvb, offset, (next_operand_address-operand_address), p_id_length,
                                 "Addr: %u       partial_identifier_length %u", operand_address, p_id_length);
@@ -3934,6 +4060,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_begin);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_state_begin, bytecode_tvb, offset, (next_operand_address-operand_address), state_begin,
                                 "Addr: %u       state_begin %u", operand_address, state_begin);
@@ -3944,6 +4072,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_length, bytecode_tvb, offset, (next_operand_address-operand_address), state_length,
                                 "Addr: %u       state_length %u", operand_address, state_length);
@@ -3954,6 +4084,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_address, bytecode_tvb, offset, (next_operand_address-operand_address), state_address,
                                 "Addr: %u       state_address %u", operand_address, state_address);
@@ -3964,6 +4096,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_instruction);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_instr, bytecode_tvb, offset, (next_operand_address-operand_address), state_instruction,
                                 "Addr: %u       state_instruction %u", operand_address, state_instruction);
@@ -4008,6 +4142,8 @@ execute_next_instruction:
          * %state_length
          */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_length, bytecode_tvb, offset, (next_operand_address-operand_address), state_length,
                                 "Addr: %u       state_length %u", operand_address, state_length);
@@ -4018,6 +4154,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_address, bytecode_tvb, offset, (next_operand_address-operand_address), state_address,
                                 "Addr: %u       state_address %u", operand_address, state_address);
@@ -4028,6 +4166,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_instruction);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_instr, bytecode_tvb, offset, (next_operand_address-operand_address), state_instruction,
                                 "Addr: %u       state_instruction %u", operand_address, state_instruction);
@@ -4038,6 +4178,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &minimum_access_length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_min_acc_len, bytecode_tvb, offset, (next_operand_address-operand_address), minimum_access_length,
                                 "Addr: %u       minimum_access_length %u", operand_address, minimum_access_length);
@@ -4048,6 +4190,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_retention_priority);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_ret_pri, bytecode_tvb, offset, (next_operand_address-operand_address), state_retention_priority,
                                 "Addr: %u       state_retention_priority %u", operand_address, state_retention_priority);
@@ -4133,6 +4277,8 @@ execute_next_instruction:
          * %partial_identifier_start
          */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &p_id_start);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_partial_identifier_start, bytecode_tvb, offset, (next_operand_address-operand_address), p_id_start,
                                 "Addr: %u       partial_identifier_start %u", operand_address, p_id_start);
@@ -4144,6 +4290,8 @@ execute_next_instruction:
          * %partial_identifier_length
          */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &p_id_length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_partial_identifier_length, bytecode_tvb, offset, (next_operand_address-operand_address), p_id_length,
                                 "Addr: %u       partial_identifier_length %u", operand_address, p_id_length);
@@ -4174,6 +4322,8 @@ execute_next_instruction:
          * %output_start
          */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &output_start);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_output_start, bytecode_tvb, offset, (next_operand_address-operand_address), output_start,
                                 "Addr: %u      output_start %u", operand_address, output_start);
@@ -4184,6 +4334,8 @@ execute_next_instruction:
          * %output_length
          */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &output_length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_output_length, bytecode_tvb, offset, (next_operand_address-operand_address), output_length,
                                 "Addr: %u      output_length %u", operand_address, output_length);
@@ -4256,6 +4408,8 @@ execute_next_instruction:
 
         /* %requested_feedback_location */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &requested_feedback_location);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_req_feedback_loc, bytecode_tvb, offset, (next_operand_address-operand_address), requested_feedback_location,
                                 "Addr: %u      requested_feedback_location %u",
@@ -4265,6 +4419,8 @@ execute_next_instruction:
         operand_address = next_operand_address;
         /* returned_parameters_location */
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &returned_parameters_location);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_ret_param_loc, bytecode_tvb, offset, (next_operand_address-operand_address), returned_parameters_location,
                                 "Addr: %u      returned_parameters_location %u", operand_address, returned_parameters_location);
@@ -4275,6 +4431,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_length, bytecode_tvb, offset, (next_operand_address-operand_address), state_length,
                                 "Addr: %u      state_length %u", operand_address, state_length);
@@ -4285,6 +4443,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_address);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_address, bytecode_tvb, offset, (next_operand_address-operand_address), state_address,
                                 "Addr: %u      state_address %u", operand_address, state_address);
@@ -4295,6 +4455,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_instruction);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_instr, bytecode_tvb, offset, (next_operand_address-operand_address), state_instruction,
                                 "Addr: %u      state_instruction %u", operand_address, state_instruction);
@@ -4306,6 +4468,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &minimum_access_length);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_min_acc_len, bytecode_tvb, offset, (next_operand_address-operand_address), minimum_access_length,
                                 "Addr: %u      minimum_access_length %u", operand_address, minimum_access_length);
@@ -4317,6 +4481,8 @@ execute_next_instruction:
          */
         operand_address = next_operand_address;
         next_operand_address = decode_udvm_multitype_operand(buff, operand_address, &state_retention_priority);
+        if (next_operand_address < 0)
+            goto decompression_failure;
         if (show_instr_detail_level == 2 ) {
             proto_tree_add_uint_format(udvm_tree, hf_udvm_state_ret_pri, bytecode_tvb, offset, (next_operand_address-operand_address), state_retention_priority,
                                 "Addr: %u      state_retention_priority %u", operand_address, state_retention_priority);

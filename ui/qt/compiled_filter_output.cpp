@@ -76,7 +76,11 @@ void CompiledFilterOutput::compileFilter()
             if (interfaces.compare(device->display_name)) {
                 continue;
             } else {
+<<<<<<< HEAD
                 pcap_t *pd = pcap_open_dead(device->active_dlt, WTAP_MAX_PACKET_SIZE_STANDARD);
+=======
+                pcap_t *pd = pcap_open_dead(device.active_dlt, WTAP_MAX_PACKET_SIZE_STANDARD);
+>>>>>>> upstream/master-2.4
                 if (pd == NULL)
                     break;
                 g_mutex_lock(pcap_compile_mtx);

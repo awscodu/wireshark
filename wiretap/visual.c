@@ -640,7 +640,11 @@ static gboolean visual_dump(wtap_dumper *wdh, const wtap_rec *rec,
     }
 
     /* Don't write anything we're not willing to read. */
+<<<<<<< HEAD
     if (rec->rec_header.packet_header.caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+=======
+    if (phdr->caplen > WTAP_MAX_PACKET_SIZE_STANDARD) {
+>>>>>>> upstream/master-2.4
         *err = WTAP_ERR_PACKET_TOO_LARGE;
         return FALSE;
     }

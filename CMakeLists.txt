@@ -24,8 +24,13 @@ project(Wireshark C CXX)
 # Updated by make-version.pl
 set(GIT_REVISION 0)
 set(PROJECT_MAJOR_VERSION 2)
+<<<<<<< HEAD
 set(PROJECT_MINOR_VERSION 5)
 set(PROJECT_PATCH_VERSION 1)
+=======
+set(PROJECT_MINOR_VERSION 4)
+set(PROJECT_PATCH_VERSION 6)
+>>>>>>> upstream/master-2.4
 set(PROJECT_BUILD_VERSION ${GIT_REVISION})
 set(PROJECT_VERSION_EXTENSION "")
 set(PROJECT_RELEASE_VERSION "${PROJECT_MAJOR_VERSION}.${PROJECT_MINOR_VERSION}")
@@ -38,7 +43,12 @@ set(PROJECT_VERSION "${PROJECT_MAJOR_VERSION}.${PROJECT_MINOR_VERSION}.${PROJECT
 
 # packaging information
 if(WIN32)
+<<<<<<< HEAD
         set(CPACK_PACKAGE_NAME Wireshark)
+=======
+	# Needed for GREATER_EQUAL operator
+	cmake_minimum_required(VERSION 3.7)
+>>>>>>> upstream/master-2.4
 else()
         set(CPACK_PACKAGE_NAME wireshark)
 endif()
@@ -109,7 +119,7 @@ if(WIN32)
 		file( TO_CMAKE_PATH "$ENV{WIRESHARK_LIB_DIR}" _PROJECT_LIB_DIR )
 	elseif( DEFINED ENV{WIRESHARK_BASE_DIR} )
 		file( TO_CMAKE_PATH "$ENV{WIRESHARK_BASE_DIR}" _WS_BASE_DIR )
-		set( _PROJECT_LIB_DIR "${_WS_BASE_DIR}/wireshark-${WIRESHARK_TARGET_PLATFORM}-libs" )
+		set( _PROJECT_LIB_DIR "${_WS_BASE_DIR}/wireshark-${WIRESHARK_TARGET_PLATFORM}-libs-2.4" )
 	else()
 		# Don't know what to do
 		message(FATAL_ERROR "Neither WIRESHARK_BASE_DIR or WIRESHARK_LIB_DIR are defined")
@@ -198,8 +208,8 @@ endif()
 # Banner shown at top right of Qt welcome screen.
 if(DEFINED ENV{WIRESHARK_VERSION_FLAVOR})
 	set(VERSION_FLAVOR "$ENV{WIRESHARK_VERSION_FLAVOR}")
-else()
-	set(VERSION_FLAVOR "Development Build")
+#else()
+#	set(VERSION_FLAVOR "Development Build")
 endif()
 
 # These are required in .rc files and manifests
@@ -854,7 +864,11 @@ endif()
 # - set HAVE_XXX
 
 # The minimum package list
+<<<<<<< HEAD
 set(PACKAGELIST Git GLIB2 GMODULE2 GTHREAD2 GCRYPT LEX YACC Perl SH PythonInterp)
+=======
+set(PACKAGELIST Gettext M Git GLIB2 GMODULE2 GTHREAD2 GCRYPT LEX YACC Perl SH PythonInterp)
+>>>>>>> upstream/master-2.4
 set(LEX_OPTIONS REQUIRED)
 set(GLIB2_OPTIONS REQUIRED)
 set(GLIB2_FIND_OPTIONS REQUIRED)
@@ -866,7 +880,10 @@ set(Python_ADDITIONAL_VERSIONS 3)
 set(YACC_OPTIONS REQUIRED)
 
 if (NOT WIN32)
+<<<<<<< HEAD
 	set(PACKAGELIST ${PACKAGELIST} Gettext M)
+=======
+>>>>>>> upstream/master-2.4
 	set(M_OPTIONS REQUIRED)
 endif()
 
@@ -1506,11 +1523,14 @@ set_package_properties(SPANDSP PROPERTIES
 	URL "http://www.soft-switch.org/"
 	PURPOSE "Support for G.722 and G.726 codecs in RTP player"
 )
+<<<<<<< HEAD
 set_package_properties(BCG729 PROPERTIES
 	DESCRIPTION "G.729 decoder"
 	URL "https://www.linphone.org/technical-corner/bcg729/overview"
 	PURPOSE "Support for G.729 codec in RTP player"
 )
+=======
+>>>>>>> upstream/master-2.4
 set_package_properties(LIBXML2 PROPERTIES
 	DESCRIPTION "XML parsing library"
 	URL "http://xmlsoft.org/"
@@ -1536,11 +1556,20 @@ set_package_properties(NGHTTP2 PROPERTIES
 	URL "https://nghttp2.org"
 	PURPOSE "Header decompression in HTTP2"
 )
+<<<<<<< HEAD
 
 message(STATUS "C-Flags: ${CMAKE_C_FLAGS}")
 message(STATUS "CXX-Flags: ${CMAKE_CXX_FLAGS}")
 message(STATUS "Warnings as errors: ${WERROR_COMMON_FLAGS}")
 
+=======
+# XXX tpg plugin is not added in CMakeLists/Makefile.am, remove plugins/tpg/?
+set_package_properties(YAPP PROPERTIES
+	DESCRIPTION "Yet Another Perl Parser compiler"
+	URL "http://search.cpan.org/dist/Parse-Yapp/"
+	PURPOSE "tpg plugin"
+)
+>>>>>>> upstream/master-2.4
 feature_summary(WHAT ALL)
 
 link_directories(
@@ -2967,9 +2996,6 @@ if(ENABLE_APPLICATION_BUNDLE)
 	)
 
 	ADD_CUSTOM_TARGET( dmg_package
-		COMMAND ${CMAKE_COMMAND} -E copy_if_different
-					"${PROJECT_SOURCE_DIR}/ipmap.html"
-					$<TARGET_FILE_DIR:wireshark>
 		COMMAND ${CMAKE_COMMAND} -E copy_directory
 					${CMAKE_SOURCE_DIR}/packaging/macosx/ChmodBPF
 					${CMAKE_BINARY_DIR}/run/ChmodBPF

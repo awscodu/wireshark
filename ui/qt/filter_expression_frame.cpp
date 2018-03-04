@@ -35,7 +35,10 @@ FilterExpressionFrame::FilterExpressionFrame(QWidget *parent) :
     }
 #endif
 
+<<<<<<< HEAD
     editExpression_ = -1;
+=======
+>>>>>>> upstream/master-2.4
     updateWidgets();
 }
 

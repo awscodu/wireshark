@@ -244,7 +244,18 @@ void ProtocolPreferencesMenu::addMenuItem(preference *pref)
 
 void ProtocolPreferencesMenu::disableProtocolTriggered()
 {
+<<<<<<< HEAD
     EnabledProtocolsModel::disableProtocol(protocol_);
+=======
+    EnabledProtocolsDialog enable_proto_dialog(this);
+    enable_proto_dialog.selectProtocol(protocol_);
+    hide();
+    enable_proto_dialog.exec();
+
+    // Emitting PacketDissectionChanged directly from a QDialog can cause
+    // problems on macOS.
+    wsApp->flushAppSignals();
+>>>>>>> upstream/master-2.4
 }
 
 void ProtocolPreferencesMenu::modulePreferencesTriggered()

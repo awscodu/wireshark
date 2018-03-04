@@ -508,9 +508,12 @@ append_extcap_interface_list(GList *list, char **err_str _U_)
     GList *interface_list = NULL;
     extcap_interface *data = NULL;
     GList *ifutilkeys_head = NULL, *ifutilkeys = NULL;
+<<<<<<< HEAD
 
     if (prefs.capture_no_extcap)
         return list;
+=======
+>>>>>>> upstream/master-2.4
 
     /* Update the extcap interfaces and get a list of their if_infos */
     if ( !_loaded_interfaces || g_hash_table_size(_loaded_interfaces) == 0 )
@@ -980,6 +983,7 @@ void extcap_if_cleanup(capture_options *capture_opts, gchar **errormsg)
               "Extcap [%s] - Cleaning up fifo: %s; PID: %d", interface_opts->name,
               interface_opts->extcap_fifo, interface_opts->extcap_pid);
 #ifdef _WIN32
+<<<<<<< HEAD
         if (interface_opts->extcap_pipe_h != INVALID_HANDLE_VALUE)
         {
             g_log(LOG_DOMAIN_CAPTURE, G_LOG_LEVEL_DEBUG,
@@ -1006,6 +1010,34 @@ void extcap_if_cleanup(capture_options *capture_opts, gchar **errormsg)
             DisconnectNamedPipe(interface_opts->extcap_control_out_h);
             CloseHandle(interface_opts->extcap_control_out_h);
             interface_opts->extcap_control_out_h = INVALID_HANDLE_VALUE;
+=======
+        if (interface_opts.extcap_pipe_h != INVALID_HANDLE_VALUE)
+        {
+            g_log(LOG_DOMAIN_CAPTURE, G_LOG_LEVEL_DEBUG,
+                  "Extcap [%s] - Closing pipe", interface_opts.name);
+            FlushFileBuffers(interface_opts.extcap_pipe_h);
+            DisconnectNamedPipe(interface_opts.extcap_pipe_h);
+            CloseHandle(interface_opts.extcap_pipe_h);
+            interface_opts.extcap_pipe_h = INVALID_HANDLE_VALUE;
+        }
+        if (interface_opts.extcap_control_in_h != INVALID_HANDLE_VALUE)
+        {
+            g_log(LOG_DOMAIN_CAPTURE, G_LOG_LEVEL_DEBUG,
+                  "Extcap [%s] - Closing control_in pipe", interface_opts.name);
+            FlushFileBuffers(interface_opts.extcap_control_in_h);
+            DisconnectNamedPipe(interface_opts.extcap_control_in_h);
+            CloseHandle(interface_opts.extcap_control_in_h);
+            interface_opts.extcap_control_in_h = INVALID_HANDLE_VALUE;
+        }
+        if (interface_opts.extcap_control_out_h != INVALID_HANDLE_VALUE)
+        {
+            g_log(LOG_DOMAIN_CAPTURE, G_LOG_LEVEL_DEBUG,
+                  "Extcap [%s] - Closing control_out pipe", interface_opts.name);
+            FlushFileBuffers(interface_opts.extcap_control_out_h);
+            DisconnectNamedPipe(interface_opts.extcap_control_out_h);
+            CloseHandle(interface_opts.extcap_control_out_h);
+            interface_opts.extcap_control_out_h = INVALID_HANDLE_VALUE;
+>>>>>>> upstream/master-2.4
         }
 #else
         if (interface_opts->extcap_fifo != NULL && file_exists(interface_opts->extcap_fifo))
@@ -1239,7 +1271,7 @@ GPtrArray *extcap_prepare_arguments(interface_options *interface_opts)
                     const gchar *stored = NULL;
                     /* In case of boolflags only first element in arg_list is relevant. */
                     arg_iter = (extcap_arg *)(arg_list->data);
-                    if (arg_iter->pref_valptr != NULL)
+                    if (arg_iter->pref_valptr != NULL && strlen(*arg_iter->pref_valptr) > 0)
                     {
                         stored = *arg_iter->pref_valptr;
                     }
@@ -1306,6 +1338,7 @@ extcap_init_interfaces(capture_options *capture_opts)
         /* create control pipes if having toolbar */
         if (extcap_has_toolbar(interface_opts->name))
         {
+<<<<<<< HEAD
             extcap_create_pipe(interface_opts->name, &interface_opts->extcap_control_in,
                                EXTCAP_CONTROL_IN_PREFIX, FALSE);
 #ifdef _WIN32
@@ -1315,17 +1348,36 @@ extcap_init_interfaces(capture_options *capture_opts)
                                EXTCAP_CONTROL_OUT_PREFIX, FALSE);
 #ifdef _WIN32
             interface_opts->extcap_control_out_h = pipe_h;
+=======
+            extcap_create_pipe(interface_opts.name, &interface_opts.extcap_control_in,
+                               EXTCAP_CONTROL_IN_PREFIX, FALSE);
+#ifdef _WIN32
+            interface_opts.extcap_control_in_h = pipe_h;
+#endif
+            extcap_create_pipe(interface_opts.name, &interface_opts.extcap_control_out,
+                               EXTCAP_CONTROL_OUT_PREFIX, FALSE);
+#ifdef _WIN32
+            interface_opts.extcap_control_out_h = pipe_h;
+>>>>>>> upstream/master-2.4
 #endif
         }
 
         /* create pipe for fifo */
+<<<<<<< HEAD
         if (!extcap_create_pipe(interface_opts->name, &interface_opts->extcap_fifo,
+=======
+        if (!extcap_create_pipe(interface_opts.name, &interface_opts.extcap_fifo,
+>>>>>>> upstream/master-2.4
                                 EXTCAP_PIPE_PREFIX, TRUE))
         {
             return FALSE;
         }
 #ifdef _WIN32
+<<<<<<< HEAD
         interface_opts->extcap_pipe_h = pipe_h;
+=======
+        interface_opts.extcap_pipe_h = pipe_h;
+>>>>>>> upstream/master-2.4
 #endif
 
         /* Create extcap call */
@@ -1363,6 +1415,7 @@ extcap_init_interfaces(capture_options *capture_opts)
         {
             HANDLE pipe_handles[3];
             int num_pipe_handles = 1;
+<<<<<<< HEAD
             pipe_handles[0] = interface_opts->extcap_pipe_h;
 
             if (extcap_has_toolbar(interface_opts->name))
@@ -1371,6 +1424,20 @@ extcap_init_interfaces(capture_options *capture_opts)
                 pipe_handles[2] = interface_opts->extcap_control_out_h;
                 num_pipe_handles += 2;
              }
+=======
+            pipe_handles[0] = interface_opts.extcap_pipe_h;
+
+            if (extcap_has_toolbar(interface_opts.name))
+            {
+                pipe_handles[1] = interface_opts.extcap_control_in_h;
+                pipe_handles[2] = interface_opts.extcap_control_out_h;
+                num_pipe_handles += 2;
+             }
+
+            extcap_wait_for_pipe(pipe_handles, num_pipe_handles, pid);
+        }
+#endif
+>>>>>>> upstream/master-2.4
 
             extcap_wait_for_pipe(pipe_handles, num_pipe_handles, pid);
         }

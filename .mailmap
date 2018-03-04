@@ -21,7 +21,10 @@ Cal Turney <cturney@charter.net> cturney <cturney@charter.net>
 Cedric Izoard <cedric.izoard@ceva-dsp.com> Cedric Izoard <cedric.izoard@rivierawaves.com>
 Chris Bontje <cbontje@gmail.com> cbontje <cbontje@gmail.com>
 Chris Bontje <cbontje@gmail.com> chrisbontje <cbontje@gmail.com>
+<<<<<<< HEAD
 Chris Brandson <chris.brandson@gmail.com> Chris Brandson <cjb@exegin.com>
+=======
+>>>>>>> upstream/master-2.4
 Chris Dunlop <chris.dunlop3@gmail.com> cjdunlop
 Chris Maynard <Christopher.Maynard@GTECH.COM> <Christopher.Maynard@igt.com>
 Christian M. Amsüss <chrysn@fsfe.org> chrysn <chrysn@fsfe.org>
@@ -145,9 +148,13 @@ Sanket Godbole <sanket.godbole@spirent.com> sangodbole <sanket.godbole@spirent.c
 Selva Kumar <v.selvamuthukumar@gmail.com> Selva <v.selvamuthukumar@gmail.com>
 Shekhar Chandra <ranushekhar@gmail.com> ranushekhar
 Shuai Xiao <iamhihi@gmail.com> shuai xiao <iamhihi@gmail.com>
+<<<<<<< HEAD
 Simon Barber <simon.barber@meraki.net> Simon Barber <sbarber@parc.com>
 Simon Zhong <szhong.jnpr@gmail.com> szhong <szhong.jnpr@gmail.com>
 Stefan Battmer <stefan.battmer@matrix-vision.de> bat <stefan.battmer@matrix-vision.de>
+=======
+Simon Zhong <szhong.jnpr@gmail.com> szhong <szhong.jnpr@gmail.com>
+>>>>>>> upstream/master-2.4
 Stella Randall <stella.randall@emeerson.com> rosemountSkp <rosemountSkp@code.wireshark.org>
 Stephen Donnelly <stephen@endace.com> sfd <stephen.donnelly@emulex.com>
 Stephen Donnelly <stephen@endace.com> sfd <stephen.donnelly@endace.com>

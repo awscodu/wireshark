@@ -516,7 +516,11 @@ void CaptureFilePropertiesDialog::fillDetails()
         cursor.insertHtml(section_tmpl_.arg(tr("Packet Comments")));
 
         for (guint32 framenum = 1; framenum <= cap_file_.capFile()->count ; framenum++) {
+<<<<<<< HEAD
             frame_data *fdata = frame_data_sequence_find(cap_file_.capFile()->provider.frames, framenum);
+=======
+            frame_data *fdata = frame_data_sequence_find(cap_file_.capFile()->frames, framenum);
+>>>>>>> upstream/master-2.4
             char *pkt_comment = cf_get_packet_comment(cap_file_.capFile(), fdata);
 
             if (pkt_comment) {

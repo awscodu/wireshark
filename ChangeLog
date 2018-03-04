@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 395016356c [SBC-AP] Enhance info column information.
 e6c0f03a42 about_dialog (qt): Fix Dead Store (Dead assignement/Dead increment) Warning found by Clang
 64c32c672c [Thrift] Handle optional elememts in struct.
@@ -2635,3 +2636,5 @@ c508932a60 RADIUS: Fix gda9363e202
 ae409ed545 Pass the file type, not the frame type, to cfile_dump_open_failure_message().
 a27a308fcc netflow: use BASE_UNIT_STRING (units_seconds, units_microseconds)
 b932b719eb netflow: ntop information elements update, added all missing items exported by nProbe.
+=======
+>>>>>>> upstream/master-2.4
